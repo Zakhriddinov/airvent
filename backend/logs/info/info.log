@@ -1,0 +1,1937 @@
+2024-07-03T17:16:31.255Z info: [34m[36mExpress running → On PORT : 8888[39m[39m
+2024-07-03T17:16:33.046Z info: [4m[36mMongoDB connect to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:17:09.808Z info: [34m[36mExpress running → On PORT : 8888[39m[39m
+2024-07-03T17:17:12.709Z info: [4m[32mMongoDB connect to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:17:17.028Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:17:18.848Z info: [4m[32mMongoDB connect to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:17:36.207Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:17:37.987Z info: [4m[32mMongoDB connect to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:17:39.794Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:17:41.536Z info: [4m[32mMongoDB connect to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:17:42.860Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:17:44.815Z info: [4m[32mMongoDB connect to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:17:59.074Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:18:01.116Z info: [4m[32mMongoDB connect to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:18:02.618Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:18:04.763Z info: [4m[32mMongoDB connect to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:23:13.205Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:23:14.936Z info: [4m[32mMongoDB connect to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:23:23.100Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:23:24.858Z info: [4m[32mMongoDB connect to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:23:34.246Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:23:35.815Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:23:37.677Z info: Connected to MongoDB
+2024-07-03T17:23:43.121Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:23:44.905Z info: Connected to MongoDB
+2024-07-03T17:23:45.829Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:23:46.888Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:23:48.608Z error: MongoDB connection error: Cannot access 'connecting' before initialization
+2024-07-03T17:23:56.612Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:23:58.337Z error: [4m[31mMongoDB connection error: Cannot access 'connecting' before initialization[39m[24m
+2024-07-03T17:24:13.922Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:24:15.914Z error: [4m[31mMongoDB connection error: Cannot access 'connecting' before initialization[39m[24m
+2024-07-03T17:24:26.857Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:24:28.106Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:24:29.372Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:24:31.084Z error: [4m[31mMongoDB connection error: Cannot access 'connecting' before initialization[39m[24m
+2024-07-03T17:24:31.712Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:24:33.457Z error: [4m[31mMongoDB connection error: Cannot access 'connecting' before initialization[39m[24m
+2024-07-03T17:25:13.536Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:25:14.992Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:25:17.312Z error: [4m[31mMongoDB connection error: Cannot access 'connecting' before initialization[39m[24m
+2024-07-03T17:25:20.090Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:25:21.826Z error: [4m[31mMongoDB connection error: Cannot access 'connecting' before initialization[39m[24m
+2024-07-03T17:25:32.013Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:25:33.857Z error: [4m[31mMongoDB connection error: Cannot access 'connecting' before initialization[39m[24m
+2024-07-03T17:25:34.092Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:25:36.145Z error: [4m[31mMongoDB connection error: Cannot access 'connecting' before initialization[39m[24m
+2024-07-03T17:25:43.466Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:25:45.200Z error: [4m[31mMongoDB connection error: Cannot access 'connecting' before initialization[39m[24m
+2024-07-03T17:26:18.634Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:26:26.994Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:26:28.983Z error: [4m[31mMongoDB connection error: Cannot access 'connecting' before initialization[39m[24m
+2024-07-03T17:26:37.025Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:26:38.862Z error: [4m[31mMongoDB connection error: Cannot access 'connecting' before initialization[39m[24m
+2024-07-03T17:27:35.385Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:27:37.997Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:28:19.630Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:28:21.631Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:28:58.097Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:28:59.950Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:29:48.343Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:29:49.780Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:29:50.942Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:29:52.830Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:32:56.247Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:32:58.193Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:36:26.074Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:36:27.863Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:37:20.638Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:37:22.782Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:37:48.788Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:37:50.747Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:39:15.345Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:39:17.129Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:39:21.827Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:39:23.915Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:39:27.094Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:39:29.001Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:39:34.505Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:39:35.505Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:39:38.140Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:39:38.534Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:39:40.393Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:39:42.282Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:39:44.003Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:39:46.274Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:39:48.978Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:39:50.851Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:39:54.074Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:39:55.873Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:39:57.918Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:40:00.023Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:40:01.811Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:40:05.977Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:40:08.191Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:40:09.786Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:40:11.059Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:40:12.826Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:40:14.894Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:40:16.627Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:40:18.072Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:40:19.780Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:40:23.063Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:40:24.790Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:40:36.920Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:40:38.694Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:40:40.391Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:40:42.126Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:40:43.059Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:40:44.828Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:41:34.004Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:41:35.744Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:43:32.848Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:43:36.704Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:43:44.001Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:43:46.404Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:45:13.679Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:45:15.404Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:45:44.406Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:45:45.816Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:45:46.933Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:45:49.333Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:46:06.179Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:46:08.496Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:46:13.528Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:46:15.266Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:46:19.902Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:46:21.610Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:46:22.750Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:46:24.523Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:46:46.289Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:46:47.170Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:46:48.861Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:46:51.165Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:47:26.835Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:47:28.602Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:48:25.586Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:48:27.337Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:55:09.513Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:55:13.289Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:55:15.808Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:55:17.559Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:55:24.448Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:55:26.200Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:56:25.156Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:56:26.877Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:56:30.975Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:56:32.687Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:56:39.909Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:56:41.640Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:56:42.322Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:56:44.042Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:56:47.050Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:56:48.784Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:56:52.608Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:56:54.308Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:56:57.638Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:56:59.357Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:57:09.803Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:57:11.566Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:57:24.098Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:57:25.837Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:57:42.247Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:57:43.980Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:57:54.985Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:57:56.726Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:57:58.955Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:58:00.681Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:58:03.563Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:58:05.273Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:58:08.439Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:58:10.178Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:58:12.837Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:58:14.575Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:58:17.082Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:58:18.809Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:58:20.306Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:58:22.801Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:58:27.689Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:58:29.440Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:58:34.830Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:58:36.558Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:58:40.814Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:58:42.928Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:58:45.857Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:58:47.569Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:58:51.065Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:58:52.793Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:58:55.509Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:58:57.223Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:58:59.993Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:59:01.691Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:59:06.981Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:59:08.743Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:59:09.414Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:59:11.142Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T17:59:14.770Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T17:59:16.742Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:00:00.183Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:00:01.953Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:00:05.091Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:00:06.815Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:00:09.060Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:00:10.777Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:00:12.055Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:00:13.765Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:00:14.303Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:00:16.026Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:00:17.893Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:00:19.596Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:00:21.486Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:00:23.318Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:00:25.451Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:00:27.250Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:00:30.078Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:00:31.842Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:00:40.075Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:00:41.824Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:00:43.557Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:00:45.348Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:00:45.614Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:00:47.345Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:00:48.845Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:00:50.604Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:00:52.604Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:00:54.326Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:00:56.041Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:00:57.749Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:00:59.017Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:01:00.774Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:01:18.436Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:01:20.148Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:01:23.622Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:01:25.341Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:01:26.541Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:01:28.281Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:01:29.245Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:01:30.977Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:02:27.449Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:02:29.164Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:39:23.669Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:39:25.404Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:39:40.429Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:39:42.204Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:40:01.147Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:40:02.813Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:40:04.016Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:40:05.700Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:40:08.920Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:40:10.625Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:40:14.203Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:40:15.975Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:40:17.692Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:40:29.727Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:40:31.469Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:40:33.824Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:40:35.522Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:40:36.141Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:40:37.873Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:40:42.530Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:40:44.237Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:40:46.076Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:40:48.230Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:40:49.818Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:40:51.554Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:40:53.066Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:40:54.500Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:40:56.321Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:40:58.002Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:40:58.206Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:40:59.956Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:41:02.065Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:41:03.814Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:41:07.424Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:41:09.150Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:41:14.869Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:41:16.620Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:41:27.707Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:41:29.479Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:41:36.996Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:41:38.706Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:41:42.089Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:41:44.215Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:41:51.073Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:41:52.785Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:41:55.949Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:41:57.835Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:42:02.108Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:42:03.820Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:42:05.858Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:42:07.592Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:42:09.096Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:42:10.755Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:42:12.492Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:42:14.109Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:42:15.914Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:42:20.880Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:42:22.580Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:42:24.469Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:42:26.162Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:42:26.748Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:42:28.374Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:42:30.089Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:42:32.389Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:42:34.107Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:42:45.032Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:42:46.721Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:42:47.977Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:42:49.767Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:42:55.093Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:42:56.811Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:42:58.389Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:43:00.081Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:43:02.101Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:43:03.869Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:43:09.083Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:43:10.818Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:43:15.026Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:43:16.711Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:43:21.325Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:43:23.100Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:43:24.805Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:43:31.088Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:43:32.796Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:43:33.960Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:43:35.699Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:43:40.064Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:43:41.804Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:43:45.104Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:43:46.810Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:43:49.961Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:43:51.666Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:43:53.532Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:43:55.329Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:43:58.094Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:43:59.848Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:44:02.100Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:44:03.884Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:44:08.986Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:44:10.777Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:44:14.980Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:44:16.712Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:44:21.214Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:44:22.934Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:44:23.325Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:44:25.086Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:44:26.312Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:44:28.185Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:44:31.714Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:44:33.441Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:44:35.548Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:44:37.731Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:44:43.987Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:44:45.717Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:44:47.633Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:44:49.393Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:44:53.217Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:44:54.912Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:44:56.209Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:44:57.898Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:45:02.232Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:45:03.931Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:45:05.852Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:45:07.583Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:45:09.189Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:45:10.293Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:45:12.023Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:45:20.421Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:45:22.038Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:45:23.739Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:45:27.690Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:45:29.510Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:45:31.706Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:45:36.028Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:45:37.729Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:45:39.632Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:45:41.096Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:45:42.795Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:45:44.638Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:45:46.637Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:45:47.118Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:45:48.820Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:45:49.907Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:45:51.060Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:45:52.774Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:45:58.822Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:46:00.409Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:46:02.613Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:46:05.673Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:46:07.398Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:46:09.722Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:46:11.424Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:46:14.233Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:46:16.435Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:46:20.580Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:46:23.799Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:46:25.498Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:46:40.613Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:46:42.349Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:47:04.099Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:47:06.062Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:47:10.884Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:47:12.588Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:47:13.112Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:47:14.533Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:47:15.468Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:47:17.285Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:48:03.613Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:48:05.300Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:48:06.382Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:48:08.116Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:48:18.603Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:48:20.354Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:48:31.022Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:48:32.149Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:48:33.829Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:48:39.057Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:48:40.804Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:48:50.618Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:48:52.315Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:48:52.629Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:48:54.372Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:48:58.346Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:49:00.067Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:49:01.568Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:49:03.258Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:49:03.567Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:49:05.309Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:49:08.972Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:49:10.679Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:49:16.850Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:49:21.713Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:49:23.420Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:49:26.685Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:49:28.522Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:49:32.093Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:49:33.851Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:49:46.118Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:49:47.821Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:49:48.091Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:49:49.795Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:49:50.839Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:49:56.064Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:49:58.244Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:50:02.142Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:50:03.902Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:50:04.661Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:50:06.807Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:50:07.582Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:50:09.318Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:50:13.954Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:50:15.689Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:50:22.411Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:50:24.582Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:50:32.099Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:50:33.817Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:50:34.436Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:50:36.086Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:50:37.792Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:50:54.285Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:50:56.013Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:50:59.084Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:51:00.867Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:51:04.420Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:51:06.183Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:51:10.159Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:51:11.891Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:51:13.088Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:51:14.789Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:51:16.448Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:51:18.174Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:51:30.703Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:51:32.433Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:51:38.984Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:51:41.232Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:51:48.691Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:51:50.391Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:51:51.334Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:51:54.106Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:51:55.843Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:51:58.919Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:52:00.631Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:52:40.094Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:52:41.808Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:52:45.772Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:52:47.520Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:52:51.572Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:52:53.326Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:53:03.085Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:53:04.817Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:53:11.574Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:53:13.289Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:53:26.746Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:53:28.456Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:53:32.213Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:53:33.920Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:53:34.930Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:53:36.646Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:53:42.111Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:53:43.822Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:54:06.569Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:54:08.281Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:55:25.260Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:55:27.019Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:55:43.308Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:55:45.041Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:56:00.439Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:56:02.207Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:56:20.562Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:56:22.285Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:56:34.139Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:56:35.829Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:56:38.135Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:56:39.905Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:56:56.860Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:56:58.703Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:57:02.306Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:57:06.898Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:58:20.073Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:58:21.252Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:58:22.997Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:58:27.074Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:58:28.842Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:58:38.825Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:58:40.095Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:58:41.828Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:58:47.081Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:58:49.300Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:58:51.991Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:58:53.701Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:59:02.028Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:59:03.787Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T18:59:07.107Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T18:59:08.895Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:00:20.693Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:00:22.434Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:00:34.259Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:00:35.944Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:00:37.156Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:00:38.937Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:00:48.077Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:00:49.844Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:00:51.992Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:00:53.705Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:01:05.099Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:01:06.925Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:01:34.084Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:01:36.800Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:01:48.092Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:01:49.868Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:02:01.090Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:02:02.843Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:02:12.088Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:02:13.836Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:02:20.103Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:02:21.827Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:02:22.081Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:02:23.792Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:02:32.075Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:02:33.774Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:02:34.249Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:02:35.979Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:03:25.220Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:03:26.963Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:03:34.677Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:03:36.321Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:03:38.725Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:03:41.107Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:03:42.854Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:03:47.066Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:03:49.311Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:03:54.999Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:03:56.747Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:04:23.710Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:04:25.456Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:04:46.549Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:04:48.275Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:08:50.291Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:08:52.006Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:08:52.293Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:08:54.195Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:08:58.209Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:08:59.912Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:09:04.067Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:09:05.898Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:09:08.168Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:09:09.872Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:09:17.189Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:09:18.908Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:09:21.697Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:09:23.398Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:09:24.918Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:09:26.623Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:09:28.220Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:09:29.914Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:09:30.951Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:09:33.343Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:09:53.641Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:09:55.363Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:10:13.808Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:10:16.200Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:10:22.158Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:10:23.907Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:10:25.996Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:10:28.208Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:10:29.333Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:10:31.194Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:10:33.196Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:10:35.462Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:10:37.611Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:10:39.352Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:10:41.716Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:10:43.418Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:11:12.864Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:11:14.611Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:11:22.065Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:11:23.759Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:11:24.047Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:11:25.761Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:11:32.937Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:11:34.661Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:11:48.276Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:11:49.989Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:11:53.075Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:11:55.367Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-03T19:11:58.153Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-03T19:11:59.883Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-04T11:17:56.430Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-04T11:17:59.110Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-04T11:20:55.735Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-04T11:20:58.458Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-04T11:21:10.863Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-04T11:21:13.247Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-04T11:26:11.971Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-04T11:26:15.022Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-04T11:26:16.384Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-04T11:26:18.594Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-04T11:26:40.184Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-04T11:26:43.105Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-04T11:31:24.838Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-04T11:31:27.063Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-04T11:31:42.394Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-04T11:31:44.170Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-04T11:31:46.529Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-04T11:32:45.743Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-04T11:32:47.912Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T15:53:29.022Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T15:53:31.522Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:01:07.259Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:01:09.489Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:01:10.677Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:01:13.230Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:01:14.944Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:01:16.308Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:01:17.972Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:01:20.175Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:01:54.633Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:01:56.755Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:01:58.804Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:02:00.655Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:02:01.163Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:02:03.337Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:02:07.046Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:02:09.655Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:02:12.417Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:02:14.362Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:02:17.054Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:02:19.654Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:02:22.233Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:02:24.201Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:02:24.775Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:02:26.681Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:02:45.970Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:02:47.947Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:04:01.277Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:04:03.037Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:04:04.574Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:04:06.330Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:04:10.867Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:04:11.957Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:04:13.842Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:04:19.747Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:04:20.703Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:04:22.786Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:04:39.164Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:04:41.827Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:04:51.746Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:04:53.598Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:05:00.851Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:05:02.897Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:05:04.803Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:05:05.872Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:05:08.273Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:05:38.336Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:05:40.095Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:05:45.985Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:05:48.173Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:06:01.222Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:06:03.067Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:06:31.191Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:06:33.086Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:07:00.646Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:07:02.550Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:07:04.470Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:07:07.978Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:07:09.704Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:07:15.866Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:07:17.660Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:07:20.226Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:07:22.014Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:07:24.370Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:07:26.413Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:07:30.336Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:07:32.703Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:07:34.601Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:11:22.177Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:11:24.320Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:11:25.473Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:11:27.318Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:11:29.612Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:11:32.020Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:34:10.989Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:34:13.940Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:34:25.747Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:34:28.611Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:34:30.570Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:34:32.437Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:34:35.931Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:36:40.513Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:36:42.206Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:36:53.765Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:36:55.561Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:36:57.685Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:36:59.493Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:37:41.473Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:37:43.441Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:38:26.723Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:38:28.860Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:40:02.518Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:40:04.354Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:40:13.582Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:40:15.362Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:41:07.907Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:41:09.893Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:43:37.244Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:43:39.146Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:43:43.779Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:43:45.935Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:44:00.897Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:44:03.003Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:46:14.773Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:46:16.721Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:48:24.900Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:48:27.245Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:48:29.913Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:48:31.871Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:48:35.066Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:48:37.097Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:48:37.502Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:48:39.469Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:48:41.410Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:48:43.201Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:53:11.353Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:53:13.815Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:53:15.699Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:53:52.124Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:53:53.969Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:54:12.340Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:54:14.037Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:54:14.526Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:54:16.454Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:54:25.041Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:54:27.003Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:54:27.813Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:54:29.715Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:54:36.798Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:54:39.029Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:55:09.359Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:55:11.803Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:55:40.491Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:55:42.246Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:56:29.902Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:56:30.794Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:56:32.671Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-06T16:57:14.579Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T16:57:16.847Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T17:26:05.625Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T17:26:08.190Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T17:26:15.285Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T17:26:17.580Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-06T17:26:18.607Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T17:26:21.245Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T17:28:51.023Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T17:28:53.186Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T17:28:56.468Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T17:29:27.350Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T17:29:33.319Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-06T17:30:06.198Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T17:30:08.008Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-06T17:30:11.995Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T17:30:14.430Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-06T17:30:18.782Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T17:30:20.932Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-06T17:31:08.155Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T17:31:09.943Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-06T17:33:02.839Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T17:33:03.946Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T17:33:05.926Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-06T17:33:52.907Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T17:33:55.349Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-06T17:34:00.681Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-06T17:34:02.834Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:01:54.754Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:01:56.459Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:02:01.778Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:02:03.452Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:02:04.372Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:02:06.046Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:03:28.432Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:03:30.098Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:07:19.804Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:07:21.498Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:07:33.347Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:07:35.194Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:07:40.987Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:07:42.677Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:08:15.725Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:08:17.440Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:08:19.310Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:08:21.036Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:08:22.692Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:08:40.214Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:08:41.868Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:08:49.120Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:08:50.822Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:08:52.868Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:08:54.542Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:08:57.073Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:08:58.733Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:08:59.448Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:09:01.162Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:09:04.899Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:09:06.752Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:09:08.404Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:09:23.883Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:09:25.574Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:09:32.888Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:09:34.691Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:09:36.591Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:09:38.269Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:09:41.587Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:09:43.292Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:10:32.288Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:10:33.992Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:10:39.264Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:10:40.926Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:10:49.020Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:10:50.686Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:10:52.328Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:10:54.057Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:11:01.802Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:11:03.547Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:11:10.285Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:11:11.960Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:12:00.374Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:12:01.274Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:12:03.020Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:12:09.640Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:12:11.290Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:12:12.969Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:12:45.583Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:12:47.368Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:13:58.256Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:14:00.222Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:14:13.910Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:14:15.570Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:15:23.261Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:15:25.013Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:15:57.433Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:15:59.184Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:16:01.051Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:16:02.708Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:16:10.154Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:16:11.834Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:16:18.288Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:16:20.038Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:16:20.765Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:16:22.516Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:16:26.253Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:16:27.971Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:16:31.723Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:16:33.395Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:16:35.261Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:16:37.037Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:16:43.001Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:16:44.861Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:16:50.263Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:16:52.086Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:16:56.099Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:16:57.853Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:16:59.612Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:17:12.235Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:17:13.934Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:18:19.414Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:18:21.200Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:18:26.028Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:18:27.869Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:18:30.281Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:18:32.098Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:18:41.939Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:18:43.694Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:18:50.047Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:18:51.865Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:18:52.701Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:18:54.591Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:18:55.222Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:18:56.999Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:18:58.254Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:18:59.526Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:19:01.260Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:19:09.598Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:19:11.158Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:19:12.806Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:19:19.090Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:19:20.798Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:19:24.212Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:19:25.873Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:19:28.675Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:19:30.373Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:19:30.934Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:19:32.642Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:19:34.849Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:19:36.660Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:19:37.196Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:19:38.983Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:19:43.748Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:19:45.423Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:19:48.042Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:19:49.698Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:19:52.259Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:19:54.204Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:19:56.290Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:19:57.955Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:20:00.247Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:20:02.031Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:20:04.175Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:20:05.877Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:20:09.790Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:20:11.700Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:20:14.153Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:20:15.147Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:20:17.257Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:20:18.945Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:20:22.041Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:20:23.722Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:20:32.091Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:20:33.962Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:21:50.810Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:21:52.504Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:21:57.902Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:21:59.287Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:22:00.997Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:22:01.514Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:22:03.292Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:22:12.575Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:22:14.286Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:22:16.100Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:22:18.465Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:23:23.038Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:23:24.719Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:24:01.786Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:24:03.445Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:24:11.926Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:24:13.685Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:24:15.455Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:24:16.140Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:24:17.297Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:24:19.081Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:24:26.406Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:24:27.691Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:24:29.407Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:24:32.919Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:24:34.634Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:24:45.312Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:24:47.026Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:24:52.103Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:24:53.760Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:25:53.848Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:25:55.627Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:25:56.853Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:25:58.557Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:25:58.890Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:26:00.565Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:26:14.384Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:26:16.042Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:26:40.582Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:26:42.413Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:27:41.034Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:27:42.698Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:27:53.890Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:27:55.639Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:28:02.610Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:28:03.851Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:28:05.564Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:28:10.932Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:28:12.627Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:28:12.953Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:28:14.665Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:28:22.574Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:28:24.254Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:28:27.133Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:28:28.843Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:28:30.817Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:28:32.529Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:28:40.586Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:28:42.410Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:29:54.676Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:29:56.393Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:30:02.280Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:30:03.972Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:30:20.521Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:30:22.266Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:30:24.464Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:30:25.790Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:30:27.610Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:30:41.711Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:30:43.371Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:31:00.644Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:31:02.474Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:36:59.100Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:37:00.911Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:40:11.707Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:40:13.376Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:40:36.957Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:40:38.807Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:47:11.821Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:47:13.525Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:47:20.895Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:47:22.689Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:48:01.144Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:48:02.814Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:48:29.755Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:48:31.511Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:49:00.537Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:49:02.296Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:56:22.275Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:56:24.029Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:56:30.982Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:56:32.679Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:56:37.774Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:56:39.607Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:56:40.740Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:56:42.419Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:56:44.203Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:56:45.858Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:56:50.138Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:56:51.868Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:56:52.256Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:56:54.033Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:56:55.745Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:57:00.900Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:57:02.341Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:57:03.859Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:57:05.349Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:57:07.004Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:57:08.040Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:57:10.019Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:57:11.708Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:57:16.269Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:57:17.769Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:57:19.660Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:57:21.525Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:57:31.607Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:57:33.322Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:57:43.343Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:57:45.078Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:57:49.702Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:57:51.447Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:57:55.152Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:57:57.019Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:57:59.466Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:58:01.357Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:58:03.039Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:58:08.854Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:58:10.541Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:58:17.066Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:58:18.794Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:58:19.498Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:58:20.752Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:58:22.511Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:58:24.193Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:58:33.236Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:58:34.884Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:58:36.212Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:58:37.928Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:58:38.653Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:58:40.843Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:58:46.371Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:58:48.879Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T03:59:58.058Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T03:59:59.759Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:00:55.303Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:00:57.092Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:00:59.186Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:01:00.812Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:01:02.607Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:01:11.535Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:01:17.061Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:01:18.901Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:01:33.397Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:01:34.996Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:01:36.667Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:03:22.425Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:03:24.269Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:04:57.475Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:04:59.331Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:05:00.562Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:05:01.706Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:05:03.768Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:05:06.669Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:05:08.487Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:05:09.221Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:05:10.870Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:05:11.167Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:05:12.675Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:05:14.346Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:05:15.033Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:05:16.489Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:05:18.191Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:06:14.157Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:06:15.884Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:06:18.268Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:06:20.137Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:06:21.313Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:06:22.982Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:06:23.622Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:06:25.138Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:06:26.611Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:06:28.262Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:06:29.540Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:06:31.223Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:06:40.203Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:06:42.105Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:06:43.934Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:07:23.895Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:07:25.835Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:07:29.071Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:07:31.080Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:07:39.602Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:07:41.342Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:08:19.870Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:08:21.552Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:08:25.382Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:08:27.283Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:08:29.061Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:09:08.286Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:09:09.980Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:10:38.855Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:10:39.894Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:10:41.586Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:10:46.301Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:10:48.059Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:11:28.151Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:11:29.892Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:11:30.288Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:11:32.199Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:12:00.158Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:12:01.841Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:12:05.749Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:12:07.640Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:12:08.825Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:12:10.592Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:12:47.737Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:12:49.403Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:14:11.287Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:14:16.654Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:14:22.722Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:14:25.854Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:14:38.580Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:14:40.303Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:14:43.408Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:14:45.227Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:14:49.727Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:14:51.437Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:14:56.506Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:14:58.436Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:16:19.437Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:16:21.472Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:16:26.843Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:16:28.735Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:16:55.516Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:16:57.204Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:17:02.049Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:17:03.692Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:17:05.457Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:17:08.226Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:17:09.972Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:17:16.979Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:17:18.799Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:17:19.915Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:17:21.688Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:17:23.744Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:17:25.407Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:17:43.300Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:17:44.984Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:17:52.165Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:17:53.880Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:18:02.209Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:18:03.912Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:18:16.266Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:18:18.024Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:18:22.415Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:18:26.009Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:18:27.784Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:18:34.730Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:18:37.411Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:18:38.465Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:18:40.670Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:18:42.484Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:18:44.220Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:59:34.866Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:59:36.851Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T04:59:50.531Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T04:59:52.435Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:00:05.003Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:00:07.365Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:00:11.310Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:00:13.284Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:00:17.858Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:00:19.762Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:00:23.399Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:00:25.359Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:00:26.347Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:00:28.394Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:00:30.510Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:00:31.883Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:00:34.287Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:00:36.545Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:00:38.851Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:00:41.634Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:00:44.261Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:00:49.908Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:00:52.025Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:00:55.477Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:00:57.534Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:01:03.909Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:01:06.171Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:01:07.812Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:01:09.882Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:01:15.894Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:01:18.011Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:01:18.505Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:01:20.400Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:01:22.199Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:01:24.130Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:01:26.092Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:01:28.652Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:01:30.691Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:01:35.880Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:01:37.833Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:01:45.068Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:01:46.930Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:01:49.283Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:01:51.314Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:12:54.459Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:12:56.565Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:13:02.298Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:13:15.272Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:13:17.355Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:13:45.885Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:13:47.933Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:13:55.166Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:13:57.290Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:14:06.278Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:14:08.817Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:14:35.708Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:14:37.615Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:14:48.032Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:14:49.926Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:14:56.179Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:14:58.445Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:59:46.086Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:59:48.296Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:59:49.683Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T05:59:51.474Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T05:59:58.413Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T06:00:00.864Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T06:00:06.031Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T06:00:07.876Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T06:38:37.263Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T06:38:38.932Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T06:40:11.922Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T06:40:13.647Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T06:41:10.212Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T06:41:12.075Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T06:42:37.848Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T06:42:38.698Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T06:42:40.458Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T06:42:45.793Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T06:42:47.359Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T06:42:49.206Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T06:42:53.869Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T06:42:55.590Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T06:43:06.997Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T06:43:08.767Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T06:44:08.105Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T06:44:09.980Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T06:44:35.180Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T06:44:37.532Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T06:44:44.724Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T06:44:46.605Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T06:44:54.950Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T06:44:56.744Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:21:18.683Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:21:20.097Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:21:21.909Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:21:45.908Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:21:47.677Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:21:48.085Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:21:49.673Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:21:51.490Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:21:58.329Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:22:00.069Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:22:13.745Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:22:15.683Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:22:22.351Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:22:24.011Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:22:25.514Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:22:27.322Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:22:42.570Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:22:44.310Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:23:11.158Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:23:13.000Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:23:17.621Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:23:19.442Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:23:22.356Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:23:24.081Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:23:29.622Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:23:31.346Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:23:39.677Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:23:41.388Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:23:43.223Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:23:44.966Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:23:59.006Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:24:00.804Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:24:01.430Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:24:03.078Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:24:04.783Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:24:47.779Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:24:49.612Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:24:55.512Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:24:57.306Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:25:28.797Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:25:30.502Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:25:30.920Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:25:32.743Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:25:36.690Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:25:38.362Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:25:48.910Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:25:50.590Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:25:57.246Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:25:59.080Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:26:37.901Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:26:39.565Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:26:47.058Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:26:48.741Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:31:10.963Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:31:12.913Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:31:14.981Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:31:16.030Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:31:17.789Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:32:50.734Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:32:52.497Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:32:54.460Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:32:56.340Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:33:20.232Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:33:21.963Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:33:29.683Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:33:31.489Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:33:33.289Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:33:35.015Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:33:39.705Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:33:41.450Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:33:41.778Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:33:43.442Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:33:50.720Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:33:52.416Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:34:31.724Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:34:33.394Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:34:33.680Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:34:35.396Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:35:16.779Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:35:18.497Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:35:21.269Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:35:22.963Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:35:38.812Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:35:40.489Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:36:56.987Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:36:58.881Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:37:23.101Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:37:24.994Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:37:25.954Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:37:27.762Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:37:30.821Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:37:32.720Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:39:48.631Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:39:50.580Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:40:19.571Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:40:20.864Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:40:22.528Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:40:33.876Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:40:40.657Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:40:42.323Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:40:44.979Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:40:46.691Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:40:48.058Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:40:49.929Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:40:50.620Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:40:52.388Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:41:00.603Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:41:02.294Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:41:06.627Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:41:08.412Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:41:13.626Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:41:15.349Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:41:19.396Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:41:21.182Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:41:21.517Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:41:23.234Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:41:32.549Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:41:34.265Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:41:37.655Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:41:39.467Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:41:58.760Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:42:00.435Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:42:08.597Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:42:10.364Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:42:38.884Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:42:40.664Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:42:43.883Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:42:44.909Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:42:46.683Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:43:00.043Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:43:01.738Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:43:24.415Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:43:26.526Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:43:41.309Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:43:43.012Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:44:11.846Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:44:13.613Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:44:22.878Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:44:24.631Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:44:56.323Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:44:58.128Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:45:05.902Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:45:07.791Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:45:26.911Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:45:28.670Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:45:41.714Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:45:43.621Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:45:44.803Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:45:46.761Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:45:47.077Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:45:48.956Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:45:52.241Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:45:53.912Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:45:54.690Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:45:56.674Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:47:39.969Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:47:41.745Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:48:27.841Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:48:29.639Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:48:48.941Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:48:50.638Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:49:03.881Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:49:05.877Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:49:08.779Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:49:10.599Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:49:14.454Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:49:16.217Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:49:19.612Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:49:20.732Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:49:22.416Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:49:26.414Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:49:28.165Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:49:39.909Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:49:41.640Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:49:45.047Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:49:46.768Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:49:54.704Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:49:56.752Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:49:58.626Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:50:07.067Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:50:08.801Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:50:09.671Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:50:11.399Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:50:25.546Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:50:27.258Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:50:29.195Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:50:31.115Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:50:32.442Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:50:34.155Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:50:46.980Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:50:48.208Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:50:50.062Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:50:59.095Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:51:01.064Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:51:27.860Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:51:29.649Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:51:37.095Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:51:38.807Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:51:42.173Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:51:43.965Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:52:12.121Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:52:13.998Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:52:17.424Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:52:19.089Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:52:28.544Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:52:30.289Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:52:33.376Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:52:35.109Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:53:51.505Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:53:53.260Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:53:57.997Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:53:59.716Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:54:03.327Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:54:05.005Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:54:08.914Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:54:10.628Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:54:14.721Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:54:16.541Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:54:23.959Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:54:25.783Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:54:32.308Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:54:34.259Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:54:36.048Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:54:46.178Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:54:48.401Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:55:07.640Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:55:09.407Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:55:47.200Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:55:49.128Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:55:52.478Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:55:54.298Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:56:40.889Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:56:42.661Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:56:47.638Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:56:49.352Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:58:07.165Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:58:08.934Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:58:12.723Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:58:14.435Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:58:17.250Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:58:19.103Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:58:20.292Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:58:22.268Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:58:26.894Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:58:28.626Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:58:33.418Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:58:35.139Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:58:35.704Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:58:37.512Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:58:42.906Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:58:45.257Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:59:16.809Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:59:18.552Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T07:59:18.950Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T07:59:20.694Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:01:46.345Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:01:48.264Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:04:56.540Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:04:58.344Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:05:18.545Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:05:20.243Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:05:37.169Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:05:39.023Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:05:42.807Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:05:44.607Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:09:25.453Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:09:27.318Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:10:14.315Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:10:16.056Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:10:22.627Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:10:25.236Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:10:30.356Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:10:32.130Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:10:45.079Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:10:46.817Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:11:01.578Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:11:03.338Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:11:05.075Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:11:06.967Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:11:20.596Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:11:21.791Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:11:23.609Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:11:26.282Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:11:28.312Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:12:31.957Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:12:33.966Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:13:41.882Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:13:43.620Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:13:49.648Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:13:51.520Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:13:53.276Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:13:56.685Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:13:58.522Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:14:07.237Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:14:09.075Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:14:09.443Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:14:11.336Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:14:13.505Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:14:15.266Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:14:19.882Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:14:21.680Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:14:23.401Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:14:25.221Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:14:30.212Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:14:31.966Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:14:58.717Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:15:02.101Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:15:04.001Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:15:09.274Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:15:11.122Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:15:15.498Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:15:17.189Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:15:19.302Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:15:21.003Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:15:53.496Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:15:55.251Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:15:55.792Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:15:57.474Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:15:59.529Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:16:01.362Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:16:36.109Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:16:37.922Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:17:30.748Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:17:32.472Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:17:48.249Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:17:50.098Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:19:43.837Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:19:45.524Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:19:48.222Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:19:49.934Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:20:17.822Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:20:19.651Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:20:20.739Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:20:22.514Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:21:05.393Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:21:07.135Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:21:21.492Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:21:23.647Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:21:26.266Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:21:27.263Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:21:29.112Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:21:49.871Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:21:51.730Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:23:11.571Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:23:13.252Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:23:17.761Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:23:19.730Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:23:31.963Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:23:34.723Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:30:02.721Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:30:04.526Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:30:05.983Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:30:07.721Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:30:39.222Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:30:41.729Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:37:16.827Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:37:18.828Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:37:19.744Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:37:20.799Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:37:22.502Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:37:24.390Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:37:26.340Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:37:34.546Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:37:36.505Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:37:49.005Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:37:50.652Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:37:52.605Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:38:08.659Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:38:11.192Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:38:13.057Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:38:46.790Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:38:48.514Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:39:00.918Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:39:02.437Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:39:04.195Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:39:04.674Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:39:06.435Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:39:07.465Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:39:09.261Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:39:10.573Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:39:12.242Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:39:13.563Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:39:15.296Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:39:18.572Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:39:20.429Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:39:23.287Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:39:25.066Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:39:33.314Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:39:35.335Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:39:38.775Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:39:39.666Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:39:40.873Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:39:42.777Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:39:43.820Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:39:45.841Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:39:52.653Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:39:54.894Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:39:56.666Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:39:58.536Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:40:41.958Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:40:43.685Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:40:45.109Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:40:47.182Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:41:10.227Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:41:12.172Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:42:06.512Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:42:08.992Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:50:04.337Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:50:06.186Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:50:12.361Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:50:14.145Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:50:17.450Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:50:19.219Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:50:20.625Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:50:22.400Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:50:24.841Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:50:26.723Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:50:28.576Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:50:30.389Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:50:58.541Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:51:00.371Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:51:02.342Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:51:04.091Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:51:13.176Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:51:15.090Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:51:17.729Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:51:19.386Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:51:23.583Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:51:25.376Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:51:26.884Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:51:28.669Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:55:07.802Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:55:09.646Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:56:04.945Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:56:06.834Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:56:19.534Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:56:20.472Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:56:22.791Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:56:26.847Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:56:28.682Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:58:56.619Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:58:58.686Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:59:02.142Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:59:03.949Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:59:05.926Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:59:07.659Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T08:59:08.672Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T08:59:10.795Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T09:00:54.269Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T09:00:55.945Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T09:01:00.488Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T09:01:02.188Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T09:04:04.895Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T09:04:06.641Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T09:04:09.118Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T09:04:10.834Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T09:05:42.342Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T09:05:44.099Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T09:05:50.749Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T09:05:52.409Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T09:06:03.412Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T09:06:05.127Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:40:33.863Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:40:35.970Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:40:48.338Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:40:50.193Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:40:59.077Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:41:00.930Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:41:18.761Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:41:20.589Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:41:26.321Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:41:28.358Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:41:30.152Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:41:34.646Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:41:36.433Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:41:39.301Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:41:41.026Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:41:41.502Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:41:43.317Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:41:43.543Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:41:45.371Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:41:47.036Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:41:48.927Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:41:50.897Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:41:52.671Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:41:52.922Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:41:54.746Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:41:57.655Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:41:59.432Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:42:02.610Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:42:04.504Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:42:08.536Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:42:10.274Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:42:16.352Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:42:17.278Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:42:19.113Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:42:19.795Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:42:21.594Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:42:23.378Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:42:23.905Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:42:25.568Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:42:37.449Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:42:39.337Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:43:00.235Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:43:02.018Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:43:50.655Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:43:52.405Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:43:55.908Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:43:57.674Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:44:01.923Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:44:03.828Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:45:14.410Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:45:16.345Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:45:20.462Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:45:22.213Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:45:25.874Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:45:27.623Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:45:34.131Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:45:36.094Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:45:41.408Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:45:43.182Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:45:47.071Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:45:48.971Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:45:56.368Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:45:58.313Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:46:04.376Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:46:06.058Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:46:11.138Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:46:13.045Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:46:21.540Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:46:23.566Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:46:27.906Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:46:29.760Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:46:35.999Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:46:37.749Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:46:38.417Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:46:40.224Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:46:42.187Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:46:43.612Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:46:45.265Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:46:55.656Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:46:57.539Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:46:57.966Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:46:59.855Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T12:47:06.622Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T12:47:08.412Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:02:52.483Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:02:54.504Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:07:41.909Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:07:43.789Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:11:38.742Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:11:40.629Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:12:27.271Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:12:28.978Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:12:30.480Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:12:32.250Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:12:41.090Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:12:42.744Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:14:10.169Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:14:12.070Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:14:20.303Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:14:22.094Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:14:38.501Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:14:40.198Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:14:45.075Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:14:46.882Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:14:48.527Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:14:50.244Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:15:04.950Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:15:06.727Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:15:10.968Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:15:12.621Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:15:51.669Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:16:10.075Z error: [4m[31mMongoDB connection error: connect ETIMEDOUT 15.184.102.209:27017[39m[24m
+2024-07-07T13:16:23.638Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:16:25.506Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:16:30.596Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:16:32.355Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:16:38.781Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:16:40.502Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:16:42.647Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:16:44.416Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:16:46.234Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:16:48.032Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:16:55.192Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:16:56.876Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:16:57.803Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:16:59.360Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:17:01.087Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:17:05.265Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:17:07.001Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:17:17.980Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:17:19.089Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:17:20.744Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:17:37.355Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:17:38.769Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:17:40.533Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:18:01.723Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:18:03.532Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:18:05.315Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:18:11.409Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:18:13.282Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:18:24.308Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:18:26.153Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:19:15.895Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:19:17.750Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:19:21.488Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:19:23.262Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:19:33.926Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:19:35.670Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:19:36.675Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:19:38.410Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:20:19.175Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:20:20.844Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:20:22.023Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:20:23.831Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:20:53.538Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:20:55.412Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:20:57.668Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:20:59.469Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:22:01.742Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:22:03.547Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
+2024-07-07T13:22:08.669Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-07T13:22:10.479Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m

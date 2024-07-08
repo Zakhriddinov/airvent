@@ -1,0 +1,14 @@
+2024-07-03T17:23:37.678Z error: [4m[31mError: Cannot read properties of undefined (reading 'connection')[39m[24m
+2024-07-03T17:23:48.608Z error: MongoDB connection error: Cannot access 'connecting' before initialization
+2024-07-03T17:23:58.337Z error: [4m[31mMongoDB connection error: Cannot access 'connecting' before initialization[39m[24m
+2024-07-03T17:24:15.914Z error: [4m[31mMongoDB connection error: Cannot access 'connecting' before initialization[39m[24m
+2024-07-03T17:24:31.084Z error: [4m[31mMongoDB connection error: Cannot access 'connecting' before initialization[39m[24m
+2024-07-03T17:24:33.457Z error: [4m[31mMongoDB connection error: Cannot access 'connecting' before initialization[39m[24m
+2024-07-03T17:25:17.312Z error: [4m[31mMongoDB connection error: Cannot access 'connecting' before initialization[39m[24m
+2024-07-03T17:25:21.826Z error: [4m[31mMongoDB connection error: Cannot access 'connecting' before initialization[39m[24m
+2024-07-03T17:25:33.857Z error: [4m[31mMongoDB connection error: Cannot access 'connecting' before initialization[39m[24m
+2024-07-03T17:25:36.145Z error: [4m[31mMongoDB connection error: Cannot access 'connecting' before initialization[39m[24m
+2024-07-03T17:25:45.200Z error: [4m[31mMongoDB connection error: Cannot access 'connecting' before initialization[39m[24m
+2024-07-03T17:26:28.983Z error: [4m[31mMongoDB connection error: Cannot access 'connecting' before initialization[39m[24m
+2024-07-03T17:26:38.862Z error: [4m[31mMongoDB connection error: Cannot access 'connecting' before initialization[39m[24m
+2024-07-07T13:16:10.075Z error: [4m[31mMongoDB connection error: connect ETIMEDOUT 15.184.102.209:27017[39m[24m

@@ -1,0 +1,96 @@
+import React, { useEffect, useState } from "react";
+import { Container, LinkLogo, Main, MenuWrap, Sidebar } from "./style";
+import logo from "../../assets/icons/img/logo.png";
+import Header from "./header";
+import { Outlet, useNavigate } from "react-router-dom";
+import { sidebar } from "../../utilities/routing/sidebar";
+import { Menu } from "antd";
+
+const Layouts = () => {
+  const navigate = useNavigate();
+  const [selectedKey, setSelectedKey] = useState("1");
+
+  useEffect(() => {
+    const storedSelectedKey = localStorage.getItem("selectedKey");
+    if (storedSelectedKey) {
+      setSelectedKey(storedSelectedKey);
+    }
+  }, []);
+
+  const onClickParent = (parent, e) => {
+    const { id, items, path, title } = parent;
+    if (!items || items.length === 0) {
+      setSelectedKey(id.toString());
+      localStorage.setItem("selectedKey", id.toString());
+      navigate(path, { state: { parent: title } });
+    }
+  };
+
+  const onClickChild = (parent, child, e) => {
+    const childKey = `${parent.id}-${child.id}`;
+    setSelectedKey(childKey);
+    localStorage.setItem("selectedKey", childKey);
+    navigate(child.path, {
+      state: { parent: parent.title, child: child.label },
+    });
+  };
+
+  const navigateDashboard = () => {
+    navigate("/");
+  };
+
+  return (
+    <Container>
+      <Sidebar trigger={null} collapsible style={{ background: "transparent" }}>
+        <LinkLogo onClick={navigateDashboard}>
+          <img src={logo} alt="icon" />
+        </LinkLogo>
+        <MenuWrap
+          theme="transparent"
+          mode="inline"
+          selectedKeys={[selectedKey]}
+        >
+          {sidebar.map((parent) => {
+            const { icon: Icon } = parent;
+            return !parent.hidden ? (
+              <React.Fragment key={parent.id}>
+                {parent.items && parent.items.length > 0 ? (
+                  <Menu.SubMenu
+                    key={parent.id}
+                    title={parent.title}
+                    icon={<Icon />}
+                  >
+                    {parent.items.map((child) => (
+                      <Menu.Item
+                        key={`${parent.id}-${child.id}`}
+                        onClick={(e) => onClickChild(parent, child, e)}
+                      >
+                        {child.label}
+                      </Menu.Item>
+                    ))}
+                  </Menu.SubMenu>
+                ) : (
+                  <Menu.Item
+                    key={parent.id}
+                    icon={<Icon />}
+                    onClick={(e) => onClickParent(parent, e)}
+                  >
+                    {parent.title}
+                  </Menu.Item>
+                )}
+              </React.Fragment>
+            ) : null;
+          })}
+        </MenuWrap>
+      </Sidebar>
+      <Container>
+        <Header />
+        <Main>
+          <Outlet />
+        </Main>
+      </Container>
+    </Container>
+  );
+};
+
+export default Layouts;
