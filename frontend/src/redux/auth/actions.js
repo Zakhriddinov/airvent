@@ -1,5 +1,5 @@
-import * as actionTypes from "./types";
-import * as authService from "@/auth";
+import * as actionTypes from './types';
+import * as authService from '@/auth';
 // import { request } from '@/request';
 
 export const login =
@@ -9,7 +9,6 @@ export const login =
       type: actionTypes.REQUEST_LOADING,
     });
     const data = await authService.login({ loginData });
-
     if (data.success === true) {
       const auth_state = {
         current: data.result,
@@ -17,8 +16,8 @@ export const login =
         isLoading: false,
         isSuccess: true,
       };
-      window.localStorage.setItem("auth", JSON.stringify(auth_state));
-      window.localStorage.removeItem("isLogout");
+      window.localStorage.setItem('auth', JSON.stringify(auth_state));
+      window.localStorage.removeItem('isLogout');
       dispatch({
         type: actionTypes.REQUEST_SUCCESS,
         payload: data.result,
@@ -64,8 +63,8 @@ export const verify =
         isLoading: false,
         isSuccess: true,
       };
-      window.localStorage.setItem("auth", JSON.stringify(auth_state));
-      window.localStorage.removeItem("isLogout");
+      window.localStorage.setItem('auth', JSON.stringify(auth_state));
+      window.localStorage.removeItem('isLogout');
       dispatch({
         type: actionTypes.REQUEST_SUCCESS,
         payload: data.result,
@@ -109,10 +108,10 @@ export const logout = () => async (dispatch) => {
   dispatch({
     type: actionTypes.LOGOUT_SUCCESS,
   });
-  const result = window.localStorage.getItem("auth");
+  const result = window.localStorage.getItem('auth');
   const tmpAuth = JSON.parse(result);
-  window.localStorage.removeItem("auth");
-  window.localStorage.setItem("isLogout", JSON.stringify({ isLogout: true }));
+  window.localStorage.removeItem('auth');
+  window.localStorage.setItem('isLogout', JSON.stringify({ isLogout: true }));
   const data = await authService.logout();
   if (data.success === false) {
     const auth_state = {
@@ -121,8 +120,8 @@ export const logout = () => async (dispatch) => {
       isLoading: false,
       isSuccess: true,
     };
-    window.localStorage.setItem("auth", JSON.stringify(auth_state));
-    window.localStorage.removeItem("isLogout");
+    window.localStorage.setItem('auth', JSON.stringify(auth_state));
+    window.localStorage.removeItem('isLogout');
     dispatch({
       type: actionTypes.LOGOUT_FAILED,
       payload: data.result,

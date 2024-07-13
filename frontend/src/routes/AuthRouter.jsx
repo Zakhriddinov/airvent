@@ -1,7 +1,7 @@
-import React from "react";
-import { Container } from "./style";
+import React from 'react';
+import { Container } from './style';
 
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from 'react-router-dom';
 import {
   Register,
   Login,
@@ -9,8 +9,8 @@ import {
   ResetPassword,
   RegisterInfo,
   MailVerification,
-} from "@/pages/Auth";
-import NotFoundPage from "../pages/not-found";
+} from '@/pages/Auth';
+import NotFoundPage from '../pages/not-found';
 
 const AuthRouter = () => {
   return (
@@ -18,18 +18,13 @@ const AuthRouter = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route element={<Navigate to="/login" replace />} path="/logout" />
+        {/* <Route element={<Navigate to="/login" replace />} path="/logout" /> */}
         <Route path="/forgetpassword" element={<ForgetPassword />} />
-        <Route
-          path="/resetpassword/:userId/:shortId"
-          element={<ResetPassword />}
-        />
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path="/resetpassword/:userId/:shortId" element={<ResetPassword />} />
         <Route path="/" element={<RegisterInfo />} />
-        <Route
-          path="/verify-email/:userId/:shortId"
-          element={<MailVerification />}
-        />
+        <Route path="/verify-email/:userId/:shortId" element={<MailVerification />} />
+
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Container>
   );

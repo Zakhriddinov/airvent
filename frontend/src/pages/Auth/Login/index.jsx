@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 import {
   Container,
   ContentLeft,
@@ -7,15 +7,15 @@ import {
   FormContent,
   ImgWrapper,
   Wrapper,
-} from "../style";
-import loginImg from "../../../assets/icons/img/auth.png";
-import { Button, Checkbox, Divider, Form, Input } from "antd";
-import { LockOutlined, MailOutlined } from "@ant-design/icons";
-import { useSelector, useDispatch } from "react-redux";
-import { selectAuth } from "@/redux/auth/selectors";
-import { useNavigate } from "react-router-dom";
-import { login } from "@/redux/auth/actions";
-import { Loading } from "@/shared/components";
+} from '../style';
+import loginImg from '../../../assets/icons/img/auth.png';
+import { Button, Checkbox, Divider, Form, Input } from 'antd';
+import { LockOutlined, MailOutlined } from '@ant-design/icons';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectAuth } from '@/redux/auth/selectors';
+import { useNavigate } from 'react-router-dom';
+import { login } from '@/redux/auth/actions';
+import { Loading } from '@/shared/components';
 
 const Login = () => {
   const { isLoading, isSuccess } = useSelector(selectAuth);
@@ -25,10 +25,11 @@ const Login = () => {
 
   const onFinish = (values) => {
     dispatch(login({ loginData: values }));
+    console.log(isSuccess);
   };
 
   useEffect(() => {
-    if (isSuccess) navigate("/");
+    if (isSuccess) navigate('/');
   }, [isSuccess]);
 
   return (
@@ -46,7 +47,7 @@ const Login = () => {
                 }}
                 layout="vertical"
                 autoComplete="off"
-                style={{ fontWeight: "bold" }}
+                style={{ fontWeight: 'bold' }}
                 onFinish={onFinish}
               >
                 <Form.Item
@@ -55,19 +56,15 @@ const Login = () => {
                   rules={[
                     {
                       required: true,
-                      message: "Iltimos, emailingizni kiriting!",
+                      message: 'Iltimos, emailingizni kiriting!',
                     },
                     {
-                      type: "email",
+                      type: 'email',
                       message: "Iltimos, to'g'ri email manzilini kiriting!",
                     },
                   ]}
                 >
-                  <Input
-                    prefix={<MailOutlined />}
-                    placeholder="Email"
-                    size="large"
-                  />
+                  <Input prefix={<MailOutlined />} placeholder="Email" size="large" />
                 </Form.Item>
                 <Form.Item
                   label="Parol"
@@ -75,7 +72,7 @@ const Login = () => {
                   rules={[
                     {
                       required: true,
-                      message: "Iltimos, parolingizni kiriting!",
+                      message: 'Iltimos, parolingizni kiriting!',
                     },
                     {
                       min: 8,
@@ -89,19 +86,11 @@ const Login = () => {
                     },
                   ]}
                 >
-                  <Input.Password
-                    prefix={<LockOutlined />}
-                    placeholder="Parol"
-                    size="large"
-                  />
+                  <Input.Password prefix={<LockOutlined />} placeholder="Parol" size="large" />
                 </Form.Item>
 
                 <div className="footer">
-                  <Form.Item
-                    name="remember"
-                    valuePropName="checked"
-                    style={{ margin: 0 }}
-                  >
+                  <Form.Item name="remember" valuePropName="checked" style={{ margin: 0 }}>
                     <Checkbox>Meni eslab qol</Checkbox>
                   </Form.Item>
                   <ForgotPasswordLink to="/forgetpassword">
@@ -113,7 +102,7 @@ const Login = () => {
                   <Button
                     type="primary"
                     htmlType="submit"
-                    style={{ width: "100%", margin: "20px 0 0 0" }}
+                    style={{ width: '100%', margin: '20px 0 0 0' }}
                     size="large"
                     loading={isLoading}
                   >
@@ -121,10 +110,8 @@ const Login = () => {
                   </Button>
                 </Form.Item>
                 <p>
-                  yoki{" "}
-                  <ForgotPasswordLink to="/register">
-                    Hozir ro'yxatdan o'ting!
-                  </ForgotPasswordLink>
+                  yoki{' '}
+                  <ForgotPasswordLink to="/register">Hozir ro'yxatdan o'ting!</ForgotPasswordLink>
                 </p>
               </Form>
             </FormContent>

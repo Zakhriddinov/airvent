@@ -1,5 +1,5 @@
-import { useLocation } from "react-router-dom";
-import { Container } from "./style";
+import { useLocation } from 'react-router-dom';
+import { Container } from './style';
 
 export const Generics = () => {
   const location = useLocation();

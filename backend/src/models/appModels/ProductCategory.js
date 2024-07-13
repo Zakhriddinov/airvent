@@ -9,7 +9,6 @@ const productCategorySchema = new mongoose.Schema({
     type: Boolean,
     default: true,
   },
-
   name: {
     type: String,
     required: true,
@@ -19,7 +18,6 @@ const productCategorySchema = new mongoose.Schema({
     type: String,
     lowercase: true,
     trim: true,
-    required: true,
   },
   hasParentCategory: {
     type: Boolean,
@@ -28,6 +26,9 @@ const productCategorySchema = new mongoose.Schema({
   parentCategory: {
     type: mongoose.Schema.ObjectId,
     ref: 'ProductCategory',
+  },
+  code: {
+    type: String,
   },
   title: String,
   tags: [String],
