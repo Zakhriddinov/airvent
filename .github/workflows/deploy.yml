@@ -21,7 +21,7 @@ jobs:
 
       - name: Install backend dependencies
         run: |
-          cd airvent/backend
+          cd backend
           npm install
 
       - name: Deploy backend to cPanel via FTP
@@ -41,12 +41,12 @@ jobs:
 
       - name: Install frontend dependencies
         run: |
-          cd airvent/frontend
+          cd frontend
           npm install
 
       - name: Build frontend
         run: |
-          cd airvent/frontend
+          cd frontend
           npm run build
 
       - name: Deploy frontend to cPanel via FTP
