@@ -21,7 +21,7 @@ jobs:
 
       - name: Install backend dependencies
         run: |
-          cd backend
+          cd airvent/backend
           npm install
 
       - name: Deploy backend to cPanel via FTP
@@ -30,23 +30,22 @@ jobs:
           server: ${{ secrets.CPANEL_FTP_SERVER }}
           username: ${{ secrets.CPANEL_FTP_USERNAME }}
           password: ${{ secrets.CPANEL_FTP_PASSWORD }}
-          # local-dir: airvent/backend/
+          local-dir: airvent/backend/
           server-dir: /public_html/airvent/backend/
 
       # Frontendni build qilish
       - name: Set up Node.js for frontend
         uses: actions/setup-node@v2
         with:
-          node-version: "20"
-
+          node-version: "20.14.0"
       - name: Install frontend dependencies
         run: |
-          cd frontend
+          cd airvent/frontend
           npm install
 
       - name: Build frontend
         run: |
-          cd frontend
+          cd airvent/frontend
           npm run build
 
       - name: Deploy frontend to cPanel via FTP
@@ -55,5 +54,5 @@ jobs:
           server: ${{ secrets.CPANEL_FTP_SERVER }}
           username: ${{ secrets.CPANEL_FTP_USERNAME }}
           password: ${{ secrets.CPANEL_FTP_PASSWORD }}
-          # local-dir: airvent/frontend/dist/
+          local-dir: airvent/frontend/dist/
           server-dir: /public_html/airvent/frontend/
