@@ -58,7 +58,7 @@ function SidePanelTopContent({ config, formElements, withUpload }) {
   );
 }
 
-function CrudModule({ config, createForm, updateForm, withUpload = false }) {
+function CrudModule({ config, createForm, updateForm, withUpload = false, isUpdateForm = false }) {
   const dispatch = useDispatch();
 
   useLayoutEffect(() => {
@@ -68,12 +68,13 @@ function CrudModule({ config, createForm, updateForm, withUpload = false }) {
   return (
     <CrudLayout
       config={config}
+      isUpdateForm={isUpdateForm}
       //   fixHeaderPanel={<FixHeaderPanel config={config} />}
       createModalContent={
         <CreateForm config={config} formElements={createForm} withUpload={withUpload} />
       }
-      sidePanelTopContent={
-        <SidePanelTopContent config={config} formElements={updateForm} withUpload={withUpload} />
+      editModalContent={
+        <UpdateForm config={config} formElements={updateForm} withUpload={withUpload} />
       }
     >
       <DataTable config={config} />

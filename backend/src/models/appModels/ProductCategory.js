@@ -12,12 +12,15 @@ const productCategorySchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
+    unique: true,
   },
   description: String,
   color: {
     type: String,
     lowercase: true,
+    index: true,
     trim: true,
+    required: true,
   },
   hasParentCategory: {
     type: Boolean,
@@ -29,6 +32,8 @@ const productCategorySchema = new mongoose.Schema({
   },
   code: {
     type: String,
+    unique: true,
+    required: true,
   },
   title: String,
   tags: [String],

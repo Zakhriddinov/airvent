@@ -33,6 +33,6 @@ app.use('/api', appRouter);
 app.use(errorHandlers.notFound);
 
 // production error handler
-app.use(errorHandlers.productionErrors);
+app.use(errorHandlers.developmentErrors);
 
 module.exports = app;

@@ -1,3 +1,4 @@
+import color from '@/utilities/color';
 export const fields = {
   code: {
     required: true,
@@ -7,9 +8,14 @@ export const fields = {
     required: true,
     label: 'Nomi',
   },
+  color: {
+    type: 'color',
+    options: [...color],
+    required: true,
+    label: 'Rang',
+  },
   description: {
     type: 'textarea',
-    required: true,
     label: 'Tavsif',
   },
   enabled: {

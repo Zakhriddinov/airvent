@@ -2,6 +2,17 @@ import dayjs from 'dayjs';
 import { Switch, Tag } from 'antd';
 import { CloseOutlined, CheckOutlined } from '@ant-design/icons';
 import { generate as uniqueId } from 'shortid';
+import color from '@/utilities/color';
+
+const moneyFormatter = ({ amount, currency_code }) => {
+  return new Intl.NumberFormat('uz-UZ', {
+    style: 'currency',
+    currency: currency_code,
+    minimumFractionDigits: 0,
+  })
+    .format(amount)
+    .replace(currency_code, 'UZS');
+};
 
 export const dataForRead = ({ fields }) => {
   let columns = [];
@@ -18,7 +29,7 @@ export const dataForRead = ({ fields }) => {
   return columns;
 };
 
-export function dataForTable({ fields, translate, moneyFormatter, dateFormat }) {
+export function dataForTable({ fields, translate, dateFormat }) {
   let columns = [];
 
   Object.keys(fields).forEach((key) => {
@@ -44,32 +55,31 @@ export function dataForTable({ fields, translate, moneyFormatter, dateFormat }) 
           />
         ),
       },
-      // date: {
-      //   title: field.label ? field.label : key,
-      //   dataIndex: keyIndex,
-      //   render: (_, record) => {
-      //     const date = dayjs(record[key]).format(dateFormat);
-      //     return (
-      //       <Tag bordered={false} color={field.color}>
-      //         {date}
-      //       </Tag>
-      //     );
-      //   },
-      // },
-      // currency: {
-      //   title: field.label ? field.label : key,
-      //   dataIndex: keyIndex,
-      //   onCell: () => {
-      //     return {
-      //       style: {
-      //         textAlign: 'right',
-      //         whiteSpace: 'nowrap',
-      //       },
-      //     };
-      //   },
-      //   render: (_, record) =>
-      //     moneyFormatter({ amount: record[key], currency_code: record.currency }),
-      // },
+      date: {
+        title: field.label ? field.label : key,
+        dataIndex: keyIndex,
+        render: (_, record) => {
+          const date = dayjs(record[key]).format(dateFormat);
+          return (
+            <Tag bordered={false} color={field.color}>
+              {date}
+            </Tag>
+          );
+        },
+      },
+      currency: {
+        title: field.label ? field.label : key,
+        dataIndex: keyIndex,
+        onCell: () => {
+          return {
+            style: {
+              textAlign: 'right',
+              whiteSpace: 'nowrap',
+            },
+          };
+        },
+        render: (_, record) => moneyFormatter({ amount: record[key], currency_code: 'UZS' }),
+      },
       async: {
         title: field.label ? field.label : key,
         dataIndex: keyIndex,

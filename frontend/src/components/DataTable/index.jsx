@@ -67,7 +67,11 @@ export default function DataTable({ config, extra = [] }) {
   ];
 
   const handleRead = (record) => {};
-  function handleEdit(record) {}
+  function handleEdit(record) {
+    dispatch(crud.currentItem({ data: record }));
+    dispatch(crud.currentAction({ actionType: 'update', data: record }));
+    editBox.open();
+  }
   function handleDelete(record) {
     dispatch(crud.currentAction({ actionType: 'delete', data: record }));
     modal.open();

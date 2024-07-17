@@ -52,18 +52,21 @@ const ContentBox = ({ children }) => {
 export default function CrudLayout({
   children,
   config,
-  sidePanelTopContent,
+  editModalContent,
   createModalContent,
   fixHeaderPanel,
+  isUpdateForm,
 }) {
+  console.log(isUpdateForm);
   return (
     <>
       <DefaultLayout>
         <CrudModal
           config={config}
-          topContent={sidePanelTopContent}
+          editContent={editModalContent}
           createContent={createModalContent}
           fixHeaderPanel={fixHeaderPanel}
+          isUpdateForm={isUpdateForm}
         ></CrudModal>
 
         <ContentBox>{children}</ContentBox>

@@ -4,6 +4,7 @@ import useFetch from '@/hooks/useFetch';
 import { Select, Tag } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { generate as uniqueId } from 'shortid';
+import color from '@/utilities/color';
 
 const SelectAsync = ({
   entity,
@@ -22,7 +23,7 @@ const SelectAsync = ({
   const navigate = useNavigate();
 
   const asyncList = () => {
-    return request.list({ entity });
+    return request.listAll({ entity });
   };
   const { result, isLoading: fetchIsLoading, isSuccess } = useFetch(asyncList);
   useEffect(() => {
@@ -53,16 +54,12 @@ const SelectAsync = ({
   const optionsList = () => {
     const list = [];
 
-    // if (selectOptions.length === 0 && withRedirect) {
-    //   const value = 'redirectURL';
-    //   const label = `+ ${translate(redirectLabel)}`;
-    //   list.push({ value, label });
-    // }
     selectOptions.map((optionField) => {
       const value = optionField[outputValue] ?? optionField;
       const label = labels(optionField);
       const currentColor = optionField[outputValue]?.color ?? optionField?.color;
-      const labelColor = color.find((x) => x.color === currentColor);
+      const labelColor = color.find((x) => x.value === currentColor);
+      console.log(currentColor);
       list.push({ value, label, color: labelColor?.color });
     });
 
@@ -78,6 +75,7 @@ const SelectAsync = ({
       placeholder={placeholder}
     >
       {optionsList()?.map((option) => {
+        console.log(option);
         return (
           <Select.Option key={`${uniqueId()}`} value={option.value}>
             <Tag bordered={false} color={option.color}>

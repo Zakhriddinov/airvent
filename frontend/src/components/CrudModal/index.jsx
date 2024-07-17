@@ -1,23 +1,28 @@
 import { Modal } from 'antd';
 import { useCrudContext } from '@/context/crud';
-export default function CrudModal({ config, createContent }) {
-  const { ADD_NEW_ENTITY } = config;
+export default function CrudModal({ config, createContent, editContent }) {
+
+  const { ADD_NEW_ENTITY, UPDATE_ENTITY } = config;
   const { state, crudContextAction } = useCrudContext();
-  const { isAdvancedBoxOpen } = state;
-  const { advancedBox } = crudContextAction;
+  const { isAdvancedBoxOpen, isEditBoxOpen } = state;
+  const { advancedBox, editBox } = crudContextAction;
 
   const handleCancel = () => {
     advancedBox.close();
+    editBox.close();
   };
   return (
     <Modal
-      title={ADD_NEW_ENTITY}
+      title={isEditBoxOpen ? UPDATE_ENTITY : ADD_NEW_ENTITY}
       width={500}
-      open={isAdvancedBoxOpen}
+      open={isEditBoxOpen ? isEditBoxOpen : isAdvancedBoxOpen}
       onCancel={handleCancel}
       footer={[]}
+      centered
     >
-      {createContent}
+      <div style={{ maxHeight: '600px', overflowY: 'auto' }}>
+        {isEditBoxOpen ? editContent : createContent}
+      </div>
     </Modal>
   );
 }

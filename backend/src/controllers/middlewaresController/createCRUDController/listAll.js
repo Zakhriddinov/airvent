@@ -8,6 +8,7 @@ const listAll = async (Model, req, res) => {
   if (enabled === undefined) {
     result = await Model.find({
       removed: false,
+      enabled: true,
     })
       .sort({ created: sort })
       .populate()

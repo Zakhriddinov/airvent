@@ -3,5 +3,6 @@ exports.migrate = (result) => {
   newData._id = result._id;
   newData.name = result.name;
   newData.code = result.code;
+  newData.color = result.color;
   return newData;
 };

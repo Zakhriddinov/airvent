@@ -1,6 +1,7 @@
 import CrudModule from '@/module/CrudModule';
-import ProductCategoryForm from '@/forms/ProductCategory';
 import { fields } from './config';
+import DynamicForm from '@/forms/DynamicForm';
+
 export default function ProductCategory() {
   const entity = 'productcategory';
   const searchConfig = {
@@ -15,6 +16,7 @@ export default function ProductCategory() {
     DATATABLE_TITLE: "Mahsulot kategoriyalari ro'yxati",
     ADD_NEW_ENTITY: "Yangi Kategoriya qo'shish",
     ENTITY_NAME: 'productcategory',
+    UPDATE_ENTITY: "Kategoriya ma'lumotlarini o'zgartirish",
   };
 
   const configPage = {
@@ -29,9 +31,10 @@ export default function ProductCategory() {
   };
   return (
     <CrudModule
-      createForm={<ProductCategoryForm />}
-      updateForm={<ProductCategoryForm isUpdateForm={true} />}
+      createForm={<DynamicForm fields={fields} />}
+      updateForm={<DynamicForm fields={fields} isUpdateForm={true} />}
       config={config}
+      isUpdateForm={true}
     />
   );
 }

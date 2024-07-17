@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
 import ListLayout from '../../shared/layout/List';
-import { Button, Dropdown, Image, Input, Space, Switch, Table, Tag } from 'antd';
+import { Button, Dropdown, Image, Input, Switch, Table } from 'antd';
 import {
   CheckOutlined,
   CloseOutlined,
