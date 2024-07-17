@@ -19,6 +19,9 @@ jobs:
         with:
           node-version: "20.14.0"
 
+      - name: Install specific npm version
+        run: npm install -g npm@10.8.1
+
       - name: Install backend dependencies
         run: |
           cd backend
@@ -31,13 +34,14 @@ jobs:
           username: ${{ secrets.CPANEL_FTP_USERNAME }}
           password: ${{ secrets.CPANEL_FTP_PASSWORD }}
           local-dir: backend/
-          server-dir: /public_html/airvent/backend/
+          server-dir: /airvent/backend/
 
       # Frontendni build qilish
       - name: Set up Node.js for frontend
         uses: actions/setup-node@v2
         with:
           node-version: "20.14.0"
+
       - name: Install frontend dependencies
         run: |
           cd frontend
@@ -55,4 +59,4 @@ jobs:
           username: ${{ secrets.CPANEL_FTP_USERNAME }}
           password: ${{ secrets.CPANEL_FTP_PASSWORD }}
           local-dir: frontend/dist/
-          server-dir: /public_html/airvent/frontend/
+          server-dir: /airvent/frontend/
