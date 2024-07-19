@@ -3,8 +3,6 @@ const express = require('express');
 const cors = require('cors');
 const compression = require('compression');
 
-const path = require('path');
-
 const cookieParser = require('cookie-parser');
 const errorHandlers = require('@/handlers/errorHandlers');
 
@@ -24,12 +22,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(compression());
 
-// Serve frontend build files
-const buildPath = path.join(__dirname, '..', 'frontend', 'dist');
-app.use(express.static(buildPath));
+app.use(express.static(path.join(__dirname, '..', 'frontend', 'dist')));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(buildPath, 'index.html'));
+// Barcha so'rovlarni frontendga yo'naltirish
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'frontend', 'dist', 'index.html'));
 });
 
 // Here our API Routes

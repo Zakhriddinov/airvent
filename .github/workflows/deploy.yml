@@ -1,52 +1,95 @@
-name: Deploy to cPanel
+# name: Deploy to cPanel
+
+# on:
+#   push:
+#     branches:
+#       - main  # O'zingizning asosiy branchingizni belgilang
+
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#     - name: Checkout code
+#       uses: actions/checkout@v2
+
+#     - name: Set up Node.js
+#       uses: actions/setup-node@v2
+#       with:
+#         node-version: '20'  # Node.js versiyasini moslang
+
+#     - name: Install dependencies
+#       run: |
+#         cd backend
+#         npm install
+#         cd ../frontend
+#         npm install
+
+#     - name: Build frontend
+#       run: |
+#         cd frontend
+#         npm run build
+
+#     - name: Upload backend files
+#       uses: SamKirkland/FTP-Deploy-Action@4.1.0
+#       with:
+#         server: ${{ secrets.FTP_SERVER }}
+#         username: ${{ secrets.FTP_USERNAME }}
+#         password: ${{ secrets.FTP_PASSWORD }}
+#         local-dir: ./backend/
+#         protocol: ftp
+#         server-dir: /public_html/backend/ 
+
+#     - name: Upload frontend files
+#       uses: SamKirkland/FTP-Deploy-Action@4.1.0
+#       with:
+#         server: ${{ secrets.FTP_SERVER }}
+#         username: ${{ secrets.FTP_USERNAME }}
+#         password: ${{ secrets.FTP_PASSWORD }}
+#         port: 21
+#         protocol: ftp
+#         local-dir: ./frontend/dist/
+#         server-dir: /public_html/
+
+
+#         name: Deploy to cPanel
 
 on:
   push:
     branches:
-      - main  # O'zingizning asosiy branchingizni belgilang
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '20'  # Node.js versiyasini moslang
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
 
-    - name: Install dependencies
-      run: |
-        cd backend
-        npm install
-        cd ../frontend
-        npm install
+      - name: Install dependencies and build frontend
+        run: |
+          cd frontend
+          npm install
+          npm run build
+          cd ..
 
-    - name: Build frontend
-      run: |
-        cd frontend
-        npm run build
+      - name: Install backend dependencies
+        run: |
+          cd backend
+          npm install
+          cd ..
 
-    - name: Upload backend files
-      uses: SamKirkland/FTP-Deploy-Action@4.1.0
-      with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./backend/
-        protocol: ftp
-        server-dir: /public_html/backend/ 
-
-    - name: Upload frontend files
-      uses: SamKirkland/FTP-Deploy-Action@4.1.0
-      with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        port: 21
-        protocol: ftp
-        local-dir: ./frontend/dist/
-        server-dir: /public_html/
+      - name: Deploy to cPanel
+        uses: SamKirkland/FTP-Deploy-Action@4.1.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./airvent/
+          server-dir: /public_html/airvent/
