@@ -30,13 +30,21 @@ jobs:
           cd frontend
           npm run build
 
+      - name: Install ftp
+        run: sudo apt-get install ftp
+
       - name: Upload backend files
         env:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          curl -T "{./backend/*}" --user $FTP_USERNAME:$FTP_PASSWORD ftp://$FTP_SERVER/public_html/backend/
+          ftp -inv $FTP_SERVER <<EOF
+          user $FTP_USERNAME $FTP_PASSWORD
+          cd public_html/backend/
+          mput backend/*
+          bye
+          EOF
 
       - name: Upload frontend files
         env:
@@ -44,7 +52,12 @@ jobs:
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          curl -T "{./frontend/dist/*}" --user $FTP_USERNAME:$FTP_PASSWORD ftp://$FTP_SERVER/public_html/
+          ftp -inv $FTP_SERVER <<EOF
+          user $FTP_USERNAME $FTP_PASSWORD
+          cd public_html/
+          mput frontend/dist/*
+          bye
+          EOF
 
       - name: Upload .htaccess file
         env:
@@ -52,4 +65,9 @@ jobs:
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          curl -T ./.htaccess --user $FTP_USERNAME:$FTP_PASSWORD ftp://$FTP_SERVER/public_html/.htaccess
+          ftp -inv $FTP_SERVER <<EOF
+          user $FTP_USERNAME $FTP_PASSWORD
+          cd public_html/
+          put .htaccess
+          bye
+          EOF
