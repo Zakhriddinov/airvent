@@ -9,7 +9,11 @@ const errorHandlers = require('@/handlers/errorHandlers');
 // create our Express app
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+  origin: 'http://localhost:3000', // Yoki frontendning to'g'ri URL manzili
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
 
 app.use(cookieParser());
 app.use(express.json());
