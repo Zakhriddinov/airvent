@@ -49,4 +49,4 @@ jobs:
         port: 21
         protocol: ftp
         local-dir: ./frontend/dist/
-        server-dir: /public_html/  # Frontend fayllari uchun joylashuv
+        server-dir: /public_html/
