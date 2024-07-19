@@ -25,8 +25,8 @@ app.use(compression());
 const authRoute = require('@/routes/authRoute');
 const appRouter = require('@/routes/appRoutes/appApi');
 
-app.use('/api/auth', authRoute);
-app.use('/api', appRouter);
+app.use('/backend/api/auth', authRoute);
+app.use('/backend/api', appRouter);
 
 // If that above routes didnt work, we 404 them and forward to error handler
 app.use(errorHandlers.notFound);
