@@ -37,6 +37,7 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./backend/
+        protocol: ftp
         server-dir: /public_html/backend/  # cPanel'dagi joylashuvni moslang
 
     - name: Upload frontend files
@@ -46,5 +47,6 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         port: 21
+        protocol: ftp
         local-dir: ./frontend/dist/
         server-dir: /public_html/  # Frontend fayllari uchun joylashuv
