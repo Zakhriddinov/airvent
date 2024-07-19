@@ -50,3 +50,4 @@ jobs:
         protocol: ftp
         local-dir: ./frontend/dist/
         server-dir: /public_html/
+        
