@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "20" # Node.js versiyasini moslang
+          node-version: '20' # Node.js versiyasini moslang
 
       - name: Install dependencies
         run: |
@@ -30,16 +30,13 @@ jobs:
           cd frontend
           npm run build
 
-      - name: Install lftp
-        run: sudo apt-get install lftp
-
       - name: Upload backend files
         env:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          lftp -e "set ftp:ssl-allow no; mirror -R backend /public_html/backend; quit" -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER
+          curl -T "{./backend/*}" --user $FTP_USERNAME:$FTP_PASSWORD ftp://$FTP_SERVER/public_html/backend/
 
       - name: Upload frontend files
         env:
@@ -47,7 +44,7 @@ jobs:
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          lftp -e "set ftp:ssl-allow no; mirror -R frontend/dist /public_html; quit" -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER
+          curl -T "{./frontend/dist/*}" --user $FTP_USERNAME:$FTP_PASSWORD ftp://$FTP_SERVER/public_html/
 
       - name: Upload .htaccess file
         env:
@@ -55,4 +52,4 @@ jobs:
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          curl -T ./.htaccess --user $FTP_USERNAME:$FTP_PASSWORD ftp://$FTP_SERVER:21/public_html/.htaccess
+          curl -T ./.htaccess --user $FTP_USERNAME:$FTP_PASSWORD ftp://$FTP_SERVER/public_html/.htaccess
