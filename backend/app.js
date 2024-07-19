@@ -10,7 +10,7 @@ const errorHandlers = require('@/handlers/errorHandlers');
 const app = express();
 
 const corsOptions = {
-  origin: 'http://localhost:3000', // Yoki frontendning to'g'ri URL manzili
+  origin: '*', // Yoki frontendning to'g'ri URL manzili
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
