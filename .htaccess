@@ -16,5 +16,5 @@ AddHandler application/x-httpd-php74 .php
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteCond %{REQUEST_URI} ^/backend/
-  RewriteRule ^(.*)$ https://airventnavoi.uz:8888/$1 [P,L]
+  RewriteRule ^backend/(.*)$ https://airventnavoi.uz/backend/$1 [P,L]
 </IfModule>
