@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '20' # Node.js versiyasini moslang
+          node-version: "20" # Node.js versiyasini moslang
 
       - name: Install dependencies
         run: |
@@ -31,24 +31,16 @@ jobs:
           npm run build
 
       - name: Upload backend files
-        uses: SamKirkland/FTP-Deploy-Action@4.1.0
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 21
-          local-dir: ./backend/
-          server-dir: /public_html/backend/ # cPanel'dagi joylashuvni moslang
+        run: |
+          lftp -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }} << EOF
+          mirror -R backend /public_html/backend
+          EOF
 
       - name: Upload frontend files
-        uses: SamKirkland/FTP-Deploy-Action@4.1.0
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 21
-          local-dir: ./frontend/dist/
-          server-dir: /public_html/ # Frontend fayllari uchun joylashuv
+        run: |
+          lftp -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }} << EOF
+          mirror -R frontend/dist /public_html
+          EOF
 
       - name: Upload .htaccess file
         env:
