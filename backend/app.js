@@ -2,7 +2,7 @@ require('module-alias/register');
 const express = require('express');
 const cors = require('cors');
 const compression = require('compression');
-
+const path = require('path');
 const cookieParser = require('cookie-parser');
 const errorHandlers = require('@/handlers/errorHandlers');
 
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, '..', 'frontend', 'dist')));
 
 // Barcha so'rovlarni frontendga yo'naltirish
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'frontend', 'dist', 'index.html'));
+  res.sendFile(path.join(__dirname, '..', 'frontend', 'dist', 'index.html'));
 });
 
 // Here our API Routes
