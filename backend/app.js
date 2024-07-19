@@ -3,23 +3,34 @@ const express = require('express');
 const cors = require('cors');
 const compression = require('compression');
 
+const path = require('path');
+
 const cookieParser = require('cookie-parser');
 const errorHandlers = require('@/handlers/errorHandlers');
 
 // create our Express app
 const app = express();
 
-const corsOptions = {
-  origin: '*', // Yoki frontendning to'g'ri URL manzili
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  allowedHeaders: ['Content-Type', 'Authorization'],
-};
+app.use(
+  cors({
+    origin: true,
+    credentials: true,
+  })
+);
 
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(compression());
+
+// Serve frontend build files
+const buildPath = path.join(__dirname, '..', 'frontend', 'dist');
+app.use(express.static(buildPath));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(buildPath, 'index.html'));
+});
 
 // Here our API Routes
 const authRoute = require('@/routes/authRoute');
