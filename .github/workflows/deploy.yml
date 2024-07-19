@@ -93,4 +93,4 @@ jobs:
           port: 21
           protocol: ftp
           local-dir: ./
-          server-dir: /public_html/airvent
+          server-dir: /public_html/airvent/
