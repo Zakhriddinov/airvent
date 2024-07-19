@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "20" # Node.js versiyasini moslang
+          node-version: '20' # Node.js versiyasini moslang
 
       - name: Install dependencies
         run: |
@@ -33,9 +33,9 @@ jobs:
       - name: Upload backend files
         uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
-          server: ${{ secrets.GIT_CPANEL_SERVER }}
-          username: ${{ secrets.GIT_CPANEL_USER }}
-          password: ${{ secrets.GIT_CPANEL_PWD }}
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
           port: 21
           local-dir: ./backend/
           server-dir: /public_html/backend/ # cPanel'dagi joylashuvni moslang
@@ -43,17 +43,17 @@ jobs:
       - name: Upload frontend files
         uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
-          server: ${{ secrets.GIT_CPANEL_SERVER }}
-          username: ${{ secrets.GIT_CPANEL_USER }}
-          password: ${{ secrets.GIT_CPANEL_PWD }}
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
           port: 21
           local-dir: ./frontend/dist/
           server-dir: /public_html/ # Frontend fayllari uchun joylashuv
 
       - name: Upload .htaccess file
         env:
-          FTP_SERVER: ${{ secrets.GIT_CPANEL_SERVER }}
-          FTP_USERNAME: ${{ secrets.GIT_CPANEL_USER }}
-          FTP_PASSWORD: ${{ secrets.GIT_CPANEL_PWD }}
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
           curl -T ./.htaccess --user $FTP_USERNAME:$FTP_PASSWORD ftp://$FTP_SERVER:21/public_html/.htaccess
