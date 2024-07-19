@@ -1,15 +1,20 @@
-# Redirect all traffic to the frontend
-RewriteEngine On
-RewriteBase /
+# Use PHP version
+AddHandler application/x-httpd-php74 .php
 
-# Serve static assets
-RewriteRule ^(static|js|css|img|fonts)/(.*)$ /frontend/dist/$1/$2 [L]
+# Frontend static files
+<IfModule mod_rewrite.c>
+  RewriteEngine On
 
-# Handle API requests
-RewriteCond %{REQUEST_URI} ^/api/
-RewriteRule ^api/(.*)$ http://localhost:8888/$1 [P,L]
+  # Redirect all requests to index.html except API requests
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !^/backend/
+  RewriteRule ^ index.html [L]
+</IfModule>
 
-# Serve the frontend index.html for all other requests
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ /frontend/dist/index.html [L]
+# Backend API proxy
+<IfModule mod_proxy.c>
+  ProxyRequests Off
+  ProxyPass /backend http://localhost:8888/backend
+  ProxyPassReverse /backend http://localhost:8888/backend
+</IfModule>

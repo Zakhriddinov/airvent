@@ -1,33 +1,51 @@
+name: Deploy to cPanel
+
 on:
   push:
     branches:
-      - main
-name: 🚀 Deploy website on push
+      - main  # O'zingizning asosiy branchingizni belgilang
 
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Use Node.js 20.14.0
-        uses: actions/setup-node@v2
-        with:
-          node-version: "20.14.0"
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'  # Node.js versiyasini moslang
 
-      - name: 🔨 Build Frontend
-        run: |
-          cd frontend
-          npm install
-          npm run build
+    - name: Install dependencies
+      run: |
+        cd backend
+        npm install
+        cd ../frontend
+        npm install
 
-      - name: 📂 Sync frontend files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ${{ secrets.GIT_CPANEL_SERVER }}
-          username: ${{ secrets.GIT_CPANEL_USER }}
-          password: ${{ secrets.GIT_CPANEL_PWD }}
-          protocol: ${{ secrets.GIT_CPANEL_REACT_PROTOCOL }}
-          local-dir: ./frontend/dist/
+    - name: Build frontend
+      run: |
+        cd frontend
+        npm run build
+
+    - name: Upload backend files
+      uses: SamKirkland/FTP-Deploy-Action@4.1.0
+      with:
+        server: ${{ secrets.GIT_CPANEL_SERVER }}
+        username: ${{ secrets.GIT_CPANEL_USER }}
+        password: ${{ secrets.GIT_CPANEL_PWD }}
+        port: 21
+        local-dir: ./backend
+        server-dir: /public_html/backend  # cPanel'dagi joylashuvni moslang
+
+    - name: Upload frontend files
+      uses: SamKirkland/FTP-Deploy-Action@4.1.0
+      with:
+        server: ${{ secrets.GIT_CPANEL_SERVER }}
+        username: ${{ secrets.GIT_CPANEL_USER }}
+        password: ${{ secrets.GIT_CPANEL_PWD }}
+        port: 21
+        local-dir: ./frontend/dist
+        server-dir: /public_html  # Frontend fayllari uchun joylashuv
