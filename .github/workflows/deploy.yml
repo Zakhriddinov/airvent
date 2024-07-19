@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '20' # Node.js versiyasini moslang
+          node-version: "20" # Node.js versiyasini moslang
 
       - name: Install dependencies
         run: |
@@ -56,4 +56,4 @@ jobs:
           FTP_USERNAME: ${{ secrets.GIT_CPANEL_USER }}
           FTP_PASSWORD: ${{ secrets.GIT_CPANEL_PWD }}
         run: |
-          curl -T ./.htaccess --user $FTP_USERNAME:$FTP_PASSWORD ftp://$FTP_SERVER/public_html/.htaccess
+          curl -T ./.htaccess --user $FTP_USERNAME:$FTP_PASSWORD ftp://$FTP_SERVER:21/public_html/.htaccess
