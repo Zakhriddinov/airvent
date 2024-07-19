@@ -50,5 +50,5 @@ jobs:
           local-dir: ./frontend/dist/
           server-dir: /public_html/ # Frontend fayllari uchun joylashuv
 
-      - name: Upload .htaccess file
-        run: curl -T ./.htaccess ftp://${{ secrets.GIT_CPANEL_USER }}:${{ secrets.GIT_CPANEL_PWD }}@${{ secrets.GIT_CPANEL_SERVER }}:21/public_html/.htaccess
+      # - name: Upload .htaccess file
+      #   run: curl -T ./.htaccess ftp://${{ secrets.GIT_CPANEL_USER }}:${{ secrets.GIT_CPANEL_PWD }}@${{ secrets.GIT_CPANEL_SERVER }}:21/public_html/.htaccess
