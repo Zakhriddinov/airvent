@@ -30,17 +30,24 @@ jobs:
           cd frontend
           npm run build
 
+      - name: Install lftp
+        run: sudo apt-get install lftp
+
       - name: Upload backend files
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          lftp -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }} << EOF
-          mirror -R backend /public_html/backend
-          EOF
+          lftp -e "set ftp:ssl-allow no; mirror -R backend /public_html/backend; quit" -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER
 
       - name: Upload frontend files
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          lftp -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }} << EOF
-          mirror -R frontend/dist /public_html
-          EOF
+          lftp -e "set ftp:ssl-allow no; mirror -R frontend/dist /public_html; quit" -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER
 
       - name: Upload .htaccess file
         env:
