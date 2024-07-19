@@ -41,7 +41,7 @@ jobs:
         run: |
           ftp -inv $FTP_SERVER <<EOF
           user $FTP_USERNAME $FTP_PASSWORD
-          cd public_html/backend/
+          cd /home/airventn/airventnavoi.uz/backend/
           mput backend/*
           bye
           EOF
@@ -54,7 +54,7 @@ jobs:
         run: |
           ftp -inv $FTP_SERVER <<EOF
           user $FTP_USERNAME $FTP_PASSWORD
-          cd public_html/
+          cd /home/airventn/airventnavoi.uz/
           mput frontend/dist/*
           bye
           EOF
@@ -67,7 +67,7 @@ jobs:
         run: |
           ftp -inv $FTP_SERVER <<EOF
           user $FTP_USERNAME $FTP_PASSWORD
-          cd public_html/
+          cd /home/airventn/airventnavoi.uz/
           put .htaccess
           bye
           EOF
