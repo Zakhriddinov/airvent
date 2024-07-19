@@ -1,6 +1,15 @@
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
-</IfModule>
+# Redirect all traffic to the frontend
+RewriteEngine On
+RewriteBase /
+
+# Serve static assets
+RewriteRule ^(static|js|css|img|fonts)/(.*)$ /frontend/dist/$1/$2 [L]
+
+# Handle API requests
+RewriteCond %{REQUEST_URI} ^/api/
+RewriteRule ^api/(.*)$ http://localhost:8888/$1 [P,L]
+
+# Serve the frontend index.html for all other requests
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ /frontend/dist/index.html [L]
