@@ -1,5 +1,5 @@
 require('module-alias/register');
-const connectDB = require('./src/config/database');
+const connectDB = require('@/config/database');
 const logger = require('@/config/logger');
 require('colors');
 
