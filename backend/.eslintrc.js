@@ -7,7 +7,7 @@ module.exports = {
   extends: 'eslint:recommended',
   parserOptions: {
     ecmaVersion: 12,
-    sourceType: 'module',
+    sourceType: 'script', // sourceType ni 'script' ga o'zgartiring
   },
   rules: {
     'no-console': 0,
