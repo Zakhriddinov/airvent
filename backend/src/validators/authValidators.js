@@ -1,5 +1,5 @@
 const Joi = require('joi');
-const validationError = require('@/handlers/validationError');
+const validationError = require('../handlers/validationError');
 // Parol validatsiyasi
 const passwordValidation = Joi.string()
   .min(8)
