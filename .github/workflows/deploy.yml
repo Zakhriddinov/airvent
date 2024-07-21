@@ -22,7 +22,6 @@ jobs:
         run: |
           cd backend
           npm install
-
           cd ../frontend
           npm install
 
@@ -39,7 +38,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./backend/
           protocol: ftp
-          server-dir: /public_html/backend/
+          server-dir: /airvent/backend/
 
       - name: Upload frontend files
         uses: SamKirkland/FTP-Deploy-Action@4.1.0
@@ -50,5 +49,4 @@ jobs:
           port: 21
           protocol: ftp
           local-dir: ./frontend/dist/
-
-          server-dir: /public_html/frontend/
+          server-dir: /airvent/frontend/
