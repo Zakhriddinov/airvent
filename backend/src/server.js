@@ -1,3 +1,4 @@
+require('module-alias/register');
 const connectDB = require('./config/database');
 const logger = require('./config/logger');
 require('colors');
