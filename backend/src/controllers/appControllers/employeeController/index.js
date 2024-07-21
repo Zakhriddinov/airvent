@@ -1,5 +1,5 @@
-const createCRUDController = require('../../middlewaresController/createCRUDController');
-const Products = require('../../../models/appModels/Employee');
+const createCRUDController = require('@/controllers/middlewaresController/createCRUDController');
+const Products = require('@/models/appModels/Employee');
 
 const create = require('./create');
 const summary = require('./summary');

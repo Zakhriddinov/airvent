@@ -1,5 +1,5 @@
-const createCRUDController = require('../../middlewaresController/createCRUDController');
-const Position = require('../../../models/appModels/Position');
+const createCRUDController = require('@/controllers/middlewaresController/createCRUDController');
+const Position = require('@/models/appModels/Position');
 
 const create = require('./create');
 const paginatedList = require('./paginatedList');

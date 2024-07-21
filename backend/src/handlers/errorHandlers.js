@@ -50,16 +50,16 @@ exports.notFound = (req, res, next) => {
   */
 exports.developmentErrors = (error, req, res, next) => {
   error.stack = error.stack || '';
-  // const errorDetails = {
-  //   message: error.message,
-  //   status: error.status,
-  //   stackHighlighted: error.stack.replace(/[a-z_-\d]+.js:\d+:\d+/gi, '<mark>$&</mark>'),
-  // };
+  const errorDetails = {
+    message: error.message,
+    status: error.status,
+    stackHighlighted: error.stack.replace(/[a-z_-\d]+.js:\d+:\d+/gi, '<mark>$&</mark>'),
+  };
 
   return res.status(500).json({
     success: false,
     message: error.message,
-    // error: errorDetails,
+    error: errorDetails,
   });
 };
 

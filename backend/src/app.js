@@ -4,7 +4,7 @@ const cors = require('cors');
 const compression = require('compression');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const errorHandlers = require('./handlers/errorHandlers');
+const errorHandlers = require('@/handlers/errorHandlers');
 
 // create our Express app
 const app = express();
@@ -30,8 +30,8 @@ app.use(compression());
 // });
 
 // Here our API Routes
-const authRoute = require('./routes/authRoute');
-const appRouter = require('./routes/appRoutes/appApi');
+const authRoute = require('@/routes/authRoute');
+const appRouter = require('@/routes/appRoutes/appApi');
 
 app.use('/api/auth', authRoute);
 app.use('/api', appRouter);
