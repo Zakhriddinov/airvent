@@ -1,6 +1,5 @@
-require('module-alias/register');
-const connectDB = require('@Z/config/database');
-const logger = require('@/config/logger');
+const connectDB = require('./config/database');
+const logger = require('./config/logger');
 require('colors');
 
 const [major, minor] = process.versions.node.split('.').map(parseFloat);
