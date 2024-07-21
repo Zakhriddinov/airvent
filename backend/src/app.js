@@ -21,11 +21,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(compression());
 
-app.use(express.static(path.join(__dirname, '..', 'frontend', 'dist')));
+app.use(express.static(path.join(__dirname, 'public_html')));
 
-// Barcha so'rovlarni frontendga yo'naltirish
+// Barcha yo'nalishlar uchun `index.html` xizmat qilish
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'frontend', 'dist', 'index.html'));
+  res.sendFile(path.join(__dirname, 'public_html', 'index.html'));
 });
 
 // Here our API Routes
