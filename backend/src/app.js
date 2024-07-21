@@ -21,12 +21,12 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(compression());
 
-// app.use(express.static(path.join(__dirname, '..', 'frontend', 'dist')));
+app.use(express.static(path.join(__dirname, '..', 'frontend', 'dist')));
 
-// // Barcha so'rovlarni frontendga yo'naltirish
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, '..', 'frontend', 'dist', 'index.html'));
-// });
+// Barcha so'rovlarni frontendga yo'naltirish
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'frontend', 'dist', 'index.html'));
+});
 
 // Here our API Routes
 const authRoute = require('./routes/authRoute');
