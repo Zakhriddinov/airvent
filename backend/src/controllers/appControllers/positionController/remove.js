@@ -1,5 +1,5 @@
 
-const Employee = require('@/models/appModels/Employee');
+const Employee = require('../../../models/appModels/Employee');
 
 const remove = async (Model, req, res) => {
   const { id } = req.params;

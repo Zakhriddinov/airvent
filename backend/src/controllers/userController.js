@@ -1,6 +1,6 @@
-const User = require('@/models/userModel');
-const { hashPassword } = require('@/utilities/hashedPassword');
-const mailer = require('@/utilities/mailer');
+const User = require('../models/userModel');
+const { hashPassword } = require('../utilities/hashedPassword');
+const mailer = require('../utilities/mailer');
 
 const userRegister = async (req, res) => {
   try {
