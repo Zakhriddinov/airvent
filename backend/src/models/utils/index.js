@@ -3,7 +3,7 @@ const { globSync } = require('glob');
 
 const appModelsFiles = globSync('./src/models/appModels/**/*.js');
 
-const pattern = './src/models/**/*.js';
+const pattern = './**/*.js';
 
 const modelsFiles = globSync(pattern).map((filePath) => {
   const fileNameWithExtension = basename(filePath);

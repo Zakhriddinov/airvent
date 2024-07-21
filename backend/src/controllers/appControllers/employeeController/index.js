@@ -1,5 +1,5 @@
 const createCRUDController = require('../../middlewaresController/createCRUDController');
-const Products = require('../../../models/appModels/Employee');
+const Employee = require('../../../models/appModels/Employee');
 
 const create = require('./create');
 const summary = require('./summary');
@@ -10,7 +10,7 @@ const remove = require('./remove');
 const read = require('./read');
 
 function modelController() {
-  const Model = Products;
+  const Model = Employee;
   const methods = createCRUDController('Employee');
 
   methods.read = (req, res) => read(Model, req, res);
