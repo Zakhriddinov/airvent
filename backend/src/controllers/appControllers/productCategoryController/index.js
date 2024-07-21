@@ -1,6 +1,6 @@
-const createCRUDController = require('@/controllers/middlewaresController/createCRUDController');
+const createCRUDController = require('../../middlewaresController/createCRUDController');
 const remove = require('./remove');
-const ProductCategory = require('@/models/appModels/ProductCategory');
+const ProductCategory = require('../../../models/appModels/ProductCategory');
 
 const create = require('./create');
 const read = require('./read');

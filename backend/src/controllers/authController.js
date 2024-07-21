@@ -1,8 +1,8 @@
-const mailer = require('@/utilities/mailer');
+const mailer = require('../../utilities/mailer');
 const bcrypt = require('bcryptjs');
-const Admin = require('@/models/auth/userModel');
-const AdminPassword = require('@/models/auth/passwordModel');
-const { hashPassword } = require('@/utilities/hashedPassword');
+const Admin = require('../../models/auth/userModel');
+const AdminPassword = require('../../models/auth/passwordModel');
+const { hashPassword } = require('../../utilities/hashedPassword');
 const jwt = require('jsonwebtoken');
 const shortid = require('shortid');
 
