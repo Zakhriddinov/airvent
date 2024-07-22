@@ -2487,3 +2487,5 @@
 2024-07-21T19:18:14.627Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-01.ahztayi.mongodb.net[39m[24m
 2024-07-21T19:18:16.357Z info: [34mExpress running → On PORT : 8888[39m
 2024-07-21T19:18:18.170Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-00.ahztayi.mongodb.net[39m[24m
+2024-07-22T17:18:21.186Z info: [34mExpress running → On PORT : 8888[39m
+2024-07-22T17:18:23.572Z info: [4m[32mMongoDB connected to: ac-xzzjheu-shard-00-02.ahztayi.mongodb.net[39m[24m
