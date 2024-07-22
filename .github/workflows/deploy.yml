@@ -48,7 +48,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
           protocol: ftp
-          local-dir: ./frontend/build/
+          local-dir: ./frontend/dist/
           server-dir: /home/airventn/public_html/frontend/
 
       - name: Set up SSH
