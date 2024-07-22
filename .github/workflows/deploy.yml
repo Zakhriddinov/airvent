@@ -38,7 +38,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./backend/
           protocol: ftp
-          server-dir: /public_html/backend/
+          server-dir: /home/airventn/public_html/backend/
 
       - name: Upload frontend files
         uses: SamKirkland/FTP-Deploy-Action@4.1.0
@@ -48,5 +48,18 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
           protocol: ftp
-          local-dir: ./frontend/dist/
-          server-dir: /public_html/frontend/
+          local-dir: ./frontend/build/
+          server-dir: /home/airventn/public_html/frontend/
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Copy Nginx config
+        run: |
+          scp -o StrictHostKeyChecking=no ./nginx.conf airventn@162.55.134.175:/etc/nginx/conf.d/airventnavoi.uz.conf
+
+      - name: Restart Nginx
+        run: |
+          ssh -o StrictHostKeyChecking=no airventn@162.55.134.175 "sudo systemctl restart nginx"
