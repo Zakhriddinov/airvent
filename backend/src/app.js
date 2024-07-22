@@ -21,12 +21,12 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(compression());
 
-app.use(express.static(path.join(__dirname, '../../frontend/')));
+// app.use(express.static(path.join(__dirname, '../../frontend/')));
 
-// Barcha yo'nalishlar uchun `index.html` xizmat qilish
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../frontend/', 'index.html'));
-});
+// // Barcha yo'nalishlar uchun `index.html` xizmat qilish
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../../frontend/', 'index.html'));
+// });
 
 // Here our API Routes
 const authRoute = require('./routes/authRoute');
