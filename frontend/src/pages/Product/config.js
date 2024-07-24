@@ -14,6 +14,9 @@ export const fields = {
     dataIndex: ['productCategory', 'name'],
     entity: 'productcategory',
     required: true,
+    redirectLabel: 'Yangi Kategoriya yaratish',
+    withRedirect: true,
+    urlToRedirect: '/product/category',
   },
   price: {
     required: true,

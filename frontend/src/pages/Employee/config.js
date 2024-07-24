@@ -17,7 +17,7 @@ export const fields = {
     searchFields: 'name',
     redirectLabel: 'Yangi lavozim yaratish',
     withRedirect: true,
-    urlToRedirect: '/employee-position',
+    urlToRedirect: '/employee/position',
   },
   phone: {
     required: true,

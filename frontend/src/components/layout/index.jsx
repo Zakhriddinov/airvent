@@ -1,27 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { Container, LinkLogo, Main, MenuWrap, Sidebar } from "./style";
-import logo from "../../assets/icons/img/logo.png";
-import Header from "./header";
-import { Outlet, useNavigate } from "react-router-dom";
-import { sidebar } from "../../utilities/routing/sidebar";
-import { Menu } from "antd";
+import React, { useEffect, useState } from 'react';
+import { Container, LinkLogo, Main, MenuWrap, Sidebar } from './style';
+import logo from '../../assets/icons/img/logo.png';
+import Header from './header';
+import { Outlet, useNavigate } from 'react-router-dom';
+import { sidebar } from '../../utilities/routing/sidebar';
+import { Menu } from 'antd';
+import storePersist from '@/redux/storePersist';
 
 const Layouts = () => {
   const navigate = useNavigate();
-  const [selectedKey, setSelectedKey] = useState("1");
+  const [selectedKey, setSelectedKey] = useState('1');
 
   useEffect(() => {
-    const storedSelectedKey = localStorage.getItem("selectedKey");
-    if (storedSelectedKey) {
-      setSelectedKey(storedSelectedKey);
-    }
+    const { key } = storePersist.get('selectedKey');
+    if (key) setSelectedKey(key);
   }, []);
 
   const onClickParent = (parent, e) => {
     const { id, items, path, title } = parent;
     if (!items || items.length === 0) {
       setSelectedKey(id.toString());
-      localStorage.setItem("selectedKey", id.toString());
+      storePersist.set('selectedKey', { key: id.toString() });
       navigate(path, { state: { parent: title } });
     }
   };
@@ -29,37 +28,30 @@ const Layouts = () => {
   const onClickChild = (parent, child, e) => {
     const childKey = `${parent.id}-${child.id}`;
     setSelectedKey(childKey);
-    localStorage.setItem("selectedKey", childKey);
+    storePersist.set('selectedKey', { key: childKey });
     navigate(child.path, {
       state: { parent: parent.title, child: child.label },
     });
   };
 
   const navigateDashboard = () => {
-    navigate("/");
+    navigate('/');
+    setSelectedKey('1');
   };
 
   return (
     <Container>
-      <Sidebar trigger={null} collapsible style={{ background: "transparent" }}>
+      <Sidebar trigger={null} collapsible style={{ background: 'transparent' }}>
         <LinkLogo onClick={navigateDashboard}>
           <img src={logo} alt="icon" />
         </LinkLogo>
-        <MenuWrap
-          theme="transparent"
-          mode="inline"
-          selectedKeys={[selectedKey]}
-        >
+        <MenuWrap theme="transparent" mode="inline" selectedKeys={[selectedKey]}>
           {sidebar.map((parent) => {
             const { icon: Icon } = parent;
             return !parent.hidden ? (
               <React.Fragment key={parent.id}>
                 {parent.items && parent.items.length > 0 ? (
-                  <Menu.SubMenu
-                    key={parent.id}
-                    title={parent.title}
-                    icon={<Icon />}
-                  >
+                  <Menu.SubMenu key={parent.id} title={parent.title} icon={<Icon />}>
                     {parent.items.map((child) => (
                       <Menu.Item
                         key={`${parent.id}-${child.id}`}
