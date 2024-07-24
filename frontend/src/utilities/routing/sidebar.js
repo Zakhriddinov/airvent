@@ -42,7 +42,7 @@ export const sidebar = [
     id: 3,
     element: ProductCategory,
     title: 'Mahsulot kategoriyalari',
-    path: '/category/product',
+    path: 'product/category',
     isPrivate: true,
     role: ['admin'],
     icon: TagsOutlined,
