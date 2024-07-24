@@ -281,6 +281,39 @@ function FormElement({ field, feedback, setFeedback }) {
   //   );
   // };
 
+  const InputWithUnitComponent = () => {
+    const [unit, setUnit] = useState('kg');
+
+    return (
+      <Form.Item label={field.label} style={{ marginBottom: 0 }}>
+        <Form.Item
+          name={field.name}
+          rules={[
+            {
+              required: field.required || false,
+              type: filedType[field.type] ?? 'any',
+            },
+          ]}
+          style={{ display: 'inline-block', width: 'calc(70% - 8px)' }}
+        >
+          <InputNumber placeholder="Enter value" style={{ width: '100%' }} min={0} />
+        </Form.Item>
+        <Form.Item
+          name={`${field.name}Unit`}
+          initialValue={unit}
+          style={{ display: 'inline-block', width: 'calc(30% - 8px)', marginLeft: '8px' }}
+        >
+          <Select defaultValue="kg" onChange={setUnit} style={{ width: '100%' }}>
+            <Select.Option value="kg">kg</Select.Option>
+            <Select.Option value="m">metr</Select.Option>
+            <Select.Option value="l">litr</Select.Option>
+            <Select.Option value="ta">son</Select.Option>
+          </Select>
+        </Form.Item>
+      </Form.Item>
+    );
+  };
+
   const formItemComponent = {
     select: <SelectComponent />,
     selectWithTranslation: <SelectWithTranslationComponent />,
@@ -293,6 +326,7 @@ function FormElement({ field, feedback, setFeedback }) {
     array: <ArrayComponent />,
     // country: <CountryComponent />,
     // search: <SearchComponent />,
+    quantity: <InputWithUnitComponent />,
   };
 
   const compunedComponent = {
@@ -331,11 +365,12 @@ function FormElement({ field, feedback, setFeedback }) {
         className="moneyInput"
         min={0}
         controls={false}
-        addonBefore={"UZS"}
+        addonBefore={'UZS'}
         style={{ width: '100%' }}
         // addonBefore={money.currency_position === 'before' ? money.currency_symbol : undefined}
       />
     ),
+    quantity: <InputWithUnitComponent />,
   };
 
   const filedType = {

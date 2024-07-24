@@ -28,19 +28,14 @@ const schema = mongoose.Schema({
   description: String,
   quantity: {
     type: Number,
+    required: true,
   },
   price: {
     type: Number,
     required: true,
   },
-  length: {
-    type: Number,
-  },
-  wight: {
-    type: Number,
-  },
-  priceReceived: {
-    type: Number,
+  quantityUnit: {
+    type: String,
     required: true,
   },
   photo: String,
@@ -79,6 +74,9 @@ const schema = mongoose.Schema({
   isPublic: {
     type: Boolean,
     default: true,
+  },
+  totalPrice: {
+    type: Number,
   },
 });
 

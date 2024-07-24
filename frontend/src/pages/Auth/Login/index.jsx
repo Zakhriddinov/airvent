@@ -25,7 +25,6 @@ const Login = () => {
 
   const onFinish = (values) => {
     dispatch(login({ loginData: values }));
-    console.log(isSuccess);
   };
 
   useEffect(() => {

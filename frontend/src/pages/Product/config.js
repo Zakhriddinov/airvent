@@ -20,22 +20,15 @@ export const fields = {
     label: 'Narxi (so`m)',
     type: 'currency',
   },
-  priceReceived: {
-    required: true,
-    label: 'Tan narxi (so`m)',
+  totalPrice: {
     type: 'currency',
+    label: "Umumiy narxi (so'm)",
+    disableForForm: true,
+    disableForUpdate: true,
   },
   quantity: {
-    type: 'number',
+    type: 'quantity',
     label: 'Miqdor',
-  },
-  length: {
-    type: 'number',
-    label: 'Uzunligi (m)',
-  },
-  wight: {
-    type: 'number',
-    label: "Og'irlik (kg)",
   },
   enabled: {
     type: 'boolean',

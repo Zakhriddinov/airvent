@@ -38,6 +38,11 @@ const paginatedList = async (Model, req, res) => {
   // Resolving both promises
   const [result, count] = await Promise.all([resultsPromise, countPromise]);
 
+  const resultWithTotalPrice = result.map((item) => ({
+    ...item._doc,
+    totalPrice: item.quantity * item.price,
+  }));
+
   // Calculating total pages
   const pages = Math.ceil(count / limit);
 
@@ -46,7 +51,7 @@ const paginatedList = async (Model, req, res) => {
   if (count > 0) {
     return res.status(200).json({
       success: true,
-      result,
+      result: resultWithTotalPrice,
       pagination,
       message: 'Successfully found all documents',
     });
