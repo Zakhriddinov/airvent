@@ -307,7 +307,7 @@ function FormElement({ field, feedback, setFeedback }) {
             <Select.Option value="kg">kg</Select.Option>
             <Select.Option value="m">metr</Select.Option>
             <Select.Option value="l">litr</Select.Option>
-            <Select.Option value="ta">son</Select.Option>
+            <Select.Option value="ta">ta</Select.Option>
           </Select>
         </Form.Item>
       </Form.Item>
