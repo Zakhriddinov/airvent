@@ -11,7 +11,12 @@
     "start": "node ./src/server.js",
     "dev": "nodemon ./src/server.js",
     "producation": "NODE_ENV=production",
-    "pm2-start": "pm2 start ./src/server.js --name airvent-backend"
+    "pm2-start": "pm2 start ./src/server.js --name airvent-backend",
+    "pm2-stop": "pm2 stop airvent-backend",
+    "pm2-restart": "pm2 restart airvent-backend",
+    "pm2-delete": "pm2 delete airvent-backend",
+    "pm2-save": "pm2 save",
+    "pm2-logs": "pm2 logs"
   },
   "keywords": [],
   "author": "Zaxriddinov Sardor",
