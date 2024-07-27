@@ -18,6 +18,17 @@ export const fields = {
     withRedirect: true,
     urlToRedirect: '/product/category',
   },
+  quantityUnit: {
+    required: true,
+    label: "O'lchov birligi",
+    disableForForm: true,
+    disableForUpdate: true,
+  },
+  quantity: {
+    required: true,
+    type: 'quantity',
+    label: 'Miqdor',
+  },
   price: {
     required: true,
     label: 'Narxi (so`m)',
@@ -29,10 +40,7 @@ export const fields = {
     disableForForm: true,
     disableForUpdate: true,
   },
-  quantity: {
-    type: 'quantity',
-    label: 'Miqdor',
-  },
+
   enabled: {
     type: 'boolean',
     required: true,

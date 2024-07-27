@@ -16,6 +16,9 @@ import ProductCategory from '@/pages/ProductCategory';
 import Product from '@/pages/Product';
 import Position from '@/pages/Position';
 import Employee from '@/pages/Employee';
+import Client from '@/pages/Client';
+import PaymentMode from '@/pages/PaymentMode';
+import Invoice from '@/pages/Invoice';
 
 export const sidebar = [
   {
@@ -59,33 +62,25 @@ export const sidebar = [
     ],
   },
   {
+    id: 5,
+    element: Client,
+    title: 'Mijozlar',
+    path: '/client',
+    isPrivate: true,
+    role: ['admin'],
+    icon: CustomerServiceOutlined,
+    hidden: false,
+    items: [],
+  },
+  {
     id: 4,
-    title: 'Mahsulot-fakturalar',
-    path: '/product',
+    element: Generics,
+    title: 'Hisob-fakturalar',
+    path: '/invoice',
     isPrivate: true,
     role: ['admin'],
     icon: ContainerOutlined,
     hidden: false,
-    items: [
-      {
-        id: '4-1',
-        parentId: 4,
-        label: 'Kirim',
-        isPrivate: true,
-        path: '/product/income',
-        role: ['admin'],
-        element: Generics,
-      },
-      {
-        id: '4-2',
-        parentId: 2,
-        element: Generics,
-        label: 'Chiqim',
-        path: '/product/expense',
-        isPrivate: true,
-        role: ['admin'],
-      },
-    ],
   },
   {
     id: 3,
@@ -116,17 +111,7 @@ export const sidebar = [
       },
     ],
   },
-  {
-    id: 5,
-    element: Generics,
-    title: 'Mijozlar',
-    path: '/customer',
-    isPrivate: true,
-    role: ['admin'],
-    icon: CustomerServiceOutlined,
-    hidden: false,
-    items: [],
-  },
+
   // {
   //   id: 7,
   //   element: Generics,
@@ -149,35 +134,35 @@ export const sidebar = [
   //   hidden: false,
   //   items: [],
   // },
-  // {
-  //   id: 5,
-  //   title: 'Sozlamalar',
-  //   path: '/settings',
-  //   isPrivate: true,
-  //   role: ['admin'],
-  //   icon: SettingOutlined,
-  //   hidden: false,
-  //   items: [
-  //     {
-  //       id: '5-1',
-  //       parentId: 4,
-  //       label: 'Admin',
-  //       isPrivate: true,
-  //       path: '/admin',
-  //       role: ['admin'],
-  //       element: Generics,
-  //     },
-  // {
-  //   id: '5-2',
-  //   parentId: 4,
-  //   label: 'Sozlamalar',
-  //   isPrivate: true,
-  //   path: '/settings',
-  //   role: ['admin'],
-  //   element: Generics,
-  // },
-  //   ],
-  // },
+  {
+    id: 6,
+    title: 'Sozlamalar',
+    path: '/settings',
+    isPrivate: true,
+    role: ['admin'],
+    icon: SettingOutlined,
+    hidden: false,
+    items: [
+      {
+        id: '5-1',
+        parentId: 4,
+        label: "To'lov usullari",
+        isPrivate: true,
+        path: '/payment/mode',
+        role: ['admin'],
+        element: PaymentMode,
+      },
+      // {
+      //   id: '5-2',
+      //   parentId: 4,
+      //   label: 'Sozlamalar',
+      //   isPrivate: true,
+      //   path: '/settings',
+      //   role: ['admin'],
+      //   element: Generics,
+      // },
+    ],
+  },
   // {
   //   id: 6,
   //   element: Generics,

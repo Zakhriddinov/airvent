@@ -180,19 +180,19 @@ export function dataForTable({ fields, translate, dateFormat }) {
           ));
         },
       },
-      quantity: {
-        title: field.label ? field.label : key,
-        dataIndex: keyIndex,
-        render: (_, record) => {
-          return (
-            <span>
-              {record[key]} {/* <Tag bordered={false} color={"slategray"}> */}
-              {record[`${key}Unit`]}
-              {/* </Tag> */}
-            </span>
-          );
-        },
-      },
+      // quantity: {
+      //   title: field.label ? field.label : key,
+      //   dataIndex: keyIndex,
+      //   render: (_, record) => {
+      //     return (
+      //       <span>
+      //         {record[key]} {/* <Tag bordered={false} color={"slategray"}> */}
+      //         {record[`${key}Unit`]}
+      //         {/* </Tag> */}
+      //       </span>
+      //     );
+      //   },
+      // },
     };
 
     const defaultComponent = {

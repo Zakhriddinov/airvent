@@ -307,7 +307,7 @@ function FormElement({ field, feedback, setFeedback }) {
             <Select.Option value="kg">kg</Select.Option>
             <Select.Option value="m">metr</Select.Option>
             <Select.Option value="l">litr</Select.Option>
-            <Select.Option value="ta">ta</Select.Option>
+            <Select.Option value="dona">dona</Select.Option>
           </Select>
         </Form.Item>
       </Form.Item>
@@ -337,7 +337,7 @@ function FormElement({ field, feedback, setFeedback }) {
     textarea: <TextArea rows={4} />,
     email: <Input autoComplete="off" placeholder="email@example.com" />,
     number: <InputNumber style={{ width: '100%' }} />,
-    phone: <Input style={{ width: '100%' }} placeholder="+1 123 456 789" />,
+    phone: <Input style={{ width: '100%' }} placeholder="+998 11 111 11 11" />,
     boolean: (
       <Switch
         checkedChildren={<CheckOutlined />}
