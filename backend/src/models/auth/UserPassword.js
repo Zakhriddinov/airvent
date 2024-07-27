@@ -41,4 +41,4 @@ const AdminPasswordSchema = new Schema({
 //   return bcrypt.compareSync(password, this.password);
 // };
 
-module.exports = mongoose.model('AdminPassword', AdminPasswordSchema);
+module.exports = mongoose.model('UserPassword', AdminPasswordSchema);
