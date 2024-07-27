@@ -12,7 +12,6 @@ const schema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    uniquie: true,
   },
   description: {
     type: String,

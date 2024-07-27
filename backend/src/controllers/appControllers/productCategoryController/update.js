@@ -3,6 +3,17 @@ const mongoose = require('mongoose');
 const Product = mongoose.model('Products');
 const update = async (Model, req, res) => {
   const { id } = req.params;
+  const { code, name } = req.body;
+
+  // Xuddi shu kod va nomga ega va yoqilgan hujjatni tekshiring
+  const existingDocument = await Model.findOne({ code, name, removed: true });
+
+  if (existingDocument) {
+    return res.status(400).json({
+      success: false,
+      message: 'Xuddi shu kod va nomga ega kategoriya mavjud',
+    });
+  }
 
   const product = await Product.findOne({
     productCategory: id,

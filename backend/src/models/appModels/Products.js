@@ -11,7 +11,6 @@ const schema = mongoose.Schema({
   },
   code: {
     type: String,
-    unique: true,
     required: true,
   },
   productCategory: {
@@ -23,7 +22,6 @@ const schema = mongoose.Schema({
   name: {
     type: String,
     required: true,
-    unique: true,
   },
   description: String,
   quantity: {
