@@ -5,8 +5,8 @@ import DynamicForm from '@/forms/DynamicForm';
 export default function ProductCategory() {
   const entity = 'productcategory';
   const searchConfig = {
-    displayLabels: ['name', 'code'],
-    searchFields: 'name,code',
+    displayLabels: ['name'],
+    searchFields: 'name',
   };
 
   const deleteModalLabels = ['name'];
@@ -28,6 +28,8 @@ export default function ProductCategory() {
     fields,
     searchConfig,
     deleteModalLabels,
+    sortBy: 'code',
+    sortValue: 'asc',
   };
   return (
     <CrudModule

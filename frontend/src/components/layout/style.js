@@ -1,11 +1,11 @@
-import { Layout, Menu } from "antd";
-import styled from "styled-components";
+import { Layout, Menu } from 'antd';
+import styled from 'styled-components';
 
 const { Sider, Content } = Layout;
 
 const Container = styled(Layout)`
-  height: 100vh;
   background-color: #f4f9fd;
+  padding-bottom: 24px;
 `;
 
 const Sidebar = styled(Sider)`
@@ -14,8 +14,6 @@ const Sidebar = styled(Sider)`
   width: 100%;
   padding: 20px 0;
   border-radius: 6px;
-  /* background-color: white !important; */
-  /* box-shadow: 0 0 20px 3px #96beee26; */
 `;
 
 const MenuWrap = styled(Menu)`
@@ -28,6 +26,7 @@ const Main = styled(Content)`
   margin: 24px 16px;
   padding: 24px;
   min-height: 280px;
+  height: 100vh;
 `;
 
 const LinkLogo = styled.div`

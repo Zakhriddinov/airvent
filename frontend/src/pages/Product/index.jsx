@@ -5,8 +5,8 @@ import DynamicForm from '@/forms/DynamicForm';
 export default function Product() {
   const entity = 'products';
   const searchConfig = {
-    displayLabels: ['name', 'code'],
-    searchFields: 'name,code',
+    displayLabels: ['name'],
+    searchFields: 'name',
   };
 
   const deleteModalLabels = ['name'];
@@ -29,6 +29,8 @@ export default function Product() {
     fields,
     searchConfig,
     deleteModalLabels,
+    sortBy: 'code',
+    sortValue: 'asc',
   };
 
   return (

@@ -1,5 +1,5 @@
-import { Layout } from "antd";
-import styled from "styled-components";
+import { Layout } from 'antd';
+import styled from 'styled-components';
 
 const { Header } = Layout;
 
@@ -10,6 +10,7 @@ export const Container = styled(Header)`
   align-items: center;
   justify-content: end;
   gap: 10px;
+  background-color: #f4f9fd;
 `;
 
 export const Profile = styled.div``;

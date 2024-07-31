@@ -30,7 +30,7 @@ const productCategorySchema = new mongoose.Schema({
     ref: 'ProductCategory',
   },
   code: {
-    type: String,
+    type: Number,
     required: true,
   },
   title: String,

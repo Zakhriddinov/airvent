@@ -57,7 +57,6 @@ export default function CrudLayout({
   fixHeaderPanel,
   isUpdateForm,
 }) {
-  console.log(isUpdateForm);
   return (
     <>
       <DefaultLayout>

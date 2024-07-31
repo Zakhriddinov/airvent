@@ -14,7 +14,15 @@ const Layouts = () => {
   useEffect(() => {
     const { key } = storePersist.get('selectedKey');
     if (key) setSelectedKey(key);
+
+    // Scroll to top on mount
+    window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    // Scroll to top on route change
+    window.scrollTo(0, 0);
+  }, [navigate]);
 
   const onClickParent = (parent, e) => {
     const { id, items, path, title } = parent;
@@ -41,7 +49,11 @@ const Layouts = () => {
 
   return (
     <Container>
-      <Sidebar trigger={null} collapsible style={{ background: 'transparent' }}>
+      <Sidebar
+        trigger={null}
+        collapsible
+        style={{ background: 'transparent', position: 'fixed', top: 0 }}
+      >
         <LinkLogo onClick={navigateDashboard}>
           <img src={logo} alt="icon" />
         </LinkLogo>
@@ -75,7 +87,7 @@ const Layouts = () => {
           })}
         </MenuWrap>
       </Sidebar>
-      <Container>
+      <Container style={{ marginInlineStart: 256 }}>
         <Header />
         <Main>
           <Outlet />

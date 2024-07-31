@@ -14,3 +14,4 @@
 2024-07-07T13:16:10.075Z error: [4m[31mMongoDB connection error: connect ETIMEDOUT 15.184.102.209:27017[39m[24m
 2024-07-27T03:31:27.276Z error: [4m[31mMongoDB connection error: bad auth : authentication failed[39m[24m
 2024-07-27T03:32:34.027Z error: [4m[31mMongoDB connection error: bad auth : authentication failed[39m[24m
+2024-07-31T06:05:17.670Z error: [4m[31mMongoDB connection error: querySrv ETIMEOUT _mongodb._tcp.airventnavoi.9ev8bio.mongodb.net[39m[24m

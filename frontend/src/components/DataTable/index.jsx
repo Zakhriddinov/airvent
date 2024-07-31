@@ -36,12 +36,13 @@ function AddNewItem({ config }) {
 }
 
 export default function DataTable({ config, extra = [] }) {
-  let { entity, dataTableColumns, DATATABLE_TITLE, fields, searchConfig } = config;
+  let { entity, dataTableColumns, DATATABLE_TITLE, fields, searchConfig, sortBy, sortValue } =
+    config;
+
+  const sort = sortBy && sortValue ? { sortBy, sortValue } : {};
 
   const { crudContextAction } = useCrudContext();
-  const { panel, collapsedBox, modal, readBox, editBox, advancedBox } = crudContextAction;
-  //   const { moneyFormatter } = useMoney();
-  //   const { dateFormat } = useDate();
+  const { modal, editBox } = crudContextAction;
 
   const items = [
     {
@@ -135,7 +136,11 @@ export default function DataTable({ config, extra = [] }) {
   const dispatch = useDispatch();
 
   const handelDataTableLoad = useCallback((pagination) => {
-    const options = { page: pagination.current || 1, items: pagination.pageSize || 10 };
+    const options = {
+      page: pagination.current || 1,
+      items: pagination.pageSize || 10,
+      ...sort,
+    };
     dispatch(crud.list({ entity, options }));
   }, []);
 
@@ -146,7 +151,7 @@ export default function DataTable({ config, extra = [] }) {
   };
 
   const dispatcher = () => {
-    dispatch(crud.list({ entity }));
+    dispatch(crud.list({ entity, options: { page: 1, items: 10, ...sort } }));
   };
 
   useEffect(() => {

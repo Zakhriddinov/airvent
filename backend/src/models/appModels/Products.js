@@ -10,7 +10,7 @@ const schema = mongoose.Schema({
     default: true,
   },
   code: {
-    type: String,
+    type: Number,
     required: true,
   },
   productCategory: {
