@@ -11,7 +11,7 @@ const list = async (Model, req, res) => {
     const startDate = new Date(Date.UTC(year, month - 1, 1));
     const endDate = new Date(Date.UTC(year, month, 0, 23, 59, 59, 999));
     const currentDate = new Date();
-
+    
     const employees = await Employee.find({ removed: false });
     const results = await Promise.all(
       employees.map(async (employee) => {
@@ -59,9 +59,13 @@ const list = async (Model, req, res) => {
             totalEarnedAmount += record.earnedAmount;
             salary -= record.earnedAmount;
           } else {
+            let status = 'not-started';
+            if (date < currentDate) {
+              status = 'absent';
+            }
             employeeResults.push({
               date: formattedDate,
-              status: 'not-started',
+              status: status,
               earnedAmount: 0,
               enabled: false,
             });
