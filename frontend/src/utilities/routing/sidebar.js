@@ -18,7 +18,7 @@ import Position from '@/pages/Position';
 import Employee from '@/pages/Employee';
 import Client from '@/pages/Client';
 import PaymentMode from '@/pages/PaymentMode';
-import Invoice from '@/pages/Invoice';
+import { EmployeeAttendance } from '@/pages/EmployeeAttendance';
 
 export const sidebar = [
   {
@@ -106,6 +106,15 @@ export const sidebar = [
         element: Position,
         label: 'Lavozim',
         path: '/employee/position',
+        isPrivate: true,
+        role: ['admin'],
+      },
+      {
+        id: '3-3',
+        parentId: 3,
+        element: EmployeeAttendance,
+        label: 'Davomat',
+        path: '/employee/attendance',
         isPrivate: true,
         role: ['admin'],
       },

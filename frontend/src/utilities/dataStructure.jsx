@@ -4,7 +4,7 @@ import { CloseOutlined, CheckOutlined } from '@ant-design/icons';
 import { generate as uniqueId } from 'shortid';
 import color from '@/utilities/color';
 
-const moneyFormatter = ({ amount, currency_code }) => {
+export const moneyFormatter = ({ amount, currency_code = 'UZS' }) => {
   return new Intl.NumberFormat('uz-UZ', {
     style: 'currency',
     currency: currency_code,

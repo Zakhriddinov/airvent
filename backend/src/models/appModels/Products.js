@@ -9,7 +9,7 @@ const schema = mongoose.Schema({
     type: Boolean,
     default: true,
   },
-  code: {
+  code: {autopopulate: true,
     type: Number,
     required: true,
   },

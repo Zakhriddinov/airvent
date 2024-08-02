@@ -15,6 +15,9 @@ const routerApp = (entity, controller) => {
   router.route(`/${entity}/listAll`).get(catchErrors(controller['listAll']));
   router.route(`/${entity}/filter`).get(catchErrors(controller['filter']));
   router.route(`/${entity}/summary`).get(catchErrors(controller['summary']));
+
+  router.route(`/${entity}/:year/:month`).get(catchErrors(controller['list']));
+  router.route(`/${entity}/update`).put(catchErrors(controller['update']));
 };
 
 routesList.forEach(({ entity, controllerName }) => {

@@ -15,12 +15,10 @@ const Layouts = () => {
     const { key } = storePersist.get('selectedKey');
     if (key) setSelectedKey(key);
 
-    // Scroll to top on mount
     window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
-    // Scroll to top on route change
     window.scrollTo(0, 0);
   }, [navigate]);
 
@@ -52,7 +50,7 @@ const Layouts = () => {
       <Sidebar
         trigger={null}
         collapsible
-        style={{ background: 'transparent', position: 'fixed', top: 0 }}
+        style={{ background: 'transparent', position: 'fixed', top: 0, height: '100vh' }}
       >
         <LinkLogo onClick={navigateDashboard}>
           <img src={logo} alt="icon" />

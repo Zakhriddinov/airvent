@@ -13,7 +13,7 @@ const remove = async (Model, req, res) => {
     return res.status(400).json({
       success: false,
       result: null,
-      message: "Agara lavozim xodimga bog'langan bo'lsa o'chirib bo'lmaydi!",
+      message: "Agar lavozim xodimga bog'langan bo'lsa o'chirib bo'lmaydi!",
     });
   }
 
