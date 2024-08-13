@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
+  CalendarOutlined,
   CheckCircleOutlined,
   CloseCircleOutlined,
   ExclamationCircleOutlined,
@@ -57,6 +58,8 @@ export const EmployeeAttendance = () => {
         return <CheckCircleOutlined style={{ color: 'green' }} />;
       case 'not-started':
         return <ExclamationCircleOutlined style={{ color: 'orange' }} />;
+      case 'rest':
+        return <CalendarOutlined style={{ color: '#1640d6' }} />;
       default:
         return <ExclamationCircleOutlined style={{ color: 'orange' }} />;
     }
@@ -196,7 +199,7 @@ export const EmployeeAttendance = () => {
         dataSource={dataSource}
         columns={columns}
         pagination={false}
-        scroll={{ x: 'max-content' }}
+        scroll={{ x: 'max-content', y: 600 }}
         style={{ marginBottom: '20px' }}
       />
       <Modal
@@ -216,6 +219,10 @@ export const EmployeeAttendance = () => {
           <Option value="not-started">
             <ExclamationCircleOutlined style={{ color: 'orange', marginRight: 8 }} />
             Hali boshlanmadi
+          </Option>
+          <Option value="rest">
+            <CalendarOutlined style={{ color: '#1640d6', marginRight: 8 }} />
+            Dam olish
           </Option>
           <Option value="present">
             <CheckCircleOutlined style={{ color: 'green', marginRight: 8 }} />

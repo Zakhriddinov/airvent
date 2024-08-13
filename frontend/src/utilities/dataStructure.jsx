@@ -32,7 +32,7 @@ export const dataForRead = ({ fields }) => {
 export function dataForTable({ fields, translate, dateFormat }) {
   let columns = [];
 
-  Object.keys(fields).forEach((key) => {
+  Object.keys(fields).forEach((key, index) => {
     let field = fields[key];
     const keyIndex = field.dataIndex ? field.dataIndex : [key];
 
@@ -180,6 +180,14 @@ export function dataForTable({ fields, translate, dateFormat }) {
           ));
         },
       },
+      index: {
+        title: field.label ? field.label : key,
+        dataIndex: keyIndex,
+        render: (_, record, index) => {
+          return index + 1;
+        },
+      },
+
       // quantity: {
       //   title: field.label ? field.label : key,
       //   dataIndex: keyIndex,

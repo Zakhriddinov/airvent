@@ -11,22 +11,7 @@ const update = async (Model, req, res) => {
       });
     }
 
-    const passiveEmployee = await Employee.findOne({
-      _id: employeeId,
-      enabled: false,
-    }).exec();
-
-    if (passiveEmployee) {
-      return res.status(400).json({
-        success: false,
-        result: null,
-        message: "Xodim status passive bo'lsa o'zgartirib bo'lmaydi!",
-      });
-    }
-
-    const employee = await Employee.findOne({
-      _id: employeeId,
-    }).exec();
+    const employee = await Employee.findOne({ _id: employeeId }).lean();
 
     if (!employee) {
       return res.status(400).json({
@@ -36,22 +21,35 @@ const update = async (Model, req, res) => {
       });
     }
 
+    if (!employee.enabled) {
+      return res.status(400).json({
+        success: false,
+        result: null,
+        message: "Xodim status passive bo'lsa o'zgartirib bo'lmaydi!",
+      });
+    }
+
     const parsedDate = new Date(date);
     const startOfDay = new Date(parsedDate.setUTCHours(0, 0, 0, 0));
     const endOfDay = new Date(parsedDate.setUTCHours(23, 59, 59, 999));
 
-    let attendanceRecord = await Model.findOne({
-      employee: new mongoose.Types.ObjectId(employeeId),
-      date: { $gte: startOfDay, $lt: endOfDay },
-    });
+    let attendanceRecord = await Model.findOneAndUpdate(
+      {
+        employee: new mongoose.Types.ObjectId(employeeId),
+        date: { $gte: startOfDay, $lt: endOfDay },
+      },
+      {
+        $set: {
+          status,
+          earnedAmount,
+          dailyWage: employee.dailyWage,
+          updated: new Date(),
+        },
+      },
+      { new: true }
+    ).lean();
 
-    if (attendanceRecord) {
-      attendanceRecord.status = status;
-      attendanceRecord.earnedAmount = earnedAmount;
-      attendanceRecord.dailyWage = employee.dailyWage;
-      attendanceRecord.updated = new Date();
-      await attendanceRecord.save();
-    } else {
+    if (!attendanceRecord) {
       attendanceRecord = new Model({
         employee: new mongoose.Types.ObjectId(employeeId),
         date: parsedDate,

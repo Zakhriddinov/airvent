@@ -18,7 +18,7 @@ const schema = new mongoose.Schema({
   status: {
     type: String,
     required: true,
-    enum: ['half-day', 'absent', 'present', 'not-started'],
+    enum: ['half-day', 'absent', 'present', 'not-started', 'rest'],
   },
   earnedAmount: {
     type: Number,
