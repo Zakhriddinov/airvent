@@ -1,10 +1,4 @@
 export const fields = {
-  _id: {
-    label: '№',
-    type: 'index',
-    disableForForm: true,
-    disableForUpdate: true,
-  },
   firstname: {
     required: true,
     label: 'Ism',

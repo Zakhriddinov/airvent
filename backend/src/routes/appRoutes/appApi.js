@@ -18,6 +18,7 @@ const routerApp = (entity, controller) => {
 
   router.route(`/${entity}/:year/:month`).get(catchErrors(controller['list']));
   router.route(`/${entity}/update`).put(catchErrors(controller['update']));
+  // router.route(`/${entity}/download-pdf/:year/:month`).get(catchErrors(controller['downloadFile']));
 };
 
 routesList.forEach(({ entity, controllerName }) => {

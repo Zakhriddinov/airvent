@@ -3,6 +3,7 @@ import {
   CalendarOutlined,
   CheckCircleOutlined,
   CloseCircleOutlined,
+  DownloadOutlined,
   ExclamationCircleOutlined,
   MinusCircleOutlined,
 } from '@ant-design/icons';
@@ -14,6 +15,7 @@ import ErpLayout from '@/layout/ErpLayout';
 import { API_BASE_URL } from '@/config/serverApiConfig';
 import { moneyFormatter } from '@/utilities/dataStructure';
 import errorHandler from '@/request/errorHandler';
+import * as XLSX from 'xlsx';
 
 const { Option } = Select;
 
@@ -27,6 +29,11 @@ export const EmployeeAttendance = () => {
   const [newStatus, setNewStatus] = useState('');
   const [amount, setAmount] = useState(0);
   const [statusLoading, setStatusLoading] = useState(false);
+  const [downloadPdfLoading, setDownloadPdfLoading] = useState(false);
+  const [totalSummary, setTotalSummary] = useState({
+    totalSalary: 0,
+    totalEarnedAmount: 0,
+  });
 
   const fetchAttendanceData = async () => {
     setLoading(true);
@@ -35,7 +42,12 @@ export const EmployeeAttendance = () => {
       const response = await axios.get(
         `${API_BASE_URL}attendance/${date.year()}/${date.month() + 1}`
       );
-      setAttendanceData(response.data);
+      const { results, totalSalary, totalEarnedAmount } = response?.data;
+      setAttendanceData(results);
+      setTotalSummary({
+        totalSalary: totalSalary,
+        totalEarnedAmount: totalEarnedAmount,
+      });
     } catch (error) {
       console.error('Error fetching data:', error);
       message.error('Error fetching attendance data.');
@@ -90,6 +102,7 @@ export const EmployeeAttendance = () => {
             setStatusLoading(false);
             return errorHandler(e);
           });
+          
       } catch (error) {
         console.error('Error updating status:', error);
         message.error('Error updating status.');
@@ -106,8 +119,9 @@ export const EmployeeAttendance = () => {
     setModalVisible(true);
   };
 
-  const dataSource = attendance.map((employeeRecord) => ({
+  const dataSource = attendance.map((employeeRecord, index) => ({
     key: employeeRecord.employee._id,
+    index: index + 1,
     employee: `${employeeRecord.employee.firstname} ${employeeRecord.employee.lastname}`,
     enabled: employeeRecord.employee.enabled,
     ...employeeRecord.results.reduce((acc, result, index) => {
@@ -149,6 +163,12 @@ export const EmployeeAttendance = () => {
 
   const columns = [
     {
+      title: '№',
+      dataIndex: 'index',
+      key: 'index',
+      width: 20,
+    },
+    {
       title: 'Ism Familiya',
       dataIndex: 'employee',
       key: 'employee',
@@ -176,6 +196,56 @@ export const EmployeeAttendance = () => {
     },
   ];
 
+  const downloadExcel = () => {
+    const workbook = XLSX.utils.book_new();
+    const worksheet = XLSX.utils.json_to_sheet([]);
+
+    const dates = [
+      ...new Set(attendance.flatMap((employee) => employee.results.map((result) => result.date))),
+    ].sort();
+    // Setting date headers
+    XLSX.utils.sheet_add_aoa(worksheet, [dates], { origin: 'B1' });
+
+    let rowOffset = 2; // Starting row offset after the header
+    attendance.forEach((employee, employeeIndex) => {
+      const baseRow = rowOffset; // Start new employee block from current row offset
+      XLSX.utils.sheet_add_json(
+        worksheet,
+        [
+          {
+            v: `${employee.employee.firstname} ${employee.employee.lastname}`,
+            t: 's',
+          },
+        ],
+        { origin: `A${baseRow}` }
+      );
+
+      dates.forEach((date, colIndex) => {
+        const record = employee.results.find((result) => result.date === date);
+        const statusCell = record ? record.status : 'N/A';
+        const amountCell = record ? record.earnedAmount || 0 : 'N/A';
+        const statusRef = XLSX.utils.encode_cell({ r: baseRow, c: colIndex + 1 });
+        const amountRef = XLSX.utils.encode_cell({ r: baseRow + 1, c: colIndex + 1 });
+        worksheet[statusRef] = { v: statusCell, t: 's' };
+        worksheet[amountRef] = { v: amountCell, t: 'n' }; // use 'n' for numbers to ensure they are right-aligned by default
+      });
+
+      // Increment rowOffset by 2 for next employee (1 for name, 1 for data)
+      rowOffset += 2;
+    });
+
+    // Set column widths
+    const colWidths = [{ wch: 20 }]; // Set first column width for names
+    dates.forEach(() => colWidths.push({ wch: 15 })); // Adjust width for data columns to be smaller
+    worksheet['!cols'] = colWidths;
+
+    // Add worksheet to workbook
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Attendance');
+
+    // Write the workbook and trigger download
+    XLSX.writeFile(workbook, 'Attendance.xlsx');
+  };
+
   return (
     <ErpLayout>
       <PageHeader
@@ -186,6 +256,14 @@ export const EmployeeAttendance = () => {
           padding: '20px 0px',
         }}
         extra={[
+          <Button
+            icon={<DownloadOutlined />}
+            type="primary"
+            loading={downloadPdfLoading}
+            onClick={downloadExcel}
+          >
+            Yuklash
+          </Button>,
           <DatePicker
             key="date-picker"
             defaultValue={dayjs(selectedMonth)}
@@ -201,6 +279,12 @@ export const EmployeeAttendance = () => {
         pagination={false}
         scroll={{ x: 'max-content', y: 600 }}
         style={{ marginBottom: '20px' }}
+        footer={() => (
+          <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 20px' }}>
+            <div>Umumiy beriladigan summa: {moneyFormatter({ amount: totalSummary.totalSalary })}</div>
+            <div>Umumiy berilgan avans: {moneyFormatter({ amount: totalSummary.totalEarnedAmount })}</div>
+          </div>
+        )}
       />
       <Modal
         title="Holat va miqdorni o'zgartirish"

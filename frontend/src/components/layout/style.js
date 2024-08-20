@@ -26,7 +26,7 @@ const Main = styled(Content)`
   margin: 24px 16px;
   padding: 24px;
   min-height: 280px;
-  height: 100vh;
+  height: 100%;
 `;
 
 const LinkLogo = styled.div`
