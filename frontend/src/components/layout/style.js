@@ -25,8 +25,9 @@ const MenuWrap = styled(Menu)`
 const Main = styled(Content)`
   margin: 24px 16px;
   padding: 24px;
-  min-height: 280px;
+  min-height: 100vh;
   height: 100%;
+  /* height: 100%; */
 `;
 
 const LinkLogo = styled.div`
