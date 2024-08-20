@@ -102,7 +102,6 @@ export const EmployeeAttendance = () => {
             setStatusLoading(false);
             return errorHandler(e);
           });
-          
       } catch (error) {
         console.error('Error updating status:', error);
         message.error('Error updating status.');
@@ -186,6 +185,7 @@ export const EmployeeAttendance = () => {
       dataIndex: 'totalEarnedAmount',
       key: 'totalEarnedAmount',
       width: 150,
+      fixed: 'right',
     },
     {
       title: 'Oylik maoshi',
@@ -281,8 +281,12 @@ export const EmployeeAttendance = () => {
         style={{ marginBottom: '20px' }}
         footer={() => (
           <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 20px' }}>
-            <div>Umumiy beriladigan summa: {moneyFormatter({ amount: totalSummary.totalSalary })}</div>
-            <div>Umumiy berilgan avans: {moneyFormatter({ amount: totalSummary.totalEarnedAmount })}</div>
+            <div>
+              Umumiy beriladigan summa: {moneyFormatter({ amount: totalSummary.totalSalary })}
+            </div>
+            <div>
+              Umumiy berilgan avans: {moneyFormatter({ amount: totalSummary.totalEarnedAmount })}
+            </div>
           </div>
         )}
       />
