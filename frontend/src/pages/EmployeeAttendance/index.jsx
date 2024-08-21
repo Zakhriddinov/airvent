@@ -199,12 +199,74 @@ export const EmployeeAttendance = () => {
   const downloadExcel = () => {
     const workbook = XLSX.utils.book_new();
     const worksheet = XLSX.utils.json_to_sheet([]);
+    const date = dayjs(selectedMonth).format('DD.MM.YYYY');
 
     const dates = [
       ...new Set(attendance.flatMap((employee) => employee.results.map((result) => result.date))),
     ].sort();
 
-    // Add header
+    // Add title "Ishlar oylik davomati" at the top and center it
+    const title = [
+      [
+        {
+          v: 'Ishchilar oylik davomati',
+          t: 's',
+          s: {
+            font: { bold: true, sz: 16 },
+            alignment: { horizontal: 'center', vertical: 'center' }, // Center alignment
+          },
+        },
+      ],
+    ];
+    XLSX.utils.sheet_add_aoa(worksheet, title, { origin: 'A1' });
+    worksheet['!merges'] = [{ s: { r: 0, c: 0 }, e: { r: 0, c: dates.length + 5 } }];
+
+    // Add date below the title and center it
+    const dateRow = [
+      [
+        {
+          v: `Sana: ${date}`,
+          t: 's',
+          s: {
+            font: { bold: true, sz: 12 },
+            alignment: { horizontal: 'center', vertical: 'center' }, // Center alignment
+          },
+        },
+      ],
+    ];
+    XLSX.utils.sheet_add_aoa(worksheet, dateRow, { origin: 'A2' });
+    worksheet['!merges'].push({ s: { r: 1, c: 0 }, e: { r: 1, c: dates.length + 5 } });
+
+    // Add total salary and total earned amount below the title and center them
+    const totalsRow = [
+      [
+        {
+          v: `Umumiy berilgan avans: ${totalSummary.totalEarnedAmount}`,
+          t: 's',
+          s: {
+            font: { bold: true, sz: 12 },
+            alignment: { horizontal: 'center', vertical: 'center' },
+          },
+        },
+      ],
+      [
+        {
+          v: `Umumiy beriladigan summa: ${totalSummary.totalSalary}`,
+          t: 's',
+          s: {
+            font: { bold: true, sz: 12 },
+            alignment: { horizontal: 'center', vertical: 'center' },
+          },
+        },
+      ],
+    ];
+    XLSX.utils.sheet_add_aoa(worksheet, totalsRow, { origin: 'A3' });
+    worksheet['!merges'].push(
+      { s: { r: 2, c: 0 }, e: { r: 2, c: dates.length + 5 } }, // Merge cells for Total Earned Amount
+      { s: { r: 3, c: 0 }, e: { r: 3, c: dates.length + 5 } } // Merge cells for Total Salary
+    );
+
+    // Add header after totals
     const header = [
       '№',
       'F.I.SH',
@@ -216,11 +278,9 @@ export const EmployeeAttendance = () => {
       'Olingan avans',
       'Oylik maoshi',
     ];
-    XLSX.utils.sheet_add_aoa(worksheet, [header], { origin: 'A1' });
+    XLSX.utils.sheet_add_aoa(worksheet, [header], { origin: 'A5' });
 
-    let rowOffset = 2;
-    let totalSalary = 0;
-    let totalEarnedAmount = 0;
+    let rowOffset = 6; // Adjust row offset due to the title and totals
 
     attendance.forEach((employee, index) => {
       const rowStatus = [];
@@ -244,19 +304,19 @@ export const EmployeeAttendance = () => {
           let status = '';
           switch (result.status) {
             case 'present':
-              status = '✔'; // Bor
+              status = '✔';
               presentCount++;
               break;
             case 'absent':
-              status = '✘'; // Yo'q
+              status = '✘';
               unexcusedCount++;
               break;
             case 'rest':
-              status = '☀'; // Ta'til
+              status = '☀';
               excusedCount++;
               break;
             case 'half-day':
-              status = '⏱'; // Keçikdi
+              status = '⏱';
               tardyCount++;
               break;
             default:
@@ -266,87 +326,85 @@ export const EmployeeAttendance = () => {
           rowStatus.push({
             v: status,
             t: 's',
-            s: { font: { sz: 10 }, alignment: { horizontal: 'center', vertical: 'center' } },
-          }); // Font size for status
+            s: {
+              font: { sz: 10 },
+              alignment: { horizontal: 'center', vertical: 'center' },
+              border: {
+                top: { style: 'thin' },
+                bottom: { style: 'thin' },
+                left: { style: 'thin' },
+                right: { style: 'thin' },
+              },
+            },
+          });
+
           rowAmount.push({
             v: result.earnedAmount || 0,
             t: 'n',
-            s: { font: { sz: 10 }, numFmt: '#,##0.00' }, // Font size for earned amount
+            s: {
+              font: { sz: 10 },
+              numFmt: '#,##0.00',
+              border: {
+                top: { style: 'thin' },
+                bottom: { style: 'thin' },
+                left: { style: 'thin' },
+                right: { style: 'thin' },
+              },
+            },
           });
         } else {
           rowStatus.push({
             v: 'N/A',
             t: 's',
-            s: { font: { sz: 10 }, alignment: { horizontal: 'center', vertical: 'center' } },
-          }); // Default size for N/A
+            s: {
+              font: { sz: 10 },
+              alignment: { horizontal: 'center', vertical: 'center' },
+              border: {
+                top: { style: 'thin' },
+                bottom: { style: 'thin' },
+                left: { style: 'thin' },
+                right: { style: 'thin' },
+              },
+            },
+          });
           rowAmount.push({
             v: 0,
             t: 'n',
-            s: { font: { sz: 10 }, numFmt: '#,##0.00' }, // Default size for earned amount
+            s: {
+              font: { sz: 10 },
+              numFmt: '#,##0.00',
+              border: {
+                top: { style: 'thin' },
+                bottom: { style: 'thin' },
+                left: { style: 'thin' },
+                right: { style: 'thin' },
+              },
+            },
           });
         }
       });
 
-      // Add totals (✔, ⏰, ✘, ☀)
       rowStatus.push(presentCount);
       rowStatus.push(tardyCount);
       rowStatus.push(unexcusedCount);
       rowStatus.push(excusedCount);
 
-      rowAmount.push(''); // Empty for totals row in earnedAmount row
       rowAmount.push('');
       rowAmount.push('');
       rowAmount.push('');
-
-      // Add Total Earned Amount and Salary columns
-      rowStatus.push({ v: employee.totalEarnedAmount, t: 'n', s: { numFmt: '#,##0.00' } }); // Total Earned Amount with format
-      rowStatus.push({ v: employee.salary, t: 'n', s: { numFmt: '#,##0.00' } }); // Salary with format
-
-      rowAmount.push(''); // Empty in earnedAmount row for totalEarnedAmount and salary
       rowAmount.push('');
 
-      // Update global totals
-      totalSalary += employee.salary;
-      totalEarnedAmount += employee.totalEarnedAmount;
+      rowStatus.push({ v: employee.totalEarnedAmount, t: 'n', s: { numFmt: '#,##0.00' } });
+      rowStatus.push({ v: employee.salary, t: 'n', s: { numFmt: '#,##0.00' } });
 
-      // Add rows to worksheet (status row and earnedAmount row)
+      rowAmount.push('');
+      rowAmount.push('');
+
       XLSX.utils.sheet_add_aoa(worksheet, [rowStatus], { origin: `A${rowOffset}` });
       XLSX.utils.sheet_add_aoa(worksheet, [rowAmount], { origin: `A${rowOffset + 1}` });
 
-      rowOffset += 2; // Move to the next pair of rows
+      rowOffset += 2;
     });
-
-    rowOffset += 3;
-
-    // Add total summary at the bottom, with wider columns
-    const totalRow = [
-      {
-        v: 'Umumiy beriladigan summa:',
-        t: 's',
-        s: { font: { bold: true }, alignment: { horizontal: 'right' } },
-      },
-      {
-        v: totalSalary,
-        t: 'n',
-        s: { numFmt: '#,##0.00', font: { bold: true }, alignment: { horizontal: 'right' } },
-      },
-    ];
-
-    const totalEarnedRow = [
-      {
-        v: 'Umumiy berilgan avans:',
-        t: 's',
-        s: { font: { bold: true }, alignment: { horizontal: 'right' } },
-      },
-      {
-        v: totalEarnedAmount,
-        t: 'n',
-        s: { numFmt: '#,##0.00', font: { bold: true }, alignment: { horizontal: 'right' } },
-      },
-    ];
-
-    XLSX.utils.sheet_add_aoa(worksheet, [totalRow], { origin: `A${rowOffset}` });
-    XLSX.utils.sheet_add_aoa(worksheet, [totalEarnedRow], { origin: `A${rowOffset + 1}` });
 
     const colWidths = [{ wch: 5 }, { wch: 20 }];
     dates.forEach(() => colWidths.push({ wch: 8 }));
@@ -360,9 +418,9 @@ export const EmployeeAttendance = () => {
     }
     worksheet['!rows'] = rowHeights;
 
-    const headerRange = XLSX.utils.decode_range(`A1:${XLSX.utils.encode_col(dates.length + 5)}1`);
+    const headerRange = XLSX.utils.decode_range(`A4:${XLSX.utils.encode_col(dates.length + 5)}4`);
     for (let C = headerRange.s.c; C <= headerRange.e.c; ++C) {
-      const headerCellRef = XLSX.utils.encode_cell({ r: 0, c: C });
+      const headerCellRef = XLSX.utils.encode_cell({ r: 3, c: C });
       if (!worksheet[headerCellRef]) continue;
       worksheet[headerCellRef].s = {
         font: { bold: true },
@@ -370,8 +428,8 @@ export const EmployeeAttendance = () => {
       };
     }
 
-    XLSX.utils.book_append_sheet(workbook, worksheet, 'Attendance');
-    XLSX.writeFile(workbook, 'Attendance.xlsx');
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Davomat');
+    XLSX.writeFile(workbook, `Davomat_${date}.xlsx`);
   };
 
   return (
