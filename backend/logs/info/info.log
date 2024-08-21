@@ -3927,3 +3927,5 @@
 2024-08-20T11:44:15.000Z info: [4m[32mMongoDB connected to: ac-5ybkk28-shard-00-00.9ev8bio.mongodb.net[39m[24m
 2024-08-20T12:17:09.981Z info: [34mExpress running → On PORT : 8888[39m
 2024-08-20T12:17:17.284Z info: [4m[32mMongoDB connected to: ac-5ybkk28-shard-00-00.9ev8bio.mongodb.net[39m[24m
+2024-08-21T09:24:51.824Z info: [34mExpress running → On PORT : 8888[39m
+2024-08-21T09:25:16.047Z info: [4m[32mMongoDB connected to: ac-5ybkk28-shard-00-02.9ev8bio.mongodb.net[39m[24m

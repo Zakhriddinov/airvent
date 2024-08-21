@@ -203,46 +203,147 @@ export const EmployeeAttendance = () => {
     const dates = [
       ...new Set(attendance.flatMap((employee) => employee.results.map((result) => result.date))),
     ].sort();
-    // Setting date headers
-    XLSX.utils.sheet_add_aoa(worksheet, [dates], { origin: 'B1' });
 
-    let rowOffset = 2; // Starting row offset after the header
-    attendance.forEach((employee, employeeIndex) => {
-      const baseRow = rowOffset; // Start new employee block from current row offset
-      XLSX.utils.sheet_add_json(
-        worksheet,
-        [
-          {
-            v: `${employee.employee.firstname} ${employee.employee.lastname}`,
-            t: 's',
-          },
-        ],
-        { origin: `A${baseRow}` }
-      );
+    // Add header
+    const header = [
+      '№',
+      'F.I.SH',
+      ...dates,
+      '✅',
+      '⌛',
+      '❌',
+      '🌞',
+      'Olingan avans',
+      'Oylik maoshi',
+    ];
+    XLSX.utils.sheet_add_aoa(worksheet, [header], { origin: 'A1' });
 
+    let rowOffset = 2; // Starting row after the header
+    let totalSalary = 0;
+    let totalEarnedAmount = 0;
+
+    attendance.forEach((employee, index) => {
+      const rowStatus = []; // Row for attendance status
+      const rowAmount = []; // Row for earned amount
+
+      rowStatus.push(index + 1); // No
+      rowStatus.push(`${employee.employee.firstname} ${employee.employee.lastname}`); // Name
+
+      rowAmount.push(''); // Skip No column in the earnedAmount row
+      rowAmount.push(''); // Skip Name column in the earnedAmount row
+
+      let presentCount = 0,
+        tardyCount = 0,
+        unexcusedCount = 0,
+        excusedCount = 0;
+
+      // Iterate over each date and set attendance status
       dates.forEach((date, colIndex) => {
-        const record = employee.results.find((result) => result.date === date);
-        const statusCell = record ? record.status : 'N/A';
-        const amountCell = record ? record.earnedAmount || 0 : 'N/A';
-        const statusRef = XLSX.utils.encode_cell({ r: baseRow, c: colIndex + 1 });
-        const amountRef = XLSX.utils.encode_cell({ r: baseRow + 1, c: colIndex + 1 });
-        worksheet[statusRef] = { v: statusCell, t: 's' };
-        worksheet[amountRef] = { v: amountCell, t: 'n' }; // use 'n' for numbers to ensure they are right-aligned by default
+        const result = employee.results.find((r) => r.date === date);
+
+        if (result) {
+          let status = '';
+          switch (result.status) {
+            case 'present':
+              status = '✅'; // Bor
+              presentCount++;
+              break;
+            case 'absent':
+              status = '❌'; // Yo'q
+              unexcusedCount++;
+              break;
+            case 'rest':
+              status = '🌞'; // Ta'til
+              excusedCount++;
+              break;
+            case 'half-day':
+              status = '⌛'; // Keçikdi
+              tardyCount++;
+              break;
+            default:
+              status = '🕒';
+          }
+
+          rowStatus.push({
+            v: status,
+            t: 's',
+            s: { font: { sz: 10 }, alignment: { horizontal: 'center', vertical: 'center' } },
+          }); // Font size for status
+          rowAmount.push({
+            v: result.earnedAmount || 0,
+            t: 'n',
+            s: { font: { sz: 10 }, numFmt: '#,##0' }, // Font size for earned amount
+          });
+        } else {
+          rowStatus.push({
+            v: '🕒',
+            t: 's',
+            s: { font: { sz: 10 }, alignment: { horizontal: 'center', vertical: 'center' } },
+          }); // Default size for N/A
+          rowAmount.push({
+            v: 0,
+            t: 'n',
+            s: { font: { sz: 10 }, numFmt: '#,##0' }, // Default size for earned amount
+          });
+        }
       });
 
-      // Increment rowOffset by 2 for next employee (1 for name, 1 for data)
-      rowOffset += 2;
-    });
+      // Add totals (✔, ⏰, ✘, ☀)
+      rowStatus.push(presentCount);
+      rowStatus.push(tardyCount);
+      rowStatus.push(unexcusedCount);
+      rowStatus.push(excusedCount);
 
-    // Set column widths
-    const colWidths = [{ wch: 20 }]; // Set first column width for names
-    dates.forEach(() => colWidths.push({ wch: 15 })); // Adjust width for data columns to be smaller
+      rowAmount.push(''); // Empty for totals row in earnedAmount row
+      rowAmount.push('');
+      rowAmount.push('');
+      rowAmount.push('');
+
+      // Add Total Earned Amount and Salary columns
+      rowStatus.push({ v: employee.totalEarnedAmount, t: 'n', s: { numFmt: '#,##0' } }); // Total Earned Amount with format
+      rowStatus.push({ v: employee.salary, t: 'n', s: { numFmt: '#,##0' } }); // Salary with format
+
+      rowAmount.push(''); // Empty in earnedAmount row for totalEarnedAmount and salary
+      rowAmount.push('');
+
+      // Update global totals
+      totalSalary += employee.salary;
+      totalEarnedAmount += employee.totalEarnedAmount;
+
+      // Add rows to worksheet (status row and earnedAmount row)
+      XLSX.utils.sheet_add_aoa(worksheet, [rowStatus], { origin: `A${rowOffset}` });
+      XLSX.utils.sheet_add_aoa(worksheet, [rowAmount], { origin: `A${rowOffset + 1}` });
+
+      rowOffset += 2; // Move to the next pair of rows
+    });
+    
+
+    // Add column widths for better readability
+    const colWidths = [{ wch: 5 }, { wch: 20 }];
+    dates.forEach(() => colWidths.push({ wch: 8 }));
+    colWidths.push({ wch: 5 }, { wch: 5 }, { wch: 5 }, { wch: 5 });
+    colWidths.push({ wch: 12 }, { wch: 12 });
     worksheet['!cols'] = colWidths;
 
-    // Add worksheet to workbook
-    XLSX.utils.book_append_sheet(workbook, worksheet, 'Attendance');
+    // ** Add row heights **
+    const rowHeights = [];
+    for (let i = 0; i < rowOffset; i++) {
+      rowHeights.push({ hpt: 20 }); // 20 point height for each row
+    }
+    worksheet['!rows'] = rowHeights;
 
-    // Write the workbook and trigger download
+    // Style header (make it bold and grey)
+    const headerRange = XLSX.utils.decode_range(`A1:${XLSX.utils.encode_col(dates.length + 5)}1`);
+    for (let C = headerRange.s.c; C <= headerRange.e.c; ++C) {
+      const headerCellRef = XLSX.utils.encode_cell({ r: 0, c: C });
+      if (!worksheet[headerCellRef]) continue;
+      worksheet[headerCellRef].s = {
+        font: { bold: true },
+        fill: { fgColor: { rgb: 'D3D3D3' } },
+      };
+    }
+
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Attendance');
     XLSX.writeFile(workbook, 'Attendance.xlsx');
   };
 
