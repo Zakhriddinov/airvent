@@ -81,8 +81,8 @@ export default function Header() {
     <Container>
       <Select
         style={{ width: 130 }}
-        defaultValue="1.0.0"
-        options={[{ value: '1.0.0', label: 'v1.0.0 (beta)' }]}
+        defaultValue="2.0.0"
+        options={[{ value: '2.0.0', label: 'v2.0.0 (beta)' }]}
       ></Select>
       {currentAdmin?.role ? (
         <Tag

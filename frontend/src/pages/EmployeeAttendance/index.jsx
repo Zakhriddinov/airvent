@@ -214,6 +214,13 @@ export const EmployeeAttendance = () => {
           s: {
             font: { bold: true, sz: 16 },
             alignment: { horizontal: 'center', vertical: 'center' }, // Center alignment
+            border: {
+              // Black border for title
+              top: { style: 'thin', color: { rgb: '000000' } },
+              bottom: { style: 'thin', color: { rgb: '000000' } },
+              left: { style: 'thin', color: { rgb: '000000' } },
+              right: { style: 'thin', color: { rgb: '000000' } },
+            },
           },
         },
       ],
@@ -230,6 +237,13 @@ export const EmployeeAttendance = () => {
           s: {
             font: { bold: true, sz: 12 },
             alignment: { horizontal: 'center', vertical: 'center' }, // Center alignment
+            border: {
+              // Black border for date
+              top: { style: 'thin', color: { rgb: '000000' } },
+              bottom: { style: 'thin', color: { rgb: '000000' } },
+              left: { style: 'thin', color: { rgb: '000000' } },
+              right: { style: 'thin', color: { rgb: '000000' } },
+            },
           },
         },
       ],
@@ -246,6 +260,13 @@ export const EmployeeAttendance = () => {
           s: {
             font: { bold: true, sz: 12 },
             alignment: { horizontal: 'center', vertical: 'center' },
+            border: {
+              // Black border for totals
+              top: { style: 'thin', color: { rgb: '000000' } },
+              bottom: { style: 'thin', color: { rgb: '000000' } },
+              left: { style: 'thin', color: { rgb: '000000' } },
+              right: { style: 'thin', color: { rgb: '000000' } },
+            },
           },
         },
       ],
@@ -256,6 +277,13 @@ export const EmployeeAttendance = () => {
           s: {
             font: { bold: true, sz: 12 },
             alignment: { horizontal: 'center', vertical: 'center' },
+            border: {
+              // Black border for totals
+              top: { style: 'thin', color: { rgb: '000000' } },
+              bottom: { style: 'thin', color: { rgb: '000000' } },
+              left: { style: 'thin', color: { rgb: '000000' } },
+              right: { style: 'thin', color: { rgb: '000000' } },
+            },
           },
         },
       ],
@@ -330,10 +358,11 @@ export const EmployeeAttendance = () => {
               font: { sz: 10 },
               alignment: { horizontal: 'center', vertical: 'center' },
               border: {
-                top: { style: 'thin' },
-                bottom: { style: 'thin' },
-                left: { style: 'thin' },
-                right: { style: 'thin' },
+                // Black border for cell
+                top: { style: 'thin', color: { rgb: '000000' } },
+                bottom: { style: 'thin', color: { rgb: '000000' } },
+                left: { style: 'thin', color: { rgb: '000000' } },
+                right: { style: 'thin', color: { rgb: '000000' } },
               },
             },
           });
@@ -345,10 +374,11 @@ export const EmployeeAttendance = () => {
               font: { sz: 10 },
               numFmt: '#,##0.00',
               border: {
-                top: { style: 'thin' },
-                bottom: { style: 'thin' },
-                left: { style: 'thin' },
-                right: { style: 'thin' },
+                // Black border for cell
+                top: { style: 'thin', color: { rgb: '000000' } },
+                bottom: { style: 'thin', color: { rgb: '000000' } },
+                left: { style: 'thin', color: { rgb: '000000' } },
+                right: { style: 'thin', color: { rgb: '000000' } },
               },
             },
           });
@@ -360,10 +390,11 @@ export const EmployeeAttendance = () => {
               font: { sz: 10 },
               alignment: { horizontal: 'center', vertical: 'center' },
               border: {
-                top: { style: 'thin' },
-                bottom: { style: 'thin' },
-                left: { style: 'thin' },
-                right: { style: 'thin' },
+                // Black border for cell
+                top: { style: 'thin', color: { rgb: '000000' } },
+                bottom: { style: 'thin', color: { rgb: '000000' } },
+                left: { style: 'thin', color: { rgb: '000000' } },
+                right: { style: 'thin', color: { rgb: '000000' } },
               },
             },
           });
@@ -374,10 +405,11 @@ export const EmployeeAttendance = () => {
               font: { sz: 10 },
               numFmt: '#,##0.00',
               border: {
-                top: { style: 'thin' },
-                bottom: { style: 'thin' },
-                left: { style: 'thin' },
-                right: { style: 'thin' },
+                // Black border for cell
+                top: { style: 'thin', color: { rgb: '000000' } },
+                bottom: { style: 'thin', color: { rgb: '000000' } },
+                left: { style: 'thin', color: { rgb: '000000' } },
+                right: { style: 'thin', color: { rgb: '000000' } },
               },
             },
           });
@@ -394,8 +426,34 @@ export const EmployeeAttendance = () => {
       rowAmount.push('');
       rowAmount.push('');
 
-      rowStatus.push({ v: employee.totalEarnedAmount, t: 'n', s: { numFmt: '#,##0.00' } });
-      rowStatus.push({ v: employee.salary, t: 'n', s: { numFmt: '#,##0.00' } });
+      rowStatus.push({
+        v: employee.totalEarnedAmount,
+        t: 'n',
+        s: {
+          numFmt: '#,##0.00',
+          border: {
+            // Black border for total earned amount
+            top: { style: 'thin', color: { rgb: '000000' } },
+            bottom: { style: 'thin', color: { rgb: '000000' } },
+            left: { style: 'thin', color: { rgb: '000000' } },
+            right: { style: 'thin', color: { rgb: '000000' } },
+          },
+        },
+      });
+      rowStatus.push({
+        v: employee.salary,
+        t: 'n',
+        s: {
+          numFmt: '#,##0.00',
+          border: {
+            // Black border for salary
+            top: { style: 'thin', color: { rgb: '000000' } },
+            bottom: { style: 'thin', color: { rgb: '000000' } },
+            left: { style: 'thin', color: { rgb: '000000' } },
+            right: { style: 'thin', color: { rgb: '000000' } },
+          },
+        },
+      });
 
       rowAmount.push('');
       rowAmount.push('');
@@ -418,13 +476,21 @@ export const EmployeeAttendance = () => {
     }
     worksheet['!rows'] = rowHeights;
 
+    // Add black border to header cells
     const headerRange = XLSX.utils.decode_range(`A4:${XLSX.utils.encode_col(dates.length + 5)}4`);
     for (let C = headerRange.s.c; C <= headerRange.e.c; ++C) {
-      const headerCellRef = XLSX.utils.encode_cell({ r: 3, c: C });
+      const headerCellRef = XLSX.utils.encode_cell({ r: 4, c: C });
       if (!worksheet[headerCellRef]) continue;
       worksheet[headerCellRef].s = {
         font: { bold: true },
         fill: { fgColor: { rgb: 'D3D3D3' } },
+        border: {
+          // Black border for header cells
+          top: { style: 'thin', color: { rgb: '000000' } },
+          bottom: { style: 'thin', color: { rgb: '000000' } },
+          left: { style: 'thin', color: { rgb: '000000' } },
+          right: { style: 'thin', color: { rgb: '000000' } },
+        },
       };
     }
 
