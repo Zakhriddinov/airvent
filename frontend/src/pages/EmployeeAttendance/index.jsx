@@ -209,35 +209,34 @@ export const EmployeeAttendance = () => {
       '№',
       'F.I.SH',
       ...dates,
-      '✅',
-      '⌛',
-      '❌',
-      '🌞',
+      '✔',
+      '⏱',
+      '✘',
+      '☀',
       'Olingan avans',
       'Oylik maoshi',
     ];
     XLSX.utils.sheet_add_aoa(worksheet, [header], { origin: 'A1' });
 
-    let rowOffset = 2; // Starting row after the header
+    let rowOffset = 2;
     let totalSalary = 0;
     let totalEarnedAmount = 0;
 
     attendance.forEach((employee, index) => {
-      const rowStatus = []; // Row for attendance status
-      const rowAmount = []; // Row for earned amount
+      const rowStatus = [];
+      const rowAmount = [];
 
-      rowStatus.push(index + 1); // No
-      rowStatus.push(`${employee.employee.firstname} ${employee.employee.lastname}`); // Name
+      rowStatus.push(index + 1);
+      rowStatus.push(`${employee.employee.firstname} ${employee.employee.lastname}`);
 
-      rowAmount.push(''); // Skip No column in the earnedAmount row
-      rowAmount.push(''); // Skip Name column in the earnedAmount row
+      rowAmount.push('');
+      rowAmount.push('');
 
       let presentCount = 0,
         tardyCount = 0,
         unexcusedCount = 0,
         excusedCount = 0;
 
-      // Iterate over each date and set attendance status
       dates.forEach((date, colIndex) => {
         const result = employee.results.find((r) => r.date === date);
 
@@ -245,23 +244,23 @@ export const EmployeeAttendance = () => {
           let status = '';
           switch (result.status) {
             case 'present':
-              status = '✅'; // Bor
+              status = '✔'; // Bor
               presentCount++;
               break;
             case 'absent':
-              status = '❌'; // Yo'q
+              status = '✘'; // Yo'q
               unexcusedCount++;
               break;
             case 'rest':
-              status = '🌞'; // Ta'til
+              status = '☀'; // Ta'til
               excusedCount++;
               break;
             case 'half-day':
-              status = '⌛'; // Keçikdi
+              status = '⏱'; // Keçikdi
               tardyCount++;
               break;
             default:
-              status = '🕒';
+              status = 'N/A';
           }
 
           rowStatus.push({
@@ -272,18 +271,18 @@ export const EmployeeAttendance = () => {
           rowAmount.push({
             v: result.earnedAmount || 0,
             t: 'n',
-            s: { font: { sz: 10 }, numFmt: '#,##0' }, // Font size for earned amount
+            s: { font: { sz: 10 }, numFmt: '#,##0.00' }, // Font size for earned amount
           });
         } else {
           rowStatus.push({
-            v: '🕒',
+            v: 'N/A',
             t: 's',
             s: { font: { sz: 10 }, alignment: { horizontal: 'center', vertical: 'center' } },
           }); // Default size for N/A
           rowAmount.push({
             v: 0,
             t: 'n',
-            s: { font: { sz: 10 }, numFmt: '#,##0' }, // Default size for earned amount
+            s: { font: { sz: 10 }, numFmt: '#,##0.00' }, // Default size for earned amount
           });
         }
       });
@@ -300,8 +299,8 @@ export const EmployeeAttendance = () => {
       rowAmount.push('');
 
       // Add Total Earned Amount and Salary columns
-      rowStatus.push({ v: employee.totalEarnedAmount, t: 'n', s: { numFmt: '#,##0' } }); // Total Earned Amount with format
-      rowStatus.push({ v: employee.salary, t: 'n', s: { numFmt: '#,##0' } }); // Salary with format
+      rowStatus.push({ v: employee.totalEarnedAmount, t: 'n', s: { numFmt: '#,##0.00' } }); // Total Earned Amount with format
+      rowStatus.push({ v: employee.salary, t: 'n', s: { numFmt: '#,##0.00' } }); // Salary with format
 
       rowAmount.push(''); // Empty in earnedAmount row for totalEarnedAmount and salary
       rowAmount.push('');
@@ -316,23 +315,51 @@ export const EmployeeAttendance = () => {
 
       rowOffset += 2; // Move to the next pair of rows
     });
-    
 
-    // Add column widths for better readability
+    rowOffset += 3;
+
+    // Add total summary at the bottom, with wider columns
+    const totalRow = [
+      {
+        v: 'Umumiy beriladigan summa:',
+        t: 's',
+        s: { font: { bold: true }, alignment: { horizontal: 'right' } },
+      },
+      {
+        v: totalSalary,
+        t: 'n',
+        s: { numFmt: '#,##0.00', font: { bold: true }, alignment: { horizontal: 'right' } },
+      },
+    ];
+
+    const totalEarnedRow = [
+      {
+        v: 'Umumiy berilgan avans:',
+        t: 's',
+        s: { font: { bold: true }, alignment: { horizontal: 'right' } },
+      },
+      {
+        v: totalEarnedAmount,
+        t: 'n',
+        s: { numFmt: '#,##0.00', font: { bold: true }, alignment: { horizontal: 'right' } },
+      },
+    ];
+
+    XLSX.utils.sheet_add_aoa(worksheet, [totalRow], { origin: `A${rowOffset}` });
+    XLSX.utils.sheet_add_aoa(worksheet, [totalEarnedRow], { origin: `A${rowOffset + 1}` });
+
     const colWidths = [{ wch: 5 }, { wch: 20 }];
     dates.forEach(() => colWidths.push({ wch: 8 }));
     colWidths.push({ wch: 5 }, { wch: 5 }, { wch: 5 }, { wch: 5 });
     colWidths.push({ wch: 12 }, { wch: 12 });
     worksheet['!cols'] = colWidths;
 
-    // ** Add row heights **
     const rowHeights = [];
     for (let i = 0; i < rowOffset; i++) {
-      rowHeights.push({ hpt: 20 }); // 20 point height for each row
+      rowHeights.push({ hpt: 20 });
     }
     worksheet['!rows'] = rowHeights;
 
-    // Style header (make it bold and grey)
     const headerRange = XLSX.utils.decode_range(`A1:${XLSX.utils.encode_col(dates.length + 5)}1`);
     for (let C = headerRange.s.c; C <= headerRange.e.c; ++C) {
       const headerCellRef = XLSX.utils.encode_cell({ r: 0, c: C });
