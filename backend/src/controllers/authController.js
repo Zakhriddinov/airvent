@@ -112,7 +112,7 @@ const loginUser = async (req, res, next) => {
     const token = jwt.sign({ id: admin._id }, process.env.JWT_SECRET, {
       expiresIn: req.body.remember ? 365 * 24 + 'h' : '24h',
     });
-    adminPassword.activeTokens.push(token);
+    // adminPassword.activeTokens.push(token);
     await adminPassword.save();
 
     await AdminPassword.findOneAndUpdate(
@@ -124,13 +124,12 @@ const loginUser = async (req, res, next) => {
     ).exec();
 
     res.cookie('token', token, {
-      maxAge: req.body.remember ? 365 * 24 * 60 * 60 * 1000 : null,
+      maxAge: req.body.remember ? 365 * 24 * 60 * 60 * 1000 : 24 * 60 * 60 * 1000, // 1 yil yoki 24 soat
       httpOnly: true,
-      secure: false,
-      path: '/',
-      Partitioned: true,
-      domain: req.hostname,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'Lax',
     });
+
     res.status(200).json({
       message: 'Kirish muvaffaqiyatli amalga oshirildi',
       status: 200,
@@ -189,24 +188,6 @@ const forgotPassword = async (req, res) => {
     result: null,
     message: 'Check your email inbox , to reset your password',
   });
-  // try {
-  //   const admin = await Admin.findOne({ email });
-  //   if (!admin) return res.status(400).json({ message: 'Foydalanuvchi topilmadi', status: 400 });
-
-  //   const resetToken = jwt.sign({ id: admin._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-  //   await AdminPassword.updateOne({ user: admin._id }, { resetToken });
-
-  //   const resetLink = `http://localhost:8888/api/auth/reset-password?token=${resetToken}`;
-  //   const mailContent = `<p>Iltimos, quyidagi havolaga bosing va parolingizni tiklang: <a href="${resetLink}">Parolni tiklash</a></p>`;
-
-  //   await mailer(email, 'Parolni tiklash', mailContent);
-
-  //   res.json({ message: 'Parolni tiklash uchun token emailingizga yuborildi', success: true });
-  // } catch (error) {
-  //   res
-  //     .status(500)
-  //     .json({ message: 'Server xatosi', status: 500, error: error.message, success: false });
-  // }
 };
 
 // Parolni tiklash funksiyasi
@@ -251,38 +232,55 @@ const resetPassword = async (req, res) => {
   }
 };
 
-// Foydalanuvchini tizimdan chiqarish funksiyasi
 const logout = async (req, res) => {
   const token = req.cookies.token;
+  if (!token) {
+    return res.status(400).json({
+      success: false,
+      message: 'Foydalanuvchi tizimga kirmagan',
+    });
+  }
+
   try {
-    const admin = await Admin.findOne();
-    console.log(req);
+    // Admin mavjudligini tekshirish
+    const adminPassword = await AdminPassword.findOne({ user: req.user._id });
+
+    if (!adminPassword) {
+      return res.status(400).json({
+        success: false,
+        message: 'Foydalanuvchi topilmadi yoki tizimga kirmagan',
+      });
+    }
+
+    // Tokenni loggedSessions dan o'chirish
     await AdminPassword.findOneAndUpdate(
-      { user: admin._id },
-      { $pull: { loggedSessions: token } },
-      {
-        new: true,
-      }
+      { user: req.user._id },
+      { $pull: { loggedSessions: token } }, // Tokenni sessiyalardan o'chirish
+      { new: true }
     ).exec();
 
-    res
-      .clearCookie('token', {
-        maxAge: null,
-        sameSite: 'none',
-        httpOnly: true,
-        secure: true,
-        domain: req.hostname,
-        Path: '/',
-      })
-      .json({
-        success: true,
-        result: {},
-        message: 'Successfully logout',
-      });
+    // Tokenni o'chirish uchun cookie'ni tozalash
+    res.clearCookie('token', {
+      maxAge: null,
+      httpOnly: true,
+      secure: true, // Faqat HTTPS orqali ishlab chiqarish muhitida
+      sameSite: 'None', // Bu parametr CORS muhitida ishlatiladi
+      domain: req.hostname, // To'g'ri domenni o'rnatish
+      path: '/', // Cookie barcha yo'llardan o'chiriladi
+    });
+
+    return res.status(200).json({
+      success: true,
+      result: {},
+      message: 'Muvaffaqiyatli tizimdan chiqdingiz',
+    });
   } catch (error) {
-    res
-      .status(500)
-      .json({ message: 'Server xatosi', status: 500, error: error.message, success: false });
+    return res.status(500).json({
+      message: 'Server xatosi',
+      status: 500,
+      error: error.message,
+      success: false,
+    });
   }
 };
 

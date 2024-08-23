@@ -30,11 +30,7 @@ const AdminPasswordSchema = new Schema({
   loggedSessions: {
     type: [String],
     default: [],
-  },
-  activeTokens: {
-    type: [String],
-    default: [],
-  },
+  }
 });
 
 // AdminPasswordSchema.methods.validPassword = function (password) {

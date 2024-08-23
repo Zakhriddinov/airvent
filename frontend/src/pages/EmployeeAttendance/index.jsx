@@ -524,6 +524,7 @@ export const EmployeeAttendance = () => {
           />,
         ]}
       />
+      
       <Table
         loading={loading}
         dataSource={dataSource}
@@ -585,6 +586,7 @@ export const EmployeeAttendance = () => {
           onChange={(e) => setAmount(e)}
         />
       </Modal>
+
     </ErpLayout>
   );
 };

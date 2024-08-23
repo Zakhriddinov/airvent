@@ -6,7 +6,9 @@ import successHandler from '@/request/successHandler';
 
 export const login = async ({ loginData }) => {
   try {
-    const response = await axios.post(API_BASE_URL + `auth/login`, loginData);
+    const response = await axios.post(API_BASE_URL + `auth/login`, loginData, {
+      withCredentials: true,
+    });
     const { status, data } = response;
 
     successHandler(

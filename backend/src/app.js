@@ -5,6 +5,8 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const errorHandlers = require('./handlers/errorHandlers');
 
+const isValidAuthToken = require('./middlewares/isValidAuthToken');
+
 // create our Express app
 const app = express();
 
@@ -26,14 +28,14 @@ const authRoute = require('./routes/authRoute');
 const appRouter = require('./routes/appRoutes/appApi');
 
 app.use('/api/auth', authRoute);
-app.use('/api', appRouter);
+app.use('/api', isValidAuthToken, appRouter);
 
-app.use(express.static(path.join(__dirname, '../../frontend/')));
+// app.use(express.static(path.join(__dirname, '../../frontend/')));
 
 // Barcha yo'nalishlar uchun `index.html` xizmat qilish
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../frontend/', 'index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../../frontend/', 'index.html'));
+// });
 
 // If that above routes didnt work, we 404 them and forward to error handler
 app.use(errorHandlers.notFound);

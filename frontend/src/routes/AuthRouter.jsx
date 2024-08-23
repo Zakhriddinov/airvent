@@ -18,7 +18,7 @@ const AuthRouter = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        {/* <Route element={<Navigate to="/login" replace />} path="/logout" /> */}
+        <Route element={<Navigate to="/login" replace />} path="/logout" />
         <Route path="/forgetpassword" element={<ForgetPassword />} />
         <Route path="/resetpassword/:userId/:shortId" element={<ResetPassword />} />
         <Route path="/" element={<Login />} />
