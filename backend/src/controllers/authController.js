@@ -126,8 +126,11 @@ const loginUser = async (req, res, next) => {
     res.cookie('token', token, {
       maxAge: req.body.remember ? 365 * 24 * 60 * 60 * 1000 : 24 * 60 * 60 * 1000, // 1 yil yoki 24 soat
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
+      secure: false,
       sameSite: 'Lax',
+      domain: req.hostname,
+      path: '/',
+      Partitioned: true,
     });
 
     res.status(200).json({
@@ -242,7 +245,6 @@ const logout = async (req, res) => {
   }
 
   try {
-    // Admin mavjudligini tekshirish
     const adminPassword = await AdminPassword.findOne({ user: req.user._id });
 
     if (!adminPassword) {
@@ -252,24 +254,22 @@ const logout = async (req, res) => {
       });
     }
 
-    // Tokenni loggedSessions dan o'chirish
     await AdminPassword.findOneAndUpdate(
       { user: req.user._id },
-      { $pull: { loggedSessions: token } }, // Tokenni sessiyalardan o'chirish
+      { $pull: { loggedSessions: token } },
       { new: true }
     ).exec();
 
-    // Tokenni o'chirish uchun cookie'ni tozalash
     res.clearCookie('token', {
       maxAge: null,
       httpOnly: true,
-      secure: true, // Faqat HTTPS orqali ishlab chiqarish muhitida
-      sameSite: 'None', // Bu parametr CORS muhitida ishlatiladi
-      domain: req.hostname, // To'g'ri domenni o'rnatish
-      path: '/', // Cookie barcha yo'llardan o'chiriladi
+      secure: true,
+      sameSite: 'none',
+      domain: req.hostname,
+      Path: '/',
     });
 
-    return res.status(200).json({
+    return res.json({
       success: true,
       result: {},
       message: 'Muvaffaqiyatli tizimdan chiqdingiz',
