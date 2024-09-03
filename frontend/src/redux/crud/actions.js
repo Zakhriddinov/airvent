@@ -196,7 +196,6 @@ export const crud = {
         });
       }
     },
-
   search:
     ({ entity, options = {} }) =>
     async (dispatch) => {
@@ -221,5 +220,5 @@ export const crud = {
           payload: null,
         });
       }
-    },
+    }
 };

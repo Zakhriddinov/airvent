@@ -18,7 +18,7 @@ import { login } from '@/redux/auth/actions';
 import { Loading } from '@/shared/components';
 
 const Login = () => {
-  const { isLoading, isSuccess } = useSelector(selectAuth);
+  const { isLoading, isSuccess, isLoggedIn } = useSelector(selectAuth);
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -28,7 +28,7 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if (isSuccess) navigate('/product');
+    if (isSuccess) navigate('/');
   }, [isSuccess]);
 
   return (

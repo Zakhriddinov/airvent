@@ -50,6 +50,7 @@ const list = async (Model, req, res) => {
             date: formattedDate,
             status: record.status,
             earnedAmount: record.earnedAmount,
+            closed: record?.closed,
           });
 
           if (record.status === 'present') {
@@ -68,6 +69,7 @@ const list = async (Model, req, res) => {
             date: formattedDate,
             status,
             earnedAmount: 0,
+            closed: false,
           });
         }
       }

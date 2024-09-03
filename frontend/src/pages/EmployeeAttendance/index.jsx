@@ -3,8 +3,10 @@ import {
   CalendarOutlined,
   CheckCircleOutlined,
   CloseCircleOutlined,
+  CloseOutlined,
   DownloadOutlined,
   ExclamationCircleOutlined,
+  IssuesCloseOutlined,
   MinusCircleOutlined,
 } from '@ant-design/icons';
 import { PageHeader } from '@ant-design/pro-layout';
@@ -34,6 +36,7 @@ export const EmployeeAttendance = () => {
     totalSalary: 0,
     totalEarnedAmount: 0,
   });
+  const [closeLoading, setCloseLoading] = useState(false);
 
   const fetchAttendanceData = async () => {
     setLoading(true);
@@ -129,7 +132,7 @@ export const EmployeeAttendance = () => {
           <Radio.Group
             value={result.status}
             style={{ marginBottom: '20px' }}
-            disabled={!employeeRecord.employee.enabled}
+            disabled={!employeeRecord.employee.enabled || result?.closed}
           >
             <Radio.Button
               value={result.status}
@@ -166,6 +169,7 @@ export const EmployeeAttendance = () => {
       dataIndex: 'index',
       key: 'index',
       width: 20,
+      fixed: 'left',
     },
     {
       title: 'Ism Familiya',
@@ -199,303 +203,142 @@ export const EmployeeAttendance = () => {
   const downloadExcel = () => {
     const workbook = XLSX.utils.book_new();
     const worksheet = XLSX.utils.json_to_sheet([]);
-    const date = dayjs(selectedMonth).format('DD.MM.YYYY');
 
-    const dates = [
-      ...new Set(attendance.flatMap((employee) => employee.results.map((result) => result.date))),
-    ].sort();
+    // Common styles
+    const borderStyle = {
+      top: { style: 'thin', color: { rgb: '000000' } },
+      bottom: { style: 'thin', color: { rgb: '000000' } },
+      left: { style: 'thin', color: { rgb: '000000' } },
+      right: { style: 'thin', color: { rgb: '000000' } },
+    };
 
-    // Add title "Ishlar oylik davomati" at the top and center it
-    const title = [
-      [
-        {
-          v: 'Ishchilar oylik davomati',
-          t: 's',
-          s: {
-            font: { bold: true, sz: 16 },
-            alignment: { horizontal: 'center', vertical: 'center' }, // Center alignment
-            border: {
-              // Black border for title
-              top: { style: 'thin', color: { rgb: '000000' } },
-              bottom: { style: 'thin', color: { rgb: '000000' } },
-              left: { style: 'thin', color: { rgb: '000000' } },
-              right: { style: 'thin', color: { rgb: '000000' } },
-            },
-          },
-        },
-      ],
+    const cellStyle = {
+      alignment: { horizontal: 'center', vertical: 'center' },
+      border: borderStyle,
+      numFmt: '#,##0', // Format for numbers
+    };
+
+    // Title style
+    const titleStyle = {
+      ...cellStyle,
+      font: { bold: true, sz: 16 },
+    };
+
+    // Add title
+    const title = [{ v: 'Ishchilar oylik davomati', t: 's', s: titleStyle }];
+    XLSX.utils.sheet_add_aoa(worksheet, [title], { origin: 'A1' });
+    worksheet['!merges'] = [{ s: { r: 0, c: 0 }, e: { r: 0, c: 7 } }];
+
+    // Add total earned amount
+    const totalEarnedAmountRow = [
+      {
+        v: `Umumiy berilgan avans: ${totalSummary.totalEarnedAmount}`,
+        t: 's',
+        s: { ...cellStyle, font: { bold: true, sz: 12 } },
+      },
     ];
-    XLSX.utils.sheet_add_aoa(worksheet, title, { origin: 'A1' });
-    worksheet['!merges'] = [{ s: { r: 0, c: 0 }, e: { r: 0, c: dates.length + 5 } }];
+    XLSX.utils.sheet_add_aoa(worksheet, [totalEarnedAmountRow], { origin: 'A2' });
+    worksheet['!merges'].push({ s: { r: 1, c: 0 }, e: { r: 1, c: 7 } });
 
-    // Add date below the title and center it
-    const dateRow = [
-      [
-        {
-          v: `Sana: ${date}`,
-          t: 's',
-          s: {
-            font: { bold: true, sz: 12 },
-            alignment: { horizontal: 'center', vertical: 'center' }, // Center alignment
-            border: {
-              // Black border for date
-              top: { style: 'thin', color: { rgb: '000000' } },
-              bottom: { style: 'thin', color: { rgb: '000000' } },
-              left: { style: 'thin', color: { rgb: '000000' } },
-              right: { style: 'thin', color: { rgb: '000000' } },
-            },
-          },
-        },
-      ],
+    // Add total salary row below the total earned amount
+    const totalSalaryRow = [
+      {
+        v: `Umumiy beriladigan summa: ${totalSummary.totalSalary}`,
+        t: 's',
+        s: { ...cellStyle, font: { bold: true, sz: 12 } },
+      },
     ];
-    XLSX.utils.sheet_add_aoa(worksheet, dateRow, { origin: 'A2' });
-    worksheet['!merges'].push({ s: { r: 1, c: 0 }, e: { r: 1, c: dates.length + 5 } });
+    XLSX.utils.sheet_add_aoa(worksheet, [totalSalaryRow], { origin: 'A3' });
+    worksheet['!merges'].push({ s: { r: 2, c: 0 }, e: { r: 2, c: 7 } });
 
-    // Add total salary and total earned amount below the title and center them
-    const totalsRow = [
-      [
-        {
-          v: `Umumiy berilgan avans: ${totalSummary.totalEarnedAmount}`,
-          t: 's',
-          s: {
-            font: { bold: true, sz: 12 },
-            alignment: { horizontal: 'center', vertical: 'center' },
-            border: {
-              // Black border for totals
-              top: { style: 'thin', color: { rgb: '000000' } },
-              bottom: { style: 'thin', color: { rgb: '000000' } },
-              left: { style: 'thin', color: { rgb: '000000' } },
-              right: { style: 'thin', color: { rgb: '000000' } },
-            },
-          },
-        },
-      ],
-      [
-        {
-          v: `Umumiy beriladigan summa: ${totalSummary.totalSalary}`,
-          t: 's',
-          s: {
-            font: { bold: true, sz: 12 },
-            alignment: { horizontal: 'center', vertical: 'center' },
-            border: {
-              // Black border for totals
-              top: { style: 'thin', color: { rgb: '000000' } },
-              bottom: { style: 'thin', color: { rgb: '000000' } },
-              left: { style: 'thin', color: { rgb: '000000' } },
-              right: { style: 'thin', color: { rgb: '000000' } },
-            },
-          },
-        },
-      ],
-    ];
-    XLSX.utils.sheet_add_aoa(worksheet, totalsRow, { origin: 'A3' });
-    worksheet['!merges'].push(
-      { s: { r: 2, c: 0 }, e: { r: 2, c: dates.length + 5 } }, // Merge cells for Total Earned Amount
-      { s: { r: 3, c: 0 }, e: { r: 3, c: dates.length + 5 } } // Merge cells for Total Salary
-    );
+    // Headers
+    const headers = ['№', 'F.I.SH', '✔', '⏱', '✘', '☀', 'Olingan avans', 'Oylik maoshi'];
+    const headerRow = headers.map((h) => ({ v: h, t: 's', s: cellStyle }));
+    XLSX.utils.sheet_add_aoa(worksheet, [headerRow], { origin: 'A4' });
 
-    // Add header after totals
-    const header = [
-      '№',
-      'F.I.SH',
-      ...dates,
-      '✔',
-      '⏱',
-      '✘',
-      '☀',
-      'Olingan avans',
-      'Oylik maoshi',
-    ];
-    XLSX.utils.sheet_add_aoa(worksheet, [header], { origin: 'A5' });
+    let rowOffset = 5; // Start data from row 5
 
-    let rowOffset = 6; // Adjust row offset due to the title and totals
-
+    // Data rows
     attendance.forEach((employee, index) => {
-      const rowStatus = [];
-      const rowAmount = [];
-
-      rowStatus.push(index + 1);
-      rowStatus.push(`${employee.employee.firstname} ${employee.employee.lastname}`);
-
-      rowAmount.push('');
-      rowAmount.push('');
+      let dataRow = [
+        { v: index + 1, t: 'n', s: cellStyle },
+        { v: `${employee.employee.firstname} ${employee.employee.lastname}`, t: 's', s: cellStyle },
+      ];
 
       let presentCount = 0,
         tardyCount = 0,
         unexcusedCount = 0,
         excusedCount = 0;
-
-      dates.forEach((date, colIndex) => {
-        const result = employee.results.find((r) => r.date === date);
-
-        if (result) {
-          let status = '';
-          switch (result.status) {
-            case 'present':
-              status = '✔';
-              presentCount++;
-              break;
-            case 'absent':
-              status = '✘';
-              unexcusedCount++;
-              break;
-            case 'rest':
-              status = '☀';
-              excusedCount++;
-              break;
-            case 'half-day':
-              status = '⏱';
-              tardyCount++;
-              break;
-            default:
-              status = 'N/A';
-          }
-
-          rowStatus.push({
-            v: status,
-            t: 's',
-            s: {
-              font: { sz: 10 },
-              alignment: { horizontal: 'center', vertical: 'center' },
-              border: {
-                // Black border for cell
-                top: { style: 'thin', color: { rgb: '000000' } },
-                bottom: { style: 'thin', color: { rgb: '000000' } },
-                left: { style: 'thin', color: { rgb: '000000' } },
-                right: { style: 'thin', color: { rgb: '000000' } },
-              },
-            },
-          });
-
-          rowAmount.push({
-            v: result.earnedAmount || 0,
-            t: 'n',
-            s: {
-              font: { sz: 10 },
-              numFmt: '#,##0.00',
-              border: {
-                // Black border for cell
-                top: { style: 'thin', color: { rgb: '000000' } },
-                bottom: { style: 'thin', color: { rgb: '000000' } },
-                left: { style: 'thin', color: { rgb: '000000' } },
-                right: { style: 'thin', color: { rgb: '000000' } },
-              },
-            },
-          });
-        } else {
-          rowStatus.push({
-            v: 'N/A',
-            t: 's',
-            s: {
-              font: { sz: 10 },
-              alignment: { horizontal: 'center', vertical: 'center' },
-              border: {
-                // Black border for cell
-                top: { style: 'thin', color: { rgb: '000000' } },
-                bottom: { style: 'thin', color: { rgb: '000000' } },
-                left: { style: 'thin', color: { rgb: '000000' } },
-                right: { style: 'thin', color: { rgb: '000000' } },
-              },
-            },
-          });
-          rowAmount.push({
-            v: 0,
-            t: 'n',
-            s: {
-              font: { sz: 10 },
-              numFmt: '#,##0.00',
-              border: {
-                // Black border for cell
-                top: { style: 'thin', color: { rgb: '000000' } },
-                bottom: { style: 'thin', color: { rgb: '000000' } },
-                left: { style: 'thin', color: { rgb: '000000' } },
-                right: { style: 'thin', color: { rgb: '000000' } },
-              },
-            },
-          });
+      employee.results.forEach((result) => {
+        switch (result.status) {
+          case 'present':
+            presentCount += 1;
+            break;
+          case 'half-day':
+            tardyCount += 1;
+            presentCount += 0.5;
+            break;
+          case 'absent':
+            unexcusedCount += 1;
+            break;
+          case 'rest':
+            excusedCount += 1;
+            break;
         }
       });
 
-      rowStatus.push(presentCount);
-      rowStatus.push(tardyCount);
-      rowStatus.push(unexcusedCount);
-      rowStatus.push(excusedCount);
+      dataRow = dataRow.concat([
+        { v: presentCount, t: 'n', s: cellStyle },
+        { v: tardyCount, t: 'n', s: cellStyle },
+        { v: unexcusedCount, t: 'n', s: cellStyle },
+        { v: excusedCount, t: 'n', s: cellStyle },
+        { v: employee.totalEarnedAmount, t: 'n', s: cellStyle },
+        { v: employee.salary, t: 'n', s: cellStyle },
+      ]);
 
-      rowAmount.push('');
-      rowAmount.push('');
-      rowAmount.push('');
-      rowAmount.push('');
-
-      rowStatus.push({
-        v: employee.totalEarnedAmount,
-        t: 'n',
-        s: {
-          numFmt: '#,##0.00',
-          border: {
-            // Black border for total earned amount
-            top: { style: 'thin', color: { rgb: '000000' } },
-            bottom: { style: 'thin', color: { rgb: '000000' } },
-            left: { style: 'thin', color: { rgb: '000000' } },
-            right: { style: 'thin', color: { rgb: '000000' } },
-          },
-        },
-      });
-      rowStatus.push({
-        v: employee.salary,
-        t: 'n',
-        s: {
-          numFmt: '#,##0.00',
-          border: {
-            // Black border for salary
-            top: { style: 'thin', color: { rgb: '000000' } },
-            bottom: { style: 'thin', color: { rgb: '000000' } },
-            left: { style: 'thin', color: { rgb: '000000' } },
-            right: { style: 'thin', color: { rgb: '000000' } },
-          },
-        },
-      });
-
-      rowAmount.push('');
-      rowAmount.push('');
-
-      XLSX.utils.sheet_add_aoa(worksheet, [rowStatus], { origin: `A${rowOffset}` });
-      XLSX.utils.sheet_add_aoa(worksheet, [rowAmount], { origin: `A${rowOffset + 1}` });
-
-      rowOffset += 2;
+      XLSX.utils.sheet_add_aoa(worksheet, [dataRow], { origin: `A${rowOffset}` });
+      rowOffset++; // Move to the next row
     });
 
-    const colWidths = [{ wch: 5 }, { wch: 20 }];
-    dates.forEach(() => colWidths.push({ wch: 8 }));
-    colWidths.push({ wch: 5 }, { wch: 5 }, { wch: 5 }, { wch: 5 });
-    colWidths.push({ wch: 12 }, { wch: 12 });
-    worksheet['!cols'] = colWidths;
-
-    const rowHeights = [];
-    for (let i = 0; i < rowOffset; i++) {
-      rowHeights.push({ hpt: 20 });
-    }
-    worksheet['!rows'] = rowHeights;
-
-    // Add black border to header cells
-    const headerRange = XLSX.utils.decode_range(`A4:${XLSX.utils.encode_col(dates.length + 5)}4`);
-    for (let C = headerRange.s.c; C <= headerRange.e.c; ++C) {
-      const headerCellRef = XLSX.utils.encode_cell({ r: 4, c: C });
-      if (!worksheet[headerCellRef]) continue;
-      worksheet[headerCellRef].s = {
-        font: { bold: true },
-        fill: { fgColor: { rgb: 'D3D3D3' } },
-        border: {
-          // Black border for header cells
-          top: { style: 'thin', color: { rgb: '000000' } },
-          bottom: { style: 'thin', color: { rgb: '000000' } },
-          left: { style: 'thin', color: { rgb: '000000' } },
-          right: { style: 'thin', color: { rgb: '000000' } },
-        },
-      };
-    }
+    // Column widths
+    worksheet['!cols'] = [
+      { wch: 5 },
+      { wch: 20 },
+      { wch: 5 },
+      { wch: 5 },
+      { wch: 5 },
+      { wch: 5 },
+      { wch: 12 },
+      { wch: 12 },
+    ];
 
     XLSX.utils.book_append_sheet(workbook, worksheet, 'Davomat');
-    XLSX.writeFile(workbook, `Davomat_${date}.xlsx`);
+    XLSX.writeFile(workbook, `Davomat.xlsx`);
+  };
+
+  const closeMonth = async () => {
+    setCloseLoading(true);
+    try {
+      const date = dayjs(selectedMonth);
+      const response = await axios
+        .post(`${API_BASE_URL}attendance/close-month`, {
+          year: date.year(),
+          month: date.month() + 1,
+        })
+        .then((res) => {
+          message.success('Muvaffaqiyatli yopildi!');
+          fetchAttendanceData();
+          setCloseLoading(false);
+        })
+        .catch((e) => {
+          setCloseLoading(false);
+          return errorHandler(e);
+        });
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      message.error('Error fetching attendance data.');
+      setCloseLoading(false);
+    }
   };
 
   return (
@@ -509,13 +352,18 @@ export const EmployeeAttendance = () => {
         }}
         extra={[
           <Button
+            type="primary"
+            danger
+            icon={<IssuesCloseOutlined />}
+            onClick={closeMonth}
+            loading={closeLoading}
+          ></Button>,
+          <Button
             icon={<DownloadOutlined />}
             type="primary"
             loading={downloadPdfLoading}
             onClick={downloadExcel}
-          >
-            Yuklash
-          </Button>,
+          ></Button>,
           <DatePicker
             key="date-picker"
             defaultValue={dayjs(selectedMonth)}
@@ -524,7 +372,7 @@ export const EmployeeAttendance = () => {
           />,
         ]}
       />
-      
+
       <Table
         loading={loading}
         dataSource={dataSource}
@@ -586,7 +434,6 @@ export const EmployeeAttendance = () => {
           onChange={(e) => setAmount(e)}
         />
       </Modal>
-
     </ErpLayout>
   );
 };
