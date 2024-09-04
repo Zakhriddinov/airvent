@@ -370,6 +370,17 @@ function FormElement({ field, feedback, setFeedback }) {
         // addonBefore={money.currency_position === 'before' ? money.currency_symbol : undefined}
       />
     ),
+    currencyDollar: (
+      <InputNumber
+        className="moneyInput"
+        min={0}
+        controls={false}
+        addonBefore={'$'}
+        style={{ width: '100%' }}
+        // formatter={(value) => moneyDollarFormatter({ amount: value })}
+        parser={(value) => value.replace(/\$\s?|(,*)/g, '')} // Removes the formatting to get the numeric value
+      />
+    ),
     quantity: <InputWithUnitComponent />,
   };
 

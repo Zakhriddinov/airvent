@@ -31,12 +31,12 @@ export const fields = {
   },
   price: {
     required: true,
-    label: 'Narxi (so`m)',
-    type: 'currency',
+    label: 'Narx',
+    type: 'currencyDollar',
   },
   totalPrice: {
-    type: 'currency',
-    label: "Umumiy narxi (so'm)",
+    type: 'currencyDollar',
+    label: "Umumiy narx",
     disableForForm: true,
     disableForUpdate: true,
   },

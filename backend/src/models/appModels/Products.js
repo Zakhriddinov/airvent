@@ -9,10 +9,7 @@ const schema = mongoose.Schema({
     type: Boolean,
     default: true,
   },
-  code: {autopopulate: true,
-    type: Number,
-    required: true,
-  },
+  code: { autopopulate: true, type: Number, required: true },
   productCategory: {
     type: mongoose.Schema.ObjectId,
     ref: 'ProductCategory',

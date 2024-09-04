@@ -14,6 +14,14 @@ export const moneyFormatter = ({ amount, currency_code = 'UZS' }) => {
     .replace(currency_code, 'UZS');
 };
 
+export const moneyDollarFormatter = ({ amount }) => {
+  return new Intl.NumberFormat('uz-UZ', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 0,
+  }).format(amount);
+};
+
 export const dataForRead = ({ fields }) => {
   let columns = [];
 
@@ -79,6 +87,19 @@ export function dataForTable({ fields, translate, dateFormat }) {
           };
         },
         render: (_, record) => moneyFormatter({ amount: record[key], currency_code: 'UZS' }),
+      },
+      currencyDollar: {
+        title: field.label ? field.label : key,
+        dataIndex: keyIndex,
+        onCell: () => {
+          return {
+            style: {
+              textAlign: 'right',
+              whiteSpace: 'nowrap',
+            },
+          };
+        },
+        render: (_, record) => moneyDollarFormatter({ amount: record[key], currency_code: 'UZS' }),
       },
       async: {
         title: field.label ? field.label : key,
