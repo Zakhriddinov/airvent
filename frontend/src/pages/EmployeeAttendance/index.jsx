@@ -155,8 +155,16 @@ export const EmployeeAttendance = () => {
       );
       return acc;
     }, {}),
-    totalEarnedAmount: moneyFormatter({ amount: employeeRecord.totalEarnedAmount }),
-    salary: moneyFormatter({ amount: employeeRecord.salary }),
+    totalEarnedAmount: (
+      <div style={employeeRecord.totalEarnedAmount < 0 ? { color: 'red' } : {}}>
+        {moneyFormatter({ amount: employeeRecord.totalEarnedAmount })}
+      </div>
+    ),
+    salary: (
+      <div style={employeeRecord.salary < 0 ? { color: 'red' } : {}}>
+        {moneyFormatter({ amount: employeeRecord.salary })}
+      </div>
+    ),
   }));
 
   const allDates = attendance.length
@@ -188,7 +196,7 @@ export const EmployeeAttendance = () => {
       title: 'Umumiy olingan avans',
       dataIndex: 'totalEarnedAmount',
       key: 'totalEarnedAmount',
-      width: 150,
+      width: 160,
       fixed: 'right',
     },
     {
@@ -196,7 +204,7 @@ export const EmployeeAttendance = () => {
       dataIndex: 'salary',
       key: 'salary',
       fixed: 'right',
-      width: 150,
+      width: 160,
     },
   ];
 

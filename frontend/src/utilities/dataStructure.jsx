@@ -76,8 +76,13 @@ export function dataForTable({ fields, translate, dateFormat }) {
             },
           };
         },
-        render: (_, record) =>
-          moneyFormatter({ amount: record[key], currency_code: record.currency }),
+        render: (_, record) => {
+          return (
+            <div style={record[key] < 0 ? { color: 'red' } : {}}>
+              {moneyFormatter({ amount: record[key], currency_code: record.currency })}
+            </div>
+          );
+        },
       },
       async: {
         title: field.label ? field.label : key,
