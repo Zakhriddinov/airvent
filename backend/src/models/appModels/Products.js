@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const schema = mongoose.Schema({
+const schema = new mongoose.Schema({
   removed: {
     type: Boolean,
     default: false,
@@ -14,6 +14,11 @@ const schema = mongoose.Schema({
     type: mongoose.Schema.ObjectId,
     ref: 'ProductCategory',
     required: true,
+    autopopulate: true,
+  },
+  supplier: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'Supplier',
     autopopulate: true,
   },
   name: {
@@ -72,6 +77,13 @@ const schema = mongoose.Schema({
   },
   totalPrice: {
     type: Number,
+  },
+  currency: {
+    type: String,
+    enum: ['UZS', 'USD'],
+    default: 'UZS',
+    required: true,
+    uppercase: true,
   },
 });
 

@@ -8,17 +8,7 @@ export const moneyFormatter = ({ amount, currency_code = 'UZS' }) => {
   return new Intl.NumberFormat('uz-UZ', {
     style: 'currency',
     currency: currency_code,
-    minimumFractionDigits: 0,
-  })
-    .format(amount)
-    .replace(currency_code, 'UZS');
-};
-
-export const moneyDollarFormatter = ({ amount }) => {
-  return new Intl.NumberFormat('uz-UZ', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 0,
+    minimumFractionDigits: 2, // To display up to two decimal places for cents
   }).format(amount);
 };
 
@@ -86,20 +76,8 @@ export function dataForTable({ fields, translate, dateFormat }) {
             },
           };
         },
-        render: (_, record) => moneyFormatter({ amount: record[key], currency_code: 'UZS' }),
-      },
-      currencyDollar: {
-        title: field.label ? field.label : key,
-        dataIndex: keyIndex,
-        onCell: () => {
-          return {
-            style: {
-              textAlign: 'right',
-              whiteSpace: 'nowrap',
-            },
-          };
-        },
-        render: (_, record) => moneyDollarFormatter({ amount: record[key], currency_code: 'UZS' }),
+        render: (_, record) =>
+          moneyFormatter({ amount: record[key], currency_code: record.currency }),
       },
       async: {
         title: field.label ? field.label : key,

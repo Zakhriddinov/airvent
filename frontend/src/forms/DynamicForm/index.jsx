@@ -9,7 +9,6 @@ import { generate as uniqueId } from 'shortid';
 
 // import { countryList } from '@/utils/countryList';
 // import { selectLangDirection } from '@/redux/translate/selectors';
-import { useSelector } from 'react-redux';
 
 export default function DynamicForm({ fields, isUpdateForm = false }) {
   const [feedback, setFeedback] = useState();
@@ -314,6 +313,69 @@ function FormElement({ field, feedback, setFeedback }) {
     );
   };
 
+  const CurrencyInput = () => {
+    const [currency, setCurrency] = useState('UZS');
+
+    // const handleCurrencyChange = (value) => {
+    //   setCurrency(value);
+    // };
+
+    return (
+      <div>
+        <Form.Item label={field.label} style={{ marginBottom: 0 }}>
+          <Form.Item
+            name={field.name}
+            rules={[
+              {
+                required: field.required || false,
+                type: filedType[field.type] ?? 'any',
+              },
+            ]}
+            style={{ display: 'inline-block', width: 'calc(70% - 8px)' }}
+          >
+            <InputNumber
+              className="moneyInput"
+              min={0}
+              controls={false}
+              // addonBefore={currency === 'USD' ? '$' : 'UZS'}
+              style={{ width: '100%' }}
+              formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+              parser={(value) => value.replace(/\$\s?|UZS|,/g, '')}
+            />
+          </Form.Item>
+          <Form.Item
+            name={`currency`}
+            initialValue={currency}
+            style={{ display: 'inline-block', width: 'calc(30% - 8px)', marginLeft: '8px' }}
+          >
+            <Select defaultValue="UZS" onChange={setCurrency} style={{ width: '100%' }}>
+              <Select.Option value="UZS">🇺🇿 UZS (UZB So'm)</Select.Option>
+              <Select.Option value="USD">🇺🇸 $ (US Dollar)</Select.Option>
+            </Select>
+          </Form.Item>
+        </Form.Item>
+
+        {/* <Select
+          defaultValue="UZS"
+          style={{ width: 90, marginRight: 10 }}
+          onChange={handleCurrencyChange}
+        >
+          <Option value="UZS">UZS</Option>
+          <Option value="USD">USD</Option>
+        </Select>
+        <InputNumber
+          className="moneyInput"
+          min={0}
+          controls={false}
+          // addonBefore={currency === 'USD' ? '$' : 'UZS'}
+          style={{ width: '100%' }}
+          formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+          parser={(value) => value.replace(/\$\s?|UZS|,/g, '')}
+        /> */}
+      </div>
+    );
+  };
+
   const formItemComponent = {
     select: <SelectComponent />,
     selectWithTranslation: <SelectWithTranslationComponent />,
@@ -327,6 +389,7 @@ function FormElement({ field, feedback, setFeedback }) {
     // country: <CountryComponent />,
     // search: <SearchComponent />,
     quantity: <InputWithUnitComponent />,
+    currency: <CurrencyInput />,
   };
 
   const compunedComponent = {
@@ -360,27 +423,23 @@ function FormElement({ field, feedback, setFeedback }) {
       ></SelectAsync>
     ),
 
-    currency: (
-      <InputNumber
-        className="moneyInput"
-        min={0}
-        controls={false}
-        addonBefore={'UZS'}
-        style={{ width: '100%' }}
-        // addonBefore={money.currency_position === 'before' ? money.currency_symbol : undefined}
-      />
+    currencySelect: (
+      <Select defaultValue="UZS" style={{ width: '100%' }}>
+        <Select.Option value="UZS">🇺🇿 UZS (UZB So'm)</Select.Option>
+        <Select.Option value="USD">🇺🇸 $ (US Dollar)</Select.Option>
+      </Select>
     ),
-    currencyDollar: (
-      <InputNumber
-        className="moneyInput"
-        min={0}
-        controls={false}
-        addonBefore={'$'}
-        style={{ width: '100%' }}
-        // formatter={(value) => moneyDollarFormatter({ amount: value })}
-        parser={(value) => value.replace(/\$\s?|(,*)/g, '')} // Removes the formatting to get the numeric value
-      />
-    ),
+    // currencyDollar: (
+    //   <InputNumber
+    //     className="moneyInput"
+    //     min={0}
+    //     controls={false}
+    //     addonBefore={'$'}
+    //     style={{ width: '100%' }}
+    //     // formatter={(value) => moneyDollarFormatter({ amount: value })}
+    //     parser={(value) => value.replace(/\$\s?|(,*)/g, '')} // Removes the formatting to get the numeric value
+    //   />
+    // ),
     quantity: <InputWithUnitComponent />,
   };
 

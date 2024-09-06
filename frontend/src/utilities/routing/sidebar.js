@@ -8,6 +8,7 @@ import {
   DeploymentUnitOutlined,
   ContainerOutlined,
   CustomerServiceOutlined,
+  ShopOutlined,
 } from '@ant-design/icons';
 
 import DashboardPage from '@/pages/Dashboard';
@@ -19,6 +20,7 @@ import Employee from '@/pages/Employee';
 import Client from '@/pages/Client';
 import PaymentMode from '@/pages/PaymentMode';
 import { EmployeeAttendance } from '@/pages/EmployeeAttendance';
+import Supplier from '@/pages/Supplier';
 
 export const sidebar = [
   {
@@ -62,26 +64,55 @@ export const sidebar = [
     ],
   },
   {
-    id: 5,
-    element: Client,
-    title: 'Mijozlar',
-    path: '/client',
+    id: 9,
+    title: 'Yetkazib beruvchi',
+    path: '/supplier',
     isPrivate: true,
     role: ['admin'],
-    icon: CustomerServiceOutlined,
+    icon: ShopOutlined,
     hidden: false,
-    items: [],
+    items: [
+      {
+        id: '9-1',
+        parentId: 9,
+        element: Supplier,
+        label: 'Kompaniyalar',
+        isPrivate: true,
+        path: '/supplier/list',
+        role: ['admin'],
+      },
+      {
+        id: '9-2',
+        parentId: 9,
+        element: ProductCategory,
+        label: 'Hisob-fakturalar',
+        path: '/supplier/invoice',
+        isPrivate: true,
+        role: ['admin'],
+      },
+    ],
   },
-  {
-    id: 4,
-    element: Generics,
-    title: 'Hisob-fakturalar',
-    path: '/invoice',
-    isPrivate: true,
-    role: ['admin'],
-    icon: ContainerOutlined,
-    hidden: false,
-  },
+  // {
+  //   id: 5,
+  //   element: Client,
+  //   title: 'Mijozlar',
+  //   path: '/client',
+  //   isPrivate: true,
+  //   role: ['admin'],
+  //   icon: CustomerServiceOutlined,
+  //   hidden: false,
+  //   items: [],
+  // },
+  // {
+  //   id: 4,
+  //   element: Generics,
+  //   title: 'Hisob-fakturalar',
+  //   path: '/invoice',
+  //   isPrivate: true,
+  //   role: ['admin'],
+  //   icon: ContainerOutlined,
+  //   hidden: false,
+  // },
   {
     id: 3,
     title: 'Xodimlar',
@@ -143,35 +174,35 @@ export const sidebar = [
   //   hidden: false,
   //   items: [],
   // },
-  {
-    id: 6,
-    title: 'Sozlamalar',
-    path: '/settings',
-    isPrivate: true,
-    role: ['admin'],
-    icon: SettingOutlined,
-    hidden: false,
-    items: [
-      {
-        id: '5-1',
-        parentId: 4,
-        label: "To'lov usullari",
-        isPrivate: true,
-        path: '/payment/mode',
-        role: ['admin'],
-        element: PaymentMode,
-      },
-      // {
-      //   id: '5-2',
-      //   parentId: 4,
-      //   label: 'Sozlamalar',
-      //   isPrivate: true,
-      //   path: '/settings',
-      //   role: ['admin'],
-      //   element: Generics,
-      // },
-    ],
-  },
+  // {
+  //   id: 6,
+  //   title: 'Sozlamalar',
+  //   path: '/settings',
+  //   isPrivate: true,
+  //   role: ['admin'],
+  //   icon: SettingOutlined,
+  //   hidden: false,
+  //   items: [
+  //     {
+  //       id: '5-1',
+  //       parentId: 4,
+  //       label: "To'lov usullari",
+  //       isPrivate: true,
+  //       path: '/payment/mode',
+  //       role: ['admin'],
+  //       element: PaymentMode,
+  //     },
+  // {
+  //   id: '5-2',
+  //   parentId: 4,
+  //   label: 'Sozlamalar',
+  //   isPrivate: true,
+  //   path: '/settings',
+  //   role: ['admin'],
+  //   element: Generics,
+  // },
+  // ],
+  // },
   // {
   //   id: 6,
   //   element: Generics,

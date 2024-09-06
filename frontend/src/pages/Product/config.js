@@ -32,15 +32,25 @@ export const fields = {
   price: {
     required: true,
     label: 'Narx',
-    type: 'currencyDollar',
+    type: 'currency',
   },
   totalPrice: {
-    type: 'currencyDollar',
-    label: "Umumiy narx",
+    type: 'currency',
+    label: 'Umumiy narx',
     disableForForm: true,
     disableForUpdate: true,
   },
-
+  supplier: {
+    type: 'async',
+    label: 'Yetkazib beruvchi',
+    displayLabels: ['supplier', 'name'],
+    dataIndex: ['supplier', 'name'],
+    entity: 'supplier',
+    redirectLabel: 'Yangi Yetkazib beruvchi yaratish',
+    withRedirect: true,
+    urlToRedirect: '/supplier/list',
+    disableForTable: true,
+  },
   enabled: {
     type: 'boolean',
     required: true,
