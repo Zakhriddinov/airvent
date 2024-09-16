@@ -27,7 +27,7 @@ export const fields = {
     disableForUpdate: true,
     type: 'currency',
   },
-  debt_end: {
+  debtEnd: {
     label: 'Oy oxiriga qarz (Xaqqimiz)',
     disableForForm: true,
     disableForUpdate: true,

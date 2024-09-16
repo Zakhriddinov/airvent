@@ -25,7 +25,7 @@ const userRegister = async (req, res) => {
 
     const userData = await user.save();
 
-    const msg = `<p>Hii ${name}, Please <a href="http://127.0.0.1:8888/mail-verification?id=${userData._id}">Verify</a> your mail </p>`;
+    const msg = `<p>Hii ${name}, Please <a href="http://127.0.0.1:8889/mail-verification?id=${userData._id}">Verify</a> your mail </p>`;
 
     mailer.sendMail(email, 'Mail verification', msg);
     return res.status(200).json({

@@ -15,7 +15,7 @@ const supplierSchema = new mongoose.Schema({
   turnover: { type: Number, default: 0 },
   cash: { type: Number, default: 0 },
   transfers: { type: Number, default: 0 },
-  debt_end: { type: Number, default: 0 },
+  debtEnd: { type: Number, default: 0 },
   currency: {
     type: String,
     enum: ['UZS', 'USD'],
@@ -34,5 +34,9 @@ const supplierSchema = new mongoose.Schema({
     },
   },
 });
+
+// supplierSchema.virtual('debtEnd').get(function () {
+//   return this.debtStart + this.turnover - this.cash - this.transfers;
+// });
 
 module.exports = mongoose.model('Supplier', supplierSchema);

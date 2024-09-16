@@ -21,6 +21,7 @@ import Client from '@/pages/Client';
 import PaymentMode from '@/pages/PaymentMode';
 import { EmployeeAttendance } from '@/pages/EmployeeAttendance';
 import Supplier from '@/pages/Supplier';
+import SupplierInvoice from '@/pages/SupplierInvoice';
 
 export const sidebar = [
   {
@@ -84,7 +85,7 @@ export const sidebar = [
       {
         id: '9-2',
         parentId: 9,
-        element: ProductCategory,
+        element: SupplierInvoice,
         label: 'Hisob-fakturalar',
         path: '/supplier/invoice',
         isPrivate: true,
