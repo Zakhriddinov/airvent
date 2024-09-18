@@ -15,8 +15,8 @@ const schema = Joi.object({
   status: Joi.string()
     .valid('draft', 'pending', 'sent', 'refunded', 'cancelled', 'on hold')
     .required(),
-  expiredDate: Joi.date().min('now').required(),
-  date: Joi.date().max('now').required(),
+  expiredDate: Joi.string().required(),
+  date: Joi.string().required(),
   items: Joi.array()
     .items(
       Joi.object({

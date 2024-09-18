@@ -21,7 +21,7 @@ function modelController() {
   methods.search = (req, res) => search(Model, req, res);
   methods.listAll = (req, res) => listAll(Model, req, res);
   methods.summary = (req, res) => summary(Model, req, res);
-
+  
   return methods;
 }
 

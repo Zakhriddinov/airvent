@@ -2,15 +2,13 @@ import { useState, useEffect } from 'react';
 import { Form, Input, InputNumber, Row, Col } from 'antd';
 
 import { DeleteOutlined } from '@ant-design/icons';
-import { useMoney, useDate } from '@/settings';
-import calculate from '@/utils/calculate';
+import calculate from '@/utilities/calculate';
 
 export default function ItemRow({ field, remove, current = null }) {
   const [totalState, setTotal] = useState(undefined);
   const [price, setPrice] = useState(0);
   const [quantity, setQuantity] = useState(0);
 
-  const money = useMoney();
   const updateQt = (value) => {
     setQuantity(value);
   };
@@ -47,7 +45,7 @@ export default function ItemRow({ field, remove, current = null }) {
 
   useEffect(() => {
     const currentTotal = calculate.multiply(price, quantity);
-
+    
     setTotal(currentTotal);
   }, [price, quantity]);
 
@@ -87,8 +85,9 @@ export default function ItemRow({ field, remove, current = null }) {
             onChange={updatePrice}
             min={0}
             controls={false}
-            addonAfter={money.currency_position === 'after' ? money.currency_symbol : undefined}
-            addonBefore={money.currency_position === 'before' ? money.currency_symbol : undefined}
+            style={{ width: '100%' }}
+            formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+            parser={(value) => value.replace(/\$\s?|UZS|,/g, '')}
           />
         </Form.Item>
       </Col>
@@ -101,11 +100,9 @@ export default function ItemRow({ field, remove, current = null }) {
               value={totalState}
               min={0}
               controls={false}
-              addonAfter={money.currency_position === 'after' ? money.currency_symbol : undefined}
-              addonBefore={money.currency_position === 'before' ? money.currency_symbol : undefined}
-              formatter={(value) =>
-                money.amountFormatter({ amount: value, currency_code: money.currency_code })
-              }
+              style={{ width: '100%' }}
+              formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+              parser={(value) => value.replace(/\$\s?|UZS|,/g, '')}
             />
           </Form.Item>
         </Form.Item>

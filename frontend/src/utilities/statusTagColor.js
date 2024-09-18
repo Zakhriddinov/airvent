@@ -1,16 +1,16 @@
 const colors = [
-  { value: 'default', label: 'default', icon: '🌟' },
-  { value: 'draft', label: 'draft', icon: '📝' },
-  { value: 'pending', label: 'pending', color: 'magenta', icon: '⏳' },
-  { value: 'cancelled', label: 'cancelled', color: 'volcano', icon: '❌' },
-  { value: 'sent', label: 'sent', color: 'gold', icon: '✉️' },
-  { value: 'refunded', label: 'refunded', color: 'purple', icon: '💰' },
-  { value: 'on hold', label: 'On hold', color: 'blue', icon: '🛑' },
+  { value: 'default', label: 'Standart', icon: '🌟' },
+  { value: 'draft', label: 'Qoralama', icon: '📝' },
+  { value: 'pending', label: 'Kutilmoqda', color: 'magenta', icon: '⏳' },
+  { value: 'cancelled', label: 'Bekor qilingan', color: 'volcano', icon: '❌' },
+  { value: 'sent', label: 'Yuborilgan', color: 'gold', icon: '✉️' },
+  { value: 'refunded', label: 'Qaytarilgan', color: 'purple', icon: '💰' },
+  { value: 'on hold', label: 'Ushlab qolingan', color: 'blue', icon: '🛑' },
 
-  { value: 'accepted', label: 'accepted', color: 'green', icon: '✅' },
-  { value: 'declined', label: 'declined', color: 'volcano', icon: '❎' },
-  { value: 'rejected', label: 'rejected', color: 'red', icon: '🚫' },
-  { value: 'expired', label: 'expired', color: 'orange', icon: '⏰' },
+  { value: 'accepted', label: 'Qabul qilingan', color: 'green', icon: '✅' },
+  { value: 'declined', label: 'Rad etdi', color: 'volcano', icon: '❎' },
+  { value: 'rejected', label: 'Rad etilgan', color: 'red', icon: '🚫' },
+  { value: 'expired', label: 'Muddati tugagan', color: 'orange', icon: '⏰' },
 
   { value: 'success', label: 'success', color: 'green', icon: '✨' },
   { value: 'failed', label: 'failed', color: 'red', icon: '❌' },
@@ -18,10 +18,10 @@ const colors = [
 
   { value: 'arrived', label: 'arrived', color: 'blue', icon: '🚚' },
 
-  { value: 'unpaid', label: 'unpaid', color: 'volcano', icon: '💵' },
-  { value: 'paid', label: 'paid', color: 'green', icon: '💳' },
-  { value: 'partially', label: 'partially paid', color: 'purple', icon: '💰' },
-  { value: 'overdue', label: 'overdue', color: 'red', icon: '💰' },
+  { value: 'unpaid', label: "To'lanmagan", color: 'volcano', icon: '💵' },
+  { value: 'paid', label: "To'langan", color: 'green', icon: '💳' },
+  { value: 'partially', label: "Qisman to'langan", color: 'purple', icon: '💰' },
+  { value: 'overdue', label: "Muddati o'tgan", color: 'red', icon: '💰' },
 
   { value: 'processing', label: 'processing', color: 'geekblue', icon: '⌛' },
   { value: 'packing', label: 'packing', color: 'orange', icon: '📦' },

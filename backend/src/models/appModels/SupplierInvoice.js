@@ -16,11 +16,11 @@ const invoiceSchema = new mongoose.Schema({
   },
   content: String,
   date: {
-    type: Date,
+    type: String,
     required: true,
   },
   expiredDate: {
-    type: Date,
+    type: String,
     required: true,
   },
   supplier: {
@@ -34,6 +34,7 @@ const invoiceSchema = new mongoose.Schema({
       product: {
         type: mongoose.Schema.ObjectId,
         ref: 'Products',
+        required: true,
         autopopulate: true,
       },
       quantity: {
@@ -49,6 +50,7 @@ const invoiceSchema = new mongoose.Schema({
         type: Number,
         required: true,
       },
+      description: String,
     },
   ],
   subTotal: {
@@ -74,12 +76,16 @@ const invoiceSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  // payment: [
-  //   {
-  //     type: mongoose.Schema.ObjectId,
-  //     ref: 'Payment',
-  //   },
-  // ],
+  credit: {
+    type: Number,
+    default: 0,
+  },
+  payment: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref: 'SupplierPayment',
+    },
+  ],
   paymentStatus: {
     type: String,
     default: 'unpaid',
@@ -90,6 +96,21 @@ const invoiceSchema = new mongoose.Schema({
     enum: ['draft', 'pending', 'sent', 'refunded', 'cancelled', 'on hold'],
     default: 'draft',
   },
+  pdf: {
+    type: String,
+  },
+  files: [
+    {
+      id: String,
+      name: String,
+      path: String,
+      description: String,
+      isPublic: {
+        type: Boolean,
+        default: true,
+      },
+    },
+  ],
 });
 
 invoiceSchema.plugin(require('mongoose-autopopulate'));

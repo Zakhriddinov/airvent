@@ -8,36 +8,32 @@ import { DatePicker } from 'antd';
 
 import AutoCompleteAsync from '@/components/AutoCompleteAsync';
 
-import ItemRow from '@/modules/ErpPanelModule/ItemRow';
-
 import MoneyInputFormItem from '@/components/MoneyInputFormItem';
-import { selectFinanceSettings } from '@/redux/settings/selectors';
-import { useDate } from '@/settings';
-import useLanguage from '@/locale/useLanguage';
+// import { selectFinanceSettings } from '@/redux/settings/selectors';
 
 import calculate from '@/utilities/calculate';
 import { useSelector } from 'react-redux';
 import SelectAsync from '@/components/SelectAsync';
+import ItemRow from '../../ErpPanelModule/ItemRow';
 
 export default function InvoiceForm({ subTotal = 0, current = null }) {
-  const { last_invoice_number } = useSelector(selectFinanceSettings);
+  // const { last_invoice_number } = useSelector(selectFinanceSettings);
 
-  if (last_invoice_number === undefined) {
-    return <></>;
-  }
+  // if (last_invoice_number === undefined) {
+  //   return <></>;
+  // }
 
   return <LoadInvoiceForm subTotal={subTotal} current={current} />;
 }
 
 function LoadInvoiceForm({ subTotal = 0, current = null }) {
-  const translate = useLanguage();
-  const { dateFormat } = useDate();
-  const { last_invoice_number } = useSelector(selectFinanceSettings);
+  // const { last_invoice_number } = useSelector(selectFinanceSettings);
   const [total, setTotal] = useState(0);
   const [taxRate, setTaxRate] = useState(0);
   const [taxTotal, setTaxTotal] = useState(0);
   const [currentYear, setCurrentYear] = useState(() => new Date().getFullYear());
-  const [lastNumber, setLastNumber] = useState(() => last_invoice_number + 1);
+  const [lastNumber, setLastNumber] = useState(() => 1);
+  const [currency, setCurrency] = useState('UZS');
 
   const handelTaxChange = (value) => {
     setTaxRate(value / 100);
@@ -53,7 +49,6 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
   }, [current]);
   useEffect(() => {
     const currentTotal = calculate.add(calculate.multiply(subTotal, taxRate), subTotal);
-    setTaxTotal(Number.parseFloat(calculate.multiply(subTotal, taxRate)));
     setTotal(Number.parseFloat(currentTotal));
   }, [subTotal, taxRate]);
 
@@ -68,8 +63,8 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
       <Row gutter={[12, 0]}>
         <Col className="gutter-row" span={8}>
           <Form.Item
-            name="client"
-            label={translate('Client')}
+            name="supplier"
+            label={'Kompaniya'}
             rules={[
               {
                 required: true,
@@ -77,18 +72,18 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
             ]}
           >
             <AutoCompleteAsync
-              entity={'client'}
+              entity={'supplier'}
               displayLabels={['name']}
               searchFields={'name'}
               redirectLabel={'Add New Client'}
               withRedirect
-              urlToRedirect={'/customer'}
+              urlToRedirect={'/supplier'}
             />
           </Form.Item>
         </Col>
         <Col className="gutter-row" span={3}>
           <Form.Item
-            label={translate('number')}
+            label={'Raqam'}
             name="number"
             initialValue={lastNumber}
             rules={[
@@ -102,7 +97,7 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
         </Col>
         <Col className="gutter-row" span={3}>
           <Form.Item
-            label={translate('year')}
+            label={'Yil'}
             name="year"
             initialValue={currentYear}
             rules={[
@@ -117,7 +112,20 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
 
         <Col className="gutter-row" span={5}>
           <Form.Item
-            label={translate('status')}
+            label={'Valyuta'}
+            name={`currency`}
+            initialValue={currency}
+          >
+            <Select defaultValue="UZS" onChange={setCurrency} style={{ width: '100%' }}>
+              <Select.Option value="UZS">🇺🇿 UZS (UZB So'm)</Select.Option>
+              <Select.Option value="USD">🇺🇸 $ (US Dollar)</Select.Option>
+            </Select>
+          </Form.Item>
+        </Col>
+
+        <Col className="gutter-row" span={5}>
+          <Form.Item
+            label={'Holat'}
             name="status"
             rules={[
               {
@@ -128,9 +136,9 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
           >
             <Select
               options={[
-                { value: 'draft', label: translate('Draft') },
-                { value: 'pending', label: translate('Pending') },
-                { value: 'sent', label: translate('Sent') },
+                { value: 'draft', label: 'Qoralama' },
+                { value: 'pending', label: 'Kutilmoqda' },
+                { value: 'sent', label: 'Yuborilgan' },
               ]}
             ></Select>
           </Form.Item>
@@ -139,7 +147,7 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
         <Col className="gutter-row" span={8}>
           <Form.Item
             name="date"
-            label={translate('Date')}
+            label={'Sana'}
             rules={[
               {
                 required: true,
@@ -148,13 +156,13 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
             ]}
             initialValue={dayjs()}
           >
-            <DatePicker style={{ width: '100%' }} format={dateFormat} />
+            <DatePicker style={{ width: '100%' }} format={'DD/MM/YYYY'} />
           </Form.Item>
         </Col>
         <Col className="gutter-row" span={6}>
           <Form.Item
             name="expiredDate"
-            label={translate('Expire Date')}
+            label={'Muddati'}
             rules={[
               {
                 required: true,
@@ -163,11 +171,11 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
             ]}
             initialValue={dayjs().add(30, 'days')}
           >
-            <DatePicker style={{ width: '100%' }} format={dateFormat} />
+            <DatePicker style={{ width: '100%' }} format={'DD/MM/YYYY'} />
           </Form.Item>
         </Col>
         <Col className="gutter-row" span={10}>
-          <Form.Item label={translate('Note')} name="notes">
+          <Form.Item label={'Izoh'} name="notes">
             <Input />
           </Form.Item>
         </Col>
@@ -175,19 +183,19 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
       <Divider dashed />
       <Row gutter={[12, 12]} style={{ position: 'relative' }}>
         <Col className="gutter-row" span={5}>
-          <p>{translate('Item')}</p>
+          <p>{'Mahsulot'}</p>
         </Col>
         <Col className="gutter-row" span={7}>
-          <p>{translate('Description')}</p>
+          <p>{'Izoh'}</p>
         </Col>
         <Col className="gutter-row" span={3}>
-          <p>{translate('Quantity')}</p>{' '}
+          <p>{'Miqdor'}</p>{' '}
         </Col>
         <Col className="gutter-row" span={4}>
-          <p>{translate('Price')}</p>
+          <p>{'Narx'}</p>
         </Col>
         <Col className="gutter-row" span={5}>
-          <p>{translate('Total')}</p>
+          <p>{'Jami'}</p>
         </Col>
       </Row>
       <Form.List name="items">
@@ -204,7 +212,7 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
                 icon={<PlusOutlined />}
                 ref={addField}
               >
-                {translate('Add field')}
+                {"Maydon qo'shish"}
               </Button>
             </Form.Item>
           </>
@@ -216,7 +224,7 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
           <Col className="gutter-row" span={5}>
             <Form.Item>
               <Button type="primary" htmlType="submit" icon={<PlusOutlined />} block>
-                {translate('Save')}
+                {'Saqlash'}
               </Button>
             </Form.Item>
           </Col>
@@ -229,38 +237,11 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
                 textAlign: 'right',
               }}
             >
-              {translate('Sub Total')} :
+              {'Jami'} :
             </p>
           </Col>
           <Col className="gutter-row" span={5}>
             <MoneyInputFormItem readOnly value={subTotal} />
-          </Col>
-        </Row>
-        <Row gutter={[12, -5]}>
-          <Col className="gutter-row" span={4} offset={15}>
-            <Form.Item
-              name="taxRate"
-              rules={[
-                {
-                  required: true,
-                },
-              ]}
-            >
-              <SelectAsync
-                value={taxRate}
-                onChange={handelTaxChange}
-                entity={'taxes'}
-                outputValue={'taxValue'}
-                displayLabels={['taxName']}
-                withRedirect={true}
-                urlToRedirect="/taxes"
-                redirectLabel={translate('Add New Tax')}
-                placeholder={translate('Select Tax Value')}
-              />
-            </Form.Item>
-          </Col>
-          <Col className="gutter-row" span={5}>
-            <MoneyInputFormItem readOnly value={taxTotal} />
           </Col>
         </Row>
         <Row gutter={[12, -5]}>
@@ -273,7 +254,7 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
                 textAlign: 'right',
               }}
             >
-              {translate('Total')} :
+              {'Jami'} :
             </p>
           </Col>
           <Col className="gutter-row" span={5}>

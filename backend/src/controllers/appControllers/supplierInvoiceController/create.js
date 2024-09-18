@@ -6,7 +6,7 @@ const Supplier = require('../../../models/appModels/Supplier');
 
 const create = async (req, res) => {
   let body = req.body;
-
+  
   const { error, value } = schema.validate(body);
   if (error) {
     const { details } = error;

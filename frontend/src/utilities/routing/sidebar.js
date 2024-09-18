@@ -22,6 +22,7 @@ import PaymentMode from '@/pages/PaymentMode';
 import { EmployeeAttendance } from '@/pages/EmployeeAttendance';
 import Supplier from '@/pages/Supplier';
 import SupplierInvoice from '@/pages/SupplierInvoice';
+import InvoiceCreate from '@/pages/SupplierInvoice/InvoiceCreate';
 
 export const sidebar = [
   {
@@ -91,7 +92,25 @@ export const sidebar = [
         isPrivate: true,
         role: ['admin'],
       },
+      {
+        id: '9-3',
+        parentId: 9,
+        element: Generics,
+        label: "To'lovlar",
+        path: '/supplier/payment',
+        isPrivate: true,
+        role: ['admin'],
+      },
     ],
+  },
+  {
+    id: 10,
+    element: InvoiceCreate,
+    label: "Create",
+    path: '/supplier/invoice/create',
+    isPrivate: true,
+    hidden: true,
+    role: ['admin'],
   },
   // {
   //   id: 5,
@@ -152,18 +171,6 @@ export const sidebar = [
       },
     ],
   },
-
-  // {
-  //   id: 7,
-  //   element: Generics,
-  //   title: 'Xodimlar fakturasi',
-  //   path: '/employee-facotory',
-  //   isPrivate: true,
-  //   role: ['admin'],
-  //   icon: PieChartOutlined,
-  //   hidden: false,
-  //   items: [],
-  // },
   // {
   //   id: 8,
   //   element: Position,

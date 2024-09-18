@@ -1,43 +1,39 @@
-import dayjs from 'dayjs';
-import CrudModule from '@/module/CrudModule';
 import { Tag } from 'antd';
+import DataTable from './DataTable';
+import ErpLayout from '@/layout/ErpLayout';
+import { moneyFormatter } from '@/utilities/dataStructure';
+import { tagColor } from '@/utilities/statusTagColor';
 
 export default function SupplierInvoice() {
   const entity = 'supplierinvoice';
 
   const searchConfig = {
-    entity: 'client',
+    entity: 'supplierinvoice',
     displayLabels: ['name'],
     searchFields: 'name',
   };
 
-  const deleteModalLabels = ['number', 'client.name'];
+  const deleteModalLabels = ['number', 'supplierinvoice'];
 
   const dataTableColumns = [
     {
-      title: 'Number',
+      title: 'Raqam',
       dataIndex: 'number',
     },
     {
-      title: 'Client',
-      dataIndex: ['client', 'name'],
+      title: 'Yetkazib beruvchi',
+      dataIndex: ['supplier', 'name'],
     },
     {
-      title: 'Date',
+      title: 'Sana',
       dataIndex: 'date',
-      //   render: (date) => {
-      //     return dayjs(date).format(dateFormat);
-      //   },
     },
     {
-      title: 'expired Date',
+      title: "Muddati o'tgan sana",
       dataIndex: 'expiredDate',
-      //   render: (date) => {
-      //     return dayjs(date).format(dateFormat);
-      //   },
     },
     {
-      title: 'Total',
+      title: 'Jami',
       dataIndex: 'total',
       onCell: () => {
         return {
@@ -49,11 +45,11 @@ export default function SupplierInvoice() {
         };
       },
       render: (total, record) => {
-        return total;
+        return moneyFormatter({ amount: total, currency_code: record.currency });
       },
     },
     {
-      title: 'paid',
+      title: "To'langan",
       dataIndex: 'credit',
       onCell: () => {
         return {
@@ -64,38 +60,42 @@ export default function SupplierInvoice() {
           },
         };
       },
-      render: (total, record) => total,
+      render: (total, record) => {
+        return moneyFormatter({ amount: total, currency_code: record.currency });
+      },
     },
     {
-      title: 'Status',
+      title: 'Holat',
       dataIndex: 'status',
       render: (status) => {
+        let tagStatus = tagColor(status);
         return (
-          <Tag>
+          <Tag color={tagStatus.color}>
             {/* {tagStatus.icon + ' '} */}
-            {status}
+            {tagStatus.label}
           </Tag>
         );
       },
     },
     {
-      title: 'Payment',
+      title: "To'lov",
       dataIndex: 'paymentStatus',
       render: (paymentStatus) => {
-        return <Tag>{paymentStatus}</Tag>;
+        let tagStatus = tagColor(paymentStatus);
+        return <Tag color={tagStatus.color}>{tagStatus.label}</Tag>;
       },
     },
     {
-      title: 'Created By',
+      title: 'Yaratuvchi',
       dataIndex: ['createdBy', 'name'],
     },
   ];
 
   const Labels = {
-    PANEL_TITLE: 'invoice',
-    DATATABLE_TITLE: 'invoice_list',
-    ADD_NEW_ENTITY: 'add_new_invoice',
-    ENTITY_NAME: 'invoice',
+    PANEL_TITLE: "Hisob-fakturalar ro'yxati",
+    DATATABLE_TITLE: "Hisob-fakturalar ro'yxati",
+    ADD_NEW_ENTITY: "Yangi hisob fatura qo'shish",
+    ENTITY_NAME: 'supplierinvoice',
   };
 
   const configPage = {
@@ -110,5 +110,9 @@ export default function SupplierInvoice() {
     dataTableColumns,
   };
 
-  return <CrudModule config={config} />;
+  return (
+    <ErpLayout>
+      <DataTable config={config} />
+    </ErpLayout>
+  );
 }
