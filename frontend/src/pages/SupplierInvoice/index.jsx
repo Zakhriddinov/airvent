@@ -3,6 +3,7 @@ import DataTable from './DataTable';
 import ErpLayout from '@/layout/ErpLayout';
 import { moneyFormatter } from '@/utilities/dataStructure';
 import { tagColor } from '@/utilities/statusTagColor';
+import dayjs from 'dayjs';
 
 export default function SupplierInvoice() {
   const entity = 'supplierinvoice';
@@ -27,11 +28,17 @@ export default function SupplierInvoice() {
     {
       title: 'Sana',
       dataIndex: 'date',
+      render: (date) => {
+        return dayjs(date).format("DD.MM.YYYY");
+      },
     },
-    {
-      title: "Muddati o'tgan sana",
-      dataIndex: 'expiredDate',
-    },
+    // {
+    //   title: "Muddati o'tgan sana",
+    //   dataIndex: 'expiredDate',
+    //   render: (date) => {
+    //     return dayjs(date).format("DD.MM.YYYY");
+    //   },
+    // },
     {
       title: 'Jami',
       dataIndex: 'total',

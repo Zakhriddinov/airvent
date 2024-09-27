@@ -9,6 +9,7 @@ import {
   EllipsisOutlined,
   ArrowRightOutlined,
   ArrowLeftOutlined,
+  CreditCardOutlined,
 } from '@ant-design/icons';
 import { Dropdown, Table, Button } from 'antd';
 import { PageHeader } from '@ant-design/pro-layout';
@@ -62,9 +63,9 @@ export default function DataTable({ config, extra = [] }) {
       icon: <EditOutlined />,
     },
     {
-      label: 'Yuklab olish',
-      key: 'download',
-      icon: <FilePdfOutlined />,
+      label: "To'lovni kiritish",
+      key: 'recordPayment',
+      icon: <CreditCardOutlined />,
     },
     ...extra,
     {
@@ -99,8 +100,8 @@ export default function DataTable({ config, extra = [] }) {
   };
 
   const handleRecordPayment = (record) => {
-    // dispatch(erp.currentItem({ data: record }));
-    // navigate(`/invoice/pay/${record._id}`);
+    dispatch(erp.currentItem({ data: record }));
+    navigate(`/invoice/pay/${record._id}`);
   };
 
   dataTableColumns = [

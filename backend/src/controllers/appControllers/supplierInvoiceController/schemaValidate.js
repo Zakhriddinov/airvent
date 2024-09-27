@@ -20,12 +20,13 @@ const schema = Joi.object({
   items: Joi.array()
     .items(
       Joi.object({
-        productId: Joi.string().required(),
+        product: Joi.string().required(),
         quantity: Joi.number().positive().required(),
         price: Joi.number().positive().required(),
       }).required()
     )
     .required(),
+  currency: Joi.string().valid('UZS', 'USD').required(),
 });
 
 module.exports = schema;

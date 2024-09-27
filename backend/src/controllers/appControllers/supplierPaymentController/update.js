@@ -1,9 +1,8 @@
-const mongoose = require('mongoose');
 const Invoice = require('../../../models/appModels/SupplierInvoice');
 const Supplier = require('../../../models/appModels/Supplier');
 const { calculate } = require('../../../helpers');
 
-const create = async (Model, req, res) => {
+const update = async (Model, req, res) => {
   if (req.body.amount === 0) {
     return res.status(202).json({
       success: false,
@@ -29,7 +28,7 @@ const create = async (Model, req, res) => {
   }
 
   req.body['createdBy'] = req.user._id;
-  const result = await Model.create(req.body);
+  const result = await Model.findOneAndUpdate(req.body);
 
   const fileId = 'payment-' + result._id + '.pdf';
   const updatePath = await Model.findOneAndUpdate(
@@ -66,7 +65,7 @@ const create = async (Model, req, res) => {
     }
   ).exec();
 
-  const supplier = await Supplier.findOne({ _id: req.body.supplier });
+  const supplier = await Supplier.findOne({ _id: result.supplier._id });
   if (req.body.paymentMode === 'cash') {
     supplier.cash += amount;
   } else if (req.body.paymentMode === 'transfers') {
@@ -86,4 +85,4 @@ const create = async (Model, req, res) => {
   });
 };
 
-module.exports = create;
+module.exports = update;

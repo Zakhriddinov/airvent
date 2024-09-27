@@ -33,11 +33,14 @@ const SelectAsync = ({
   const labels = (optionField) => {
     return displayLabels.map((x) => optionField[x]).join(' ');
   };
+  const currentObj = (v) => {
+    return selectOptions.find((x) => x._id === v);
+  };
   useEffect(() => {
     if (value !== undefined) {
       const val = value[outputValue] ?? value;
       setCurrentValue(val);
-      onChange(val);
+      onChange(val, currentObj(val));
     }
   }, [value]);
 
@@ -47,7 +50,7 @@ const SelectAsync = ({
     } else {
       const val = newValue[outputValue] ?? newValue;
       setCurrentValue(newValue);
-      onChange(val);
+      onChange(val, currentObj(val));
     }
   };
 
@@ -59,7 +62,6 @@ const SelectAsync = ({
       const label = labels(optionField);
       const currentColor = optionField[outputValue]?.color ?? optionField?.color;
       const labelColor = color.find((x) => x.value === currentColor);
-      console.log(currentColor);
       list.push({ value, label, color: labelColor?.color });
     });
 
@@ -75,7 +77,6 @@ const SelectAsync = ({
       placeholder={placeholder}
     >
       {optionsList()?.map((option) => {
-        console.log(option);
         return (
           <Select.Option key={`${uniqueId()}`} value={option.value}>
             <Tag bordered={false} color={option.color}>

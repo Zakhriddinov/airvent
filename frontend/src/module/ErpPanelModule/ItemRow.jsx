@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Form, Input, InputNumber, Row, Col } from 'antd';
+import AutoCompleteAsync from '@/components/AutoCompleteAsync';
 
 import { DeleteOutlined } from '@ant-design/icons';
 import calculate from '@/utilities/calculate';
+import SelectAsync from '@/components/SelectAsync';
 
 export default function ItemRow({ field, remove, current = null }) {
   const [totalState, setTotal] = useState(undefined);
@@ -18,11 +20,6 @@ export default function ItemRow({ field, remove, current = null }) {
 
   useEffect(() => {
     if (current) {
-      // When it accesses the /payment/ endpoint,
-      // it receives an invoice.item instead of just item
-      // and breaks the code, but now we can check if items exists,
-      // and if it doesn't we can access invoice.items.
-
       const { items, invoice } = current;
 
       if (invoice) {
@@ -45,27 +42,33 @@ export default function ItemRow({ field, remove, current = null }) {
 
   useEffect(() => {
     const currentTotal = calculate.multiply(price, quantity);
-    
+
     setTotal(currentTotal);
-  }, [price, quantity]);
+  }, [quantity, price]);
+
+  const productHandleChange = (v, data) => {
+    // setPrice(data.price);
+  };
 
   return (
     <Row gutter={[12, 12]} style={{ position: 'relative' }}>
       <Col className="gutter-row" span={5}>
         <Form.Item
-          name={[field.name, 'itemName']}
+          name={[field.name, 'product']}
           rules={[
             {
               required: true,
-              message: 'Missing itemName name',
-            },
-            {
-              pattern: /^(?!\s*$)[\s\S]+$/, // Regular expression to allow spaces, alphanumeric, and special characters, but not just spaces
-              message: 'Item Name must contain alphanumeric or special characters',
             },
           ]}
         >
-          <Input placeholder="Item Name" />
+          <SelectAsync
+            entity={'products'}
+            displayLabels={['name']}
+            withRedirect={true}
+            redirectLabel={'Maxsulot yaratish'}
+            urlToRedirect={'/product'}
+            onChange={productHandleChange}
+          />
         </Form.Item>
       </Col>
       <Col className="gutter-row" span={7}>
@@ -81,8 +84,8 @@ export default function ItemRow({ field, remove, current = null }) {
       <Col className="gutter-row" span={4}>
         <Form.Item name={[field.name, 'price']} rules={[{ required: true }]}>
           <InputNumber
-            className="moneyInput"
             onChange={updatePrice}
+            className="moneyInput"
             min={0}
             controls={false}
             style={{ width: '100%' }}

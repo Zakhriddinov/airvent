@@ -23,6 +23,10 @@ import { EmployeeAttendance } from '@/pages/EmployeeAttendance';
 import Supplier from '@/pages/Supplier';
 import SupplierInvoice from '@/pages/SupplierInvoice';
 import InvoiceCreate from '@/pages/SupplierInvoice/InvoiceCreate';
+import SuppplierPayment from '@/pages/SupplierPayment';
+import SupplierPaymentUpdate from '@/pages/SupplierPayment/SupplierPaymentUpdate';
+import SupplierPaymentRead from '@/pages/SupplierPayment/SupplierPaymentRead';
+import InvoiceRecordPayment from '@/pages/SupplierInvoice/InvoiceRecordPayment';
 
 export const sidebar = [
   {
@@ -95,7 +99,7 @@ export const sidebar = [
       {
         id: '9-3',
         parentId: 9,
-        element: Generics,
+        element: SuppplierPayment,
         label: "To'lovlar",
         path: '/supplier/payment',
         isPrivate: true,
@@ -106,8 +110,35 @@ export const sidebar = [
   {
     id: 10,
     element: InvoiceCreate,
-    label: "Create",
+    label: 'Create',
     path: '/supplier/invoice/create',
+    isPrivate: true,
+    hidden: true,
+    role: ['admin'],
+  },
+  {
+    id: 11,
+    element: SupplierPaymentUpdate,
+    label: 'Update',
+    path: '/supplierpayment/update/:id',
+    isPrivate: true,
+    hidden: true,
+    role: ['admin'],
+  },
+  {
+    id: 11,
+    element: SupplierPaymentRead,
+    label: 'Read',
+    path: '/supplierpayment/read/:id',
+    isPrivate: true,
+    hidden: true,
+    role: ['admin'],
+  },
+  {
+    id: 12,
+    element: InvoiceRecordPayment,
+    label: 'Pay',
+    path: '/invoice/pay/:id',
     isPrivate: true,
     hidden: true,
     role: ['admin'],

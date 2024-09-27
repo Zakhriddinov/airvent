@@ -24,7 +24,6 @@ const paymentSchema = new mongoose.Schema({
   },
   date: {
     type: Date,
-    default: Date.now,
     required: true,
   },
   amount: {
@@ -40,7 +39,7 @@ const paymentSchema = new mongoose.Schema({
   },
   paymentMode: {
     type: String,
-    enum: ['cash', 'transfers'],
+    enum: ['cash', 'transfers', 'click'],
     default: 'cash',
   },
   updated: {

@@ -3,6 +3,7 @@ const SupplierPayment = require('../../../models/appModels/SupplierPayment');
 
 const create = require('./create');
 const paginatedList = require('./paginatedList');
+const update = require('./update');
 
 function modelController() {
   const Model = SupplierPayment;
@@ -10,6 +11,7 @@ function modelController() {
 
   methods.create = (req, res) => create(Model, req, res);
   methods.list = (req, res) => paginatedList(Model, req, res);
+  methods.update = (req, res) => update(Model, req, res);
 
   return methods;
 }

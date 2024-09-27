@@ -16,6 +16,8 @@ const routerApp = (entity, controller) => {
   router.route(`/${entity}/filter`).get(catchErrors(controller['filter']));
   router.route(`/${entity}/summary`).get(catchErrors(controller['summary']));
 
+  router.route(`/${entity}/:id/ref`).get(catchErrors(controller['ref']));
+
   router.route(`/${entity}/:year/:month`).get(catchErrors(controller['list']));
   router.route(`/${entity}/update`).put(catchErrors(controller['update']));
   router.route(`/${entity}/close-month`).post(catchErrors(controller['closeMonth']));

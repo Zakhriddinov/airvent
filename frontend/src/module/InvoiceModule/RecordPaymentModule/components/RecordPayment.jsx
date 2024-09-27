@@ -4,17 +4,15 @@ import { Form, Button } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import { erp } from '@/redux/erp/actions';
 import { selectRecordPaymentItem } from '@/redux/erp/selectors';
-import useLanguage from '@/locale/useLanguage';
 
 import Loading from '@/components/Loading';
 
 import PaymentForm from '@/forms/PaymentForm';
 import { useNavigate } from 'react-router-dom';
-import calculate from '@/utils/calculate';
+import calculate from '@/utilities/calculate';
 
 export default function RecordPayment({ config }) {
   const navigate = useNavigate();
-  const translate = useLanguage();
   let { entity } = config;
 
   const dispatch = useDispatch();
@@ -30,29 +28,31 @@ export default function RecordPayment({ config }) {
       setMaxAmount(calculate.sub(calculate.sub(total, discount), credit));
     }
   }, [currentInvoice]);
+
   useEffect(() => {
     if (isSuccess) {
       form.resetFields();
       dispatch(erp.resetAction({ actionType: 'recordPayment' }));
       dispatch(erp.list({ entity }));
-      navigate(`/${entity}/`);
+      navigate(`/supplier/invoice`);
     }
   }, [isSuccess]);
 
   const onSubmit = (fieldsValue) => {
     if (currentInvoice) {
       const { _id: invoice } = currentInvoice;
-      const client = currentInvoice.client && currentInvoice.client._id;
+      const supplier = currentInvoice.supplier && currentInvoice.supplier._id;
       fieldsValue = {
         ...fieldsValue,
         invoice,
-        client,
+        supplier,
+        currency: currentInvoice?.currency,
       };
     }
 
     dispatch(
       erp.recordPayment({
-        entity: 'payment',
+        entity: 'supplierpayment',
         jsonData: fieldsValue,
       })
     );
@@ -64,7 +64,7 @@ export default function RecordPayment({ config }) {
         <PaymentForm maxAmount={maxAmount} />
         <Form.Item>
           <Button type="primary" htmlType="submit">
-            {translate('Record Payment')}
+            To'lovni kiritish
           </Button>
         </Form.Item>
       </Form>

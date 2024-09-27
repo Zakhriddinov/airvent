@@ -16,6 +16,10 @@ const colors = [
   { value: 'failed', label: 'failed', color: 'red', icon: '❌' },
   { value: 'error', label: 'error', color: 'volcano', icon: '⚠️' },
 
+  { value: 'cash', label: 'naqd', color: 'green', icon: '✨' },
+  { value: 'transfers', label: 'transferlar', color: 'blue', icon: '❌' },
+  { value: 'click', label: 'click', color: 'orange', icon: '❌' },
+
   { value: 'arrived', label: 'arrived', color: 'blue', icon: '🚚' },
 
   { value: 'unpaid', label: "To'lanmagan", color: 'volcano', icon: '💵' },

@@ -8,6 +8,7 @@ const update = require('./update');
 const listAll = require('./listAll');
 const remove = require('./remove');
 const read = require('./read');
+const ref = require('./ref');
 
 function modelController() {
   const Model = Products;
@@ -21,6 +22,7 @@ function modelController() {
   methods.search = (req, res) => search(Model, req, res);
   methods.listAll = (req, res) => listAll(Model, req, res);
   methods.summary = (req, res) => summary(Model, req, res);
+  methods.ref = (req, res) => ref(Model, req, res);
   
   return methods;
 }

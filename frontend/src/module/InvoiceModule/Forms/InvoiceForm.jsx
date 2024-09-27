@@ -17,12 +17,6 @@ import SelectAsync from '@/components/SelectAsync';
 import ItemRow from '../../ErpPanelModule/ItemRow';
 
 export default function InvoiceForm({ subTotal = 0, current = null }) {
-  // const { last_invoice_number } = useSelector(selectFinanceSettings);
-
-  // if (last_invoice_number === undefined) {
-  //   return <></>;
-  // }
-
   return <LoadInvoiceForm subTotal={subTotal} current={current} />;
 }
 
@@ -78,6 +72,7 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
               redirectLabel={'Add New Client'}
               withRedirect
               urlToRedirect={'/supplier'}
+              onChange={(v) => console.log(v)}
             />
           </Form.Item>
         </Col>
@@ -111,11 +106,7 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
         </Col>
 
         <Col className="gutter-row" span={5}>
-          <Form.Item
-            label={'Valyuta'}
-            name={`currency`}
-            initialValue={currency}
-          >
+          <Form.Item label={'Valyuta'} name={`currency`} initialValue={currency}>
             <Select defaultValue="UZS" onChange={setCurrency} style={{ width: '100%' }}>
               <Select.Option value="UZS">🇺🇿 UZS (UZB So'm)</Select.Option>
               <Select.Option value="USD">🇺🇸 $ (US Dollar)</Select.Option>

@@ -170,7 +170,6 @@ export default function DataTable({ config, extra = [] }) {
     const options = { equal: value, filter: searchConfig?.entity };
     dispatch(erp.list({ entity, options }));
   };
-  const langDirection = useSelector(selectLangDirection);
 
   return (
     <>
@@ -197,7 +196,6 @@ export default function DataTable({ config, extra = [] }) {
         ]}
         style={{
           padding: '20px 0px',
-          direction: langDirection,
         }}
       ></PageHeader>
 
