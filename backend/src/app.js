@@ -13,7 +13,7 @@ const app = express();
 app.use(
   cors({
     origin: true,
-    credentials: true
+    credentials: true,
   })
 );
 
@@ -26,6 +26,11 @@ app.use(compression());
 // Here our API Routes
 const authRoute = require('./routes/authRoute');
 const appRouter = require('./routes/appRoutes/appApi');
+// const updateDebtStartForSuppliers = require('./controllers/appControllers/supplierController/schedule');
+
+// har oy tugaganda debtEnd dan debtStart ga o'tkazadi
+// updateDebtStartForSuppliers();
+
 
 app.use('/api/auth', authRoute);
 app.use('/api', isValidAuthToken, appRouter);

@@ -3,10 +3,11 @@ const mongoose = require('mongoose');
 const Model = require('../../../models/appModels/SupplierInvoice');
 const { calculate } = require('../../../helpers');
 const Supplier = require('../../../models/appModels/Supplier');
+const Products = require('../../../models/appModels/Products');
 
 const create = async (req, res) => {
   let body = req.body;
-  
+
   const { error, value } = schema.validate(body);
   if (error) {
     const { details } = error;
@@ -22,28 +23,51 @@ const create = async (req, res) => {
   let subTotal = 0;
   let total = 0;
 
-  items.map((item) => {
-    let total = calculate.multiply(item['quantity'], item['price']);
-    //sub total
-    subTotal = calculate.add(subTotal, total);
-    //item total
-    item['total'] = total;
-  });
-
-  total = subTotal;
-
-  body['subTotal'] = subTotal;
-  body['total'] = total;
-  body['items'] = items;
-  body['createdBy'] = req.user._id;
-
   const session = await mongoose.startSession();
   session.startTransaction();
 
   try {
+    // Loop through each item to update products and calculate totals
+    for (let item of items) {
+      const { product, quantity, price, discount = 0 } = item;
+
+      // Fetch the product by its ID
+      const productResult = await Products.findById(product).session(session);
+      if (!productResult) {
+        throw new Error(`Product with ID ${product} not found`);
+      }
+
+      // Calculate the discounted price if a discount is provided
+      let discountedPrice = price;
+      if (discount > 0) {
+        discountedPrice = (price * discount) / 100 + price;
+      }
+
+      // Update product's price and quantity in the database
+      productResult.price = discountedPrice;
+      productResult.quantity = calculate.add(productResult.quantity, quantity); // Adjust the quantity
+
+      await productResult.save({ session });
+
+      // Calculate the total for the item
+      let itemTotal = calculate.multiply(quantity, discountedPrice);
+
+      // Update subTotal and item total
+      subTotal = calculate.add(subTotal, itemTotal);
+      item['total'] = itemTotal;
+      item['price'] = discountedPrice; // Update the item's price with the discounted one
+    }
+
+    total = subTotal;
+    body['subTotal'] = subTotal;
+    body['total'] = total;
+    body['items'] = items;
+    body['createdBy'] = req.user._id;
+
+    // Create the invoice
     const result = await new Model(body).save({ session });
 
-    // Supplier'ni topish va yangilash
+    // Fetch and update the Supplier
     const supplier = await Supplier.findById(result.supplier).session(session);
     if (!supplier) {
       throw new Error('Supplier not found');
@@ -54,6 +78,7 @@ const create = async (req, res) => {
 
     await supplier.save({ session });
 
+    // Commit the transaction
     await session.commitTransaction();
     session.endSession();
 

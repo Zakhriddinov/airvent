@@ -15,6 +15,8 @@ import calculate from '@/utilities/calculate';
 import { useSelector } from 'react-redux';
 import SelectAsync from '@/components/SelectAsync';
 import ItemRow from '../../ErpPanelModule/ItemRow';
+import axios from 'axios';
+import { API_BASE_URL } from '@/config/serverApiConfig';
 
 export default function InvoiceForm({ subTotal = 0, current = null }) {
   return <LoadInvoiceForm subTotal={subTotal} current={current} />;
@@ -28,6 +30,25 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
   const [currentYear, setCurrentYear] = useState(() => new Date().getFullYear());
   const [lastNumber, setLastNumber] = useState(() => 1);
   const [currency, setCurrency] = useState('UZS');
+  const [supplierId, setSupplierId] = useState('');
+  const [productData, setProductData] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const fetchProductData = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get(`${API_BASE_URL}products/${supplierId}/ref`);
+      setProductData(response?.data?.result);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      message.error('Error fetching attendance data.');
+    } finally {
+      setLoading(false);
+    }
+  };
+  useEffect(() => {
+    fetchProductData();
+  }, [supplierId]);
 
   const handelTaxChange = (value) => {
     setTaxRate(value / 100);
@@ -72,7 +93,7 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
               redirectLabel={'Add New Client'}
               withRedirect
               urlToRedirect={'/supplier'}
-              onChange={(v) => console.log(v)}
+              onChange={(v) => setSupplierId(v)}
             />
           </Form.Item>
         </Col>
@@ -176,14 +197,17 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
         <Col className="gutter-row" span={5}>
           <p>{'Mahsulot'}</p>
         </Col>
-        <Col className="gutter-row" span={7}>
-          <p>{'Izoh'}</p>
-        </Col>
         <Col className="gutter-row" span={3}>
           <p>{'Miqdor'}</p>{' '}
         </Col>
         <Col className="gutter-row" span={4}>
           <p>{'Narx'}</p>
+        </Col>
+        <Col className="gutter-row" span={3}>
+          <p>{"Qo'yiladigan foiz"}</p>
+        </Col>
+        <Col className="gutter-row" span={4}>
+          <p>{'Sotiladigan narx'}</p>
         </Col>
         <Col className="gutter-row" span={5}>
           <p>{'Jami'}</p>
@@ -193,7 +217,14 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
         {(fields, { add, remove }) => (
           <>
             {fields.map((field) => (
-              <ItemRow key={field.key} remove={remove} field={field} current={current}></ItemRow>
+              <ItemRow
+                key={field.key}
+                remove={remove}
+                field={field}
+                current={current}
+                loading={loading}
+                productData={productData}
+              ></ItemRow>
             ))}
             <Form.Item>
               <Button

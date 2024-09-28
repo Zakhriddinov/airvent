@@ -14,13 +14,14 @@ export const fields = {
     disableForTable: true,
   },
   debtStart: {
-    label: 'Oy boshiga qarz (Xaqqimiz)',
+    label: 'Oy boshiga qarz',
     disableForForm: true,
     disableForUpdate: true,
     type: 'currency',
   },
   turnover: { label: 'Aylanmasi', disableForForm: true, disableForUpdate: true, type: 'currency' },
   cash: { label: 'Naqd', disableForForm: true, disableForUpdate: true, type: 'currency' },
+  click: { label: 'Click', disableForForm: true, disableForUpdate: true, type: 'currency' },
   transfers: {
     label: 'Transferlar',
     disableForForm: true,
@@ -28,7 +29,7 @@ export const fields = {
     type: 'currency',
   },
   debtEnd: {
-    label: 'Oy oxiriga qarz (Xaqqimiz)',
+    label: 'Oy oxiriga qarz',
     disableForForm: true,
     disableForUpdate: true,
     type: 'currency',

@@ -71,6 +71,8 @@ const create = async (Model, req, res) => {
     supplier.cash += amount;
   } else if (req.body.paymentMode === 'transfers') {
     supplier.transfers += amount;
+  } else if (req.body.paymentMode === 'click') {
+    supplier.click += amount;
   }
 
   // Subtract the amount from debtEnd

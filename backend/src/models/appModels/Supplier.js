@@ -14,6 +14,7 @@ const supplierSchema = new mongoose.Schema({
   debtStart: { type: Number, default: 0 },
   turnover: { type: Number, default: 0 },
   cash: { type: Number, default: 0 },
+  click: { type: Number, default: 0 },
   transfers: { type: Number, default: 0 },
   debtEnd: { type: Number, default: 0 },
   currency: {
