@@ -27,6 +27,7 @@ import SuppplierPayment from '@/pages/SupplierPayment';
 import SupplierPaymentUpdate from '@/pages/SupplierPayment/SupplierPaymentUpdate';
 import SupplierPaymentRead from '@/pages/SupplierPayment/SupplierPaymentRead';
 import InvoiceRecordPayment from '@/pages/SupplierInvoice/InvoiceRecordPayment';
+import InvoiceUpdate from '@/pages/SupplierInvoice/InvoiceUpdate';
 
 export const sidebar = [
   {
@@ -112,6 +113,15 @@ export const sidebar = [
     element: InvoiceCreate,
     label: 'Create',
     path: '/supplier/invoice/create',
+    isPrivate: true,
+    hidden: true,
+    role: ['admin'],
+  },
+  {
+    id: 13,
+    element: InvoiceUpdate,
+    label: 'Create',
+    path: '/supplier/invoice/update/:id',
     isPrivate: true,
     hidden: true,
     role: ['admin'],

@@ -39,7 +39,7 @@ const paymentSchema = new mongoose.Schema({
   },
   paymentMode: {
     type: String,
-    enum: ['cash', 'transfers', 'click'],
+    enum: ['cash', 'transfer', 'click'],
     default: 'cash',
   },
   updated: {

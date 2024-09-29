@@ -86,9 +86,9 @@ export default function DataTable({ config, extra = [] }) {
     // navigate(`/${entity}/read/${record._id}`);
   };
   const handleEdit = (record) => {
-    // const data = { ...record };
-    // dispatch(erp.currentAction({ actionType: 'update', data }));
-    // navigate(`/${entity}/update/${record._id}`);
+    const data = { ...record };
+    dispatch(erp.currentAction({ actionType: 'update', data }));
+    navigate(`/supplier/invoice/update/${record._id}`);
   };
   const handleDownload = (record) => {
     // window.open(`${DOWNLOAD_BASE_URL}${entity}/${entity}-${record._id}.pdf`, '_blank');

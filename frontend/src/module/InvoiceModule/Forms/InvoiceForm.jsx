@@ -61,6 +61,7 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
       setCurrentYear(year);
       setLastNumber(number);
     }
+    console.log(current);
   }, [current]);
   useEffect(() => {
     const currentTotal = calculate.add(calculate.multiply(subTotal, taxRate), subTotal);

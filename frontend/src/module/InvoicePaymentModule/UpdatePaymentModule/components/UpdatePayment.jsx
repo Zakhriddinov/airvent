@@ -50,19 +50,19 @@ export default function UpdatePayment({ config, currentInvoice }) {
     if (currentInvoice) {
       const { _id: invoice } = currentInvoice;
       console.log(currentInvoice);
-      
+
       const supplier = currentInvoice.supplier && currentInvoice.supplier._id;
       fieldsValue = {
         ...fieldsValue,
         invoice,
-        supplier
+        supplier,
       };
     }
 
     dispatch(
       erp.update({
         entity,
-        id: currentInvoice._id,
+        id: currentInvoice.paymentId,
         jsonData: fieldsValue,
       })
     );

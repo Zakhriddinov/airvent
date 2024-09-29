@@ -3,7 +3,17 @@ const Supplier = require('../../../models/appModels/Supplier');
 const { calculate } = require('../../../helpers');
 
 const update = async (Model, req, res) => {
-  if (req.body.amount === 0) {
+  const {
+    amount: newAmount,
+    invoice: invoiceId,
+    paymentMode,
+    supplier: supplierId,
+    number,
+    description,
+  } = req.body;
+  const paymentId = req.params.id;
+
+  if (newAmount === 0) {
     return res.status(202).json({
       success: false,
       result: null,
@@ -11,77 +21,108 @@ const update = async (Model, req, res) => {
     });
   }
 
+  // Fetch the current invoice
   const currentInvoice = await Invoice.findOne({
-    _id: req.body.invoice,
+    _id: invoiceId,
     removed: false,
   });
 
-  const { total: previousTotal, credit: previousCredit } = currentInvoice;
-  const maxAmount = calculate.sub(previousTotal, previousCredit);
-
-  if (req.body.amount > maxAmount) {
-    return res.status(202).json({
+  if (!currentInvoice) {
+    return res.status(404).json({
       success: false,
       result: null,
-      message: `The Max Amount you can add is ${maxAmount}`,
+      message: 'Invoice not found',
     });
   }
 
-  req.body['createdBy'] = req.user._id;
-  const result = await Model.findOneAndUpdate(req.body);
+  // Extract supplierId from the invoice
+  // const supplierId = currentInvoice.supplier;
 
-  const fileId = 'payment-' + result._id + '.pdf';
-  const updatePath = await Model.findOneAndUpdate(
-    {
-      _id: result._id.toString(),
-      removed: false,
-    },
-    { pdf: fileId },
-    {
-      new: true,
-    }
+  // Fetch the previous payment
+  const previousPayment = await Model.findOne({
+    _id: paymentId,
+    removed: false,
+  });
+
+  if (!previousPayment) {
+    return res.status(404).json({
+      success: false,
+      result: null,
+      message: 'Payment not found',
+    });
+  }
+
+  const oldAmount = previousPayment.amount;
+  const { total: previousTotal, credit: previousCredit } = currentInvoice;
+
+  // Calculate max allowable amount
+  const maxAmount = calculate.sub(previousTotal, previousCredit) + oldAmount;
+
+  if (newAmount > maxAmount) {
+    return res.status(202).json({
+      success: false,
+      result: null,
+      message: `Qo'shishingiz mumkin bo'lgan maksimal summa ${maxAmount}`,
+    });
+  }
+
+  // Update the payment
+  const updatedPayment = await Model.findOneAndUpdate(
+    { _id: paymentId },
+    { amount: newAmount, updatedBy: req.user._id, number: number, description: description },
+    { new: true }
   ).exec();
 
-  const { _id: paymentId, amount } = result;
-  const { id: invoiceId, total, credit } = currentInvoice;
+  const amountDifference = calculate.sub(newAmount, oldAmount);
+  const updatedCredit = calculate.add(previousCredit, amountDifference);
 
+  // Update invoice with new payment and status
   let paymentStatus =
-    calculate.sub(total, 0) === calculate.add(credit, amount)
+    calculate.sub(previousTotal, 0) === updatedCredit
       ? 'paid'
-      : calculate.add(credit, amount) > 0
+      : updatedCredit > 0
         ? 'partially'
         : 'unpaid';
 
-  const invoiceUpdate = await Invoice.findOneAndUpdate(
-    { _id: req.body.invoice },
+  await Invoice.findOneAndUpdate(
+    { _id: invoiceId },
     {
-      $push: { payment: paymentId.toString() },
-      $inc: { credit: amount },
-      $set: { paymentStatus: paymentStatus },
+      $set: { credit: updatedCredit, paymentStatus: paymentStatus },
     },
-    {
-      new: true, // return the new result instead of the old one
-      runValidators: true,
-    }
+    { new: true }
   ).exec();
 
-  const supplier = await Supplier.findOne({ _id: result.supplier._id });
-  if (req.body.paymentMode === 'cash') {
-    supplier.cash += amount;
-  } else if (req.body.paymentMode === 'transfers') {
-    supplier.transfers += amount;
+  // Fetch supplier
+  const supplier = await Supplier.findOne({ _id: supplierId });
+
+  // Reverse the old amount from supplier's balances
+  if (previousPayment.paymentMode === 'cash') {
+    supplier.cash = calculate.sub(supplier.cash, oldAmount);
+  } else if (previousPayment.paymentMode === 'transfer') {
+    supplier.transfers = calculate.sub(supplier.transfers, oldAmount);
+  } else if (previousPayment.paymentMode === 'click') {
+    supplier.click = calculate.sub(supplier.click, oldAmount);
   }
 
-  // Subtract the amount from debtEnd
-  supplier.debtEnd = calculate.sub(supplier.debtEnd, amount);
+  // Add the new amount to the supplier's balances based on payment mode
+  if (paymentMode === 'cash') {
+    supplier.cash = calculate.add(supplier.cash, newAmount);
+  } else if (paymentMode === 'transfer') {
+    supplier.transfers = calculate.add(supplier.transfers, newAmount);
+  } else if (paymentMode === 'click') {
+    supplier.click = calculate.add(supplier.click, newAmount);
+  }
 
-  // Save the supplier's updated information
+  // Update the supplier's debt by subtracting the new amount and adding the old amount
+  supplier.debt = calculate.sub(calculate.add(supplier.debt, oldAmount), newAmount);
+
+  // Save updated supplier information
   await supplier.save();
 
   return res.status(200).json({
     success: true,
-    result: updatePath,
-    message: 'Payment Invoice created successfully',
+    result: updatedPayment,
+    message: "To'lov muvaffaqiyatli yangilandi",
   });
 };
 

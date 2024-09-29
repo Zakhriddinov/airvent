@@ -13,12 +13,12 @@ export const fields = {
     type: 'currencySelect',
     disableForTable: true,
   },
-  debtStart: {
-    label: 'Oy boshiga qarz',
-    disableForForm: true,
-    disableForUpdate: true,
-    type: 'currency',
-  },
+  // debtStart: {
+  //   label: 'Oy boshiga qarz',
+  //   disableForForm: true,
+  //   disableForUpdate: true,
+  //   type: 'currency',
+  // },
   turnover: { label: 'Aylanmasi', disableForForm: true, disableForUpdate: true, type: 'currency' },
   cash: { label: 'Naqd', disableForForm: true, disableForUpdate: true, type: 'currency' },
   click: { label: 'Click', disableForForm: true, disableForUpdate: true, type: 'currency' },
@@ -28,8 +28,8 @@ export const fields = {
     disableForUpdate: true,
     type: 'currency',
   },
-  debtEnd: {
-    label: 'Oy oxiriga qarz',
+  debt: {
+    label: 'Qarzimiz',
     disableForForm: true,
     disableForUpdate: true,
     type: 'currency',

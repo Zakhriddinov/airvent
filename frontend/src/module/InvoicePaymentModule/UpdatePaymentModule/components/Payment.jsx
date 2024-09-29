@@ -17,7 +17,9 @@ export default function Payment({ config, currentItem }) {
     const controller = new AbortController();
     if (currentItem) {
       const { invoice, _id, ...others } = currentItem;
-      setCurrentErp({ ...others, ...invoice, _id });
+      console.log(invoice);
+
+      setCurrentErp({ ...others, ...invoice, paymentId: _id });
     }
     return () => controller.abort();
   }, [currentItem]);
@@ -90,13 +92,13 @@ export default function Payment({ config, currentItem }) {
                 {tagColor(currentErp.paymentStatus)?.label}
               </Tag>
             </Descriptions.Item>
-            <Descriptions.Item label={"Jami"}>
+            <Descriptions.Item label={'Jami'}>
               {moneyFormatter({
                 amount: currentErp.subTotal,
                 currency_code: currentErp.currency,
               })}
             </Descriptions.Item>
-            <Descriptions.Item label={"Umumiy"}>
+            <Descriptions.Item label={'Umumiy'}>
               {moneyFormatter({
                 amount: currentErp.total,
                 currency_code: currentErp.currency,

@@ -24,7 +24,7 @@ const create = async (Model, req, res) => {
     return res.status(202).json({
       success: false,
       result: null,
-      message: `The Max Amount you can add is ${maxAmount}`,
+      message: `Qo'shishingiz mumkin bo'lgan maksimal miqdor ${maxAmount}`,
     });
   }
 
@@ -69,14 +69,14 @@ const create = async (Model, req, res) => {
   const supplier = await Supplier.findOne({ _id: req.body.supplier });
   if (req.body.paymentMode === 'cash') {
     supplier.cash += amount;
-  } else if (req.body.paymentMode === 'transfers') {
+  } else if (req.body.paymentMode === 'transfer') {
     supplier.transfers += amount;
   } else if (req.body.paymentMode === 'click') {
     supplier.click += amount;
   }
 
   // Subtract the amount from debtEnd
-  supplier.debtEnd = calculate.sub(supplier.debtEnd, amount);
+  supplier.debt = calculate.sub(supplier.debt, amount);
 
   // Save the supplier's updated information
   await supplier.save();
@@ -84,7 +84,7 @@ const create = async (Model, req, res) => {
   return res.status(200).json({
     success: true,
     result: updatePath,
-    message: 'Payment Invoice created successfully',
+    message: `To'lov hisob-fakturasi muvaffaqiyatli yaratildi'`,
   });
 };
 

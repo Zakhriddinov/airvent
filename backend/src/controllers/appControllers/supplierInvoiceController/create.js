@@ -50,12 +50,12 @@ const create = async (req, res) => {
       await productResult.save({ session });
 
       // Calculate the total for the item
-      let itemTotal = calculate.multiply(quantity, discountedPrice);
+      let itemTotal = calculate.multiply(quantity, price);
 
       // Update subTotal and item total
       subTotal = calculate.add(subTotal, itemTotal);
       item['total'] = itemTotal;
-      item['price'] = discountedPrice; // Update the item's price with the discounted one
+      item['price'] = price; // Update the item's price with the discounted one
     }
 
     total = subTotal;
@@ -74,7 +74,7 @@ const create = async (req, res) => {
     }
 
     supplier.turnover += subTotal;
-    supplier.debtEnd = supplier.debtStart + supplier.turnover - supplier.cash - supplier.transfers;
+    supplier.debt = supplier.turnover - supplier.cash - supplier.transfers;
 
     await supplier.save({ session });
 
@@ -85,7 +85,7 @@ const create = async (req, res) => {
     return res.status(200).json({
       success: true,
       result: result,
-      message: 'Invoice and Supplier updated successfully',
+      message: 'Hisob-faktura muvaffaqiyatli yangilandi',
     });
   } catch (error) {
     await session.abortTransaction();

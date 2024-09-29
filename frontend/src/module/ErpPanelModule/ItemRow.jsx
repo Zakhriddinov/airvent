@@ -39,6 +39,7 @@ export default function ItemRow({
         if (item) {
           setQuantity(item.quantity);
           setPrice(item.price);
+          setDiscount(item.discount);
         }
       } else {
         const item = items[field.fieldKey];
@@ -46,6 +47,7 @@ export default function ItemRow({
         if (item) {
           setQuantity(item.quantity);
           setPrice(item.price);
+          setDiscount(item.discount);
         }
       }
     }
@@ -73,7 +75,12 @@ export default function ItemRow({
             },
           ]}
         >
-          <Select loading={loading} disabled={loading} onChange={productHandleChange}>
+          <Select
+            loading={loading}
+            disabled={loading}
+            onChange={productHandleChange}
+            value={[field.name, 'product']}
+          >
             {productData?.map((option) => {
               return <Select.Option value={option._id}>{option.name}</Select.Option>;
             })}
@@ -103,7 +110,6 @@ export default function ItemRow({
         <Form.Item name={[field.name, 'discount']}>
           {/* <Input placeholder="description Name" /> */}
           <InputNumber
-            defaultValue={0}
             min={0}
             max={100}
             formatter={(value) => `${value}%`}
