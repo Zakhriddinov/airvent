@@ -73,6 +73,7 @@ export function dataForTable({ fields, translate, dateFormat }) {
             style: {
               textAlign: 'right',
               whiteSpace: 'nowrap',
+              color: field?.style?.color,
             },
           };
         },

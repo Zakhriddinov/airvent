@@ -28,11 +28,23 @@ export const fields = {
     disableForUpdate: true,
     type: 'currency',
   },
+  // credit: {
+  //   label: 'Xaqqimiz',
+  //   disableForForm: true,
+  //   disableForUpdate: true,
+  //   type: 'currency',
+  //   style: {
+  //     color: 'green',
+  //   },
+  // },
   debt: {
     label: 'Qarzimiz',
     disableForForm: true,
     disableForUpdate: true,
     type: 'currency',
+    style: {
+      color: 'red',
+    },
   },
   enabled: {
     type: 'boolean',

@@ -16,6 +16,7 @@ const supplierSchema = new mongoose.Schema({
   click: { type: Number, default: 0 },
   transfers: { type: Number, default: 0 },
   debt: { type: Number, default: 0 },
+  credit: { type: Number, default: 0 },
   currency: {
     type: String,
     enum: ['UZS', 'USD'],
@@ -34,6 +35,5 @@ const supplierSchema = new mongoose.Schema({
     },
   },
 });
-
 
 module.exports = mongoose.model('Supplier', supplierSchema);
