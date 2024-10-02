@@ -73,7 +73,10 @@ const list = async (Model, req, res) => {
           });
         }
       }
-      totalSalary += employeeSalary;
+      if (employeeSalary >= 0) {
+        totalSalary += employeeSalary;
+      }
+
       totalEarnedAmount += employeeTotalEarnedAmount;
 
       return {

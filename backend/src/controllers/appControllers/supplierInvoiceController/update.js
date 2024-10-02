@@ -52,7 +52,6 @@ const update = async (req, res) => {
       if (!productResult) {
         throw new Error(`Product with ID ${product} not found`);
       }
-
       // Chegirma mavjud bo'lsa, narxni hisoblash
       let discountedPrice = price;
       if (discount > 0) {
