@@ -5,8 +5,8 @@ import DynamicForm from '@/forms/DynamicForm';
 export default function Client() {
   const entity = 'client';
   const searchConfig = {
-    displayLabels: ['firstname,lastname'],
-    searchFields: 'firstname,lastname',
+    displayLabels: ['name'],
+    searchFields: 'name',
   };
 
   const deleteModalLabels = ['name'];
@@ -28,6 +28,8 @@ export default function Client() {
     fields,
     searchConfig,
     deleteModalLabels,
+    sortBy: 'code',
+    sortValue: 'asc',
   };
   return (
     <CrudModule

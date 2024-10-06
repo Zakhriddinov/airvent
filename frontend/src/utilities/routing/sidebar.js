@@ -17,8 +17,6 @@ import ProductCategory from '@/pages/ProductCategory';
 import Product from '@/pages/Product';
 import Position from '@/pages/Position';
 import Employee from '@/pages/Employee';
-import Client from '@/pages/Client';
-import PaymentMode from '@/pages/PaymentMode';
 import { EmployeeAttendance } from '@/pages/EmployeeAttendance';
 import Supplier from '@/pages/Supplier';
 import SupplierInvoice from '@/pages/SupplierInvoice';
@@ -28,6 +26,10 @@ import SupplierPaymentUpdate from '@/pages/SupplierPayment/SupplierPaymentUpdate
 import SupplierPaymentRead from '@/pages/SupplierPayment/SupplierPaymentRead';
 import InvoiceRecordPayment from '@/pages/SupplierInvoice/InvoiceRecordPayment';
 import InvoiceUpdate from '@/pages/SupplierInvoice/InvoiceUpdate';
+import Taxes from '@/pages/Taxes';
+import Client from '@/pages/Client';
+import ClientInvoice from '@/pages/ClientInvoice';
+import ClientInvoiceCreate from '@/pages/ClientInvoice/InvoiceCreate';
 
 export const sidebar = [
   {
@@ -153,27 +155,53 @@ export const sidebar = [
     hidden: true,
     role: ['admin'],
   },
-  // {
-  //   id: 5,
-  //   element: Client,
-  //   title: 'Mijozlar',
-  //   path: '/client',
-  //   isPrivate: true,
-  //   role: ['admin'],
-  //   icon: CustomerServiceOutlined,
-  //   hidden: false,
-  //   items: [],
-  // },
-  // {
-  //   id: 4,
-  //   element: Generics,
-  //   title: 'Hisob-fakturalar',
-  //   path: '/invoice',
-  //   isPrivate: true,
-  //   role: ['admin'],
-  //   icon: ContainerOutlined,
-  //   hidden: false,
-  // },
+  {
+    id: 14,
+    title: 'Mijoz',
+    path: '/client',
+    isPrivate: true,
+    role: ['admin'],
+    icon: CustomerServiceOutlined,
+    hidden: false,
+    items: [
+      {
+        id: '14-1',
+        parentId: 14,
+        element: Client,
+        label: "Mijozlar ro'yxati",
+        isPrivate: true,
+        path: '/client/list',
+        role: ['admin'],
+      },
+      {
+        id: '14-2',
+        parentId: 14,
+        element: ClientInvoice,
+        label: 'Hisob-fakturalar',
+        isPrivate: true,
+        path: '/client/invoice',
+        role: ['admin'],
+      },
+      {
+        id: '14-3',
+        parentId: 14,
+        element: Generics,
+        label: "To'lovlar",
+        isPrivate: true,
+        path: '/client/payment',
+        role: ['admin'],
+      },
+    ],
+  },
+  {
+    id: 15,
+    element: ClientInvoiceCreate,
+    label: 'Create',
+    path: '/clientinvoice/create',
+    isPrivate: true,
+    hidden: true,
+    role: ['admin'],
+  },
   {
     id: 3,
     title: 'Xodimlar',
@@ -212,55 +240,24 @@ export const sidebar = [
       },
     ],
   },
-  // {
-  //   id: 8,
-  //   element: Position,
-  //   title: 'Lavozim',
-  //   path: '/employee-position',
-  //   isPrivate: true,
-  //   role: ['admin'],
-  //   icon: DeploymentUnitOutlined,
-  //   hidden: false,
-  //   items: [],
-  // },
-  // {
-  //   id: 6,
-  //   title: 'Sozlamalar',
-  //   path: '/settings',
-  //   isPrivate: true,
-  //   role: ['admin'],
-  //   icon: SettingOutlined,
-  //   hidden: false,
-  //   items: [
-  //     {
-  //       id: '5-1',
-  //       parentId: 4,
-  //       label: "To'lov usullari",
-  //       isPrivate: true,
-  //       path: '/payment/mode',
-  //       role: ['admin'],
-  //       element: PaymentMode,
-  //     },
-  // {
-  //   id: '5-2',
-  //   parentId: 4,
-  //   label: 'Sozlamalar',
-  //   isPrivate: true,
-  //   path: '/settings',
-  //   role: ['admin'],
-  //   element: Generics,
-  // },
-  // ],
-  // },
-  // {
-  //   id: 6,
-  //   element: Generics,
-  //   title: 'Profile',
-  //   path: '/profile',
-  //   isPrivate: true,
-  //   role: ['admin'],
-  //   icon: UserOutlined,
-  //   hidden: true,
-  //   items: [],
-  // },
+  {
+    id: 13,
+    title: 'Sozlamalar',
+    path: null,
+    isPrivate: true,
+    role: ['admin'],
+    icon: SettingOutlined,
+    hidden: false,
+    items: [
+      {
+        id: '13-1',
+        parentId: 13,
+        element: Taxes,
+        label: 'Soliqlar',
+        path: '/taxes',
+        isPrivate: true,
+        role: ['admin'],
+      },
+    ],
+  },
 ];

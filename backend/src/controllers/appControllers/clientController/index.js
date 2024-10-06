@@ -7,6 +7,7 @@ const update = require('./update');
 const listAll = require('./listAll');
 const remove = require('./remove');
 const read = require('./read');
+const search = require('./search');
 
 function modelController() {
   const Model = Employee;

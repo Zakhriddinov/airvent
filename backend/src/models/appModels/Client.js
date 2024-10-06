@@ -9,57 +9,37 @@ const schema = new mongoose.Schema({
     type: Boolean,
     default: true,
   },
-  firstname: {
+  code: { type: Number, required: true },
+  name: {
     type: String,
     trim: true,
     required: true,
   },
-  lastname: {
+  turnover: { type: Number, default: 0 },
+  cash: { type: Number, default: 0 },
+  click: { type: Number, default: 0 },
+  transfers: { type: Number, default: 0 },
+  debt: { type: Number, default: 0 },
+  currency: {
     type: String,
-    trim: true,
+    enum: ['UZS', 'USD'],
+    default: 'UZS',
     required: true,
+    uppercase: true,
   },
   phone: {
     type: String,
     trim: true,
   },
-  images: [
-    {
-      id: String,
-      name: String,
-      path: String,
-      description: String,
-      isPublic: {
-        type: Boolean,
-        default: false,
-      },
-    },
-  ],
-  files: [
-    {
-      id: String,
-      name: String,
-      path: String,
-      description: String,
-      isPublic: {
-        type: Boolean,
-        default: false,
-      },
-    },
-  ],
-  notes: String,
-  address: { type: String },
   created: {
     type: Date,
     default: Date.now,
   },
   updated: {
     type: Date,
-    default: Date.now,
-  },
-  isPublic: {
-    type: Boolean,
-    default: false,
+    default: function () {
+      return Date.now();
+    },
   },
 });
 

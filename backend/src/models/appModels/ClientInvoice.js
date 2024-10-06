@@ -23,9 +23,9 @@ const invoiceSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
-  supplier: {
+  client: {
     type: mongoose.Schema.ObjectId,
-    ref: 'Supplier',
+    ref: 'Client',
     required: true,
     autopopulate: true,
   },
@@ -33,9 +33,8 @@ const invoiceSchema = new mongoose.Schema({
     {
       product: {
         type: mongoose.Schema.ObjectId,
-        ref: 'Products',
+        ref: 'Product',
         required: true,
-        // autopopulate: true,
       },
       quantity: {
         type: Number,
@@ -50,14 +49,17 @@ const invoiceSchema = new mongoose.Schema({
         type: Number,
         required: true,
       },
-      discount: {
-        type: Number,
-        required: true,
-      },
-      description: String,
     },
   ],
+  taxRate: {
+    type: Number,
+    default: 0,
+  },
   subTotal: {
+    type: Number,
+    default: 0,
+  },
+  taxTotal: {
     type: Number,
     default: 0,
   },
@@ -72,28 +74,27 @@ const invoiceSchema = new mongoose.Schema({
     required: true,
     uppercase: true,
   },
-  updated: {
-    type: Date,
-    default: Date.now,
-  },
-  created: {
-    type: Date,
-    default: Date.now,
-  },
   credit: {
+    type: Number,
+    default: 0,
+  },
+  discount: {
     type: Number,
     default: 0,
   },
   payment: [
     {
       type: mongoose.Schema.ObjectId,
-      ref: 'SupplierPayment',
+      ref: 'ClientPayment',
     },
   ],
   paymentStatus: {
     type: String,
     default: 'unpaid',
     enum: ['unpaid', 'paid', 'partially'],
+  },
+  notes: {
+    type: String,
   },
   status: {
     type: String,
@@ -115,7 +116,15 @@ const invoiceSchema = new mongoose.Schema({
       },
     },
   ],
+  updated: {
+    type: Date,
+    default: Date.now,
+  },
+  created: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 invoiceSchema.plugin(require('mongoose-autopopulate'));
-module.exports = mongoose.model('SupplierInvoice', invoiceSchema);
+module.exports = mongoose.model('ClientInvoice', invoiceSchema);

@@ -1,31 +1,40 @@
 // import color from '@/utilities/color';
 export const fields = {
-  firstname: {
-    label: 'Ism',
+  code: {
     required: true,
+    label: 'Kod',
   },
-  lastname: {
-    label: 'Familiya',
+  name: {
+    required: true,
+    label: 'Nomi',
   },
-  phone: {
-    label: 'Telefon raqam',
+  currency: {
+    required: true,
+    label: 'Valyuta',
+    type: 'currencySelect',
+    disableForTable: true,
   },
-  phone: {
-    type: 'phone',
-    label: 'Telefon raqam',
+  turnover: { label: 'Aylanmasi', disableForForm: true, disableForUpdate: true, type: 'currency' },
+  cash: { label: 'Naqd', disableForForm: true, disableForUpdate: true, type: 'currency' },
+  click: { label: 'Click', disableForForm: true, disableForUpdate: true, type: 'currency' },
+  transfers: {
+    label: 'Transferlar',
+    disableForForm: true,
+    disableForUpdate: true,
+    type: 'currency',
   },
-  //   color: {
-  //     type: 'color',
-  //     options: [...color],
-  //     required: true,
-  //     label: 'Rang',
-  //   },
-  address: {
-    type: 'textarea',
-    label: 'Manzil',
+  debt: {
+    label: 'Mijoz qarzi',
+    disableForForm: true,
+    disableForUpdate: true,
+    type: 'currency',
+    style: {
+      color: 'green',
+    },
   },
   enabled: {
     type: 'boolean',
+    required: true,
     label: 'Holat',
   },
 };
