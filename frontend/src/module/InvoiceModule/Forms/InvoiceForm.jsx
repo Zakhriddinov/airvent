@@ -30,29 +30,10 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
   const [currentYear, setCurrentYear] = useState(() => new Date().getFullYear());
   const [lastNumber, setLastNumber] = useState(() => 1);
   const [currency, setCurrency] = useState('UZS');
-  const [supplierId, setSupplierId] = useState('');
-  const [productData, setProductData] = useState([]);
-  const [loading, setLoading] = useState(false);
 
-  const fetchProductData = async () => {
-    setLoading(true);
-    try {
-      const response = await axios.get(`${API_BASE_URL}products/${supplierId}/ref`);
-      setProductData(response?.data?.result);
-    } catch (error) {
-      console.error('Error fetching data:', error);
-      message.error('Error fetching attendance data.');
-    } finally {
-      setLoading(false);
-    }
-  };
-  useEffect(() => {
-    fetchProductData();
-  }, [supplierId]);
-
-  const handelTaxChange = (value) => {
-    setTaxRate(value / 100);
-  };
+  // const handelTaxChange = (value) => {
+  //   setTaxRate(value / 100);
+  // };
 
   useEffect(() => {
     if (current) {
@@ -94,7 +75,6 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
               redirectLabel={'Add New Client'}
               withRedirect
               urlToRedirect={'/supplier'}
-              onChange={(v) => setSupplierId(v)}
             />
           </Form.Item>
         </Col>
@@ -223,8 +203,6 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
                 remove={remove}
                 field={field}
                 current={current}
-                loading={loading}
-                productData={productData}
               ></ItemRow>
             ))}
             <Form.Item>

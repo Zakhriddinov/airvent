@@ -4,14 +4,11 @@ import AutoCompleteAsync from '@/components/AutoCompleteAsync';
 
 import { DeleteOutlined } from '@ant-design/icons';
 import calculate from '@/utilities/calculate';
-import SelectAsync from '@/components/SelectAsync';
 
 export default function ItemRow({
   field,
   remove,
   current = null,
-  loading = false,
-  productData = [],
 }) {
   const [totalState, setTotal] = useState(undefined);
   const [price, setPrice] = useState(0);
@@ -75,16 +72,15 @@ export default function ItemRow({
             },
           ]}
         >
-          <Select
-            loading={loading}
-            disabled={loading}
+          <AutoCompleteAsync
+            entity={'products'}
+            displayLabels={['name']}
+            searchFields={'name'}
+            redirectLabel={'Yangi mijoz yaratish'}
+            withRedirect
             onChange={productHandleChange}
-            value={[field.name, 'product']}
-          >
-            {productData?.map((option) => {
-              return <Select.Option value={option._id}>{option.name}</Select.Option>;
-            })}
-          </Select>
+            urlToRedirect={'/product'}
+          ></AutoCompleteAsync>
         </Form.Item>
       </Col>
 

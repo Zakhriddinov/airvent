@@ -1,4 +1,4 @@
-const migrate = require('./migrate');
+const { migrate } = require('./migrate');
 
 const search = async (Model, req, res) => {
   const fieldsArray = req.query.fields ? req.query.fields.split(',') : ['name'];

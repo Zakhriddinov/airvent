@@ -3,11 +3,14 @@ import { Form, Input, InputNumber, Row, Col } from 'antd';
 
 import { DeleteOutlined } from '@ant-design/icons';
 import calculate from '@/utilities/calculate';
+import AutoCompleteAsync from '@/components/AutoCompleteAsync';
 
 export default function ItemRow({ field, remove, current = null }) {
   const [totalState, setTotal] = useState(undefined);
   const [price, setPrice] = useState(0);
   const [quantity, setQuantity] = useState(0);
+  const [maxQuantity, setMaxQuantity] = useState(null);
+  const [product, setProduct] = useState({});
 
   const updateQt = (value) => {
     setQuantity(value);
@@ -44,10 +47,16 @@ export default function ItemRow({ field, remove, current = null }) {
   }, [current]);
 
   useEffect(() => {
-    const currentTotal = calculate.multiply(price, quantity);
-
+    const currentTotal = calculate.multiply(product?.price, quantity);
+    setPrice(product?.price);
     setTotal(currentTotal);
-  }, [price, quantity]);
+
+    // if (product && product.quantity) {
+    //   setMaxQuantity(product.quantity);
+    // } else {
+    //   setMaxQuantity(null);
+    // }
+  }, [quantity, product]);
 
   return (
     <Row gutter={[12, 12]} style={{ position: 'relative' }}>
@@ -65,7 +74,15 @@ export default function ItemRow({ field, remove, current = null }) {
             },
           ]}
         >
-          <Input placeholder="Item Name" />
+          <AutoCompleteAsync
+            entity={'products'}
+            displayLabels={['name']}
+            searchFields={'name'}
+            // redirectLabel={'Yangi mijoz yaratish'}
+            withRedirect
+            onChange={(v, data) => setProduct(data)}
+            // urlToRedirect={'/client/list'}
+          ></AutoCompleteAsync>
         </Form.Item>
       </Col>
       <Col className="gutter-row" span={7}>
@@ -74,21 +91,40 @@ export default function ItemRow({ field, remove, current = null }) {
         </Form.Item>
       </Col>
       <Col className="gutter-row" span={3}>
-        <Form.Item name={[field.name, 'quantity']} rules={[{ required: true }]}>
-          <InputNumber style={{ width: '100%' }} min={0} onChange={updateQt} />
+        <Form.Item
+          name={[field.name, 'quantity']}
+          rules={[
+            {
+              required: true,
+            },
+          ]}
+        >
+          <InputNumber
+            style={{ width: '100%' }}
+            min={0}
+            onChange={updateQt}
+            max={maxQuantity || undefined}
+          />
+          {maxQuantity && (
+            <span style={{ color: 'gray', fontSize: '12px' }}>Maxsulot soni: {maxQuantity}</span>
+          )}
         </Form.Item>
       </Col>
       <Col className="gutter-row" span={4}>
-        <Form.Item name={[field.name, 'price']} rules={[{ required: true }]}>
-          <InputNumber
-            onChange={updatePrice}
-            className="moneyInput"
-            min={0}
-            controls={false}
-            style={{ width: '100%' }}
-            formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-            parser={(value) => value.replace(/\$\s?|UZS|,/g, '')}
-          />
+        <Form.Item name={[field.name, 'price']}>
+          <Form.Item>
+            <InputNumber
+              // onChange={updatePrice}
+              readOnly
+              value={price}
+              className="moneyInput"
+              min={0}
+              controls={false}
+              style={{ width: '100%' }}
+              formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+              parser={(value) => value.replace(/\$\s?|UZS|,/g, '')}
+            />
+          </Form.Item>
         </Form.Item>
       </Col>
       <Col className="gutter-row" span={5}>

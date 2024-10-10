@@ -9,6 +9,7 @@ const listAll = require('./listAll');
 const remove = require('./remove');
 const read = require('./read');
 const ref = require('./ref');
+const search = require('./search');
 
 function modelController() {
   const Model = Products;

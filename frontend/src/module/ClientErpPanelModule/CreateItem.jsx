@@ -49,10 +49,12 @@ export default function CreateItem({ config, CreateForm }) {
   const [subTotal, setSubTotal] = useState(0);
   const [offerSubTotal, setOfferSubTotal] = useState(0);
   const handelValuesChange = (changedValues, values) => {
+    console.log(values);
+    
     const items = values['items'];
     let subTotal = 0;
     let subOfferTotal = 0;
-
+    
     if (items) {
       items.map((item) => {
         if (item) {
