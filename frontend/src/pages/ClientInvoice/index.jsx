@@ -21,7 +21,7 @@ export default function ClientInvoice() {
     },
     {
       title: 'Mijoz',
-      dataIndex: ['client', 'name'],
+      dataIndex: 'clientName',
     },
     {
       title: 'Sana',
@@ -91,9 +91,9 @@ export default function ClientInvoice() {
 
   const Labels = {
     PANEL_TITLE: 'invoice',
-    DATATABLE_TITLE: 'invoice_list',
-    ADD_NEW_ENTITY: 'add_new_invoice',
-    ENTITY_NAME: 'invoice',
+    DATATABLE_TITLE: "Hisob-fakturalar ro'yxati",
+    ADD_NEW_ENTITY: "Yangi hisob faktura qo'shish",
+    ENTITY_NAME: 'clientinvoice',
 
     RECORD_ENTITY: 'record_payment',
   };

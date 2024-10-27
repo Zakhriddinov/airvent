@@ -5,10 +5,13 @@ import { generate as uniqueId } from 'shortid';
 import color from '@/utilities/color';
 
 export const moneyFormatter = ({ amount, currency_code = 'UZS' }) => {
-  return new Intl.NumberFormat('uz-UZ', {
+  // Mintaqani valyuta kodiga qarab aniqlash
+  const locale = currency_code === 'USD' ? 'en-US' : 'uz-UZ';
+
+  return new Intl.NumberFormat(locale, {
     style: 'currency',
     currency: currency_code,
-    minimumFractionDigits: 2, // To display up to two decimal places for cents
+    minimumFractionDigits: 2, // To display up to two decimal places
   }).format(amount);
 };
 

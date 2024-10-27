@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import dayjs from 'dayjs';
-import { Form, Input, InputNumber, Button, Select, Divider, Row, Col } from 'antd';
+import { Form, Input, InputNumber, Button, Select, Divider, Row, Col, Space, Tooltip } from 'antd';
 
-import { PlusOutlined } from '@ant-design/icons';
+import { EditOutlined, PlusOutlined, SwapOutlined, UnorderedListOutlined } from '@ant-design/icons';
 
 import { DatePicker } from 'antd';
 
@@ -16,16 +16,19 @@ import calculate from '@/utilities/calculate';
 // import { useSelector } from 'react-redux';
 import SelectAsync from '@/components/SelectAsync';
 
-export default function InvoiceForm({ subTotal = 0, current = null }) {
-  return <LoadInvoiceForm subTotal={subTotal} current={current} />;
+export default function InvoiceForm({ subTotal = 0, current = null, form }) {
+  return <LoadInvoiceForm subTotal={subTotal} current={current} form={form} />;
 }
 
-function LoadInvoiceForm({ subTotal = 0, current = null }) {
+function LoadInvoiceForm({ subTotal = 0, current = null, form = { form } }) {
   const [total, setTotal] = useState(0);
   const [taxRate, setTaxRate] = useState(0);
   const [taxTotal, setTaxTotal] = useState(0);
   const [currentYear, setCurrentYear] = useState(() => new Date().getFullYear());
   const [lastNumber, setLastNumber] = useState(() => 1);
+  const [currency, setCurrency] = useState('USD');
+
+  const [isInputVisible, setIsInputVisible] = useState(false);
 
   const handelTaxChange = (value) => {
     setTaxRate(value / 100);
@@ -50,7 +53,6 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
   useEffect(() => {
     addField.current.click();
   }, []);
-
   return (
     <>
       <Row gutter={[12, 0]}>
@@ -64,15 +66,29 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
               },
             ]}
           >
-            <AutoCompleteAsync
-              entity={'client'}
-              displayLabels={['name']}
-              searchFields={'name'}
-              redirectLabel={'Yangi mijoz yaratish'}
-              withRedirect
-              urlToRedirect={'/client/list'}
-            />
+            {isInputVisible ? (
+              <Input placeholder="Mijoz nomi" />
+            ) : (
+              <AutoCompleteAsync
+                entity={'client'}
+                displayLabels={['name']}
+                searchFields={'name'}
+                redirectLabel={'Yangi mijoz yaratish'}
+                withRedirect
+                urlToRedirect={'/client/list'}
+              />
+            )}
           </Form.Item>
+        </Col>
+        <Col className="gutter-row" span={1}>
+          <div style={{ marginBottom: '7px' }}>&nbsp;</div>
+          <Tooltip title={isInputVisible ? "Ro'yxatdan olish" : "Qo'lda kiritish"}>
+            <Button
+              type="primary"
+              onClick={() => setIsInputVisible(!isInputVisible)} // Input va Select o'rtasida almashtirish
+              icon={isInputVisible ? <UnorderedListOutlined /> : <EditOutlined />} // Ikonalar holatga qarab o'zgaradi
+            />
+          </Tooltip>
         </Col>
         <Col className="gutter-row" span={3}>
           <Form.Item
@@ -104,6 +120,15 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
         </Col>
 
         <Col className="gutter-row" span={5}>
+          <Form.Item label={'Valyuta'} name={`currency`} initialValue={currency}>
+            <Select defaultValue="UZS" onChange={setCurrency} style={{ width: '100%' }}>
+              <Select.Option value="UZS">🇺🇿 UZS (UZB So'm)</Select.Option>
+              <Select.Option value="USD">🇺🇸 $ (US Dollar)</Select.Option>
+            </Select>
+          </Form.Item>
+        </Col>
+
+        <Col className="gutter-row" span={4}>
           <Form.Item
             label={'Holat'}
             name="status"
@@ -162,17 +187,20 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
       </Row>
       <Divider dashed />
       <Row gutter={[12, 12]} style={{ position: 'relative' }}>
-        <Col className="gutter-row" span={5}>
+        <Col className="gutter-row" span={6}>
           <p>{'Maxsulot'}</p>
-        </Col>
-        <Col className="gutter-row" span={7}>
-          <p>{'Izoh'}</p>
         </Col>
         <Col className="gutter-row" span={3}>
           <p>{'Miqdor'}</p>{' '}
         </Col>
-        <Col className="gutter-row" span={4}>
+        <Col className="gutter-row" span={2}>
+          <p>{'Birlik'}</p>{' '}
+        </Col>
+        <Col className="gutter-row" span={5}>
           <p>{'Narx'}</p>
+        </Col>
+        <Col className="gutter-row" span={3}>
+          <p>{'Chegirma (%)'}</p>
         </Col>
         <Col className="gutter-row" span={5}>
           <p>{'Jami'}</p>
@@ -181,23 +209,55 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
       <Form.List name="items">
         {(fields, { add, remove }) => (
           <>
-            {fields.map((field) => (
-              <ItemRow key={field.key} remove={remove} field={field} current={current}></ItemRow>
-            ))}
+            {fields.map(
+              (field) => (
+                // form.getFieldValue(['items', field.name, 'isCustom']) ? (
+                //   <CustomItemRow
+                //     key={field.key}
+                //     remove={remove}
+                //     field={field}
+                //     current={current}
+                //     form={form}
+                //   />
+                // ) : (
+                <ItemRow
+                  key={field.key}
+                  remove={remove}
+                  field={field}
+                  current={current}
+                  form={form}
+                  isCustom={form.getFieldValue(['items', field.name, 'isCustom'])}
+                />
+              )
+              // )
+            )}
+            {/* Button to add regular ItemRow */}
             <Form.Item>
-              <Button
-                type="dashed"
-                onClick={() => add()}
-                block
-                icon={<PlusOutlined />}
-                ref={addField}
-              >
-                {"Maydon qo'shish"}
-              </Button>
+              <Space>
+                <Button
+                  type="dashed"
+                  onClick={() => add()} // Regular ItemRow (no isCustom)
+                  block
+                  icon={<PlusOutlined />}
+                  ref={addField}
+                >
+                  {"Mahsulot uchun qo'shish"}
+                </Button>
+
+                <Button
+                  type="dashed"
+                  onClick={() => add({ isCustom: true })} // Custom ItemRow (with isCustom)
+                  block
+                  icon={<PlusOutlined />}
+                >
+                  {"Custom mahsulot qo'shish"}
+                </Button>
+              </Space>
             </Form.Item>
           </>
         )}
       </Form.List>
+
       <Divider dashed />
       <div style={{ position: 'relative', width: ' 100%', float: 'right' }}>
         <Row gutter={[12, -5]}>
@@ -261,7 +321,7 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
                 textAlign: 'right',
               }}
             >
-              {"Jami"} :
+              {'Jami'} :
             </p>
           </Col>
           <Col className="gutter-row" span={5}>

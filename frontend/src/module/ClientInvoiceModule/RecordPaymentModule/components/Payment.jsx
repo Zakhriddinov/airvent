@@ -6,18 +6,13 @@ import { FileTextOutlined, CloseCircleOutlined } from '@ant-design/icons';
 
 import { generate as uniqueId } from 'shortid';
 
-import { useMoney } from '@/settings';
-
 import RecordPayment from './RecordPayment';
-import useLanguage from '@/locale/useLanguage';
-import { tagColor } from '@/utils/statusTagColor';
+import { tagColor } from '@/utilities/statusTagColor';
 import { useNavigate } from 'react-router-dom';
+import { moneyFormatter } from '@/utilities/dataStructure';
 
 export default function Payment({ config, currentItem }) {
-  const translate = useLanguage();
   const { entity, ENTITY_NAME } = config;
-
-  const money = useMoney();
   const navigate = useNavigate();
 
   const [itemslist, setItemsList] = useState([]);
@@ -29,7 +24,7 @@ export default function Payment({ config, currentItem }) {
       setClient(currentErp.client[currentErp.client.type]);
     }
   }, [currentErp]);
-
+  
   useEffect(() => {
     const controller = new AbortController();
     if (currentItem) {
@@ -56,14 +51,14 @@ export default function Payment({ config, currentItem }) {
           lg={{ span: 20, push: 2 }}
         >
           <PageHeader
-            onBack={() => navigate(`/${entity.toLowerCase()}`)}
-            title={`Record Payment for ${ENTITY_NAME} # ${currentErp.number}/${
+            onBack={() => navigate(`/client/invoice`)}
+            title={`Hisob faktura to'lovni kiritish # ${currentErp.number}/${
               currentErp.year || ''
             }`}
             ghost={false}
             tags={
               <Tag color={tagColor(currentErp.paymentStatus)?.color}>
-                {currentErp.paymentStatus && translate(currentErp.paymentStatus)}
+                {currentErp.paymentStatus && tagColor(currentErp.paymentStatus)?.label}
               </Tag>
             }
             // subTitle="This is cuurent erp page"
@@ -71,19 +66,12 @@ export default function Payment({ config, currentItem }) {
               <Button
                 key={`${uniqueId()}`}
                 onClick={() => {
-                  navigate(`/${entity.toLowerCase()}`);
+                  navigate(`/client/invoice`);
                 }}
                 icon={<CloseCircleOutlined />}
               >
-                {translate('Cancel')}
-              </Button>,
-              <Button
-                key={`${uniqueId()}`}
-                onClick={() => navigate(`/invoice/read/${currentErp._id}`)}
-                icon={<FileTextOutlined />}
-              >
-                {translate('Show Invoice')}
-              </Button>,
+                {'Bekor qilish'}
+              </Button>
             ]}
             style={{
               padding: '20px 0px',
@@ -101,35 +89,27 @@ export default function Payment({ config, currentItem }) {
           lg={{ span: 10, order: 2, push: 4 }}
         >
           <div className="space50"></div>
-          <Descriptions title={`${translate('Client')}  : ${currentErp.client.name}`} column={1}>
-            <Descriptions.Item label={translate('email')}>{client.email}</Descriptions.Item>
-            <Descriptions.Item label={translate('phone')}>{client.phone}</Descriptions.Item>
+          <Descriptions title={`Mijoz  : ${currentErp?.client?.name}`} column={1}>
             <Divider dashed />
-            <Descriptions.Item label={translate('payment status')}>
+            <Descriptions.Item label={"To'lov holati"}>
               <Tag color={tagColor(currentErp.paymentStatus)?.color}>
-                {currentErp.paymentStatus && translate(currentErp.paymentStatus)}
+                {tagColor(currentErp.paymentStatus)?.label}
               </Tag>
             </Descriptions.Item>
-            <Descriptions.Item label={translate('sub total')}>
-              {money.moneyFormatter({
+            <Descriptions.Item label={'Jami'}>
+              {moneyFormatter({
                 amount: currentErp.subTotal,
                 currency_code: currentErp.currency,
               })}
             </Descriptions.Item>
-            <Descriptions.Item label={translate('total')}>
-              {money.moneyFormatter({
+            <Descriptions.Item label={'Umumiy'}>
+              {moneyFormatter({
                 amount: currentErp.total,
                 currency_code: currentErp.currency,
               })}
             </Descriptions.Item>
-            <Descriptions.Item label={translate('discount')}>
-              {money.moneyFormatter({
-                amount: currentErp.discount,
-                currency_code: currentErp.currency,
-              })}
-            </Descriptions.Item>
-            <Descriptions.Item label={translate('Paid')}>
-              {money.moneyFormatter({
+            <Descriptions.Item label={'Balans'}>
+              {moneyFormatter({
                 amount: currentErp.credit,
                 currency_code: currentErp.currency,
               })}

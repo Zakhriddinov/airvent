@@ -10,7 +10,7 @@ const paymentSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  supplier: {
+  client: {
     type: mongoose.Schema.ObjectId,
     ref: 'Client',
     autopopulate: true,

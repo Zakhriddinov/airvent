@@ -1,4 +1,4 @@
-import { ErpLayout } from '@/layout';
+import ErpLayout from '@/layout/ErpLayout';
 
 import PageLoader from '@/components/PageLoader';
 import { erp } from '@/redux/erp/actions';

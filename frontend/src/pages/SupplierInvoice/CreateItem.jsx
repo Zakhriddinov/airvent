@@ -87,6 +87,10 @@ export default function CreateItem({ config, CreateForm }) {
     if (fieldsValue) {
       if (fieldsValue.items) {
         let newList = [...fieldsValue.items];
+        newList.map((item) => {
+          if (item.isCustom) delete item.isCustom;
+          item.total = calculate.multiply(item.quantity, item.price);
+        });
         fieldsValue = {
           ...fieldsValue,
           items: newList,
@@ -105,7 +109,7 @@ export default function CreateItem({ config, CreateForm }) {
         // backIcon={langDirection === 'rtl' ? <ArrowRightOutlined /> : <ArrowLeftOutlined />}
         title={'Yangi'}
         ghost={false}
-        tags={<Tag>{'Draft'}</Tag>}
+        tags={<Tag>Qoralama</Tag>}
         // subTitle="This is create page"
         extra={[
           <Button
@@ -124,7 +128,7 @@ export default function CreateItem({ config, CreateForm }) {
       <Divider dashed />
       <Loading isLoading={isLoading}>
         <Form form={form} layout="vertical" onFinish={onSubmit} onValuesChange={handelValuesChange}>
-          <CreateForm subTotal={subTotal} offerTotal={offerSubTotal} />
+          <CreateForm subTotal={subTotal} offerTotal={offerSubTotal} form={form} />
         </Form>
       </Loading>
     </>

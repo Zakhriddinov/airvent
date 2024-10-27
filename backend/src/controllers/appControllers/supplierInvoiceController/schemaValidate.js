@@ -20,14 +20,18 @@ const schema = Joi.object({
   items: Joi.array()
     .items(
       Joi.object({
-        product: Joi.string().required(),
+        product: Joi.string().optional(),
+        itemName: Joi.string().optional(),
         quantity: Joi.number().positive().required(),
         price: Joi.number().positive().required(),
-        discount: Joi.number().required(),
+        discount: Joi.number(),
+        total: Joi.number().required(),
+        unit: Joi.string().valid('m', 'kg', 'l', 'dona').optional(),
       }).required()
     )
     .required(),
-  currency: Joi.string().valid('UZS', 'USD').required(),
+  currency: Joi.string().valid('UZS', 'USD').optional(),
+  notes: Joi.string().optional()
 });
 
 module.exports = schema;

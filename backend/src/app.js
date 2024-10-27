@@ -26,15 +26,17 @@ app.use(compression());
 // Here our API Routes
 const authRoute = require('./routes/authRoute');
 const appRouter = require('./routes/appRoutes/appApi');
+const coreDownloadRouter = require('./routes/coreDownloadRouter');
 // const updateDebtStartForSuppliers = require('./controllers/appControllers/supplierController/schedule');
 
 // har oy tugaganda debtEnd dan debtStart ga o'tkazadi
 // updateDebtStartForSuppliers();
 
-
 app.use('/api/auth', authRoute);
 app.use('/api', isValidAuthToken, appRouter);
+app.use('/download', coreDownloadRouter);
 
+app.use('/public', express.static('src/public'));
 app.use(express.static(path.join(__dirname, '../../frontend/')));
 
 // Barcha yo'nalishlar uchun `index.html` xizmat qilish

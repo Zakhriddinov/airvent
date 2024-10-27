@@ -9,7 +9,7 @@ export default function InvoiceDataTableModule({ config }) {
         config={config}
         extra={[
           {
-            label: 'Record Payment',
+            label: "To'lovni kiritish",
             key: 'recordPayment',
             icon: <CreditCardOutlined />,
           },

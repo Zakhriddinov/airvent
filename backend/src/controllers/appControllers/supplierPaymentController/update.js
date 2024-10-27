@@ -35,6 +35,15 @@ const update = async (Model, req, res) => {
     });
   }
 
+  // Check if the invoice is already fully paid
+  if (currentInvoice.paymentStatus === 'paid') {
+    return res.status(400).json({
+      success: false,
+      result: null,
+      message: "To'lov to'liq amalga oshirilgan, yangilash mumkin emas",
+    });
+  }
+
   // Extract supplierId from the invoice
   // const supplierId = currentInvoice.supplier;
 

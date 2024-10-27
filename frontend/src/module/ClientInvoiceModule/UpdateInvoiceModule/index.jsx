@@ -1,8 +1,8 @@
 import NotFound from '@/components/NotFound';
 
-import { ErpLayout } from '@/layout';
-import UpdateItem from '@/modules/ErpPanelModule/UpdateItem';
-import InvoiceForm from '@/modules/InvoiceModule/Forms/InvoiceForm';
+import ErpLayout from '@/layout/ErpLayout';
+import UpdateItem from '@/module/ClientErpPanelModule/UpdateItem';
+import InvoiceForm from '@/module/ClientInvoiceModule/Forms/InvoiceForm';
 
 import PageLoader from '@/components/PageLoader';
 
@@ -12,8 +12,6 @@ import { selectReadItem } from '@/redux/erp/selectors';
 import { useLayoutEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-
-import { settingsAction } from '@/redux/settings/actions';
 
 export default function UpdateInvoiceModule({ config }) {
   const dispatch = useDispatch();

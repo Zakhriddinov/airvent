@@ -7,7 +7,7 @@ export default function SupplierPaymentRead() {
     PANEL_TITLE: 'payment',
     DATATABLE_TITLE: 'payment_list',
     ADD_NEW_ENTITY: 'add_new_payment',
-    ENTITY_NAME: 'payment',
+    ENTITY_NAME: "To'lov",
   };
 
   const configPage = {

@@ -30,6 +30,10 @@ import Taxes from '@/pages/Taxes';
 import Client from '@/pages/Client';
 import ClientInvoice from '@/pages/ClientInvoice';
 import ClientInvoiceCreate from '@/pages/ClientInvoice/InvoiceCreate';
+import ClientInvoiceRecordPayment from '@/pages/ClientInvoice/InvoiceRecordPayment';
+import ClientPayment from '@/pages/ClientPayment'
+import ClientInvoiceUpdate from '@/pages/ClientInvoice/InvoiceUpdate'
+import InvoiceRead from '@/pages/SupplierInvoice/InvoiceRead';
 
 export const sidebar = [
   {
@@ -129,6 +133,15 @@ export const sidebar = [
     role: ['admin'],
   },
   {
+    id: 16,
+    element: InvoiceRead,
+    label: 'Read',
+    path: '/supplier/invoice/read/:id',
+    isPrivate: true,
+    hidden: true,
+    role: ['admin'],
+  },
+  {
     id: 11,
     element: SupplierPaymentUpdate,
     label: 'Update',
@@ -185,7 +198,7 @@ export const sidebar = [
       {
         id: '14-3',
         parentId: 14,
-        element: Generics,
+        element: ClientPayment,
         label: "To'lovlar",
         isPrivate: true,
         path: '/client/payment',
@@ -198,6 +211,24 @@ export const sidebar = [
     element: ClientInvoiceCreate,
     label: 'Create',
     path: '/clientinvoice/create',
+    isPrivate: true,
+    hidden: true,
+    role: ['admin'],
+  },
+  {
+    id: 16,
+    element: ClientInvoiceRecordPayment,
+    label: 'Pay',
+    path: '/clientinvoice/pay/:id',
+    isPrivate: true,
+    hidden: true,
+    role: ['admin'],
+  },
+  {
+    id: 17,
+    element: ClientInvoiceUpdate,
+    label: 'Create',
+    path: '/clientinvoice/update/:id',
     isPrivate: true,
     hidden: true,
     role: ['admin'],

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import dayjs from 'dayjs';
-import { Form, Input, InputNumber, Button, Select, Divider, Row, Col } from 'antd';
+import { Form, Input, InputNumber, Button, Select, Divider, Row, Col, Space } from 'antd';
 
 import { PlusOutlined } from '@ant-design/icons';
 
@@ -12,42 +12,41 @@ import MoneyInputFormItem from '@/components/MoneyInputFormItem';
 // import { selectFinanceSettings } from '@/redux/settings/selectors';
 
 import calculate from '@/utilities/calculate';
-import { useSelector } from 'react-redux';
-import SelectAsync from '@/components/SelectAsync';
 import ItemRow from '../../ErpPanelModule/ItemRow';
-import axios from 'axios';
-import { API_BASE_URL } from '@/config/serverApiConfig';
 
-export default function InvoiceForm({ subTotal = 0, current = null }) {
-  return <LoadInvoiceForm subTotal={subTotal} current={current} />;
+export default function InvoiceForm({ subTotal = 0, current = null, form }) {
+  return <LoadInvoiceForm subTotal={subTotal} current={current} form={form} />;
 }
 
-function LoadInvoiceForm({ subTotal = 0, current = null }) {
+function LoadInvoiceForm({ subTotal = 0, current = null, form = { form } }) {
   // const { last_invoice_number } = useSelector(selectFinanceSettings);
   const [total, setTotal] = useState(0);
   const [taxRate, setTaxRate] = useState(0);
-  const [taxTotal, setTaxTotal] = useState(0);
   const [currentYear, setCurrentYear] = useState(() => new Date().getFullYear());
   const [lastNumber, setLastNumber] = useState(() => 1);
-  const [currency, setCurrency] = useState('UZS');
+  const [currency, setCurrency] = useState();
+  const [supplier, setSupplier] = useState({});
 
-  // const handelTaxChange = (value) => {
-  //   setTaxRate(value / 100);
-  // };
+  function handleSupplier(v, data) {
+    setSupplier(data);
+  }
 
   useEffect(() => {
     if (current) {
-      const { taxRate = 0, year, number } = current;
+      const { taxRate = 0, year, number, currency } = current;
       setTaxRate(taxRate / 100);
       setCurrentYear(year);
       setLastNumber(number);
+      setCurrency(currency);
     }
-    console.log(current);
   }, [current]);
+
   useEffect(() => {
     const currentTotal = calculate.add(calculate.multiply(subTotal, taxRate), subTotal);
     setTotal(Number.parseFloat(currentTotal));
-  }, [subTotal, taxRate]);
+
+    supplier?.currency && setCurrency(supplier?.currency);
+  }, [subTotal, taxRate, supplier]);
 
   const addField = useRef(false);
 
@@ -72,9 +71,10 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
               entity={'supplier'}
               displayLabels={['name']}
               searchFields={'name'}
-              redirectLabel={'Add New Client'}
+              redirectLabel={"Yangi yetkazib beruvchi qo'shish"}
               withRedirect
-              urlToRedirect={'/supplier'}
+              urlToRedirect={'/supplier/list'}
+              onChange={handleSupplier}
             />
           </Form.Item>
         </Col>
@@ -108,11 +108,10 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
         </Col>
 
         <Col className="gutter-row" span={5}>
-          <Form.Item label={'Valyuta'} name={`currency`} initialValue={currency}>
-            <Select defaultValue="UZS" onChange={setCurrency} style={{ width: '100%' }}>
-              <Select.Option value="UZS">🇺🇿 UZS (UZB So'm)</Select.Option>
-              <Select.Option value="USD">🇺🇸 $ (US Dollar)</Select.Option>
-            </Select>
+          <Form.Item label={'Valyuta'} name={'currency'}>
+            <Form.Item>
+              <Input value={currency} readOnly />
+            </Form.Item>
           </Form.Item>
         </Col>
 
@@ -181,16 +180,19 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
         <Col className="gutter-row" span={3}>
           <p>{'Miqdor'}</p>{' '}
         </Col>
+        <Col className="gutter-row" span={2}>
+          <p>{'Birlik'}</p>{' '}
+        </Col>
         <Col className="gutter-row" span={4}>
           <p>{'Narx'}</p>
         </Col>
-        <Col className="gutter-row" span={3}>
+        <Col className="gutter-row" span={2}>
           <p>{"Qo'yiladigan foiz"}</p>
         </Col>
         <Col className="gutter-row" span={4}>
           <p>{'Sotiladigan narx'}</p>
         </Col>
-        <Col className="gutter-row" span={5}>
+        <Col className="gutter-row" span={4}>
           <p>{'Jami'}</p>
         </Col>
       </Row>
@@ -203,18 +205,30 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
                 remove={remove}
                 field={field}
                 current={current}
+                isCustom={form.getFieldValue(['items', field.name, 'isCustom'])}
               ></ItemRow>
             ))}
             <Form.Item>
-              <Button
-                type="dashed"
-                onClick={() => add()}
-                block
-                icon={<PlusOutlined />}
-                ref={addField}
-              >
-                {"Maydon qo'shish"}
-              </Button>
+              <Space>
+                <Button
+                  type="dashed"
+                  onClick={() => add()}
+                  block
+                  icon={<PlusOutlined />}
+                  ref={addField}
+                >
+                  Mahsulotdan olish
+                </Button>
+
+                <Button
+                  type="dashed"
+                  onClick={() => add({ isCustom: true })}
+                  block
+                  icon={<PlusOutlined />}
+                >
+                  Qo'lda kiritish
+                </Button>
+              </Space>
             </Form.Item>
           </>
         )}
@@ -245,7 +259,7 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
             <MoneyInputFormItem readOnly value={subTotal} />
           </Col>
         </Row>
-        <Row gutter={[12, -5]}>
+        {/* <Row gutter={[12, -5]}>
           <Col className="gutter-row" span={4} offset={15}>
             <p
               style={{
@@ -261,7 +275,7 @@ function LoadInvoiceForm({ subTotal = 0, current = null }) {
           <Col className="gutter-row" span={5}>
             <MoneyInputFormItem readOnly value={total} />
           </Col>
-        </Row>
+        </Row> */}
       </div>
     </>
   );

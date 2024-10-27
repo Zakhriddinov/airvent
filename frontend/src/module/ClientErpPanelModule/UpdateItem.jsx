@@ -5,35 +5,30 @@ import { Button, Tag } from 'antd';
 import { PageHeader } from '@ant-design/pro-layout';
 
 import { useSelector, useDispatch } from 'react-redux';
-import useLanguage from '@/locale/useLanguage';
 import { erp } from '@/redux/erp/actions';
 
-import calculate from '@/utils/calculate';
+import calculate from '@/utilities/calculate';
 import { generate as uniqueId } from 'shortid';
 import { selectUpdatedItem } from '@/redux/erp/selectors';
 import Loading from '@/components/Loading';
-import { tagColor } from '@/utils/statusTagColor';
+import { tagColor } from '@/utilities/statusTagColor';
 
 import { CloseCircleOutlined, PlusOutlined } from '@ant-design/icons';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import { settingsAction } from '@/redux/settings/actions';
-// import { StatusTag } from '@/components/Tag';
-
-function SaveForm({ form, translate }) {
+function SaveForm({ form }) {
   const handelClick = () => {
     form.submit();
   };
 
   return (
     <Button onClick={handelClick} type="primary" icon={<PlusOutlined />}>
-      {translate('update')}
+      Saqlash
     </Button>
   );
 }
 
 export default function UpdateItem({ config, UpdateForm }) {
-  const translate = useLanguage();
   let { entity } = config;
 
   const dispatch = useDispatch();
@@ -46,9 +41,6 @@ export default function UpdateItem({ config, UpdateForm }) {
     status: '',
     client: {
       name: '',
-      email: '',
-      phone: '',
-      address: '',
     },
     subTotal: 0,
     taxTotal: 0,
@@ -93,9 +85,11 @@ export default function UpdateItem({ config, UpdateForm }) {
       if (fieldsValue.items) {
         let newList = [];
         fieldsValue.items.map((item) => {
-          const { quantity, price, itemName, description } = item;
-          const total = item.quantity * item.price;
-          newList.push({ total, quantity, price, itemName, description });
+          const { quantity, price, product, discount, itemName } = item;
+          if (item.isCustom) delete item.isCustom;
+          const total = calculate.multiply(item.quantity, item.price);
+
+          newList.push({ quantity, price, product: product, discount, itemName, total });
         });
         dataToUpdate.items = newList;
       }
@@ -108,7 +102,7 @@ export default function UpdateItem({ config, UpdateForm }) {
       form.resetFields();
       setSubTotal(0);
       dispatch(erp.resetAction({ actionType: 'update' }));
-      navigate(`/${entity.toLowerCase()}/read/${id}`);
+      navigate(`/client/invoice`);
     }
   }, [isSuccess]);
 
@@ -138,17 +132,17 @@ export default function UpdateItem({ config, UpdateForm }) {
     <>
       <PageHeader
         onBack={() => {
-          navigate(`/${entity.toLowerCase()}`);
+          navigate(`/client/invoice`);
         }}
-        title={translate('update')}
+        title={'Hisob fakturani yangilash'}
         ghost={false}
         tags={[
           <Tag color={tagColor(currentErp.status)?.color} key="status">
-            {currentErp.status && translate(currentErp.status)}
+            {tagColor(currentErp.status)?.label}
           </Tag>,
           currentErp.paymentStatus && (
             <Tag color={tagColor(currentErp.paymentStatus)?.color} key="paymentStatus">
-              {currentErp.paymentStatus && translate(currentErp.paymentStatus)}
+              {tagColor(currentErp.paymentStatus)?.label}
             </Tag>
           ),
         ]}
@@ -156,13 +150,13 @@ export default function UpdateItem({ config, UpdateForm }) {
           <Button
             key={`${uniqueId()}`}
             onClick={() => {
-              navigate(`/${entity.toLowerCase()}`);
+              navigate(`/client/invoice`);
             }}
             icon={<CloseCircleOutlined />}
           >
-            {translate('Cancel')}
+            Bekor qilish
           </Button>,
-          <SaveForm translate={translate} form={form} key={`${uniqueId()}`} />,
+          <SaveForm form={form} key={`${uniqueId()}`} />,
         ]}
         style={{
           padding: '20px 0px',
@@ -171,7 +165,7 @@ export default function UpdateItem({ config, UpdateForm }) {
       <Divider dashed />
       <Loading isLoading={isLoading}>
         <Form form={form} layout="vertical" onFinish={onSubmit} onValuesChange={handelValuesChange}>
-          <UpdateForm subTotal={subTotal} current={current} />
+          <UpdateForm subTotal={subTotal} current={current} form={form} />
         </Form>
       </Loading>
     </>

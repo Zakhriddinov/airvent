@@ -1,31 +1,33 @@
 import { useState, useEffect } from 'react';
-import { Form, Input, InputNumber, Row, Col } from 'antd';
+import { Form, Input, InputNumber, Row, Col, Select } from 'antd';
 
 import { DeleteOutlined } from '@ant-design/icons';
 import calculate from '@/utilities/calculate';
 import AutoCompleteAsync from '@/components/AutoCompleteAsync';
 
-export default function ItemRow({ field, remove, current = null }) {
+export default function ItemRow({ field, remove, current = null, form, isCustom = false }) {
   const [totalState, setTotal] = useState(undefined);
   const [price, setPrice] = useState(0);
   const [quantity, setQuantity] = useState(0);
   const [maxQuantity, setMaxQuantity] = useState(null);
   const [product, setProduct] = useState({});
+  const [discount, setDiscount] = useState(0);
+  const [itemName, setItemName] = useState('');
+  const [unit, setUnit] = useState('kg');
 
   const updateQt = (value) => {
     setQuantity(value);
   };
+
+  const updateDiscount = (value) => {
+    setDiscount(value);
+  };
+
   const updatePrice = (value) => {
     setPrice(value);
   };
-
   useEffect(() => {
     if (current) {
-      // When it accesses the /payment/ endpoint,
-      // it receives an invoice.item instead of just item
-      // and breaks the code, but now we can check if items exists,
-      // and if it doesn't we can access invoice.items.
-
       const { items, invoice } = current;
 
       if (invoice) {
@@ -34,6 +36,10 @@ export default function ItemRow({ field, remove, current = null }) {
         if (item) {
           setQuantity(item.quantity);
           setPrice(item.price);
+          setDiscount(item.discount);
+          if (item.itemName) {
+            setItemName(item.itemName);
+          }
         }
       } else {
         const item = items[field.fieldKey];
@@ -41,55 +47,75 @@ export default function ItemRow({ field, remove, current = null }) {
         if (item) {
           setQuantity(item.quantity);
           setPrice(item.price);
+          setDiscount(item.discount);
+          if (item.itemName) {
+            setItemName(item.itemName);
+          }
         }
       }
     }
   }, [current]);
 
   useEffect(() => {
-    const currentTotal = calculate.multiply(product?.price, quantity);
-    setPrice(product?.price);
+    // if (product?.price && !isCustom && !itemName) {
+    // form.setFieldsValue({
+    //   [`items[${field.name}].price`]: product.price,
+    // });
+    //   setPrice(product.price);
+    // }
+
+    if (product?.quantityUnit && !isCustom && !itemName) {
+      setUnit(product?.quantityUnit);
+    }
+
+    const calculateDiscount = price - (price * discount) / 100;
+    const currentTotal = calculate.multiply(calculateDiscount, quantity);
     setTotal(currentTotal);
 
-    // if (product && product.quantity) {
-    //   setMaxQuantity(product.quantity);
-    // } else {
-    //   setMaxQuantity(null);
-    // }
-  }, [quantity, product]);
+    if (product?.quantity && !isCustom && !itemName) {
+      setMaxQuantity(product.quantity);
+    } else {
+      setMaxQuantity("Yo'q");
+    }
+  }, [product, price, quantity, discount]);
 
   return (
     <Row gutter={[12, 12]} style={{ position: 'relative' }}>
-      <Col className="gutter-row" span={5}>
-        <Form.Item
-          name={[field.name, 'itemName']}
-          rules={[
-            {
-              required: true,
-              message: 'Missing itemName name',
-            },
-            {
-              pattern: /^(?!\s*$)[\s\S]+$/, // Regular expression to allow spaces, alphanumeric, and special characters, but not just spaces
-              message: 'Item Name must contain alphanumeric or special characters',
-            },
-          ]}
-        >
-          <AutoCompleteAsync
-            entity={'products'}
-            displayLabels={['name']}
-            searchFields={'name'}
-            // redirectLabel={'Yangi mijoz yaratish'}
-            withRedirect
-            onChange={(v, data) => setProduct(data)}
-            // urlToRedirect={'/client/list'}
-          ></AutoCompleteAsync>
-        </Form.Item>
+      <Col className="gutter-row" span={6}>
+        {isCustom || itemName ? (
+          <Form.Item
+            name={[field.name, 'itemName']}
+            rules={[
+              {
+                required: true,
+              },
+            ]}
+            initialValue={itemName}
+          >
+            <Input placeholder="Mahsulot nomi" onChange={(e) => setItemName(e.target.value)} />
+          </Form.Item>
+        ) : (
+          <Form.Item
+            name={[field.name, 'product']}
+            rules={[
+              {
+                required: true,
+              },
+            ]}
+          >
+            <AutoCompleteAsync
+              entity={'products'}
+              displayLabels={['name']}
+              searchFields={'name'}
+              redirectLabel={'Yangi maxsulot yaratish'}
+              withRedirect
+              onChange={(v, data) => setProduct(data)}
+              urlToRedirect={'/product'}
+            />
+          </Form.Item>
+        )}
       </Col>
-      <Col className="gutter-row" span={7}>
-        <Form.Item name={[field.name, 'description']}>
-          <Input placeholder="description Name" />
-        </Form.Item>
-      </Col>
+
       <Col className="gutter-row" span={3}>
         <Form.Item
           name={[field.name, 'quantity']}
@@ -98,6 +124,8 @@ export default function ItemRow({ field, remove, current = null }) {
               required: true,
             },
           ]}
+          style={{ marginBottom: 0 }}
+          initialValue={quantity}
         >
           <InputNumber
             style={{ width: '100%' }}
@@ -105,28 +133,74 @@ export default function ItemRow({ field, remove, current = null }) {
             onChange={updateQt}
             max={maxQuantity || undefined}
           />
-          {maxQuantity && (
-            <span style={{ color: 'gray', fontSize: '12px' }}>Maxsulot soni: {maxQuantity}</span>
-          )}
         </Form.Item>
+        {!isCustom && !itemName && (
+          <span style={{ color: 'gray', fontSize: '12px' }}>Maxsulot soni: {maxQuantity}</span>
+        )}
       </Col>
-      <Col className="gutter-row" span={4}>
-        <Form.Item name={[field.name, 'price']}>
-          <Form.Item>
-            <InputNumber
-              // onChange={updatePrice}
-              readOnly
-              value={price}
-              className="moneyInput"
-              min={0}
-              controls={false}
-              style={{ width: '100%' }}
-              formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-              parser={(value) => value.replace(/\$\s?|UZS|,/g, '')}
-            />
+
+      <Col className="gutter-row" span={2}>
+        {isCustom || itemName ? (
+          <Form.Item
+            name={[field.name, 'unit']}
+            rules={[
+              {
+                required: true,
+              },
+            ]}
+            initialValue={unit}
+          >
+            <Select defaultValue={unit} onChange={setUnit} style={{ width: '100%' }}>
+              <Select.Option value="kg">kg</Select.Option>
+              <Select.Option value="m">metr</Select.Option>
+              <Select.Option value="l">litr</Select.Option>
+              <Select.Option value="dona">dona</Select.Option>
+            </Select>
           </Form.Item>
+        ) : (
+          <Form.Item initialValue={unit}>
+            <Input value={unit} readOnly />
+          </Form.Item>
+        )}
+      </Col>
+
+      <Col className="gutter-row" span={5}>
+        <Form.Item name={[field.name, 'price']}>
+          <InputNumber
+            onChange={updatePrice}
+            className="moneyInput"
+            min={0}
+            controls={false}
+            style={{ width: '100%' }}
+            formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+            parser={(value) => value.replace(/\$\s?|UZS|,/g, '')}
+          />
         </Form.Item>
       </Col>
+
+      <Col className="gutter-row" span={3}>
+        <Form.Item
+          name={[field.name, 'discount']}
+          rules={[
+            {
+              required: true,
+            },
+          ]}
+          initialValue={discount}
+        >
+          <InputNumber
+            min={0}
+            max={100}
+            formatter={(value) => `${value}%`}
+            parser={(value) => value?.replace('%', '')}
+            className="moneyInput"
+            controls={false}
+            style={{ width: '100%' }}
+            onChange={updateDiscount}
+          />
+        </Form.Item>
+      </Col>
+
       <Col className="gutter-row" span={5}>
         <Form.Item name={[field.name, 'total']}>
           <Form.Item>

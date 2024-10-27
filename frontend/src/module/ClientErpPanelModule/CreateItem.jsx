@@ -13,12 +13,7 @@ import calculate from '@/utilities/calculate';
 import { generate as uniqueId } from 'shortid';
 
 import Loading from '@/components/Loading';
-import {
-  ArrowLeftOutlined,
-  ArrowRightOutlined,
-  CloseCircleOutlined,
-  PlusOutlined,
-} from '@ant-design/icons';
+import { CloseCircleOutlined, PlusOutlined } from '@ant-design/icons';
 
 import { useNavigate } from 'react-router-dom';
 // import { selectLangDirection } from '@/redux/translate/selectors';
@@ -48,27 +43,32 @@ export default function CreateItem({ config, CreateForm }) {
   const [form] = Form.useForm();
   const [subTotal, setSubTotal] = useState(0);
   const [offerSubTotal, setOfferSubTotal] = useState(0);
+
   const handelValuesChange = (changedValues, values) => {
-    console.log(values);
-    
     const items = values['items'];
     let subTotal = 0;
     let subOfferTotal = 0;
-    
+    console.log(items);
+
     if (items) {
-      items.map((item) => {
+      items.forEach((item) => {
         if (item) {
           if (item.offerPrice && item.quantity) {
-            let offerTotal = calculate.multiply(item['quantity'], item['offerPrice']);
+            const offerPrice = parseFloat(item.offerPrice?.toString().replace(/,/g, '')) || 0;
+            const offerTotal = calculate.multiply(item['quantity'], offerPrice);
             subOfferTotal = calculate.add(subOfferTotal, offerTotal);
           }
           if (item.quantity && item.price) {
-            let total = calculate.multiply(item['quantity'], item['price']);
-            //sub total
+            const price = item['price'];
+
+            const calculateDiscount = price - (price * item['discount']) / 100;
+
+            const total = calculate.multiply(item['quantity'], calculateDiscount);
             subTotal = calculate.add(subTotal, total);
           }
         }
       });
+
       setSubTotal(subTotal);
       setOfferSubTotal(subOfferTotal);
     }
@@ -91,6 +91,7 @@ export default function CreateItem({ config, CreateForm }) {
       if (fieldsValue.items) {
         let newList = [...fieldsValue.items];
         newList.map((item) => {
+          delete item.isCustom;
           item.total = calculate.multiply(item.quantity, item.price);
         });
         fieldsValue = {
@@ -109,7 +110,7 @@ export default function CreateItem({ config, CreateForm }) {
         }}
         title={'Yangi'}
         ghost={false}
-        tags={<Tag>{'Draft'}</Tag>}
+        // tags={<Tag>{'Draft'}</Tag>}
         // subTitle="This is create page"
         extra={[
           <Button
@@ -128,7 +129,7 @@ export default function CreateItem({ config, CreateForm }) {
       <Divider dashed />
       <Loading isLoading={isLoading}>
         <Form form={form} layout="vertical" onFinish={onSubmit} onValuesChange={handelValuesChange}>
-          <CreateForm subTotal={subTotal} offerTotal={offerSubTotal} />
+          <CreateForm subTotal={subTotal} offerTotal={offerSubTotal} form={form} />
         </Form>
       </Loading>
     </>

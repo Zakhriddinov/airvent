@@ -1,6 +1,6 @@
 import NotFound from '@/components/NotFound';
-import { ErpLayout } from '@/layout';
-import ReadItem from '@/modules/ErpPanelModule/ReadItem';
+import ErpLayout from '@/layout/ErpLayout';
+import ReadItem from '@/module/ErpPanelModule/ReadItem';
 
 import PageLoader from '@/components/PageLoader';
 import { erp } from '@/redux/erp/actions';

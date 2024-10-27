@@ -4,10 +4,29 @@ const Model = require('../../../models/appModels/SupplierInvoice');
 const { calculate } = require('../../../helpers');
 const Supplier = require('../../../models/appModels/Supplier');
 const Products = require('../../../models/appModels/Products');
+const Transaction = require('../../../models/appModels/SupplierPayment');
+
+/**
+ * Bog'liq tranzaksiyalar mavjudligini tekshirish uchun funksiya
+ * @param {String} invoiceId - Invoice ID
+ * @returns {Boolean} - True agar bog'liq tranzaksiyalar mavjud bo'lsa, aks holda false
+ */
+const relatedTransactionsExist = async (invoiceId) => {
+  try {
+    // Transaction kolleksiyasida invoice bilan bog'liq tranzaksiyalarni qidirish
+    const relatedTransactions = await Transaction.find({ invoice: invoiceId });
+
+    // Agar bog'liq tranzaksiyalar mavjud bo'lsa, true qaytaradi, aks holda false
+    return relatedTransactions.length > 0;
+  } catch (error) {
+    console.error('Tegishli tranzaktsiyalarni tekshirishda xatolik yuz berdi:', error);
+    throw new Error('Tegishli tranzaktsiyalarni tekshirishda xatolik yuz berdi');
+  }
+};
 
 const update = async (req, res) => {
   let body = req.body;
-  const invoiceId = req.params.id; // path parameterdan invoiceId keladi
+  const invoiceId = req.params.id;
 
   const { error, value } = schema.validate(body);
   if (error) {
@@ -31,44 +50,71 @@ const update = async (req, res) => {
     // Eski invoiceni topish
     const existingInvoice = await Model.findById(invoiceId).session(session);
     if (!existingInvoice) {
-      throw new Error('Invoice not found');
+      throw new Error('Hisob-faktura topilmadi');
     }
 
-    // Avvalgi invoicedagi product quantity'larini rollback qilish
-    // for (let oldItem of existingInvoice.items) {
-    //   const product = await Products.findById(oldItem.product).session(session);
-    //   if (product) {
-    //     product.quantity = calculate.sub(product.quantity, oldItem.quantity);
-    //     await product.save({ session });
-    //   }
-    // }
+    // 1. Invoice "Yopilgan" yoki "To'langan" bo'lsa, yangilashni taqiqlash
+    if (existingInvoice.status === 'paid') {
+      throw new Error("Hisob-faktura allaqachon yopilgan yoki to'langan");
+    }
 
+    // 2. Invoice bilan bog'liq boshqa tranzaksiyalar mavjudligini tekshirish
+    const hasRelatedTransactions = await relatedTransactionsExist(invoiceId);
+    if (hasRelatedTransactions) {
+      throw new Error(
+        'Hisob-fakturada tegishli operatsiyalar mavjud. Yangilanishlarga ruxsat berilmaydi.'
+      );
+    }
+
+    // 3. Eski invoicedagi product quantity'larini rollback qilish
+    for (let oldItem of existingInvoice.items) {
+      const product = await Products.findById(oldItem.product).session(session);
+      if (product) {
+        product.quantity = calculate.sub(product.quantity, oldItem.quantity);
+        await product.save({ session });
+      }
+    }
+
+    // Supplierni yangilash
+    const supplier = await Supplier.findById(body.supplier).session(session);
+    if (!supplier) {
+      throw new Error('Yetkazib beruvchi topilmadi');
+    }
     // Yangi ma'lumotlarni o'rnatish va product quantity'larini yangilash
     for (let item of items) {
       const { product, quantity, price, discount = 0 } = item;
 
-      // Mahsulotni ID bo'yicha olish
-      const productResult = await Products.findById(product).session(session);
-      if (!productResult) {
-        throw new Error(`Product with ID ${product} not found`);
+      if (product !== null && product) {
+        // Mahsulotni ID bo'yicha olish va o'chirilgan yoki mavjud emasligini tekshirish
+        const productResult = await Products.findById(product).session(session);
+        if (!productResult || productResult.status === 'deleted') {
+          throw new Error(`Product with ID ${product} is either deleted or does not exist`);
+        }
+
+        // Chegirma mavjud bo'lsa, narxni hisoblash
+        let discountedPrice = price;
+        if (discount > 0) {
+          discountedPrice = (price * discount) / 100 + price;
+        }
+
+        // Eski quantity'ni topish (agar mavjud bo'lsa)
+        const oldItem = existingInvoice.items.find(
+          (i) => i.product && i.product.toString() === product.toString()
+        );
+
+        if (oldItem) {
+          // Agar eski mahsulot mavjud bo'lsa, quantity farqini hisoblash
+          const quantityDifference = calculate.sub(quantity, oldItem.quantity);
+          productResult.quantity = calculate.add(productResult.quantity, quantityDifference);
+        } else {
+          // Agar mahsulot yangi bo'lsa, quantity'ni to'g'ridan-to'g'ri qo'shish
+          productResult.quantity = calculate.add(productResult.quantity, quantity);
+        }
+
+        // Mahsulotni yangilash
+        productResult.price = discountedPrice;
+        await productResult.save({ session });
       }
-      // Chegirma mavjud bo'lsa, narxni hisoblash
-      let discountedPrice = price;
-      if (discount > 0) {
-        discountedPrice = (price * discount) / 100 + price;
-      }
-
-      // Mahsulot narxi va miqdorini yangilash
-      const oldQuantity =
-        existingInvoice.items.find((i) => i.product.toString() === product.toString())?.quantity ||
-        0;
-
-      const quantityDifference = calculate.sub(quantity, oldQuantity);
-
-      productResult.quantity = calculate.add(productResult.quantity, quantityDifference);
-      productResult.price = discountedPrice;
-
-      await productResult.save({ session });
 
       // Item uchun umumiy qiymatni hisoblash
       let itemTotal = calculate.multiply(quantity, price);
@@ -84,15 +130,10 @@ const update = async (req, res) => {
     body['total'] = total;
     body['items'] = items;
     body['updatedBy'] = req.user._id;
+    body['currency'] = supplier.currency;
 
     // Invoice ma'lumotlarini yangilash
     const updatedInvoice = await Model.findByIdAndUpdate(invoiceId, body, { new: true, session });
-
-    // Supplierni yangilash
-    const supplier = await Supplier.findById(updatedInvoice.supplier).session(session);
-    if (!supplier) {
-      throw new Error('Supplier not found');
-    }
 
     // Eski supplier ma'lumotlarini rollback qilish
     supplier.turnover = calculate.sub(supplier.turnover, existingInvoice.subTotal);

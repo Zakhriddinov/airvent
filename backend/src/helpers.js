@@ -1,4 +1,3 @@
-
 const currency = require('currency.js');
 
 exports.calculate = {
@@ -15,3 +14,5 @@ exports.calculate = {
     return currency(firstValue).divide(secondValue).value;
   },
 };
+
+

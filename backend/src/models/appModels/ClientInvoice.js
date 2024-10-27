@@ -14,7 +14,7 @@ const invoiceSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  content: String,
+  notes: String,
   date: {
     type: Date,
     required: true,
@@ -26,15 +26,18 @@ const invoiceSchema = new mongoose.Schema({
   client: {
     type: mongoose.Schema.ObjectId,
     ref: 'Client',
-    required: true,
     autopopulate: true,
   },
+  clientName: { type: String },
   items: [
     {
       product: {
         type: mongoose.Schema.ObjectId,
-        ref: 'Product',
-        required: true,
+        ref: 'Products',
+        autopopulate: true,
+      },
+      itemName: {
+        type: String,
       },
       quantity: {
         type: Number,
@@ -48,6 +51,14 @@ const invoiceSchema = new mongoose.Schema({
       total: {
         type: Number,
         required: true,
+      },
+      discount: {
+        type: Number,
+        default: 0,
+      },
+      unit: {
+        type: String,
+        enum: ['m', 'kg', 'l', 'dona'],
       },
     },
   ],
@@ -92,9 +103,6 @@ const invoiceSchema = new mongoose.Schema({
     type: String,
     default: 'unpaid',
     enum: ['unpaid', 'paid', 'partially'],
-  },
-  notes: {
-    type: String,
   },
   status: {
     type: String,

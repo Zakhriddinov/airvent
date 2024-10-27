@@ -43,7 +43,7 @@ export default function Payment({ config, currentItem }) {
           lg={{ span: 20, push: 2 }}
         >
           <PageHeader
-            onBack={() => navigate(`/${entity.toLowerCase()}`)}
+            onBack={() => navigate(`/supplier/payment`)}
             title={`To'lovni yangilash # ${currentErp.number}/${currentErp.year || ''}`}
             ghost={false}
             tags={
@@ -59,14 +59,14 @@ export default function Payment({ config, currentItem }) {
                 }}
                 icon={<CloseCircleOutlined />}
               >
-                {'Bekor qilish'}
+                Bekor qilish
               </Button>,
               <Button
                 key={`${uniqueId()}`}
                 onClick={() => navigate(`/supplierpayment/read/${currentErp._id}`)}
                 icon={<FileTextOutlined />}
               >
-                {'Show invoice'}
+                Hisob-fakturani ko'rish
               </Button>,
             ]}
             style={{

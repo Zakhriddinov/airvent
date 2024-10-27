@@ -5,5 +5,6 @@ exports.migrate = (result) => {
   newData.code = result.code;
   newData.price = result.price;
   newData.quantity = result.quantity;
+  newData.quantityUnit = result.quantityUnit;
   return newData;
 };

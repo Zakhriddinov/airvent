@@ -22,7 +22,7 @@ import { selectListItems } from '@/redux/erp/selectors';
 import { generate as uniqueId } from 'shortid';
 import { useNavigate } from 'react-router-dom';
 
-// import { DOWNLOAD_BASE_URL } from '@/config/serverApiConfig';
+import { DOWNLOAD_BASE_URL } from '@/config/serverApiConfig';
 
 function AddNewItem({ config }) {
   const navigate = useNavigate();
@@ -67,6 +67,11 @@ export default function DataTable({ config, extra = [] }) {
       key: 'recordPayment',
       icon: <CreditCardOutlined />,
     },
+    {
+      label: 'Yuklab olish',
+      key: 'download',
+      icon: <FilePdfOutlined />,
+    },
     ...extra,
     {
       type: 'divider',
@@ -82,8 +87,8 @@ export default function DataTable({ config, extra = [] }) {
   const navigate = useNavigate();
 
   const handleRead = (record) => {
-    // dispatch(erp.currentItem({ data: record }));
-    // navigate(`/${entity}/read/${record._id}`);
+    dispatch(erp.currentItem({ data: record }));
+    navigate(`/supplier/invoice/read/${record._id}`);
   };
   const handleEdit = (record) => {
     const data = { ...record };
@@ -91,7 +96,7 @@ export default function DataTable({ config, extra = [] }) {
     navigate(`/supplier/invoice/update/${record._id}`);
   };
   const handleDownload = (record) => {
-    // window.open(`${DOWNLOAD_BASE_URL}${entity}/${entity}-${record._id}.pdf`, '_blank');
+    window.open(`${DOWNLOAD_BASE_URL}${entity}/${entity}-${record._id}.pdf`, '_blank');
   };
 
   const handleDelete = (record) => {

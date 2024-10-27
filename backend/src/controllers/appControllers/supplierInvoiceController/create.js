@@ -27,27 +27,38 @@ const create = async (req, res) => {
   session.startTransaction();
 
   try {
+    // Fetch and verify the supplier
+    const supplier = await Supplier.findById(body.supplier).session(session);
+    if (!supplier) {
+      throw new Error('Supplier not found');
+    }
+
+    // Set currency in the body based on supplier's currency
+    body['currency'] = supplier.currency;
+
     // Loop through each item to update products and calculate totals
     for (let item of items) {
       const { product, quantity, price, discount = 0 } = item;
 
-      // Fetch the product by its ID
-      const productResult = await Products.findById(product).session(session);
-      if (!productResult) {
-        throw new Error(`Product with ID ${product} not found`);
+      if (product) {
+        // Fetch the product by its ID
+        const productResult = await Products.findById(product).session(session);
+        if (!productResult) {
+          throw new Error(`Product with ID ${product} not found`);
+        }
+
+        // Calculate the discounted price if a discount is provided
+        let discountedPrice = price;
+        if (discount > 0) {
+          discountedPrice = (price * discount) / 100 + price;
+        }
+
+        // Update product's price and quantity in the database
+        productResult.price = discountedPrice;
+        productResult.quantity = calculate.add(productResult.quantity, quantity); // Adjust the quantity
+
+        await productResult.save({ session });
       }
-
-      // Calculate the discounted price if a discount is provided
-      let discountedPrice = price;
-      if (discount > 0) {
-        discountedPrice = (price * discount) / 100 + price;
-      }
-
-      // Update product's price and quantity in the database
-      productResult.price = discountedPrice;
-      productResult.quantity = calculate.add(productResult.quantity, quantity); // Adjust the quantity
-
-      await productResult.save({ session });
 
       // Calculate the total for the item
       let itemTotal = calculate.multiply(quantity, price);
@@ -67,11 +78,11 @@ const create = async (req, res) => {
     // Create the invoice
     const result = await new Model(body).save({ session });
 
-    // Fetch and update the Supplier
-    const supplier = await Supplier.findById(result.supplier).session(session);
-    if (!supplier) {
-      throw new Error('Supplier not found');
-    }
+    // // Fetch and update the Supplier
+    // const supplier = await Supplier.findById(result.supplier).session(session);
+    // if (!supplier) {
+    //   throw new Error('Supplier not found');
+    // }
 
     supplier.turnover += subTotal;
     supplier.debt = supplier.turnover - supplier.cash - supplier.transfers;

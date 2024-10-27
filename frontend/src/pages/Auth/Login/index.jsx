@@ -18,7 +18,7 @@ import { login } from '@/redux/auth/actions';
 import { Loading } from '@/shared/components';
 
 const Login = () => {
-  const { isLoading, isSuccess, isLoggedIn } = useSelector(selectAuth);
+  const { isLoading, isSuccess } = useSelector(selectAuth);
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -28,8 +28,8 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if (isSuccess) navigate('/');
-  }, [isSuccess]);
+    if (isSuccess || isLoading) navigate('/');
+  }, [isSuccess, isLoading]);
 
   return (
     <Loading isLoading={isLoading}>
@@ -92,9 +92,9 @@ const Login = () => {
                   <Form.Item name="remember" valuePropName="checked" style={{ margin: 0 }}>
                     <Checkbox>Meni eslab qol</Checkbox>
                   </Form.Item>
-                  <ForgotPasswordLink to="/forgetpassword">
+                  {/* <ForgotPasswordLink to="/forgetpassword">
                     Parolni unutdingizmi?
-                  </ForgotPasswordLink>
+                  </ForgotPasswordLink> */}
                 </div>
 
                 <Form.Item>
@@ -108,10 +108,10 @@ const Login = () => {
                     Kirish
                   </Button>
                 </Form.Item>
-                <p>
+                {/* <p>
                   yoki{' '}
                   <ForgotPasswordLink to="/register">Hozir ro'yxatdan o'ting!</ForgotPasswordLink>
-                </p>
+                </p> */}
               </Form>
             </FormContent>
           </ContentLeft>

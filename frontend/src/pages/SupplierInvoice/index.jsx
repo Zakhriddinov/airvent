@@ -9,7 +9,7 @@ export default function SupplierInvoice() {
   const entity = 'supplierinvoice';
 
   const searchConfig = {
-    entity: 'supplierinvoice',
+    entity: 'supplier',
     displayLabels: ['name'],
     searchFields: 'name',
   };
@@ -29,7 +29,7 @@ export default function SupplierInvoice() {
       title: 'Sana',
       dataIndex: 'date',
       render: (date) => {
-        return dayjs(date).format("DD.MM.YYYY");
+        return dayjs(date).format('DD.MM.YYYY');
       },
     },
     // {
@@ -101,7 +101,7 @@ export default function SupplierInvoice() {
   const Labels = {
     PANEL_TITLE: "Hisob-fakturalar ro'yxati",
     DATATABLE_TITLE: "Hisob-fakturalar ro'yxati",
-    ADD_NEW_ENTITY: "Yangi hisob fatura qo'shish",
+    ADD_NEW_ENTITY: "Yangi hisob faktura qo'shish",
     ENTITY_NAME: 'supplierinvoice',
   };
 

@@ -34,9 +34,9 @@ const invoiceSchema = new mongoose.Schema({
       product: {
         type: mongoose.Schema.ObjectId,
         ref: 'Products',
-        required: true,
-        // autopopulate: true,
+        autopopulate: true,
       },
+      itemName: { type: String },
       quantity: {
         type: Number,
         default: 1,
@@ -52,9 +52,13 @@ const invoiceSchema = new mongoose.Schema({
       },
       discount: {
         type: Number,
-        required: true,
+        default: 0,
       },
       description: String,
+      unit: {
+        type: String,
+        enum: ['m', 'kg', 'l', 'dona'],
+      },
     },
   ],
   subTotal: {

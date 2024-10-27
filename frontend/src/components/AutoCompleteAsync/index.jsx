@@ -35,13 +35,14 @@ export default function AutoCompleteAsync({
 
   const handleSelectChange = (newValue) => {
     isUpdating.current = false;
-    // setCurrentValue(value[outputValue] || value); // set nested value or value
+    if (value) setCurrentValue(value[outputValue] || value); // set nested value or value
     // onChange(newValue[outputValue] || newValue);
     if (onChange) {
       const currentData = selectOptions.find(
         (item) => item._id === (newValue[outputValue] || newValue)
       );
       if (newValue) onChange(newValue[outputValue] || newValue, currentData);
+      setCurrentValue(newValue[outputValue] || newValue);
     }
     if (newValue === 'redirectURL' && withRedirect) {
       navigate(urlToRedirect);

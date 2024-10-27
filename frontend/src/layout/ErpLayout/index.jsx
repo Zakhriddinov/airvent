@@ -12,7 +12,6 @@ export default function ErpLayout({ children }) {
         style={{
           margin: '30px auto',
           width: '100%',
-          padding: '0 50px',
         }}
       >
         {children}

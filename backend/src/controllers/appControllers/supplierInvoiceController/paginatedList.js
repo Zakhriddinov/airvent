@@ -26,7 +26,7 @@ const paginatedList = async (req, res) => {
   })
     .skip(skip)
     .limit(limit)
-    .sort({ [sortBy]: sortValue })
+    .sort({ [sortBy]: sortValue, date: 'desc' })
     .populate('createdBy', 'name')
     .exec();
 

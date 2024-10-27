@@ -126,7 +126,7 @@ export default function CreateItem({ config, CreateForm }) {
       <Divider dashed />
       <Loading isLoading={isLoading}>
         <Form form={form} layout="vertical" onFinish={onSubmit} onValuesChange={handelValuesChange}>
-          <CreateForm subTotal={subTotal} offerTotal={offerSubTotal} />
+          <CreateForm subTotal={subTotal} offerTotal={offerSubTotal} form={form} />
         </Form>
       </Loading>
     </>
