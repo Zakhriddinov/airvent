@@ -17,6 +17,7 @@ const supplierSchema = new mongoose.Schema({
   transfers: { type: Number, default: 0 },
   debt: { type: Number, default: 0 },
   credit: { type: Number, default: 0 },
+  phone: { type: String },
   currency: {
     type: String,
     enum: ['UZS', 'USD'],

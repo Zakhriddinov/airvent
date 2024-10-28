@@ -39,7 +39,13 @@ function AddNewItem({ config }) {
 }
 
 export default function DataTable({ config, extra = [] }) {
-  let { entity, dataTableColumns, disableAdd = false, searchConfig } = config;
+  let {
+    entity,
+    dataTableColumns,
+    disableAdd = false,
+    searchConfig,
+    withoutDeleteBtn = false,
+  } = config;
 
   const { DATATABLE_TITLE } = config;
 
@@ -67,15 +73,15 @@ export default function DataTable({ config, extra = [] }) {
       icon: <FilePdfOutlined />,
     },
     ...extra,
-    {
-      type: 'divider',
-    },
-
-    {
-      label: "O'chirish",
-      key: 'delete',
-      icon: <DeleteOutlined />,
-    },
+    !withoutDeleteBtn &&
+      ({
+        type: 'divider',
+      },
+      {
+        label: "O'chirish",
+        key: 'delete',
+        icon: <DeleteOutlined />,
+      }),
   ];
 
   const navigate = useNavigate();

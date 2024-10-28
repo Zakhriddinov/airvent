@@ -221,8 +221,8 @@ export default function ReadItem({ config, selectedItem }) {
       <Divider dashed />
       <Descriptions title={`Mijoz : ${currentErp?.supplier?.name}`}>
         {/* <Descriptions.Item label={'Address'}>{client?.address || ''}</Descriptions.Item>
-        <Descriptions.Item label={'email'}>{client?.email || ''}</Descriptions.Item>
-        <Descriptions.Item label={'Phone'}>{client?.phone || ''}</Descriptions.Item> */}
+        <Descriptions.Item label={'email'}>{client?.email || ''}</Descriptions.Item>*/}
+        <Descriptions.Item label={'Telefon raqam'}>{currentErp?.supplier?.phone || '+998 __ ___ __ __'}</Descriptions.Item> 
       </Descriptions>
       <Divider />
       <Row gutter={[12, 0]}>

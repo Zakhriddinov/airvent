@@ -1,4 +1,4 @@
-const schema = require('./schemaValidate');
+const { createSchema } = require('./schemaValidate');
 const mongoose = require('mongoose');
 const Model = require('../../../models/appModels/SupplierInvoice');
 const { calculate } = require('../../../helpers');
@@ -8,7 +8,7 @@ const Products = require('../../../models/appModels/Products');
 const create = async (req, res) => {
   let body = req.body;
 
-  const { error, value } = schema.validate(body);
+  const { error, value } = createSchema.validate(body);
   if (error) {
     const { details } = error;
     return res.status(400).json({

@@ -28,6 +28,10 @@ export const fields = {
     disableForUpdate: true,
     type: 'currency',
   },
+  phone: {
+    label: 'Telefon raqam',
+    disableForTable: true,
+  },
   // credit: {
   //   label: 'Xaqqimiz',
   //   disableForForm: true,

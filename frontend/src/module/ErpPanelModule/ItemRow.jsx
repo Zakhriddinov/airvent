@@ -46,7 +46,6 @@ export default function ItemRow({ field, remove, current = null, isCustom }) {
             setUnit(item.unit);
           }
           console.log(item);
-          
         }
       } else {
         const item = items[field.fieldKey];
@@ -113,26 +112,6 @@ export default function ItemRow({ field, remove, current = null, isCustom }) {
           </Form.Item>
         )}
       </Col>
-      {/* <Col className="gutter-row" span={5}>
-        <Form.Item
-          name={[field.name, 'product']}
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-        >
-          <AutoCompleteAsync
-            entity={'products'}
-            displayLabels={['name']}
-            searchFields={'name'}
-            redirectLabel={'Yangi maxsulot yaratish'}
-            withRedirect
-            onChange={productHandleChange}
-            urlToRedirect={'/product'}
-          ></AutoCompleteAsync>
-        </Form.Item>
-      </Col> */}
 
       <Col className="gutter-row" span={3}>
         <Form.Item name={[field.name, 'quantity']} rules={[{ required: true }]}>
@@ -148,6 +127,7 @@ export default function ItemRow({ field, remove, current = null, isCustom }) {
                 required: true,
               },
             ]}
+            initialValue={unit}
           >
             <Select defaultValue={unit} onChange={setUnit} style={{ width: '100%' }}>
               <Select.Option value="kg">kg</Select.Option>

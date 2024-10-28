@@ -36,13 +36,21 @@ function AddNewItem({ config }) {
 }
 
 export default function DataTable({ config, extra = [] }) {
-  let { entity, dataTableColumns, DATATABLE_TITLE, fields, searchConfig, sortBy, sortValue } =
-    config;
+  let {
+    entity,
+    dataTableColumns,
+    DATATABLE_TITLE,
+    fields,
+    searchConfig,
+    sortBy,
+    sortValue,
+    withoutDeleteBtn = false,
+  } = config;
 
   const sort = sortBy && sortValue ? { sortBy, sortValue } : {};
 
   const { crudContextAction } = useCrudContext();
-  const { modal, editBox } = crudContextAction;
+  const { modal, editBox, readBox } = crudContextAction;
 
   const items = [
     {
@@ -56,18 +64,21 @@ export default function DataTable({ config, extra = [] }) {
       icon: <EditOutlined />,
     },
     ...extra,
-    {
-      type: 'divider',
-    },
-
-    {
-      label: "O'chirish",
-      key: 'delete',
-      icon: <DeleteOutlined />,
-    },
+    !withoutDeleteBtn &&
+      ({
+        type: 'divider',
+      },
+      {
+        label: "O'chirish",
+        key: 'delete',
+        icon: <DeleteOutlined />,
+      }),
   ];
 
-  const handleRead = (record) => {};
+  const handleRead = (record) => {
+    // dispatch(crud.currentItem({ data: record }));
+    // readBox.open();
+  };
   function handleEdit(record) {
     dispatch(crud.currentItem({ data: record }));
     dispatch(crud.currentAction({ actionType: 'update', data: record }));

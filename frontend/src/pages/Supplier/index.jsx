@@ -31,6 +31,7 @@ export default function Supplier() {
     deleteModalLabels,
     sortBy: 'code',
     sortValue: 'asc',
+    withoutDeleteBtn: true,
   };
 
   return (

@@ -17,6 +17,7 @@ export default function AutoCompleteAsync({
   urlToRedirect = '/',
   value, /// this is for update
   onChange, /// this is for update
+  disabled = false,
 }) {
   const addNewValue = { value: 'redirectURL', label: `+ ${redirectLabel}` };
 
@@ -130,6 +131,7 @@ export default function AutoCompleteAsync({
       }}
       onChange={handleSelectChange}
       style={{ minWidth: '220px' }}
+      disabled={disabled}
       // onSelect={handleOnSelect}
     >
       {selectOptions.map((optionField) => (

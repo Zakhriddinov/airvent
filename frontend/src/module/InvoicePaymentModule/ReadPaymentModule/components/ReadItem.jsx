@@ -139,7 +139,11 @@ export default function ReadItem({ config, selectedItem }) {
         </Row>
       </PageHeader>
       <Divider dashed />
-      <Descriptions title={`Yetkazib beruvchi : ${currentErp.supplier.name}`}></Descriptions>
+      <Descriptions title={`Yetkazib beruvchi : ${currentErp.supplier.name}`}>
+        <Descriptions.Item label={'Telefon raqam'}>
+          {currentErp?.supplier?.phone || '+998 __ ___ __ __'}
+        </Descriptions.Item>
+      </Descriptions>
       <Divider />
       <Row>
         <Col sm={24} md={12}>

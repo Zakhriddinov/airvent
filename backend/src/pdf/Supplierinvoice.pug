@@ -274,6 +274,7 @@ html
               p Tel: #{'+998 93 753 26 26'}
             .right
               p.strong #{'Yetkazib beruvchi'}: #{model.supplier.name}
+              p Tel: #{model.supplier.phone?model.supplier.phone : "+998 __ ___ __ __"}
         .col.col-24
               .col.col-7
                 p.strong #{'Sana'} :

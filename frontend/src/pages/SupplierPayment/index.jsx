@@ -82,6 +82,7 @@ export default function SuppplierPayment() {
     dataTableColumns,
     searchConfig,
     deleteModalLabels,
+    withoutDeleteBtn: true,
   };
 
   return <PaymentDataTableModule config={config} />;

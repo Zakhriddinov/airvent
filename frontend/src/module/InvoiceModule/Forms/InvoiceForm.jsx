@@ -9,7 +9,6 @@ import { DatePicker } from 'antd';
 import AutoCompleteAsync from '@/components/AutoCompleteAsync';
 
 import MoneyInputFormItem from '@/components/MoneyInputFormItem';
-// import { selectFinanceSettings } from '@/redux/settings/selectors';
 
 import calculate from '@/utilities/calculate';
 import ItemRow from '../../ErpPanelModule/ItemRow';
@@ -58,25 +57,38 @@ function LoadInvoiceForm({ subTotal = 0, current = null, form = { form } }) {
     <>
       <Row gutter={[12, 0]}>
         <Col className="gutter-row" span={8}>
-          <Form.Item
-            name="supplier"
-            label={'Kompaniya'}
-            rules={[
-              {
-                required: true,
-              },
-            ]}
-          >
-            <AutoCompleteAsync
-              entity={'supplier'}
-              displayLabels={['name']}
-              searchFields={'name'}
-              redirectLabel={"Yangi yetkazib beruvchi qo'shish"}
-              withRedirect
-              urlToRedirect={'/supplier/list'}
-              onChange={handleSupplier}
-            />
-          </Form.Item>
+          {current ? (
+            <Form.Item
+              label={'Kompaniya'}
+              rules={[
+                {
+                  required: true,
+                },
+              ]}
+            >
+              <Input value={current?.supplier.name} readOnly/>
+            </Form.Item>
+          ) : (
+            <Form.Item
+              name="supplier"
+              label={'Kompaniya'}
+              rules={[
+                {
+                  required: true,
+                },
+              ]}
+            >
+              <AutoCompleteAsync
+                entity={'supplier'}
+                displayLabels={['name']}
+                searchFields={'name'}
+                redirectLabel={"Yangi yetkazib beruvchi qo'shish"}
+                withRedirect
+                urlToRedirect={'/supplier/list'}
+                onChange={handleSupplier}
+              />
+            </Form.Item>
+          )}
         </Col>
         <Col className="gutter-row" span={3}>
           <Form.Item

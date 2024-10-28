@@ -1,4 +1,4 @@
-const schema = require('./schemaValidate');
+const { updateSchema } = require('./schemaValidate');
 const mongoose = require('mongoose');
 const Model = require('../../../models/appModels/SupplierInvoice');
 const { calculate } = require('../../../helpers');
@@ -28,7 +28,7 @@ const update = async (req, res) => {
   let body = req.body;
   const invoiceId = req.params.id;
 
-  const { error, value } = schema.validate(body);
+  const { error, value } = updateSchema.validate(body);
   if (error) {
     const { details } = error;
     return res.status(400).json({
@@ -76,7 +76,7 @@ const update = async (req, res) => {
     }
 
     // Supplierni yangilash
-    const supplier = await Supplier.findById(body.supplier).session(session);
+    const supplier = await Supplier.findById(existingInvoice.supplier._id).session(session);
     if (!supplier) {
       throw new Error('Yetkazib beruvchi topilmadi');
     }

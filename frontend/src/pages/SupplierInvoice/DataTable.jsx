@@ -73,15 +73,6 @@ export default function DataTable({ config, extra = [] }) {
       icon: <FilePdfOutlined />,
     },
     ...extra,
-    {
-      type: 'divider',
-    },
-
-    {
-      label: "O'chirish",
-      key: 'delete',
-      icon: <DeleteOutlined />,
-    },
   ];
 
   const navigate = useNavigate();
