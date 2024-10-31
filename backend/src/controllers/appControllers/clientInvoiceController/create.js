@@ -1,4 +1,4 @@
-const schema = require('./schemaValidate');
+const { createSchema } = require('./schemaValidate');
 const mongoose = require('mongoose');
 const Model = require('../../../models/appModels/ClientInvoice');
 const { calculate } = require('../../../helpers');
@@ -8,7 +8,7 @@ const Products = require('../../../models/appModels/Products');
 const create = async (Model, req, res) => {
   let body = req.body;
 
-  const { error, value } = schema.validate(body);
+  const { error, value } = createSchema.validate(body);
   if (error) {
     const { details } = error;
     return res.status(400).json({
@@ -27,6 +27,11 @@ const create = async (Model, req, res) => {
   session.startTransaction();
 
   try {
+    const client = await Client.findById(body.client).session(session);
+    if (!client) {
+      throw new Error('Mijoz mavjud emas!');
+    }
+    body['currency'] = client?.currency;
     // Mahsulotlarni loop orqali o'zgartirish va umumiy summalarni hisoblash
     for (let item of items) {
       const { product, quantity, price, discount = 0, itemName } = item;
@@ -47,19 +52,13 @@ const create = async (Model, req, res) => {
 
         // Mahsulot miqdorini kamaytirish
         if (productResult.quantity < quantity) {
-          throw new Error(`Not enough quantity for product ${product}`);
+          throw new Error(`'${productResult?.name}' - mahsuloti uchun miqdor yetarli emas`);
         }
         productResult.quantity = calculate.sub(productResult.quantity, quantity);
 
         await productResult.save({ session });
 
         // Chegirma hisoblash
-        if (discount > 0) {
-          discountedPrice = price - (price * discount) / 100;
-        }
-      } else if (itemName) {
-        // Agar product bo'lmasa, itemName bo'yicha ishlov berish
-        // ItemName kiritilganda, mahsulotni Products'dan izlash shart emas.
         if (discount > 0) {
           discountedPrice = price - (price * discount) / 100;
         }
@@ -71,7 +70,7 @@ const create = async (Model, req, res) => {
       // Umumiy summa va subtotal yangilash
       subTotal = calculate.add(subTotal, itemTotal);
       item['total'] = itemTotal;
-      item['price'] = discountedPrice;
+      item['price'] = price;
     }
 
     total = subTotal;
@@ -80,33 +79,12 @@ const create = async (Model, req, res) => {
     body['items'] = items;
     body['createdBy'] = req.user._id;
 
-    // Hisob-fakturani yaratish
-    // Clientni topish va yangilash
-
-    // const client = await Client.findById(body.client).session(session);
-    // if (!client) {
-    //   body['clientName'] = client;
-    // } else {
-    //   body['clientName'] = client.name;
-    // }
-    console.log(body);
-
     const result = await new Model(body).save({ session });
 
-    // Clientni topish va yangilash
+    client.turnover += subTotal;
+    client.debt = client.turnover - client.cash - client.transfers;
 
-    // const client = await Client.findById(result.client).session(session);
-    // if (!client) {
-    //   body['clientName'] = client;
-    // } else {
-    //   body['clientName'] = client.name;
-    // }
-    // if (client) {
-    //   client.turnover += subTotal;
-    //   client.debt = client.turnover - client.cash - client.transfers;
-
-    //   await client.save({ session });
-    // }
+    await client.save({ session });
 
     // PDF faylini yaratish va invoicega qo'shish
     const fileId = 'invoice-' + result._id + '.pdf';

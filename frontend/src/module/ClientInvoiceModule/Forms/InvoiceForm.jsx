@@ -13,7 +13,6 @@ import ItemRow from '@/module/ClientErpPanelModule/ItemRow';
 import MoneyInputFormItem from '@/components/MoneyInputFormItem';
 
 import calculate from '@/utilities/calculate';
-// import { useSelector } from 'react-redux';
 import SelectAsync from '@/components/SelectAsync';
 
 export default function InvoiceForm({ subTotal = 0, current = null, form }) {
@@ -26,27 +25,33 @@ function LoadInvoiceForm({ subTotal = 0, current = null, form = { form } }) {
   const [taxTotal, setTaxTotal] = useState(0);
   const [currentYear, setCurrentYear] = useState(() => new Date().getFullYear());
   const [lastNumber, setLastNumber] = useState(() => 1);
-  const [currency, setCurrency] = useState('USD');
-
-  const [isInputVisible, setIsInputVisible] = useState(false);
+  const [currency, setCurrency] = useState();
+  const [client, setClient] = useState({});
 
   const handelTaxChange = (value) => {
     setTaxRate(value / 100);
   };
 
+  const handleChangeClient = (v, data) => {
+    setClient(data);
+  };
+
   useEffect(() => {
     if (current) {
-      const { taxRate = 0, year, number } = current;
+      const { taxRate = 0, year, number, currency } = current;
       setTaxRate(taxRate / 100);
       setCurrentYear(year);
       setLastNumber(number);
+      setCurrency(currency ?? '');
     }
   }, [current]);
   useEffect(() => {
     const currentTotal = calculate.add(calculate.multiply(subTotal, taxRate), subTotal);
     setTaxTotal(Number.parseFloat(calculate.multiply(subTotal, taxRate)));
     setTotal(Number.parseFloat(currentTotal));
-  }, [subTotal, taxRate]);
+
+    client?.currency && setCurrency(client?.currency);
+  }, [subTotal, taxRate, client]);
 
   const addField = useRef(false);
 
@@ -57,18 +62,27 @@ function LoadInvoiceForm({ subTotal = 0, current = null, form = { form } }) {
     <>
       <Row gutter={[12, 0]}>
         <Col className="gutter-row" span={8}>
-          <Form.Item
-            name="client"
-            label={'Mijoz'}
-            rules={[
-              {
-                required: true,
-              },
-            ]}
-          >
-            {isInputVisible ? (
-              <Input placeholder="Mijoz nomi" />
-            ) : (
+          {current ? (
+            <Form.Item
+              label={'Mijoz'}
+              rules={[
+                {
+                  required: true,
+                },
+              ]}
+            >
+              <Input value={current?.client.name} readOnly />
+            </Form.Item>
+          ) : (
+            <Form.Item
+              name="client"
+              label={'Mijoz'}
+              rules={[
+                {
+                  required: true,
+                },
+              ]}
+            >
               <AutoCompleteAsync
                 entity={'client'}
                 displayLabels={['name']}
@@ -76,19 +90,10 @@ function LoadInvoiceForm({ subTotal = 0, current = null, form = { form } }) {
                 redirectLabel={'Yangi mijoz yaratish'}
                 withRedirect
                 urlToRedirect={'/client/list'}
+                onChange={handleChangeClient}
               />
-            )}
-          </Form.Item>
-        </Col>
-        <Col className="gutter-row" span={1}>
-          <div style={{ marginBottom: '7px' }}>&nbsp;</div>
-          <Tooltip title={isInputVisible ? "Ro'yxatdan olish" : "Qo'lda kiritish"}>
-            <Button
-              type="primary"
-              onClick={() => setIsInputVisible(!isInputVisible)} // Input va Select o'rtasida almashtirish
-              icon={isInputVisible ? <UnorderedListOutlined /> : <EditOutlined />} // Ikonalar holatga qarab o'zgaradi
-            />
-          </Tooltip>
+            </Form.Item>
+          )}
         </Col>
         <Col className="gutter-row" span={3}>
           <Form.Item
@@ -120,11 +125,10 @@ function LoadInvoiceForm({ subTotal = 0, current = null, form = { form } }) {
         </Col>
 
         <Col className="gutter-row" span={5}>
-          <Form.Item label={'Valyuta'} name={`currency`} initialValue={currency}>
-            <Select defaultValue="UZS" onChange={setCurrency} style={{ width: '100%' }}>
-              <Select.Option value="UZS">🇺🇿 UZS (UZB So'm)</Select.Option>
-              <Select.Option value="USD">🇺🇸 $ (US Dollar)</Select.Option>
-            </Select>
+          <Form.Item label={'Valyuta'} name={'currency'}>
+            <Form.Item>
+              <Input value={currency} readOnly />
+            </Form.Item>
           </Form.Item>
         </Col>
 
@@ -241,7 +245,7 @@ function LoadInvoiceForm({ subTotal = 0, current = null, form = { form } }) {
                   icon={<PlusOutlined />}
                   ref={addField}
                 >
-                  {"Mahsulot uchun qo'shish"}
+                  Mahsulotdan olish
                 </Button>
 
                 <Button
@@ -250,7 +254,7 @@ function LoadInvoiceForm({ subTotal = 0, current = null, form = { form } }) {
                   block
                   icon={<PlusOutlined />}
                 >
-                  {"Custom mahsulot qo'shish"}
+                  Qo'lda kiritish
                 </Button>
               </Space>
             </Form.Item>

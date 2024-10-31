@@ -1,15 +1,34 @@
-const schema = require('./schemaValidate');
+const { updateSchema } = require('./schemaValidate');
 const mongoose = require('mongoose');
 const Model = require('../../../models/appModels/ClientInvoice');
 const { calculate } = require('../../../helpers');
 const Client = require('../../../models/appModels/Client');
 const Products = require('../../../models/appModels/Products');
+const Transaction = require('../../../models/appModels/ClientPayment');
+/**
+ * Bog'liq tranzaksiyalar mavjudligini tekshirish uchun funksiya
+ * @param {String} invoiceId - Invoice ID
+ * @returns {Boolean} - True agar bog'liq tranzaksiyalar mavjud bo'lsa, aks holda false
+ */
+const relatedTransactionsExist = async (invoiceId) => {
+  try {
+    // Transaction kolleksiyasida invoice bilan bog'liq tranzaksiyalarni qidirish
+    const relatedTransactions = await Transaction.find({ invoice: invoiceId });
+
+    // Agar bog'liq tranzaksiyalar mavjud bo'lsa, true qaytaradi, aks holda false
+    return relatedTransactions.length > 0;
+  } catch (error) {
+    console.error('Tegishli tranzaktsiyalarni tekshirishda xatolik yuz berdi:', error);
+    throw new Error('Tegishli tranzaktsiyalarni tekshirishda xatolik yuz berdi');
+  }
+};
 
 const update = async (req, res) => {
   let body = req.body;
-  const invoiceId = req.params.id; // path parameterdan invoiceId keladi
+  const invoiceId = req.params.id;
 
-  const { error, value } = schema.validate(body);
+  const { error, value } = updateSchema.validate(body);
+
   if (error) {
     const { details } = error;
     return res.status(400).json({
@@ -18,7 +37,6 @@ const update = async (req, res) => {
       message: details[0]?.message,
     });
   }
-
   const { items = [] } = value;
 
   let subTotal = 0;
@@ -34,7 +52,20 @@ const update = async (req, res) => {
       throw new Error('Invoice not found');
     }
 
-    // Avvalgi invoicedagi product quantity'larini rollback qilish
+    // 1. Invoice "Yopilgan" yoki "To'langan" bo'lsa, yangilashni taqiqlash
+    if (existingInvoice.status === 'paid') {
+      throw new Error("Hisob-faktura allaqachon yopilgan yoki to'langan");
+    }
+
+    // 2. Invoice bilan bog'liq boshqa tranzaksiyalar mavjudligini tekshirish
+    const hasRelatedTransactions = await relatedTransactionsExist(invoiceId);
+    if (hasRelatedTransactions) {
+      throw new Error(
+        'Hisob-fakturada tegishli operatsiyalar mavjud. Yangilanishlarga ruxsat berilmaydi.'
+      );
+    }
+
+    // 3. Eski invoicedagi product quantity'larini rollback qilish
     for (let oldItem of existingInvoice.items) {
       const product = await Products.findById(oldItem.product).session(session);
       if (product) {
@@ -43,34 +74,51 @@ const update = async (req, res) => {
       }
     }
 
+    // Mijoz
+    const client = await Client.findById(existingInvoice.client._id).session(session);
+    if (!client) {
+      throw new Error('Bunday mijoz mavjud emas!');
+    }
+
     // Yangi ma'lumotlarni o'rnatish va product quantity'larini yangilash
     for (let item of items) {
-      const { product, quantity, price } = item; // Chegirma yo'q
+      const { product, quantity, price, discount = 0 } = item; // Chegirma yo'q
 
-      // Mahsulotni ID bo'yicha olish
-      const productResult = await Products.findById(product).session(session);
-      if (!productResult) {
-        throw new Error(`Product with ID ${product} not found`);
+      if (product !== null && product) {
+        const productResult = await Products.findById(product).session(session);
+        if (!productResult || productResult.status === 'deleted') {
+          throw new Error(`Product with ID ${product} is either deleted or does not exist`);
+        }
+
+        // Chegirma mavjud bo'lsa, narxni hisoblash
+        let discountedPrice = price;
+        if (discount > 0) {
+          discountedPrice = price - (price * discount) / 100;
+        }
+
+        // Eski quantity'ni topish (agar mavjud bo'lsa)
+        const oldItem = existingInvoice.items.find(
+          (i) => i.product && i.product.toString() === product.toString()
+        );
+
+        if (oldItem) {
+          // Agar eski mahsulot mavjud bo'lsa, quantity farqini hisoblash
+          const quantityDifference = calculate.sub(quantity, oldItem.quantity);
+          productResult.quantity = calculate.sub(productResult.quantity, quantityDifference);
+        } else {
+          // Agar mahsulot yangi bo'lsa, quantity'ni to'g'ridan-to'g'ri qo'shish
+          productResult.quantity = calculate.sub(productResult.quantity, quantity);
+        }
+
+        await productResult.save({ session });
       }
 
-      // Mahsulot narxi va miqdorini yangilash
-      const oldQuantity =
-        existingInvoice.items.find((i) => i.product.toString() === product.toString())?.quantity ||
-        0;
-
-      const quantityDifference = calculate.sub(quantity, oldQuantity);
-
-      productResult.quantity = calculate.sub(productResult.quantity, quantityDifference); // Ombor miqdorini kamaytirish
-
-      await productResult.save({ session });
-
-      // Item uchun umumiy qiymatni hisoblash
-      let itemTotal = calculate.multiply(quantity, price);
+      let itemTotal = calculate.multiply(quantity, discountedPrice);
 
       // SubTotalni va item totalni yangilash
       subTotal = calculate.add(subTotal, itemTotal);
       item['total'] = itemTotal;
-      item['price'] = price; // Chegirma olinmagan holda narxni yangilash
+      item['price'] = price;
     }
 
     total = subTotal;
@@ -78,17 +126,10 @@ const update = async (req, res) => {
     body['total'] = total;
     body['items'] = items;
     body['updatedBy'] = req.user._id;
-
+    body['currency'] = client.currency;
     // Invoice ma'lumotlarini yangilash
     const updatedInvoice = await Model.findByIdAndUpdate(invoiceId, body, { new: true, session });
 
-    // Clientni yangilash
-    const client = await Client.findById(updatedInvoice.client).session(session);
-    if (!client) {
-      throw new Error('Client not found');
-    }
-
-    // Eski client ma'lumotlarini rollback qilish
     client.turnover = calculate.sub(client.turnover, existingInvoice.subTotal);
     client.debt = calculate.sub(
       client.debt,

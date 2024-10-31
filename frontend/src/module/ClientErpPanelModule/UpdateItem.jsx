@@ -85,11 +85,11 @@ export default function UpdateItem({ config, UpdateForm }) {
       if (fieldsValue.items) {
         let newList = [];
         fieldsValue.items.map((item) => {
-          const { quantity, price, product, discount, itemName } = item;
+          const { quantity, price, product, discount, itemName, unit } = item;
           if (item.isCustom) delete item.isCustom;
           const total = calculate.multiply(item.quantity, item.price);
 
-          newList.push({ quantity, price, product: product, discount, itemName, total });
+          newList.push({ quantity, price, product: product, discount, itemName, total, unit });
         });
         dataToUpdate.items = newList;
       }

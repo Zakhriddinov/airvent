@@ -8,6 +8,8 @@ import {
   ExclamationCircleOutlined,
   IssuesCloseOutlined,
   MinusCircleOutlined,
+  OrderedListOutlined,
+  UnorderedListOutlined,
 } from '@ant-design/icons';
 import { PageHeader } from '@ant-design/pro-layout';
 import { DatePicker, Radio, Table, Modal, Select, Button, message, InputNumber } from 'antd';
@@ -18,6 +20,7 @@ import { API_BASE_URL } from '@/config/serverApiConfig';
 import { moneyFormatter } from '@/utilities/dataStructure';
 import errorHandler from '@/request/errorHandler';
 import * as XLSX from 'xlsx';
+import MoreAttendanceModal from './MoreAttendanceModal';
 
 const { Option } = Select;
 
@@ -37,6 +40,7 @@ export const EmployeeAttendance = () => {
     totalEarnedAmount: 0,
   });
   const [closeLoading, setCloseLoading] = useState(false);
+  const [moreAttendanceModal, setMoreAttendanceModal] = useState(false);
 
   const fetchAttendanceData = async () => {
     setLoading(true);
@@ -79,6 +83,10 @@ export const EmployeeAttendance = () => {
         return <ExclamationCircleOutlined style={{ color: 'orange' }} />;
     }
   };
+
+  function openMoreAttendanceModal() {
+    setMoreAttendanceModal(true);
+  }
 
   const handleStatusChange = async () => {
     if (currentEmployee && currentDateIndex !== null) {
@@ -359,19 +367,31 @@ export const EmployeeAttendance = () => {
           padding: '20px 0px',
         }}
         extra={[
+          // <Button
+          //   onClick={openMoreAttendanceModal}
+          //   color="default"
+          //   variant="outlined"
+          //   icon={<UnorderedListOutlined />}
+          // >
+          //   Barchasini belgilash
+          // </Button>,
           <Button
             type="primary"
             danger
             icon={<IssuesCloseOutlined />}
             onClick={closeMonth}
             loading={closeLoading}
-          ></Button>,
+          >
+            Oyni yopish
+          </Button>,
           <Button
             icon={<DownloadOutlined />}
             type="primary"
             loading={downloadPdfLoading}
             onClick={downloadExcel}
-          ></Button>,
+          >
+            XLSX yuklab olish
+          </Button>,
           <DatePicker
             key="date-picker"
             defaultValue={dayjs(selectedMonth)}
@@ -442,6 +462,13 @@ export const EmployeeAttendance = () => {
           onChange={(e) => setAmount(e)}
         />
       </Modal>
+
+      {moreAttendanceModal && (
+        <MoreAttendanceModal
+          setIsModalVisible={setMoreAttendanceModal}
+          isModalVisible={moreAttendanceModal}
+        />
+      )}
     </ErpLayout>
   );
 };

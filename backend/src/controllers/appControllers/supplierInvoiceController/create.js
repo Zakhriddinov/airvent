@@ -78,12 +78,6 @@ const create = async (req, res) => {
     // Create the invoice
     const result = await new Model(body).save({ session });
 
-    // // Fetch and update the Supplier
-    // const supplier = await Supplier.findById(result.supplier).session(session);
-    // if (!supplier) {
-    //   throw new Error('Supplier not found');
-    // }
-
     supplier.turnover += subTotal;
     supplier.debt = supplier.turnover - supplier.cash - supplier.transfers;
 

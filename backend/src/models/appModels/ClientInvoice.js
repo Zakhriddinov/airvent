@@ -27,8 +27,8 @@ const invoiceSchema = new mongoose.Schema({
     type: mongoose.Schema.ObjectId,
     ref: 'Client',
     autopopulate: true,
+    required: true,
   },
-  clientName: { type: String },
   items: [
     {
       product: {
@@ -36,9 +36,7 @@ const invoiceSchema = new mongoose.Schema({
         ref: 'Products',
         autopopulate: true,
       },
-      itemName: {
-        type: String,
-      },
+      itemName: {type: String},
       quantity: {
         type: Number,
         default: 1,

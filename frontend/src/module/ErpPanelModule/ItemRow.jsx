@@ -45,11 +45,9 @@ export default function ItemRow({ field, remove, current = null, isCustom }) {
             setItemName(item.itemName);
             setUnit(item.unit);
           }
-          console.log(item);
         }
       } else {
         const item = items[field.fieldKey];
-        console.log(item);
         if (item) {
           setQuantity(item.quantity);
           setPrice(item.price);
@@ -134,6 +132,7 @@ export default function ItemRow({ field, remove, current = null, isCustom }) {
               <Select.Option value="m">metr</Select.Option>
               <Select.Option value="l">litr</Select.Option>
               <Select.Option value="dona">dona</Select.Option>
+              <Select.Option value="m2">m2</Select.Option>
             </Select>
           </Form.Item>
         ) : (

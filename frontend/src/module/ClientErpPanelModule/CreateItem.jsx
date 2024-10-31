@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react';
 
-import { Button, Tag, Form, Divider } from 'antd';
+import { Button, Form, Divider } from 'antd';
 import { PageHeader } from '@ant-design/pro-layout';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-// import { settingsAction } from '@/redux/settings/actions';
 import { erp } from '@/redux/erp/actions';
 import { selectCreatedItem } from '@/redux/erp/selectors';
 
@@ -16,8 +15,8 @@ import Loading from '@/components/Loading';
 import { CloseCircleOutlined, PlusOutlined } from '@ant-design/icons';
 
 import { useNavigate } from 'react-router-dom';
-// import { selectLangDirection } from '@/redux/translate/selectors';
-
+import useFetch from '@/hooks/useFetch';
+import { request } from '@/request';
 function SaveForm({ form }) {
   const handelClick = () => {
     form.submit();
@@ -33,10 +32,17 @@ function SaveForm({ form }) {
 export default function CreateItem({ config, CreateForm }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [productList, setProductList] = useState([]);
 
-  // useEffect(() => {
-  //   dispatch(settingsAction.list({ entity: 'setting' }));
-  // }, []);
+  const asyncList = () => {
+    return request.listAll({ entity: 'products' });
+  };
+
+  const responseData = useFetch(asyncList);
+  useEffect(() => {
+    responseData?.isSuccess && setProductList(responseData?.result);
+  }, [responseData?.isSuccess]);
+
   let { entity } = config;
 
   const { isLoading, isSuccess, result } = useSelector(selectCreatedItem);
@@ -60,6 +66,14 @@ export default function CreateItem({ config, CreateForm }) {
           }
           if (item.quantity && item.price) {
             const price = item['price'];
+
+            const calculateDiscount = price - (price * item['discount']) / 100;
+
+            const total = calculate.multiply(item['quantity'], calculateDiscount);
+            subTotal = calculate.add(subTotal, total);
+          } else if (item.quantity && item.product) {
+            const findProduct = productList.find((v) => v._id === item.product);
+            const price = findProduct?.price ?? 0;
 
             const calculateDiscount = price - (price * item['discount']) / 100;
 
@@ -90,7 +104,12 @@ export default function CreateItem({ config, CreateForm }) {
     if (fieldsValue) {
       if (fieldsValue.items) {
         let newList = [...fieldsValue.items];
+
         newList.map((item) => {
+          if (item.product) {
+            const findProduct = productList.find((v) => v._id === item.product);
+            item['price'] = findProduct?.price;
+          }
           delete item.isCustom;
           item.total = calculate.multiply(item.quantity, item.price);
         });

@@ -29,8 +29,12 @@ export const fields = {
     disableForUpdate: true,
     type: 'currency',
     style: {
-      color: 'green',
+      color: 'red',
     },
+  },
+  phone: {
+    label: 'Telefon raqam',
+    disableForTable: true,
   },
   enabled: {
     type: 'boolean',

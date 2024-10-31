@@ -1,18 +1,13 @@
 import {
   DashboardOutlined,
   UserOutlined,
-  TagOutlined,
   TagsOutlined,
   SettingOutlined,
-  PieChartOutlined,
-  DeploymentUnitOutlined,
-  ContainerOutlined,
   CustomerServiceOutlined,
   ShopOutlined,
 } from '@ant-design/icons';
 
 import DashboardPage from '@/pages/Dashboard';
-import Generics from '@/pages/Generics';
 import ProductCategory from '@/pages/ProductCategory';
 import Product from '@/pages/Product';
 import Position from '@/pages/Position';
@@ -34,6 +29,8 @@ import ClientInvoiceRecordPayment from '@/pages/ClientInvoice/InvoiceRecordPayme
 import ClientPayment from '@/pages/ClientPayment'
 import ClientInvoiceUpdate from '@/pages/ClientInvoice/InvoiceUpdate'
 import InvoiceRead from '@/pages/SupplierInvoice/InvoiceRead';
+import ClientInvoiceRead from '@/pages/ClientInvoice/InvoiceRead';
+
 
 export const sidebar = [
   {
@@ -229,6 +226,15 @@ export const sidebar = [
     element: ClientInvoiceUpdate,
     label: 'Create',
     path: '/clientinvoice/update/:id',
+    isPrivate: true,
+    hidden: true,
+    role: ['admin'],
+  },
+  {
+    id: 18,
+    element: ClientInvoiceRead,
+    label: 'Read',
+    path: '/clientinvoice/read/:id',
     isPrivate: true,
     hidden: true,
     role: ['admin'],

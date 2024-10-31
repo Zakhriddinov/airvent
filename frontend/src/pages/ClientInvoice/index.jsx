@@ -7,7 +7,7 @@ import InvoiceDataTableModule from '@/module/ClientInvoiceModule/InvoiceDataTabl
 export default function ClientInvoice() {
   const entity = 'clientinvoice';
   const searchConfig = {
-    entity: 'clientinvoice',
+    entity: 'client',
     displayLabels: ['name'],
     searchFields: 'name',
   };
@@ -21,7 +21,7 @@ export default function ClientInvoice() {
     },
     {
       title: 'Mijoz',
-      dataIndex: 'clientName',
+      dataIndex: ['client', 'name'],
     },
     {
       title: 'Sana',

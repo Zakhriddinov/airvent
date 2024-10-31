@@ -26,6 +26,11 @@ export default function ItemRow({ field, remove, current = null, form, isCustom 
   const updatePrice = (value) => {
     setPrice(value);
   };
+
+  const handleChangeProduct = (v, data) => {
+    setProduct(data);
+    setPrice(data?.price);
+  };
   useEffect(() => {
     if (current) {
       const { items, invoice } = current;
@@ -37,8 +42,13 @@ export default function ItemRow({ field, remove, current = null, form, isCustom 
           setQuantity(item.quantity);
           setPrice(item.price);
           setDiscount(item.discount);
+          if (item?.product) {
+            setPrice(item?.product?.price);
+            setUnit(item?.product?.quantityUnit);
+          }
           if (item.itemName) {
             setItemName(item.itemName);
+            setUnit(item.unit);
           }
         }
       } else {
@@ -48,8 +58,13 @@ export default function ItemRow({ field, remove, current = null, form, isCustom 
           setQuantity(item.quantity);
           setPrice(item.price);
           setDiscount(item.discount);
+          if (item?.product) {
+            setPrice(item?.product?.price);
+            setUnit(item?.product?.quantityUnit);
+          }
           if (item.itemName) {
             setItemName(item.itemName);
+            setUnit(item.unit);
           }
         }
       }
@@ -57,17 +72,6 @@ export default function ItemRow({ field, remove, current = null, form, isCustom 
   }, [current]);
 
   useEffect(() => {
-    // if (product?.price && !isCustom && !itemName) {
-    // form.setFieldsValue({
-    //   [`items[${field.name}].price`]: product.price,
-    // });
-    //   setPrice(product.price);
-    // }
-
-    if (product?.quantityUnit && !isCustom && !itemName) {
-      setUnit(product?.quantityUnit);
-    }
-
     const calculateDiscount = price - (price * discount) / 100;
     const currentTotal = calculate.multiply(calculateDiscount, quantity);
     setTotal(currentTotal);
@@ -75,7 +79,7 @@ export default function ItemRow({ field, remove, current = null, form, isCustom 
     if (product?.quantity && !isCustom && !itemName) {
       setMaxQuantity(product.quantity);
     } else {
-      setMaxQuantity("Yo'q");
+      setMaxQuantity(0);
     }
   }, [product, price, quantity, discount]);
 
@@ -109,7 +113,7 @@ export default function ItemRow({ field, remove, current = null, form, isCustom 
               searchFields={'name'}
               redirectLabel={'Yangi maxsulot yaratish'}
               withRedirect
-              onChange={(v, data) => setProduct(data)}
+              onChange={handleChangeProduct}
               urlToRedirect={'/product'}
             />
           </Form.Item>
@@ -165,17 +169,34 @@ export default function ItemRow({ field, remove, current = null, form, isCustom 
       </Col>
 
       <Col className="gutter-row" span={5}>
-        <Form.Item name={[field.name, 'price']}>
-          <InputNumber
-            onChange={updatePrice}
-            className="moneyInput"
-            min={0}
-            controls={false}
-            style={{ width: '100%' }}
-            formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-            parser={(value) => value.replace(/\$\s?|UZS|,/g, '')}
-          />
-        </Form.Item>
+        {isCustom || itemName ? (
+          <Form.Item name={[field.name, 'price']}>
+            <InputNumber
+              onChange={updatePrice}
+              className="moneyInput"
+              min={0}
+              controls={false}
+              style={{ width: '100%' }}
+              formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+              parser={(value) => value.replace(/\$\s?|UZS|,/g, '')}
+            />
+          </Form.Item>
+        ) : (
+          <Form.Item name={[field.name, 'price']} initialValue={price}>
+            <Form.Item>
+              <InputNumber
+                value={price}
+                className="moneyInput"
+                min={0}
+                readOnly
+                controls={false}
+                style={{ width: '100%' }}
+                formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                parser={(value) => value.replace(/\$\s?|UZS|,/g, '')}
+              />
+            </Form.Item>
+          </Form.Item>
+        )}
       </Col>
 
       <Col className="gutter-row" span={3}>

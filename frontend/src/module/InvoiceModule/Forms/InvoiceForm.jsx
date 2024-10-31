@@ -18,7 +18,6 @@ export default function InvoiceForm({ subTotal = 0, current = null, form }) {
 }
 
 function LoadInvoiceForm({ subTotal = 0, current = null, form = { form } }) {
-  // const { last_invoice_number } = useSelector(selectFinanceSettings);
   const [total, setTotal] = useState(0);
   const [taxRate, setTaxRate] = useState(0);
   const [currentYear, setCurrentYear] = useState(() => new Date().getFullYear());

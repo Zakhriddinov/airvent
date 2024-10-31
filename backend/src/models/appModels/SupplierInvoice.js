@@ -57,7 +57,7 @@ const invoiceSchema = new mongoose.Schema({
       description: String,
       unit: {
         type: String,
-        enum: ['m', 'kg', 'l', 'dona'],
+        enum: ['m', 'kg', 'l', 'dona',"m2"],
       },
     },
   ],

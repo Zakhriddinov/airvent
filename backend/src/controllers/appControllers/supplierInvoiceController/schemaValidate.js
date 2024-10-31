@@ -26,7 +26,7 @@ const createSchema = Joi.object({
         price: Joi.number().positive().required(),
         discount: Joi.number(),
         total: Joi.number().required(),
-        unit: Joi.string().valid('m', 'kg', 'l', 'dona').optional(),
+        unit: Joi.string().valid('m', 'kg', 'l', 'dona', 'm2').optional(),
       }).required()
     )
     .required(),
@@ -51,7 +51,7 @@ const updateSchema = Joi.object({
         price: Joi.number().positive().required(),
         discount: Joi.number(),
         total: Joi.number().required(),
-        unit: Joi.string().valid('m', 'kg', 'l', 'dona').optional(),
+        unit: Joi.string().valid('m', 'kg', 'l', 'dona', 'm2').optional(),
       }).required()
     )
     .required(),
