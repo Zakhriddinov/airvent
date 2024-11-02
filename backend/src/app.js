@@ -37,12 +37,12 @@ app.use('/api', isValidAuthToken, appRouter);
 app.use('/download', coreDownloadRouter);
 
 app.use('/public', express.static('src/public'));
-app.use(express.static(path.join(__dirname, '../../frontend/')));
+// app.use(express.static(path.join(__dirname, '../../frontend/')));
 
 // Barcha yo'nalishlar uchun `index.html` xizmat qilish
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../frontend/', 'index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../../frontend/', 'index.html'));
+// });
 
 // If that above routes didnt work, we 404 them and forward to error handler
 app.use(errorHandlers.notFound);
