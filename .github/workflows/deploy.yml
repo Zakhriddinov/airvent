@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "22.8.0" # Node.js versiyasini moslang
+          node-version: "20.14.0" # Node.js versiyasini moslang
 
       - name: Install dependencies
         run: |
