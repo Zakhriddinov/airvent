@@ -31,6 +31,18 @@ jobs:
           cd frontend
           npm run build
 
+
+      - name: Upload frontend files
+        uses: SamKirkland/FTP-Deploy-Action@4.1.0
+        with:
+         server: ${{ secrets.FTP_SERVER }}
+         username: ${{ secrets.FTP_USERNAME }}
+         password: ${{ secrets.FTP_PASSWORD }}
+         port: 21
+         protocol: ftp
+         local-dir: ./frontend/dist/
+         server-dir: /public_html/frontend/
+
       - name: Upload backend files
         uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
@@ -41,13 +53,3 @@ jobs:
           protocol: ftp
           server-dir: /public_html/backend/
 
-      - name: Upload frontend files
-        uses: SamKirkland/FTP-Deploy-Action@4.1.0
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          port: 21
-          protocol: ftp
-          local-dir: ./frontend/dist/
-          server-dir: /public_html/frontend/
