@@ -2,11 +2,11 @@ const connectDB = require('./config/database');
 const logger = require('./config/logger');
 require('colors');
 
-const [major, minor] = process.versions.node.split('.').map(parseFloat);
-if (major < 20) {
-  console.log('Please upgrade your node.js version at least 20 or greater. 👌\n ');
-  process.exit();
-}
+// const [major, minor] = process.versions.node.split('.').map(parseFloat);
+// if (major < 20) {
+//   console.log('Please upgrade your node.js version at least 20 or greater. 👌\n ');
+//   process.exit();
+// }
 require('dotenv').config({ path: '.env' });
 
 // connect database
