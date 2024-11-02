@@ -1,0 +1,53 @@
+name: Deploy to cPanel
+
+on:
+  push:
+    branches:
+      - main # O'zingizning asosiy branchingizni belgilang
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "20.17.0" # Node.js versiyasini moslang
+
+      - name: Install dependencies
+        run: |
+          cd backend
+          npm install
+
+          cd ../frontend
+          npm install
+
+      - name: Build frontend
+        run: |
+          cd frontend
+          npm run build
+
+      - name: Upload backend files
+        uses: SamKirkland/FTP-Deploy-Action@4.1.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./backend/
+          protocol: ftp
+          server-dir: /public_html/backend/
+
+      - name: Upload frontend files
+        uses: SamKirkland/FTP-Deploy-Action@4.1.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: 21
+          protocol: ftp
+          local-dir: ./frontend/dist/
+          server-dir: /public_html/frontend/

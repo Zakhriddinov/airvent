@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance Report</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10px;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 2px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Attendance Report</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <% data[0].results.forEach(result=> { %>
+                    <th>
+                        <%= result.date %>
+                    </th>
+                    <% }); %>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach(employee=> { %>
+                <tr>
+                    <td>
+                        <%= employee.employee.firstname %>
+                            <%= employee.employee.lastname %>
+                    </td>
+                    <% employee.results.forEach(result=> { %>
+                        <td>
+                            <%= result.status %> (<%= result.earnedAmount || 0 %>)
+                        </td>
+                        <% }); %>
+                </tr>
+                <% }); %>
+        </tbody>
+    </table>
+</body>
+
+</html>

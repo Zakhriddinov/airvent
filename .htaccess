@@ -1,0 +1,20 @@
+# Use PHP version
+AddHandler application/x-httpd-php74 .php
+
+# Frontend static files
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Redirect all requests to index.html except API requests
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !^/backend/
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Redirect backend API to external server
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_URI} ^/backend/
+  RewriteRule ^(.*)$ https://airventnavoi.uz:8889/$1 [P,L]
+</IfModule>
