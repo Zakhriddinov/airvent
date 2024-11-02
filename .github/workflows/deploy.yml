@@ -11,8 +11,8 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
-
+        uses: actions/checkout@v2.1.0
+        
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
@@ -33,7 +33,7 @@ jobs:
 
 
       - name: Upload frontend files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
          server: ${{ secrets.FTP_SERVER }}
          username: ${{ secrets.FTP_USERNAME }}
@@ -44,7 +44,7 @@ jobs:
          server-dir: /public_html/frontend/
 
       - name: Upload backend files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
